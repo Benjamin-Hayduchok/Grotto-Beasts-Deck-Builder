@@ -25,3 +25,23 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.cardListOuter {
+  margin: auto;
+  width: 50%;
+  justify-content: center;
+  background-color: pink;
+}
+
+.cardList {
+  margin: auto;
+  background-color: aqua;
+}
+
+.cardOuter {
+  background-color: red;
+}
+
+.card {
+  background-color: Green;
+}
