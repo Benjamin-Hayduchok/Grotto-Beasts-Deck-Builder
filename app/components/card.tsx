@@ -55,7 +55,7 @@ const Card = (props:
             <div
                 ref={inputRef}
                 className="card"
-                style={{ background: `url(${imageName}) no-repeat`, backgroundSize: "cover"}}
+                style={{ background: `url(${imageName}) no-repeat`, backgroundSize: "contain"}}
                 onMouseLeave={removeListener}
                 onMouseMove={rotateToMouse}
             >

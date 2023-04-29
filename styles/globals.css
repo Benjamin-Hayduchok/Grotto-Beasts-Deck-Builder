@@ -85,7 +85,7 @@ button {
   background-size: cover; */
 
   position: relative;
-
+  display: inline-block;
   transition-duration: 300ms;
   transition-property: transform, box-shadow;
   transition-timing-function: ease-out;
@@ -109,4 +109,9 @@ button {
 
 .app {
   perspective: 1500px;
+  max-width:50%;
+  display: inline-block;
+  padding: 1%;
+
 }
+

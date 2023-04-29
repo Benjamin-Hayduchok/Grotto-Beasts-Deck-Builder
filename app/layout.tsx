@@ -11,9 +11,7 @@ export default function RootLayout({
     <html>
       <body>
         <main>
-          before
           {children}
-          after
         </main>
       </body>
     </html>
