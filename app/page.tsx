@@ -9,7 +9,6 @@ export default function HomePage() {
     return (
         <div>
             <StickyBox className='deckSticky' offsetTop={20} offsetBottom={20}>
-                <div>Sidebar</div>
                 <Deck>
                 </Deck>
             </StickyBox>

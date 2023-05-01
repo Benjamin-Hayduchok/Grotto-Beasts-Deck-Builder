@@ -3,8 +3,6 @@
 import './../../styles/globals.css';
 import Card from './card';
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
 const cardArray = [
     {name: "Mr. Greenz", imageName: "Mr.+Greenz.webp", cardText: "When a card effect has you roll exactly one die, roll an additional die. You may choose which die result to use for the card effect. When you roll exactly two dice, if the result on both die is the same number, score three cards."},
@@ -27,7 +25,7 @@ const cardArray = [
 
 const CardList = () => {
     return (
-        <Container>
+        <Container style={{marginRight: "15vh"}}>
             {cardArray.map(card => (
                 <Card 
                     name={card.name}

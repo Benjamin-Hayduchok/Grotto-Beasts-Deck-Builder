@@ -11,7 +11,7 @@ export default class deck extends Component<Props, State> {
 
   render() {
     return (
-        <div className="deckSideBar">
+        <div>
             <DeckHeader>
             </DeckHeader>
             <DeckCards>

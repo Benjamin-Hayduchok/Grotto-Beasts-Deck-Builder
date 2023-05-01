@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import DeckCounter from './deckCounter'
 
 type Props = {}
 
@@ -9,7 +10,9 @@ export default class deckHeader extends Component<Props, State> {
 
   render() {
     return (
-      <div>deckHeader</div>
+      <div className="deckHeader">
+        <DeckCounter></DeckCounter>
+      </div>
     )
   }
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import DeckCard from './deckCard'
 
 type Props = {}
 
@@ -9,7 +10,11 @@ export default class deckCards extends Component<Props, State> {
 
   render() {
     return (
-      <div>deckCards</div>
+      <div className='deckCards'>
+        <DeckCard>
+
+        </DeckCard>
+      </div>
     )
   }
 }

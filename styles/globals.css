@@ -116,5 +116,67 @@ button {
 }
 
 .deckSticky {
+  position: relative;
+
   float: right;
+  margin-right: 2%;
+
+  border: 10px solid rgb(127, 90, 58);
+  border-style: outset;
+  border-radius: 5px;
+
+  width: 20vw;
+  height: 90vh;
+  z-index: 5;
+
+  background-image: url("./../public/TESTER.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.deckHeader {
+  /* height: 10vh; */
+  position: relative;
+  border: 6px solid rgb(224, 180, 34);
+  border-style: inset;
+  border-radius: 5px;
+  margin-top: -2%;
+  background-color: rgb(127, 90, 58);
+  background-image: linear-gradient(to bottom right, rgb(121, 66, 18) , rgb(184, 146, 114));
+  z-index: 3;
+}
+
+.containerDeckCounter {
+  position: relative;
+
+  min-width: 15%;
+  max-width: 100%;
+  margin-left: 1vw;
+  margin-top: 2vh;
+}
+
+.deckCounter {
+  position: relative;
+
+  color: rgb(252, 209, 68);
+  font-family: "Brush Script MT";
+  font-size:  22px;
+  display: flex;
+
+  min-width: 20px;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.deckCards {
+  /* border: 10px solid rgb(127, 90, 58);
+  border-style: outset;
+  border-radius: 5px;
+  margin-top: -5%;
+  z-index: -1;
+
+  height: 80vh; */
+  margin-top: -5%;
+  border-top: 10px solid rgb(127, 90, 58);
 }
