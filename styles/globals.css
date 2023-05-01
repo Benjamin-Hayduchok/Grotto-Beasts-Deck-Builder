@@ -180,3 +180,8 @@ button {
   margin-top: -5%;
   border-top: 10px solid rgb(127, 90, 58);
 }
+
+.starIcon {
+  max-width: 5vw;
+  max-height: 5vh;
+}
