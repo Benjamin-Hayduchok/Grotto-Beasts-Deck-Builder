@@ -6,7 +6,7 @@ type Props = {}
 type State = {}
 
 const currDeckArr = [
-  {cost: "0", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false},
+  {cost: "0", name: "placeholder", imageName: "placeholder", count: "1", isEpic: true},
   {cost: "1", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false},
   {cost: "2", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false},
   {cost: "3", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false},

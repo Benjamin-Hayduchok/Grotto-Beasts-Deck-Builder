@@ -178,10 +178,29 @@ button {
 
   height: 80vh; */
   margin-top: -5%;
-  border-top: 10px solid rgb(127, 90, 58);
+  border-top: 3vh solid rgb(127, 90, 58);
 }
 
-.starIcon {
+.deckCard {
+  /* display: inline-block; */
+}
+
+.deckCardName {
+  font-family: "AclonicaRegular";
+}
+
+.costIcon {
   max-width: 5vw;
   max-height: 5vh;
+  display: inline-block
 }
+
+@font-face {
+  font-family: "AclonicaRegular";
+  src: local("AclonicaRegular"),
+   url("./../app/fonts/Aclonica-Regular.ttf") format("truetype");
+ }
+
+ .epicTag {
+  
+} 
