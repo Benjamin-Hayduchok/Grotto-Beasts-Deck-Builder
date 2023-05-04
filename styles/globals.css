@@ -125,9 +125,12 @@ button {
   border-style: outset;
   border-radius: 5px;
 
-  width: 20vw;
+  width: 22vw;
   height: 90vh;
   z-index: 5;
+  /* width: 22vw;
+  height: 90vh; */
+  min-width: 200px;
 
   background-image: url("./../public/TESTER.png");
   background-repeat: no-repeat;
@@ -182,20 +185,26 @@ button {
 }
 
 .deckCard {
-  /* display: inline-block; */
+  display: flex;
+  /* justify-content:; */
+  background-color: rgb(215, 167, 67);
 }
 
 .deckCardName {
   font-family: "AclonicaRegular";
   color: black;
   text-shadow: 0px 0px 4px white;
-  font-size: 1.5vw;
+  font-size: 1.1vw;
+  font-weight: bold;
+  width: 13vw;
 }
 
 .costIcon {
-  max-width: 5vw;
-  max-height: 5vh;
-  display: inline-block
+  max-width: 7vw;
+  max-height: 7vh;
+  /* display: inline-block; */
+  padding: 1vh;
+  float: left;
 }
 
 @font-face {
@@ -206,4 +215,19 @@ button {
 
  .epicTag {
   font-family: "AclonicaRegular";
-} 
+  text-shadow: 0px 0px 4px white;
+  font-size: 1.5vw;
+}
+
+.cardCount{
+  font-family: "AclonicaRegular";
+  color: black;
+  text-shadow: 2px 2px 10px whitesmoke;
+  font-size: 2vw;
+  font-weight: bold;
+  float: right;
+}
+
+.spacing {
+  width: 2vw;
+}

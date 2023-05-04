@@ -8,7 +8,8 @@ const DeckCard = (props: {name: string, imageName: string, count: string, cost: 
     <div className="deckCard">
       <img className="costIcon" src={"./cost+" + cost + ".png"}></img>
       <p className="deckCardName">{name}</p>
-      <EpicTag isEpic={isEpic}></EpicTag>
+      <div className="spacing"><EpicTag isEpic={isEpic}></EpicTag></div>
+      <p className="cardCount">{count}</p>
     </div>
   )
 }
