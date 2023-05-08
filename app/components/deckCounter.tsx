@@ -10,11 +10,11 @@ export default class deckCounter extends Component<Props, State> {
 
   render() {
     return (
-        <Container className="containerDeckCounter">
-                    <p className="deckCounter">
-            0/40    
-        </p>
-        </Container>
+        <div className="containerDeckCounter">
+            <p className="deckCounter">
+              0/40    
+            </p>
+        </div>
 
     )
   }

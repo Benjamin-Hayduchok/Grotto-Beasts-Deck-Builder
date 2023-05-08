@@ -15,6 +15,11 @@ const currDeckArr = [
   {cost: "6", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false},
   {cost: "7", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false},
   {cost: "9", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false},
+  {cost: "9", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false},
+  {cost: "9", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false},
+  {cost: "9", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false},
+  {cost: "9", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false},
+
 ];
 
 export default class deckCards extends Component<Props, State> {
@@ -22,7 +27,7 @@ export default class deckCards extends Component<Props, State> {
 
   render() {
     return (
-      <div className='deckCards'>
+      <div className='deckCards'  id="style-1">
           {currDeckArr.map(card => (
               <DeckCard 
                   name={card.name}
