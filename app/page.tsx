@@ -3,6 +3,7 @@
 import CardList from './components/cardList';
 import StickyBox from "react-sticky-box";
 import Deck from './components/deck'
+// import "./fonts/Aclonica-Regular.ttf";
 // import Deck from 
 
 export default function HomePage() {

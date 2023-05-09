@@ -1,6 +1,13 @@
 "use client"; 
 import React, { useEffect, useRef } from 'react';
 import './../../styles/globals.css';
+import eventBus from './eventBus';
+
+function addCard() {
+    console.log("cunt");
+    eventBus.dispatch("couponApply", { message: "coupone applied" });
+}
+
 
 const Card = (props: 
         { name: string, imageName: string, cardText: string }
@@ -51,7 +58,7 @@ const Card = (props:
     };
     useEffect(() => {});
     return (
-        <div className="app">
+        <div className="cardContainer" onClick={addCard}>
             <div
                 ref={inputRef}
                 className="card"
