@@ -3,9 +3,10 @@ import React, { useEffect, useRef } from 'react';
 import './../../styles/globals.css';
 import eventBus from './eventBus';
 
-function addCard() {
-    console.log("cunt");
-    eventBus.dispatch("couponApply", { message: "coupone applied" });
+function addCard(card: object) {
+    console.log('card', card)
+    card = {cost: '3', name: 'placeholder', imageName: 'placeholder', count: '1', isEpic: false}
+    eventBus.dispatch("addCardToDeck", { card: card });
 }
 
 
@@ -58,7 +59,7 @@ const Card = (props:
     };
     useEffect(() => {});
     return (
-        <div className="cardContainer" onClick={addCard}>
+        <div className="cardContainer" onClick={() => addCard(props)}>
             <div
                 ref={inputRef}
                 className="card"
@@ -71,28 +72,6 @@ const Card = (props:
             </div>
         </div>
     );
-    // const card = document.querySelector(".card");
-    // console.log('card :>> ', card);
-    // const THRESHOLD = 15;
-    // function handleHover(e: Event) {
-    //     // TODO
-    // }
-    
-    // function resetStyles(e: Event) {
-    //     // TODO
-    // }
-    
-    // // card.addEventListener("mousemove", handleHover);
-    // // card.addEventListener("mouseleave", resetStyles);
-    //     return (
-    //             <article className="card" style={{ background: `url(${imageName}) no-repeat`, backgroundSize: "contain"}}>
-    //                 <div className="content">
-    //                     <h2>The Best Beaches</h2>
-    //                     <p>Check out these top 10 beaches this summer.</p>
-    //                     <button type="button">Explore</button>
-    //                 </div>
-    //             </article>
-    //     );
     }
 
 export default Card

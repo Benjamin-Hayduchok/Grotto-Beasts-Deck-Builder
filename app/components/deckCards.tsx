@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import DeckCard from './deckCard'
 import eventBus from './eventBus';
 
@@ -24,22 +24,22 @@ var currDeckArr = [
 
 ];
 
-eventBus.on("couponApply", (data: any) =>
+export default function deckCards(props: any) {
+  
+  const [deckArr, setDeckArr] = useState(currDeckArr);
+  console.log('deckArr', deckArr)
+
+  eventBus.on("addCardToDeck", (data: any) =>
         {
-            console.log("OMGGGGGG")
-            console.log(data)
-            currDeckArr.push({cost: "9", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false})
-            console.log('currDeckArr', currDeckArr)
+          var deckCopy = deckArr;
+          deckCopy.push(data.card);
+          setDeckArr([...deckCopy]);
         }
     );
 
-export default class deckCards extends Component<Props, State> {
-  state = {}
-
-  render() {
     return (
       <div className='deckCards'  id="style-1">
-          {currDeckArr.map(card => (
+          {deckArr.map(card => (
               <DeckCard 
                   name={card.name}
                   imageName={card.imageName}
@@ -50,5 +50,4 @@ export default class deckCards extends Component<Props, State> {
           ))}
       </div>
     )
-  }
 }
