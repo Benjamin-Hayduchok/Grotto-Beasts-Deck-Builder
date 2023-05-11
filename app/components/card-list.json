@@ -1,0 +1,2002 @@
+{
+  "1": {
+    "Name": "Glueman",
+    "🛡️": 1,
+    "❤️": 16,
+    "🌟": "-",
+    "Effect": "When attacking alone, Glueman does not rest and gains 1 power for each Beast on your team until the end of the turn.",
+    "Flavor Text": "-",
+    "Type": "Challenger",
+    "Artist": "Ashlelang"
+  },
+  "2": {
+    "Name": "B.F. Bugleberry",
+    "🛡️": 1,
+    "❤️": 16,
+    "🌟": "-",
+    "Effect": "During either of you action phases at any time, you may rest B. F. Bugleberry and discard three cards from your score pile. If you do, summon any card from your hand free of cost.",
+    "Flavor Text": "-",
+    "Type": "Challenger",
+    "Artist": "Jason Rainville"
+  },
+  "3": {
+    "Name": "Grandpa",
+    "🛡️": 1,
+    "❤️": 12,
+    "🌟": "-",
+    "Effect": "You have no maximum hand size.",
+    "Flavor Text": "-",
+    "Type": "Challenger",
+    "Artist": "Gwen M."
+  },
+  "4": {
+    "Name": "Demon Lord Zeraxos",
+    "🛡️": 3,
+    "❤️": 18,
+    "🌟": "-",
+    "Effect": "At the start of each player's turn, if they have more Beasts in play than their opponents, that player may discard a Beast they own. If they don't, their opponents score a card.",  
+    "Flavor Text": "-",
+    "Type": "Challenger",
+    "Artist": "Snoozincopter"
+  },
+  "5": {
+    "Name": "JEX",
+    "🛡️": 2,
+    "❤️": 18,
+    "🌟": "-",
+    "Effect": "Your deck may ignore the \"Epic Rule",
+    "Flavor Text": "-",
+    "Type": "Challenger",
+    "Artist": "Jason Rainville"
+  },
+  "6": {
+    "Name": "Mr. Greenz",
+    "🛡️": 1,
+    "❤️": 21,
+    "🌟": "-",
+    "Effect": "When a card effect has you roll exactly one die, roll an additional die. You may choose which die result to use for the card effect.\n\nWhen you roll exactly two dice, if the result on both die is the same number, score three cards.",
+    "Flavor Text": "-",
+    "Type": "Challenger",
+    "Artist": "Slab Mangrave"
+  },
+  "7": {
+    "Name": "Jerma",
+    "🛡️": 1,
+    "❤️": 12,
+    "🌟": "-",
+    "Effect": "When you lose a coin flip, attach a card from your deck face down onto Jerma.\n\nWhen you flip a coin, if there are two cards attached to Jerma, you win that coin flip regardless of what you call and discard all cards attached to Jerma.",
+    "Flavor Text": "-",
+    "Type": "Challenger",
+    "Artist": "kevins_computer"
+  },
+  "8": {
+    "Name": "Carl Griffinsteed",
+    "🛡️": 3,
+    "❤️": 17,
+    "🌟": "-",
+    "Effect": "When you choose attackers or defenders, you may discard two cards. If you don't, Carl Griffinsteed cannot attack or defend until the end of the turn.\n\nCarl Griffinsteed gains 3 power as long as you have twenty or more cards in your discard pile.",
+    "Flavor Text": "-",
+    "Type": "Challenger",
+    "Artist": "WiseSeaMonster"
+  },
+  "9": {
+    "Name": "Jerma Earth",
+    "🛡️": 0,
+    "❤️": 15,
+    "🌟": "-",
+    "Effect": "At the start of your turn, if you have five Grottos in play, score a card.",
+    "Flavor Text": "-",
+    "Type": "Challenger",
+    "Artist": "kevins_computer"
+  },
+  "10": {
+    "Name": "Jerma Moon",
+    "🛡️": 1,
+    "❤️": 13,
+    "🌟": "-",
+    "Effect": "Jerma Moon gains 2 power as long as you have more resting Beasts in play than any opponent.",
+    "Flavor Text": "-",
+    "Type": "Challenger",
+    "Artist": "Milkbox"
+  },
+  "11": {
+    "Name": "Jerma Venus",
+    "🛡️": 0,
+    "❤️": 15,
+    "🌟": "-",
+    "Effect": "Beasts each player summons do not gain summoning sadness.",
+    "Flavor Text": "-",
+    "Type": "Challenger",
+    "Artist": "Hollulu"
+  },
+  "12": {
+    "Name": "Jerma Pluto",
+    "🛡️": 0,
+    "❤️": 12,
+    "🌟": "-",
+    "Effect": "You may look at the cards in any player's score pile at any time.\n\nAt the start of your turn, if you have the fewest number of cards scored than any other player, draw a card.",  
+    "Flavor Text": "-",
+    "Type": "Challenger",
+    "Artist": "Tree"
+  },
+  "13": {
+    "Name": "The Jerm",
+    "🛡️": 1,
+    "❤️": 12,
+    "🌟": "-",
+    "Effect": "At the start of each opponent's turn, The Jerm wakes up.",
+    "Flavor Text": "-",
+    "Type": "Challenger",
+    "Artist": "Blordow"
+  },
+  "14": {
+    "Name": "Byeah Prime",
+    "🛡️": 1,
+    "❤️": 15,
+    "🌟": "-",
+    "Effect": "Your deck size must be sixty cards.\n\nYour maximum hand size is increased by 2.",
+    "Flavor Text": "-",
+    "Type": "Challenger",
+    "Artist": "Gwen M."
+  },
+  "15": {
+    "Name": "Bat Boy",
+    "🛡️": 1,
+    "❤️": 10,
+    "🌟": "-",
+    "Effect": "Beasts you have in play lose 1 power.",
+    "Flavor Text": "-",
+    "Type": "Challenger",
+    "Artist": "Hollulu"
+  },
+  "16": {
+    "Name": "Green Screen",
+    "🛡️": 2,
+    "❤️": 15,
+    "🌟": "-",
+    "Effect": "When a Grotto you have in play is discarded, you may attach it face up onto Green Screen instead.\n\nWhen you would score a card, you may discard the top three cards of your deck instead. If you do, choose a Grotto attached to Green Screen and summon it free of cost.",
+    "Flavor Text": "-",
+    "Type": "Challenger",
+    "Artist": "Hollulu"
+  },
+  "17": {
+    "Name": "The Giant Rat",
+    "🛡️": 2,
+    "❤️": 16,
+    "🌟": "-",
+    "Effect": "When you summon a Rat Beast, you may return a Rat Beast from your discard pile to the top of your summoning pool.\n\nWhen you score a card, reveal it to all players. If it is a Rat Beast, you may summon it to your sideline free of cost.",
+    "Flavor Text": "-",
+    "Type": "Challenger",
+    "Artist": "Hollulu"
+  },
+  "18": {
+    "Name": "Sus Guy",
+    "🛡️": 2,
+    "❤️": 14,
+    "🌟": "-",
+    "Effect": "At the end of your turn, if your deck has exactly zero cards in it, you win the game.",
+    "Flavor Text": "-",
+    "Type": "Challenger",
+    "Artist": "Corax"
+  },
+  "19": {
+    "Name": "The Jem Wizard",
+    "🛡️": 0,
+    "❤️": 14,
+    "🌟": "-",
+    "Effect": "The top card of your deck is always revealed to all players.\n\nYou may summon the top card of your deck as if it was in your hand. If it is a Wish, its summoning cost is 1 less.", 
+    "Flavor Text": "-",
+    "Type": "Challenger",
+    "Artist": "Hollulu"
+  },
+  "20": {
+    "Name": "Otto",
+    "🛡️": 1,
+    "❤️": 16,
+    "🌟": "-",
+    "Effect": "When attacking, Gruffling Beasts you have in play gain 1 power until the end of the turn.",
+    "Flavor Text": "-",
+    "Type": "Challenger",
+    "Artist": "Melscribbles"
+  },
+  "21": {
+    "Name": "Scritchy Scratch",
+    "🛡️": 2,
+    "❤️": 15,
+    "🌟": "-",
+    "Effect": "At the start of each opponent's turn, that player discards the top card of their deck.\n\nWhen an opponent shuffles their deck, that player discards the top card of their deck.",   
+    "Flavor Text": "-",
+    "Type": "Challenger",
+    "Artist": "Hollulu"
+  },
+  "22": {
+    "Name": "Wall Dad",
+    "🛡️": 4,
+    "❤️": 16,
+    "🌟": "-",
+    "Effect": "Wall Dad cannot attack.\n\nWhen defending, the attacking player scores two cards.",
+    "Flavor Text": "-",
+    "Type": "Challenger",
+    "Artist": "Gwen M."
+  },
+  "23": {
+    "Name": "Giant Enemy Spider",
+    "🛡️": 0,
+    "❤️": 15,
+    "🌟": "-",
+    "Effect": "You may choose Beasts on your sideline to defend during battle as though they were on your team.",
+    "Flavor Text": "-",
+    "Type": "Challenger",
+    "Artist": "Sturner"
+  },
+  "24": {
+    "Name": "30's Milkman",
+    "🛡️": 1,
+    "❤️": 12,
+    "🌟": "-",
+    "Effect": "When a card effect an opponent activates allows them to search their deck or look at cards on the top of their deck, draw a card.",
+    "Flavor Text": "-",
+    "Type": "Challenger",
+    "Artist": "Gwen M."
+  },
+  "25": {
+    "Name": "Michael the Birthday Boy",
+    "🛡️": 0,
+    "❤️": 13,
+    "🌟": "-",
+    "Effect": "During game setup, attach ten cards at random from your deck face down onto Michael the Birthday Boy.\n\nWhen an opponent scores a card, you may look at the cards attached to Michael the Birthday Boy. If you do, choose one of them and put it into your hand.",
+    "Flavor Text": "-",
+    "Type": "Challenger",
+    "Artist": "Hollulu"
+  },
+  "26": {
+    "Name": "One Guy",
+    "🛡️": 1,
+    "❤️": 13,
+    "🌟": "-",
+    "Effect": "You draw an additional card when defeating Challengers.\n\nWhen you defeat a Challenger named Jerma, draw a card.",
+    "Flavor Text": "-",
+    "Type": "Challenger",
+    "Artist": "Jerma"
+  },
+  "27": {
+    "Name": "Pirouette",
+    "🛡️": 1,
+    "❤️": 14,
+    "🌟": "-",
+    "Effect": "Wishes you summon cost 1 less for each Beast and Grotto you summoned this turn.\n\nAt the end of your turn, if you scored at least one card this turn, you may return a Wish from your discard pile to your hand.",
+    "Flavor Text": "-",
+    "Type": "Challenger",
+    "Artist": "Hollulu"
+  },
+  "28": {
+    "Name": "Abacus 1.0",
+    "🛡️": 2,
+    "❤️": 14,
+    "🌟": "-",
+    "Effect": "When a Beast or Grotto you have in play is discarded from play, you may move any cards attached to it onto any number of other Beasts or Grottos you have in play.",
+    "Flavor Text": "-",
+    "Type": "Challenger",
+    "Artist": "Sturner"
+  },
+  "29": {
+    "Name": "The Big Baker",
+    "🛡️": 2,
+    "❤️": 13,
+    "🌟": "-",
+    "Effect": "During game setup, search your deck for six cards and put them into your hand. This becomes your starting hand for the game. Shuffle your deck when you're done.",
+    "Flavor Text": "-",
+    "Type": "Challenger",
+    "Artist": "Hollulu"
+  },
+  "30": {
+    "Name": "Cloud King",
+    "🛡️": 0,
+    "❤️": 18,
+    "🌟": "-",
+    "Effect": "Cloud King gains 1 power for each Wish attached to it.\n\nWhen you score a card, reveal it to all players. If the revealed card is a Wish, attach it face up onto Cloud King.",      
+    "Flavor Text": "-",
+    "Type": "Challenger",
+    "Artist": "Hollulu"
+  },
+  "31": {
+    "Name": "Pine Princess",
+    "🛡️": 0,
+    "❤️": 16,
+    "🌟": "-",
+    "Effect": "Pine Princess gains 1 power for each Grotto you have in play.\n\nWhen the Grotto under Pine Princess is discarded from play, you may score it instead.",
+    "Flavor Text": "-",
+    "Type": "Challenger",
+    "Artist": "Hollulu"
+  },
+  "32": {
+    "Name": "Naturalist Langston",
+    "🛡️": 0,
+    "❤️": 16,
+    "🌟": "-",
+    "Effect": "When you summon a Beast, if it doesn't share a name with any other Beast you have in play, attach a card from the top card of your deck face down onto that Beast.\n\nWhen a Beast on your team attacks or defends, you may discard a card attached to it. If you do, that Beast gains 1 power until the end of the turn.",
+    "Flavor Text": "-",
+    "Type": "Challenger",
+    "Artist": "Hollulu"
+  },
+  "33": {
+    "Name": "Bittersweet Peaks",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "When summoned, attach a card from the top of your deck face down onto Bittersweet Peaks.\n\nWhen the Beast or Challenger above Bittersweet Peaks attacks or defends, put all face down cards attached to Bittersweet Peaks into your hand. If there are no cards attached to Bittersweet Peaks, return it to your hand instead.",
+    "Flavor Text": "-",
+    "Type": "Grotto",
+    "Artist": "Hollulu"
+  },
+  "34": {
+    "Name": "Brightlight Casino",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "When you win a coin flip, draw a card.",
+    "Flavor Text": "It's good to be the house.",
+    "Type": "Grotto",
+    "Artist": "Sturner"
+  },
+  "35": {
+    "Name": "Carnival Kingdom",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 6,
+    "Effect": "At the end of your turn, put the top card from your summoning pool into your hand for each resting Beast above and beside Carnival Kingdom.",
+    "Flavor Text": "Welcome, to the grand re-opening!",
+    "Type": "Grotto",
+    "Artist": "Hollulu"
+  },
+  "36": {
+    "Name": "Cloudtop Observatory",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 4,
+    "Effect": "Wishes you summon from your hand are put on the bottom of your summoning pool rather than discarded after their card effect is activated.",
+    "Flavor Text": "It's said that the Polestar Observatory's lens can see beyond the thickest fog, even through different planes.",
+    "Type": "Grotto",
+    "Artist": "Hollulu"
+  },
+  "37": {
+    "Name": "Coral Shoal",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 5,
+    "Effect": "Aquatic Beasts on your team gain 1 power.",
+    "Flavor Text": "Over time it builds up, becoming a fortress and a home.",
+    "Type": "Grotto",
+    "Artist": "Sturner"
+  },
+  "38": {
+    "Name": "Dank Sewer",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 1,
+    "Effect": "When an opponent scores a card, that player discards the top card of their deck.",
+    "Flavor Text": "It's rumored there's a treasure here, much more than meets the eye. If it were to fall into the wrong hands...",
+    "Type": "Grotto",
+    "Artist": "Sturner"
+  },
+  "39": {
+    "Name": "Forgotten Tableau",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 5,
+    "Effect": "At the end of your turn, if you have one of each Beast named Jup the 1st, Jup the 2nd, Jup the 3rd, and Jup the 4th on your sideline, score each of them and Forgotten Tableau.",    
+    "Flavor Text": "No one knows what'd happen if the glyphs were returned.",
+    "Type": "✦Grotto",
+    "Artist": "Hollulu"
+  },
+  "40": {
+    "Name": "Fossil Ridge",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "When a card effect an opponent activates causes you to discard cards from your hand or your deck, you may choose to put those cards on the top of your summoning pool instead.",     
+    "Flavor Text": "-",
+    "Type": "Grotto",
+    "Artist": "Hollulu"
+  },
+  "41": {
+    "Name": "Fruit Jungle",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "When the Beast above Fruit Jungle attacks, it gains 1 power until the end of the turn.",
+    "Flavor Text": "Surrounded by so many tasty treats, the Beasts here tend to grow faster then those within neighboring lands.",
+    "Type": "Grotto",
+    "Artist": "Melscribbles"
+  },
+  "42": {
+    "Name": "Glowing Cavern",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "When the Beast above Glowing Cavern is discarded, you may choose to rest that Beast and discard Glowing Carvern instead.",
+    "Flavor Text": "Bioluminescent lichens illuminate the pathways much better than torches would.",
+    "Type": "Grotto",
+    "Artist": "Sturner"
+  },
+  "43": {
+    "Name": "Haunted Manor",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 4,
+    "Effect": "At the end of your turn, if you have two or fewer cards in your hand, you may choose a card in your discard pile, reveal it to all players, and put it into your hand.",
+    "Flavor Text": "Don't go near, if the lights go on.",
+    "Type": "Grotto",
+    "Artist": "Hollulu"
+  },
+  "44": {
+    "Name": "Magical Canopy",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "When the Beast above Magical Canopy defends, that Beast gains 2 power until the end of the turn.",
+    "Flavor Text": "Under the shade of the great trees, the Beasts find protection.",
+    "Type": "Grotto",
+    "Artist": "Hollulu"
+  },
+  "45": {
+    "Name": "Maze of Many Ways",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 4,
+    "Effect": "At the start of your turn, you may discard the Beast above Maze of Many Ways. If you do, search your deck for a Beast with a summoning cost of exactly 1 more than the discarded Beast and summon it above Maze of Many Ways free of cost. Shuffle your deck when you're done.",
+    "Flavor Text": "-",
+    "Type": "✦Grotto",
+    "Artist": "Hollulu"
+  },
+  "46": {
+    "Name": "Metrometropolis",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 4,
+    "Effect": "When the result on a die you roll is an even number, the Beast above Metrometropolis gains 2 power until the end of the turn.\n\nWhen the result on a die you roll is a 1, the Beast above Metrometropolis rests.",
+    "Flavor Text": "-",
+    "Type": "Grotto",
+    "Artist": "Hollulu"
+  },
+  "47": {
+    "Name": "Ponderer's Grove",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "At the start of your turn, you may choose to look at the top two cards of your deck. If you do, put one of them on bottom of your deck and the other back on the top of your deck.", 
+    "Flavor Text": "A trained eye can see the future within the waters.",
+    "Type": "Grotto",
+    "Artist": "Sturner"
+  },
+  "48": {
+    "Name": "Rumble Ring",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 5,
+    "Effect": "When the Beast or Challenger above Rumble Ring attacks alone, the attacked player may only choose up to one Beast or Challenger to defend this turn.",
+    "Flavor Text": "Lord Zeraxos may have brought chaos to this world, but he also delivered the Jerma Rumble to all.",
+    "Type": "✦Grotto",
+    "Artist": "Bellymouth"
+  },
+  "49": {
+    "Name": "Skeld's Factory",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "At the start of your turn, you may either attach a card from your hand face down onto a Beast beside Skeld's Factory, or put a face down card attached to a Beast beside Skeld's Factory into your hand.",
+    "Flavor Text": "The air ducts have been inexplicably clean...",
+    "Type": "Grotto",
+    "Artist": "Sturner"
+  },
+  "50": {
+    "Name": "Skull Valley",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "When you use \"rock\" during a game of Rock-Paper-Scissors, the Beast above Skull Valley gains 1 power until the end of the turn.",
+    "Flavor Text": "To this day, no one knows for sure if it was carved with purpose, or if it was formed by chance.",
+    "Type": "Grotto",
+    "Artist": "Sturner & Hollulu"
+  },
+  "51": {
+    "Name": "Sportball Stadium",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "When you score a card, draw a card for each card scored.",
+    "Flavor Text": "Right as the portal was opened by Lord Zeraxos, so did the JBA appear in this world.",
+    "Type": "Grotto",
+    "Artist": "Sturner"
+  },
+  "52": {
+    "Name": "Sunspring Field",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 1,
+    "Effect": "Your maximum hand size is increased by 1.",
+    "Flavor Text": "Where the sun shines, everything grows.",
+    "Type": "Grotto",
+    "Artist": "Hollulu"
+  },
+  "53": {
+    "Name": "Volca Isle",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 1,
+    "Effect": "At the start of your turn, attach a card from the top of your deck face down onto Volca Isle. Then, if there are three or more cards attached to Volca Isle, choose a Beast in play and discard both the chosen Beast and Volca Isle.",
+    "Flavor Text": "-",
+    "Type": "Grotto",
+    "Artist": "Hollulu"
+  },
+  "54": {
+    "Name": "+2",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "Choose a Beast in play and it gains 2 power until the start of your next turn.",
+    "Flavor Text": "The crowd loved that!",
+    "Type": "Wish",
+    "Artist": "Sturner"
+  },
+  "55": {
+    "Name": -2,
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "Choose a Beast in play and it loses 2 power until the start of your next turn.",
+    "Flavor Text": "The crowd demands less of that.",
+    "Type": "Wish",
+    "Artist": "Sturner"
+  },
+  "56": {
+    "Name": "Batter Up!",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "Choose an awake Beast you have in play and it rests. Then, flip a number of coins equal to that Beast's power. If all coins flipped land on \"heads\", score cards equal to that Beast's power. Otherwise, draw a card.",
+    "Flavor Text": "-",
+    "Type": "Wish",
+    "Artist": "Absterarts"
+  },
+  "57": {
+    "Name": "Bonus Luck",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 1,
+    "Effect": "Flip a coin and call it. If you win the flip, draw three cards. If you lose the flip, draw a card.",
+    "Flavor Text": "On one side, fortune; on the other side, fortune... but better!",
+    "Type": "Wish",
+    "Artist": "Hollulu"
+  },
+  "58": {
+    "Name": "Book of Wonder",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "Search your deck for a Wish or Grotto and you may reveal it to all players. If you do, put it in your hand. Shuffle your deck when you're done.",
+    "Flavor Text": "The possibilities just leap off the pages!",
+    "Type": "Wish",
+    "Artist": "Hollulu"
+  },
+  "59": {
+    "Name": "Bounty Board",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "Choose a Beast an opponent has in play and they score it.",
+    "Flavor Text": "-",
+    "Type": "Wish",
+    "Artist": "Hollulu"
+  },
+  "60": {
+    "Name": "Breakdance Boots",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 1,
+    "Effect": "Choose two Beasts a player has in play and they switch spots.",
+    "Flavor Text": "Warning: May lead to extensive breaktime.",
+    "Type": "Wish",
+    "Artist": "Hollulu"
+  },
+  "61": {
+    "Name": "Call for Help",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "Search your deck for a Beast and you may reveal it to all players. If you do, put it into your hand. Shuffle your deck when you're done.",
+    "Flavor Text": "Yeah... Send him back...\" -Jerma",
+    "Type": "Wish",
+    "Artist": "Bellymouth"
+  },
+  "62": {
+    "Name": "Clip That!",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 0,
+    "Effect": "Choose a player and they put the top three cards of their deck into their summoning pool.",
+    "Flavor Text": "Clip it, quick!\" -Jerma",
+    "Type": "Wish",
+    "Artist": "Sturner"
+  },
+  "63": {
+    "Name": "Copycat",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "Choose a player, then search your deck for a card with the same name as a Beast or Grotto that player has in play, and reveal it to all players. If the chosen player is an opponent, summon the card free of cost. Otherwise, put it into your hand. Shuffle your deck when you're done.",
+    "Flavor Text": "-",
+    "Type": "Wish",
+    "Artist": "Melscribbles"
+  },
+  "64": {
+    "Name": "Crazy Stunt",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 7,
+    "Effect": "Beasts on your team gain 2 power until the end of the turn. At the end of the battle this turn, discard each Beast chosen to attack.",
+    "Flavor Text": "Bill was a fine, upstanding citizen. Then he met Gary, and it all went downhill from there.",
+    "Type": "Wish",
+    "Artist": "Bellymouth"
+  },
+  "65": {
+    "Name": "Dance-Off",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "Each player reveals the top card of their deck at the same time. The player or players that reveal cards with the highest summoning cost put those cards into their hands. All other players score their revealed cards.",
+    "Flavor Text": "If you think that you have what it takes to BE me, then you need to have what it takes to BEAT me.\" -Jerma",
+    "Type": "Wish",
+    "Artist": "SodaSneb"
+  },
+  "66": {
+    "Name": "Dire Escape",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 1,
+    "Effect": "Choose a Beast you have in play. Return it and all face down cards attached to it to your hand. (Any attached face up cards are discarded.)",
+    "Flavor Text": "No, no, no, no, no, NO!!\" -Jerma",
+    "Type": "Wish",
+    "Artist": "Hollulu"
+  },
+  "67": {
+    "Name": "Double or Nothing",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 4,
+    "Effect": "Play games of Rock-Paper-Scissors with an opponent until you draw, lose, or you choose to stop playing. If you had chosen to stop, draw a number of cards equal to the number of games you won in this way.",
+    "Flavor Text": "Whaddyou got?! Ya ain't got nothin'!\" -Mr. Greenz",
+    "Type": "Wish",
+    "Artist": "Slab Mangrave"
+  },
+  "68": {
+    "Name": "Dunk Tank",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "Choose a Beast, then flip a coin and call it. If you win the flip, discard the chosen Beast. If you lose the flip, that Beast's player draws a card.",
+    "Flavor Text": "I am as safe as you can possibly be. It's not gonna happen!\" -Jerma",
+    "Type": "Wish",
+    "Artist": "Siins"
+  },
+  "69": {
+    "Name": "Eat It Up!",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 1,
+    "Effect": "Choose a Beast on your team and it gains 1 power until the end of the turn. Then, draw a card.",
+    "Flavor Text": "Ladies and gentlemen, The APPLE has come to rescue the Rumble! Thank goodness for The Apple!\" -Jerma",
+    "Type": "Wish",
+    "Artist": "Hollulu"
+  },
+  "70": {
+    "Name": "Emergency Rescue",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 0,
+    "Effect": "Name a card and shuffle each card with that name from your discard pile into your deck.",
+    "Flavor Text": "Proudly serving over 200,000!",
+    "Type": "Wish",
+    "Artist": "Hollulu"
+  },
+  "71": {
+    "Name": "Encouraging Cheer",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 4,
+    "Effect": "Beasts on your team gain 1 power until the end of the turn.",
+    "Flavor Text": "YOU'RE DOING A GREAT JOB!",
+    "Type": "Wish",
+    "Artist": "kevins_computer"
+  },
+  "72": {
+    "Name": "Energizing Drink",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "Choose a Beast you have in play and if it is resting, it wakes up. The chosen Beast does not rest if chosen to attack this turn.",
+    "Flavor Text": "Green tea, sip.",
+    "Type": "Wish",
+    "Artist": "Hollulu"
+  },
+  "73": {
+    "Name": "Excavate",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "Choose a Grotto in play and it is discarded. Then, you may put a Grotto from your discard pile into your hand.",
+    "Flavor Text": " ...Whoever found this: Congratulations, you just went up a whole tax bracket.\" -Grandpa",
+    "Type": "Wish",
+    "Artist": "SodaSneb"
+  },
+  "74": {
+    "Name": "Frog Slap",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "Choose a Beast in play and either discard two cards attached to it, or attach a card from your hand face up onto it.",
+    "Flavor Text": "An impressively accurate coordinated attack!",
+    "Type": "Wish",
+    "Artist": "Sturner"
+  },
+  "75": {
+    "Name": "Frog's Breath Potion",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "Choose a player and they discard a resting Beast they have in play.",
+    "Flavor Text": "Surprisingly potent.",
+    "Type": "Wish",
+    "Artist": "Hollulu"
+  },
+  "76": {
+    "Name": "Game Wipe",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 4,
+    "Effect": "Each player discards all Beasts they have in play.",
+    "Flavor Text": "We're going to start a new game.\" -Jerma",
+    "Type": "✦Wish",
+    "Artist": "WiseSeaMonster"
+  },
+  "77": {
+    "Name": "Greedy Grinner",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 4,
+    "Effect": "Set aside any number of cards from your score pile, then choose an opponent and they do the same. Then you both play a game of Rock-Paper-Scissors. The winner scores cards from the top of their deck equal to the number of cards they set aside and returns the set aside cards to their score pile. The loser discards the cards they set aside. If there is a draw, both players return their set aside cards to their score pile.",
+    "Flavor Text": "I'll be takin' that one!' -The Greedy Grinner",
+    "Type": "✦Wish",
+    "Artist": "Jason Rainville"
+  },
+  "78": {
+    "Name": "Up in the Air",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 4,
+    "Effect": "Until the start of your next turn, when a Beast you have in play is discarded from play, return it to your hand instead.",
+    "Flavor Text": "This is gonna be a fun trip, I think!\" -Jerma",
+    "Type": "Wish",
+    "Artist": "Bellymouth"
+  },
+  "79": {
+    "Name": "Intimidate",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "Choose a Beast on an opponent's team and you may move it to their sideline. If you do, that Beast may not move to that player's team during their next turn.",
+    "Flavor Text": "Eeeeeerrrrooooo.\" -Jerma Raptor",
+    "Type": "Wish",
+    "Artist": "Absterarts"
+  },
+  "80": {
+    "Name": "JBA Power Card: Upgrade",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 6,
+    "Effect": "Choose a Beast or Challenger in play. It gains power equal to its current power until the end of the turn.",
+    "Flavor Text": "Proudly presented by the Jerma Baseball Association! Very sought after by the Phoenix Cavemen.",
+    "Type": "Wish",
+    "Artist": "Hollulu"
+  },
+  "81": {
+    "Name": "Open Geode",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 1,
+    "Effect": "Look at the top four cards of your deck. Put one of them into your hand and the rest back on top of your deck in any order.",
+    "Flavor Text": "You never know— inspiration may wait inside.",
+    "Type": "Wish",
+    "Artist": "Hollulu"
+  },
+  "82": {
+    "Name": "Presto Majesto",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "Choose an awake Beast or Challenger in play and it rests.",
+    "Flavor Text": "Master illusions with these magic words!",
+    "Type": "Wish",
+    "Artist": "Melscribbles"
+  },
+  "83": {
+    "Name": "Reckless Offroading",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "Choose a Grotto in play and it is discarded.",
+    "Flavor Text": "It may seen like a simple clown car, but when driving, it's a circus all its own.",
+    "Type": "Wish",
+    "Artist": "Bellymouth"
+  },
+  "84": {
+    "Name": "Reorganize",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 1,
+    "Effect": "Count the number of cards in your score pile and put all your scored cards into your hand. Then put that many cards from your hand into your score pile face down.",
+    "Flavor Text": "The Movers appear in dreams to deliver gifts. They seem to enjoy tomfoolery, fire, and interior design.",
+    "Type": "Wish",
+    "Artist": "Hollulu"
+  },
+  "85": {
+    "Name": "Similar Company",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 4,
+    "Effect": "Choose a Beast on your team. It gains 2 power until the end of the turn for each other Beast with the same name as the chosen Beast in play.",
+    "Flavor Text": "Welcome to the monthly meeting of the Byeahs.",
+    "Type": "Wish",
+    "Artist": "Hollulu"
+  },
+  "86": {
+    "Name": "Smushed",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 5,
+    "Effect": "Choose a Beast or Grotto in play and it is discarded.",
+    "Flavor Text": "This TV definitely weighs over 130 pounds.",
+    "Type": "Wish",
+    "Artist": "SammNnn & Sturner"
+  },
+  "87": {
+    "Name": "Sneak Thief",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "Choose an opponent and look at their hand. You may choose a card in their hand and it is discarded.",
+    "Flavor Text": "Your team has picked up the enemy intelligence!",
+    "Type": "Wish",
+    "Artist": "Sturner"
+  },
+  "88": {
+    "Name": "Sole Survivor",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 5,
+    "Effect": "If you only have one Beast or Challenger on your team, score a card. If it attacked this turn, score another card. If an opponent dealt battle damage to it, score another card.",   
+    "Flavor Text": "The Disco Diaper... He never was eliminated! Everyone just forgot about him.\" -Jerma",
+    "Type": "Wish",
+    "Artist": "Hollulu"
+  },
+  "89": {
+    "Name": "Song of Protection",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 0,
+    "Effect": "Choose a Beast in play and it cannot be chosen for card effects your opponent activates until the start of your next turn.",
+    "Flavor Text": "Sheeto!",
+    "Type": "Wish",
+    "Artist": "Milkbox"
+  },
+  "90": {
+    "Name": "Starbit Cluster",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "As Starbit Cluster is spent to pay the summoning cost of a Wish, you may discard Starbit Cluster instead of adding it to your summoning pool. If you do, draw a card.\n\nWhen Starbit Cluster is summoned from your hand, draw four cards.",
+    "Flavor Text": "-",
+    "Type": "Wish",
+    "Artist": "Hollulu"
+  },
+  "91": {
+    "Name": "Surprise Snack",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 1,
+    "Effect": "Reveal the top card of your deck to all players. If the revealed card has the same name as any card in play, score the revealed card. Otherwise, put it into your hand.",
+    "Flavor Text": "Dude the thing that everybody!\" -Jerma",
+    "Type": "Wish",
+    "Artist": "Tree"
+  },
+  "92": {
+    "Name": "Tactical Rocket Launcher",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "Choose a Beast on an opponent's team and it is discarded.",
+    "Flavor Text": "You never know when you're gonna need a rocket launcher\" -Carl Griffinsteed's Ol' Grandmother",
+    "Type": "Wish",
+    "Artist": "Hollulu"
+  },
+  "93": {
+    "Name": "The Cauldron",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 4,
+    "Effect": "Reveal the top card of your deck to all players one at a time until you reveal a Beast. If you do, you may summon the revealed Beast free of cost. Shuffle revealed cards into your deck when you're done.",
+    "Flavor Text": "Jerma's DNA... What will we create this time?\" -B.F. Bugleberry",
+    "Type": "Wish",
+    "Artist": "Sturner"
+  },
+  "94": {
+    "Name": "Top Rope",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "Choose a Beast you have on your sideline and you may move it to your team. If you do, choose a Beast an opponent has on their team with power less than or equal to your chosen Beast, and it is discarded.",
+    "Flavor Text": "He's beating me, I can't take it!\" -Jerma",
+    "Type": "Wish",
+    "Artist": "Siins"
+  },
+  "95": {
+    "Name": "Try Another!",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 1,
+    "Effect": "Until the end of the turn, after each time you flip a coin or roll a die, you may discard a card from your hand. If you do, ignore the result of the coin or die, and redo it. (Card effects do not activate if a result is ignored.)",
+    "Flavor Text": "Nice shootin'!",
+    "Type": "Wish",
+    "Artist": "SammNnn"
+  },
+  "96": {
+    "Name": "Wild Dreams",
+    "🛡️": "-",
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "Each player switches their discard pile with their summoning pool.",
+    "Flavor Text": "You want a test if you're dreaming? Flick a light switch. If it doesn't work, you're dreaming!\" -Jerma",
+    "Type": "✦Wish",
+    "Artist": "Blordow"
+  },
+  "97": {
+    "Name": "2-Moon Jelly",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "When another Beast on your team is discarded from play, you may attach it face up onto 2-Moon Jelly instead.\n\nAt the start of your turn, if there are four or more face up cards attached to 2-Moon Jelly, choose one of them and score it. Then, discard all other cards attached to 2-Moon Jelly.",
+    "Flavor Text": "-",
+    "Type": "Galactic Beast",
+    "Artist": "Melscribbles & Hollulu"
+  },
+  "98": {
+    "Name": "AiMbot-3940",
+    "🛡️": 0,
+    "❤️": "-",
+    "🌟": 4,
+    "Effect": "When attacking or defending, roll a six-sided die. AiMbot-3940 gains power equal to the result until the end of turn.",
+    "Flavor Text": "Don't underestimate this little robot catapult— it can process thousands of users inputs at once!",
+    "Type": "Techtic Beast",
+    "Artist": "Sturner"
+  },
+  "99": {
+    "Name": "Alieums",
+    "🛡️": 5,
+    "❤️": "-",
+    "🌟": 9,
+    "Effect": "As you summon Alieums, you may discard any number of face down cards attached to Beasts and Grottos you have in play. Alieums's summoning cost is 1 less for each card you discard in this way.",
+    "Flavor Text": "-",
+    "Type": "✦Galactic Beast",
+    "Artist": "Bellymouth"
+  },
+  "100": {
+    "Name": "Anhybite",
+    "🛡️": 3,
+    "❤️": "-",
+    "🌟": 5,
+    "Effect": "When summoned, you may choose any Grotto in play and it is discarded.",
+    "Flavor Text": "These hearty creatures chew on volcanic gravel to keep their teeth sharp.",
+    "Type": "Titanic Beast",
+    "Artist": "Bellymouth"
+  },
+  "101": {
+    "Name": "Awoobis",
+    "🛡️": 2,
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "Awoobis cannot be chosen for card effects your opponents activate.",
+    "Flavor Text": "Fiesty guard dog of those passing over. Fiercely preserves the secrets within.",
+    "Type": "Shadow Beast",
+    "Artist": "Sturner"
+  },
+  "102": {
+    "Name": "Baghost",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 1,
+    "Effect": "-",
+    "Flavor Text": "Baghosts scurry around, masked in plastic bags. When truly frightened, they let the wind take them.",
+    "Type": "Ghostly Beast",
+    "Artist": "Sturner"
+  },
+  "103": {
+    "Name": "Baroot",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 1,
+    "Effect": "Baroot gains 1 power as long as it is above a Grotto.",
+    "Flavor Text": "A very relaxed creature. They pay no mind to the grass and moss that grows on their back.",
+    "Type": "Stone Beast",
+    "Artist": "Sturner"
+  },
+  "104": {
+    "Name": "Beelt",
+    "🛡️": 2,
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "-",
+    "Flavor Text": "These color-shifting creatures can be found along the western coast's reefs, and are completely transparent in their larval stage.",
+    "Type": "Aqutic Beast",
+    "Artist": "Melscribbles"
+  },
+  "105": {
+    "Name": "Biogator",
+    "🛡️": 3,
+    "❤️": "-",
+    "🌟": 6,
+    "Effect": "When attacking, each player must choose one Beast they have in play and it is discarded. (You may choose Biogator for this card effect.)",
+    "Flavor Text": "They say bones are its toothbrush, mud its mouthwash ... and that one lurks withing the Carnival moat.",
+    "Type": "Toxic Beast",
+    "Artist": "Bellymouth"
+  },
+  "106": {
+    "Name": "Birds of Fortune",
+    "🛡️": 2,
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "When summoned or defending, play a game of Rock-Paper-Scissors with an opponent. If you win the game, rreturn a card from your discard pile to your hand.",
+    "Flavor Text": "Each morning they pluck unlucky feathers from their plumage, and move them far from their nests.",
+    "Type": "Feathered Beast",
+    "Artist": "Hollulu"
+  },
+  "107": {
+    "Name": "Birthday Basher",
+    "🛡️": 2,
+    "❤️": "-",
+    "🌟": 4,
+    "Effect": "When summoned, if you have a Beast named Sweet Tooth in play, Birthday Basher does not gain summoning sadness.",
+    "Flavor Text": "These hotheads and their fiery cupcake cohorts patrol around the Bittersweet Peaks.",
+    "Type": "Foodie Beast",
+    "Artist": "Melscribbles"
+  },
+  "108": {
+    "Name": "Blademaus",
+    "🛡️": 2,
+    "❤️": "-",
+    "🌟": 1,
+    "Effect": "You cannot summon Blademaus if you have another Blademaus in play.",
+    "Flavor Text": "The modified sewing needle Blademaus skillfuly weilds is a memento from an old friend.",
+    "Type": "✦Scout Beast",
+    "Artist": "Bellymouth"
+  },
+  "109": {
+    "Name": "Bobbin",
+    "🛡️": 2,
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "When summoned, draw a card.",
+    "Flavor Text": "To kickstart their flight, they breathe in air and float into the sky.",
+    "Type": "Feathered Beast",
+    "Artist": "Sturner"
+  },
+  "110": {
+    "Name": "Bottled Nightmare",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 1,
+    "Effect": "When discarded from play, you may attach Bottled Nightmare face up onto any Beast in play instead.",
+    "Flavor Text": "The destructive substance within swirls with an uncanny irridescence.",
+    "Type": "Unspeakable Beast",
+    "Artist": "Bellymouth"
+  },
+  "111": {
+    "Name": "Byeah Beast",
+    "🛡️": 2,
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "Your deck may contain any number of cards named Byeah Beast.",
+    "Flavor Text": "Cheeseburgers. Hotdogs. Donuts. Bar fightin'. Bug collection.",
+    "Type": "✦Byeah Beast",
+    "Artist": "Snoozincopter"
+  },
+  "112": {
+    "Name": "Cauldrosaur",
+    "🛡️": 2,
+    "❤️": "-",
+    "🌟": 4,
+    "Effect": "When Cauldrosaur rests, draw a card.",
+    "Flavor Text": "It clanks around, seeking ingredients to add to its frigid, bubbling core.",
+    "Type": "Ghostly Beast",
+    "Artist": "Sturner"
+  },
+  "113": {
+    "Name": "Centilead",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 1,
+    "Effect": "When summoned, attach a card from the top of your deck face down onto Centilead.",
+    "Flavor Text": "The city has terminals built to prevent Centileads from draining electricity, but they rarely work, as the creatures just go for them first.",
+    "Type": "Techtic Beast",
+    "Artist": "Sturner"
+  },
+  "114": {
+    "Name": "Chromanova",
+    "🛡️": 3,
+    "❤️": "-",
+    "🌟": 6,
+    "Effect": "Beasts on your team that are above a Grotto gain 1 power.\n\nBeasts on your team that are beside Chromanova gain 1 power.",
+    "Flavor Text": "It is said that once you get a glimpse of the rare Chromanova, you'll never be lucky again.",
+    "Type": "✦Mystic Beast",
+    "Artist": "Melscribbles"
+  },
+  "115": {
+    "Name": "Connival",
+    "🛡️": 5,
+    "❤️": "-",
+    "🌟": 5,
+    "Effect": "At the start of your turn, you may discard a Grotto you have in play. If you don't, discard Connival.",
+    "Flavor Text": "Their games are not to be trusted.",
+    "Type": "Imp Beast",
+    "Artist": "Sturner"
+  },
+  "116": {
+    "Name": "Crabcha",
+    "🛡️": 2,
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "Crabcha's summoning cost is 1 less for each other Crabcha you have in play.",
+    "Flavor Text": "Crabchas migrate in huge numbers to the Bittersweet Peaks, where the clouds become sweet slush.",
+    "Type": "Foodie Beast",
+    "Artist": "Bellymouth"
+  },
+  "117": {
+    "Name": "Dig Dog",
+    "🛡️": 2,
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "When summoned, you may choose a Grotto in your discard pile and put it on the top of your deck.",
+    "Flavor Text": "These excellent burrowers have been known to squeeze themselves into holes one-tenth their height.",
+    "Type": "Gruffling Beast",
+    "Artist": "Sturner"
+  },
+  "118": {
+    "Name": "Dragossom",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "When summoned to your sideline, choose a Beast on an opponent's team with power 2 or less and it is discarded.",
+    "Flavor Text": "The most adorable ball of fiery distruction.",
+    "Type": "Dragon Beast",
+    "Artist": "Melscribbles"
+  },
+  "119": {
+    "Name": "Dream-Eater Bat",
+    "🛡️": 2,
+    "❤️": "-",
+    "🌟": 4,
+    "Effect": "When summoned or attacking, you may choose a Beast or Grotto in play and discard one card attached to it.",
+    "Flavor Text": "These nocturnal creatures can smell a nightmare from over 10 miles away!",
+    "Type": "Shadow Beast",
+    "Artist": "Sturner"
+  },
+  "120": {
+    "Name": "Dredgelord",
+    "🛡️": 8,
+    "❤️": "-",
+    "🌟": 4,
+    "Effect": "When summoned, attach five cards from the top of your deck face down onto Dredgelord.\n\nDredgelord cannot attack or defend if it has cards attached to it.",
+    "Flavor Text": "Deep within the magma chambers, it slumbers...",
+    "Type": "✦Dragon Beast",
+    "Artist": "Sturner"
+  },
+  "121": {
+    "Name": "Droplganger",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 4,
+    "Effect": "When attacking or defending, you may choose a Beast on an opponent's team. If the chosen Beast is above a Grotto, Droplganger gains power equal to the chosen Beast's power until the end of the turn.",
+    "Flavor Text": "-",
+    "Type": "Plant Beast",
+    "Artist": "Bellymouth"
+  },
+  "122": {
+    "Name": "Dustbunny",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "When summoned, you may choose a Beast in play and it rests.",
+    "Flavor Text": "As they fly, small shining particles are left behind that tickle as you walk through them.",
+    "Type": "Fairy Beast",
+    "Artist": "Hollulu"
+  },
+  "123": {
+    "Name": "EEE-Vamp",
+    "🛡️": 2,
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "When an opponent summons a Wish, that player discards the top card of their deck.",
+    "Flavor Text": "Beware the cardioid mic— an EEE-Vamp's song can hit you right in the heart!",
+    "Type": "Musical Beast",
+    "Artist": "Melscribbles"
+  },
+  "124": {
+    "Name": "Exbeelosion",
+    "🛡️": 0,
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "When defending, the attacking player draws a scored card.",
+    "Flavor Text": "They say the sting hurts like a blast of dynamite continuously combusting, for days.",
+    "Type": "Insect Beast",
+    "Artist": "Bellymouth"
+  },
+  "125": {
+    "Name": "Excasaur",
+    "🛡️": 2,
+    "❤️": "-",
+    "🌟": 4,
+    "Effect": "When attacking or defending, if Excasaur is above a Grotto, you may discard that Grotto. If you do, Excasaur gains 3 power until the end of the turn.",
+    "Flavor Text": "In this world, it's sometimes impossible to determine if something started out as an object, or as a creature.",
+    "Type": "Techtic Beast",
+    "Artist": "Sturner"
+  },
+  "126": {
+    "Name": "Festive Mimic",
+    "🛡️": 2,
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "When summoned, roll a six-sided die. Draw a number of cards equal to the result on the die.",
+    "Flavor Text": "Surprise!",
+    "Type": "✦Surprise Beast",
+    "Artist": "Hollulu"
+  },
+  "127": {
+    "Name": "Fleech",
+    "🛡️": 2,
+    "❤️": "-",
+    "🌟": 1,
+    "Effect": "Fleech cannot defend.",
+    "Flavor Text": "A Fleech's favorite foods are small fish, coral polyps, and the negative thoughts of unfortunate sailors.",
+    "Type": "Aquatic Beast",
+    "Artist": "Sturner"
+  },
+  "128": {
+    "Name": "Fretzel",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 1,
+    "Effect": "When defending, draw a card.",
+    "Flavor Text": "Fretzels are highly mischevious— they often steal snacks, and enjoy the antics on the Carnival Grounds!",
+    "Type": "Foodie Beast",
+    "Artist": "Melscribbles"
+  },
+  "129": {
+    "Name": "Friendtriloquist",
+    "🛡️": 2,
+    "❤️": "-",
+    "🌟": 4,
+    "Effect": "When summoned, attach all cards from your hand face down onto Friendtriloquist, then draw that many cards.\n\nAt the start of your turn, you may return a face down card attached to Friendtriloquist at random to your hand.",
+    "Flavor Text": "-",
+    "Type": "Puppet Beast",
+    "Artist": "Sturner"
+  },
+  "130": {
+    "Name": "Frostbite",
+    "🛡️": 4,
+    "❤️": "-",
+    "🌟": 4,
+    "Effect": "-",
+    "Flavor Text": "These Beasts shepherd wandering spirits from completely losing their way. In turn, the ice that forms on them from prolonged ghostly exposure acts as armor.",
+    "Type": "Icy Beast",
+    "Artist": "Hollulu & Sturner"
+  },
+  "131": {
+    "Name": "Gachatron",
+    "🛡️": 2,
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "When an opponent summons a Beast to their team, you may play a game of Rock-Paper-Scissors with them. If you do, the winner of the game draws a card.",
+    "Flavor Text": "-",
+    "Type": "Techtic Beast",
+    "Artist": "Sturner"
+  },
+  "132": {
+    "Name": "Ghastlight",
+    "🛡️": 2,
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "When summoned, choose a player and they discard a card from their hand.",
+    "Flavor Text": "It's not the kind of light one should follow.",
+    "Type": "Ghostly Beast",
+    "Artist": "Sturner"
+  },
+  "133": {
+    "Name": "Glow Angel",
+    "🛡️": 3,
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "When summoned to your sideline, you may return two Beasts on your team to your hand. If you don't, discard Glow Angel.",
+    "Flavor Text": "The Glow Angels watch from the clouds for distress. What counts as distress varies heavily between them.",
+    "Type": "Angelic Beast",
+    "Artist": "Melscribbles"
+  },
+  "134": {
+    "Name": "Googlow",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 1,
+    "Effect": "When you would score a card from the top of your deck, you may score Googlow instead. If you do, draw two cards.",
+    "Flavor Text": "Googlows started appearing around the same time Metrometropolis' Filamites started going missing.",
+    "Type": "Galactic Beast",
+    "Artist": "Sturner"
+  },
+  "135": {
+    "Name": "Gourmander",
+    "🛡️": 2,
+    "❤️": "-",
+    "🌟": 5,
+    "Effect": "When summoned, attacking, or defending, you may seach your deck for a Foodie Beast card, reveal it to all players, and put it into your hand. Shuffle your deck when you're done.",  
+    "Flavor Text": "Gourmander's appetite for culinary excellence is as voracious as its... well, appetite.",
+    "Type": "✦Chef Beast",
+    "Artist": "Bellymouth"
+  },
+  "136": {
+    "Name": "Harlefin",
+    "🛡️": 0,
+    "❤️": "-",
+    "🌟": 1,
+    "Effect": "When Harlefin is moved between your team and sideline, draw a card.",
+    "Flavor Text": "These little clowns use spritzflowers to hop from pool to pool, making intricate water ripple patterns.",
+    "Type": "Aquatic Beast",
+    "Artist": "Hollulu"
+  },
+  "137": {
+    "Name": "Highland Destrier",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "When attacking or defending, if Highland Destrier is above a Grotto, put a card from the top of your summoning pool on the top of your deck.",
+    "Flavor Text": "A crowd favorite at the robotics-filled Carnival Kingdom! They come and go as they see fit.",
+    "Type": "Gruffling Beast",
+    "Artist": "Bellymouth"
+  },
+  "138": {
+    "Name": "Highlyre",
+    "🛡️": 3,
+    "❤️": "-",
+    "🌟": 6,
+    "Effect": "When summoned, each opponent skips their next turn's wake up step.",
+    "Flavor Text": "Highlyres graze in groups, as their soothing notes harmonize across the rolling plains.",
+    "Type": "Gruffling Beast",
+    "Artist": "Sturner"
+  },
+  "139": {
+    "Name": "Hypnodaze",
+    "🛡️": 0,
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "When you summon Hypnodaze, you must choose a Beast in play and it rests. That Beast's player discards cards from the top of their deck equal to the chosen Beast's power.",
+    "Flavor Text": "WooooOOOoooOOoOoooo!",
+    "Type": "Weird Beast",
+    "Artist": "Melscribbles"
+  },
+  "140": {
+    "Name": "Hydraxolotl",
+    "🛡️": 4,
+    "❤️": "-",
+    "🌟": 7,
+    "Effect": "During either of your action phases at any time, you may attach a Wish from your hand face up onto Hydraxolotl. \n\nHydraxolotl gains 1 power for each Wish attached to it.",        
+    "Flavor Text": "Their song ripples with wondrous healing powers!",
+    "Type": "Titanic Beast",
+    "Artist": "Hollulu"
+  },
+  "141": {
+    "Name": "Invasive Wavestrider",
+    "🛡️": 2,
+    "❤️": "-",
+    "🌟": 4,
+    "Effect": "When summoned, you may discard an Aquatic Beast you have in play that wasn't summoned this turn. If you do, Invasive Wavestrider does not gain summoning sadness and gains 2 power until the end of the turn.",
+    "Flavor Text": "-",
+    "Type": "Parasite Beast",
+    "Artist": "Bellymouth"
+  },
+  "142": {
+    "Name": "Jelly Monkey",
+    "🛡️": 3,
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "When summoned, each opponent puts all cards in their summoning pool into their hands.",
+    "Flavor Text": "Food fights among these silly creatures are actually displays of affection!",
+    "Type": "Foodie Beast",
+    "Artist": "Bellymouth"
+  },
+  "143": {
+    "Name": "Jestapod",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 1,
+    "Effect": "When attacking or defending, play a game of Rock-Paper-Scissors with an opponent. If you win the game, Jestapod gains 1 power until the end of the turn.",
+    "Flavor Text": "These impish creatures thrive at the Carnival, where they like to perch on unsuspecting attendees' heads.",
+    "Type": "Imp Beast",
+    "Artist": "Sturner"
+  },
+  "144": {
+    "Name": "Jukeboxer",
+    "🛡️": 3,
+    "❤️": "-",
+    "🌟": 6,
+    "Effect": "When summoned, you may choose a Beast in play and it is discarded.",
+    "Flavor Text": "Jukeboxer; play \"Eye of the Leozard\".",
+    "Type": "Musical Beast",
+    "Artist": "Melscribbles"
+  },
+  "145": {
+    "Name": "Jup the 1st",
+    "🛡️": 0,
+    "❤️": "-",
+    "🌟": 1,
+    "Effect": "When summoned, roll a six-sided die and call it. If you win the roll, choose a Beast in play and it rests.",
+    "Flavor Text": "-",
+    "Type": "Glyph Beast",
+    "Artist": "Hollulu"
+  },
+  "146": {
+    "Name": "Jup the 2nd",
+    "🛡️": 0,
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "When summoned, choose an opponent and they put the top two cards of their deck into their discard pile.",
+    "Flavor Text": "-",
+    "Type": "Glyph Beast",
+    "Artist": "Sturner"
+  },
+  "147": {
+    "Name": "Jup the 3rd",
+    "🛡️": 0,
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "When summoned, discard the top three cards of your deck. Then, choose a card in your discard pile and put it on the top of your deck.",
+    "Flavor Text": "-",
+    "Type": "Glyph Beast",
+    "Artist": "Bellymouth"
+  },
+  "148": {
+    "Name": "Jup the 4th",
+    "🛡️": 0,
+    "❤️": "-",
+    "🌟": 4,
+    "Effect": "When summoned, reveal the top four cards of your deck to all players. Put each Grotto revealed in this way into your hand and reshuffle the rest back into you deck when you're done.",
+    "Flavor Text": "-",
+    "Type": "Glyph Beast",
+    "Artist": "Melscribbles"
+  },
+  "149": {
+    "Name": "Kelpdrake Root",
+    "🛡️": 0,
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "As Kelpdrake Root is spent to pay the summoning cost of a Grotto, you may summon Kelpdrake Root free of cost and it rests instead of adding it to your summoning pool.\n\nKelpdrake Root cannot attack.",
+    "Flavor Text": "-",
+    "Type": "Aquatic Beast",
+    "Artist": "Sturner"
+  },
+  "150": {
+    "Name": "Lavabrys Shark",
+    "🛡️": 2,
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "When attacking, you may put the top five cards of your deck into your summoning pool. If you do, Lavabrys Shark gains 3 power until the end of the turn.",
+    "Flavor Text": "These fiery beasts, born from within the caldera, ward off the encroaching horrors in the depths.",
+    "Type": "Aquatic Beast",
+    "Artist": "Sturner"
+  },
+  "151": {
+    "Name": "Leozard",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "When you summon a Grotto under Leozard, Leozard gains 2 power until the start of your next turn.",
+    "Flavor Text": "They unfurl their mane in so many circumstances. It's assumed they're just very eager to show off.",
+    "Type": "Plant Beast",
+    "Artist": "Sturner"
+  },
+  "152": {
+    "Name": "Lizard Wizard",
+    "🛡️": 2,
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "When summoned, put a Wish or Wizard Beast from your discard pile to your hand.",
+    "Flavor Text": "It is said they used to travel behind shooting stars!",
+    "Type": "Wizard Beast",
+    "Artist": "Melscribbles"
+  },
+  "153": {
+    "Name": "Lobboss",
+    "🛡️": 2,
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "When summoned to your sideline, you may move another Aquatic Beast from your sideline to your team and it loses summoning sadness.",
+    "Flavor Text": "Swimming with the fishes is its most preferred way to do business.",
+    "Type": "Aquatic Beast",
+    "Artist": "Sturner"
+  },
+  "154": {
+    "Name": "Meowdy",
+    "🛡️": 3,
+    "❤️": "-",
+    "🌟": 4,
+    "Effect": "When anything ends in a draw, you win instead.",
+    "Flavor Text": "The long paw of the law!",
+    "Type": "Sheriff Beast",
+    "Artist": "Melscribbles"
+  },
+  "155": {
+    "Name": "Metranomatone",
+    "🛡️": 2,
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "When summoned, if you also summoned a Wish this turn, you must choose a Beast in play and it rests or wakes up.",
+    "Flavor Text": "It marches to its own tune!",
+    "Type": "Musical Beast",
+    "Artist": "Sturner"
+  },
+  "156": {
+    "Name": "Minereel",
+    "🛡️": 5,
+    "❤️": "-",
+    "🌟": 5,
+    "Effect": "Minereel does not wake up during your wake up step unless it is above a Grotto.",
+    "Flavor Text": "These ancient creatures hold immense power, if you're patient enough to see it.",
+    "Type": "Geode Beast",
+    "Artist": "Sturner"
+  },
+  "157": {
+    "Name": "Moosaic",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 4,
+    "Effect": "When summoned, look at all cards in your summoning pool and you may reveal a Wish from among them to all players. If you do, put that card into your hand. Shuffle your summoning pool when you're done.",
+    "Flavor Text": "-",
+    "Type": "Glass Beast",
+    "Artist": "Melscribbles"
+  },
+  "158": {
+    "Name": "Mountidary",
+    "🛡️": 6,
+    "❤️": "-",
+    "🌟": 6,
+    "Effect": "Mountidary can only be summoned to your sideline.\n\nWhen Mountidary is moved between your team and sideline, it rests.",
+    "Flavor Text": "A marvel to behold! Mountidary migration and rest cycles keep cartographers busy.",
+    "Type": "Titanic Beast",
+    "Artist": "Melscribbles"
+  },
+  "159": {
+    "Name": "Mr. Anycard",
+    "🛡️": 2,
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "When summoned, flip a coin and call it. If you win the flip, play a game of Rock-Paper-Scissors with an opponent. If you win the game, roll a six-sided die and call it. If you win the roll, score two cards.",
+    "Flavor Text": "The name's Anycard. Pickacard Anycard.",
+    "Type": "Lucky Beast",
+    "Artist": "Hollulu"
+  },
+  "160": {
+    "Name": "Nebula Ray",
+    "🛡️": 4,
+    "❤️": "-",
+    "🌟": 4,
+    "Effect": "When summoned, you may discard two scored cards. If you don't, discard Nebula Ray.",
+    "Flavor Text": "These iridescent creatures glide through space, looking for starbits to absorb.",
+    "Type": "Galactic Beast",
+    "Artist": "Hollulu"
+  },
+  "161": {
+    "Name": "Nightmite",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "Ghostly Beasts on your team gain 1 power.",
+    "Flavor Text": "The insect's flickering, cold glow guides wandering spirits to forgotten memories.",
+    "Type": "Insect Beast",
+    "Artist": "Sturner"
+  },
+  "162": {
+    "Name": "Nyxwing",
+    "🛡️": 3,
+    "❤️": "-",
+    "🌟": 4,
+    "Effect": "When you score a card, you may score Nyxwing.",
+    "Flavor Text": "The wind carries fragmented whispers of how to awaken the ancient owl, sleeping deep in the North.",
+    "Type": "Roc Beast",
+    "Artist": "Sturner"
+  },
+  "163": {
+    "Name": "Optimal Illusion",
+    "🛡️": 3,
+    "❤️": "-",
+    "🌟": 5,
+    "Effect": "You may summon Beasts and Grottos from your discard pile as if they were in your hand.\n\nWhen you summon a Wish, you may choose a Beast in play and it rests.",
+    "Flavor Text": "Behold: The Grand Finale!",
+    "Type": "✦Wizard Beast",
+    "Artist": "Hollulu"
+  },
+  "164": {
+    "Name": "Paintergeist",
+    "🛡️": 0,
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "When summoned, attach three cards from the top of your deck face down onto Paintergeist.\n\nDuring either of your action phases at any time, you may rest Paintergeist and discard a card from Paintergeist. If the discarded card is a wish, you may summon it free of cost.",
+    "Flavor Text": "-",
+    "Type": "Ghostly Beast",
+    "Artist": "Sturner"
+  },
+  "165": {
+    "Name": "Peep-Peep",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "When summoned, attacking, or defending, roll a six-sided die. If you roll an even number, Peep-Peep gains 1 power until the end of the turn. If you roll a 1, score Peep-Peep and draw a card.",
+    "Flavor Text": "A tiny egg can carry tons of potential. And confetti!",
+    "Type": "Surprise Beast",
+    "Artist": "Hollulu"
+  },
+  "166": {
+    "Name": "Plunky",
+    "🛡️": 3,
+    "❤️": "-",
+    "🌟": 4,
+    "Effect": "As you summon Plunky, you may choose to reveal to all players the cards spent to pay Plunky's summoning cost. If each card revealed in this way is the same card type, Plunky does not gain summoning sadness and gains 2 power until the end of the turn.",
+    "Flavor Text": "An old friend.",
+    "Type": "Plush Beast",
+    "Artist": "Bellymouth"
+  },
+  "167": {
+    "Name": "Poñata",
+    "🛡️": 2,
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "When defending, if Poñata would be discarded from play during combat, flip a coin and call it. If you win the flip, move Poñata to your Sideline instead. If you can't or you lose the flip, discard Poñata and each opponent draws two cards.",
+    "Flavor Text": "One... two... three..! And your time is up.",
+    "Type": "Surprise Beast",
+    "Artist": "Hollulu"
+  },
+  "168": {
+    "Name": "Pourcelain",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "When summoned to your sideline, draw two cards.",
+    "Flavor Text": "The shimmering, magical sand that flows from Pourcelain can take on many forms.",
+    "Type": "Trinket Beast",
+    "Artist": "Melscribbles"
+  },
+  "169": {
+    "Name": "Protojammer",
+    "🛡️": 3,
+    "❤️": "-",
+    "🌟": 5,
+    "Effect": "When summoned, you may attach any number of Wishes from you hand face up onto Protojammer.\n\nDuring either of your action phases at any time, you may rest Protojammer. When you do, summon a face up wish attached to Protojammer free of cost. It remains attached to Protojammer.",
+    "Flavor Text": "-",
+    "Type": "✦Musical Beast",
+    "Artist": "Melscribbles"
+  },
+  "170": {
+    "Name": "Pteroducktyl",
+    "🛡️": 2,
+    "❤️": "-",
+    "🌟": 1,
+    "Effect": "Pteroducktyl cannot attack or defend alone.",
+    "Flavor Text": "The most reliable steed in all the land!",
+    "Type": "Feathered Beast",
+    "Artist": "Melscribbles"
+  },
+  "171": {
+    "Name": "Puddle Puppy",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "Puddle Puppy gains 3 power as long as an opponent has an Aquatic Beast in play.",
+    "Flavor Text": "Glides through the water effortlessly and loves to collect seashells. ALWAYS wants to play fetch!",
+    "Type": "Soggy Beast",
+    "Artist": "Melscribbles"
+  },
+  "172": {
+    "Name": "Radroot",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 1,
+    "Effect": "When summoned above a Grotto, Radroot does not gain summoning sadness.",
+    "Flavor Text": "When in doubt, raddish it out!",
+    "Type": "Plant Beast",
+    "Artist": "Hollulu"
+  },
+  "173": {
+    "Name": "Razzleposs",
+    "🛡️": 2,
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "When summoned, choose a player. That player puts a face down card from each Beast and Grotto they have in play onto the top of their summoning pool.",
+    "Flavor Text": "The ol' razzle dazzle!",
+    "Type": "Wizard Beast",
+    "Artist": "Bellymouth"
+  },
+  "174": {
+    "Name": "Rich Rat",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "At the start of your turn, if you have the fewest number of cards in your hand than any other player, draw a card.",
+    "Flavor Text": "You don't always have to be the Giant Rat to run things around here.",
+    "Type": "Rat Beast",
+    "Artist": "Sturner"
+  },
+  "175": {
+    "Name": "Rummage Rat",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "When defending, choose a card in your discard pile and put it on the top of your deck.",
+    "Flavor Text": "Preys at night, stalks at night.",
+    "Type": "Rat Beast",
+    "Artist": "Sturner"
+  },
+  "176": {
+    "Name": "Scorptus",
+    "🛡️": 0,
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "When defending, choose an attacking Beast. At the end of battle, the chosen Beast is discarded.",
+    "Flavor Text": "A living, venomous ballista— an angry one, too.",
+    "Type": "Plant Beast",
+    "Artist": "Sturner"
+  },
+  "177": {
+    "Name": "Seasprinter",
+    "🛡️": 2,
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "When summoned, Seasprinter does not gain summoning sadness.",
+    "Flavor Text": "These momorious hippocampi can swiftly travel between sea and sky.",
+    "Type": "Aquatic Beast",
+    "Artist": "Melscribbles"
+  },
+  "178": {
+    "Name": "Serachime",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 1,
+    "Effect": "When defending, if Serachime is discarded from play, you may return it to your hand instead.",
+    "Flavor Text": "Sounds like home.",
+    "Type": "Angelic Beast",
+    "Artist": "Sturner"
+  },
+  "179": {
+    "Name": "Sheetopillar",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 1,
+    "Effect": "When you summon a Wish, Sheetopillar wakes up.",
+    "Flavor Text": "These fiesty robotic creatures love to explore and sing! Extra pep after eating AAA batteries.",
+    "Type": "Musical Beast",
+    "Artist": "Sturner"
+  },
+  "180": {
+    "Name": "Sir Greaves",
+    "🛡️": 3,
+    "❤️": "-",
+    "🌟": 9,
+    "Effect": "Sir Greaves costs 1 less to summon for each Beast in your discard pile.\n\nWhen Sir Greaves is discarded from play, shuffle it into your deck instead.",
+    "Flavor Text": "Endlessly searching. He is never without his dragon companion.",
+    "Type": "✦Ghostly Beast",
+    "Artist": "Hollulu"
+  },
+  "181": {
+    "Name": "Sludge",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 0,
+    "Effect": "Sludge cannot attack.",
+    "Flavor Text": "Sludge...",
+    "Type": "Sludge Beast",
+    "Artist": "Sturner"
+  },
+  "182": {
+    "Name": "Small Enemy Spider",
+    "🛡️": 0,
+    "❤️": "-",
+    "🌟": 0,
+    "Effect": "Small Enemy Spider gains 2 power as long as you have no other Beasts on your team.",
+    "Flavor Text": "Comes with its own miniboss theme!",
+    "Type": "Spider Beast",
+    "Artist": "Bellymouth"
+  },
+  "183": {
+    "Name": "Snailsman",
+    "🛡️": 4,
+    "❤️": "-",
+    "🌟": 5,
+    "Effect": "When you would score a card from the top of your deck, you may choose to score any card from your discard pile instead.",
+    "Flavor Text": "A crawling bazaar, offering the most bizarre deals— Don't miss out!",
+    "Type": "Entrepreneur Beast",
+    "Artist": "Bellymouth"
+  },
+  "184": {
+    "Name": "Snaptrap",
+    "🛡️": 2,
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "When an opponent discards a card from their hand, attach a card from the top of you deck face down onto Snaptrap for each card discarded.\n\nSnaptrap gains 4 power as long as there are four of more cards attached to it.",
+    "Flavor Text": "-",
+    "Type": "Plant Beast",
+    "Artist": "Melscribbles"
+  },
+  "185": {
+    "Name": "Sneaky Rat",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 1,
+    "Effect": "When Sneaky Rat is discarded from play, if it was attached to a Beast or Grotto, you may summon Sneaky Rat to your sideline free of cost.",
+    "Flavor Text": "Let's see what kind of trouble we can get ourselves into!",
+    "Type": "Rat Beast",
+    "Artist": "Sturner"
+  },
+  "186": {
+    "Name": "Sneezie",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "When an opponent moves a Beast to another spot in play, that player discards a card from the top of their deck.",
+    "Flavor Text": "Discovered to have over four hundred allergies, and counting.",
+    "Type": "Weird Beast",
+    "Artist": "Sturner"
+  },
+  "187": {
+    "Name": "Spectocular",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 1,
+    "Effect": "When summoned, look at the top three cards of your deck. Put one of them in your hand, another on the top of your summoning pool, and discard the rest.",
+    "Flavor Text": "His prized possesion is his Nyxwing feather quill, that he's proud to have cleverly acquired.",
+    "Type": "Wizard Beast",
+    "Artist": "Hollulu"
+  },
+  "188": {
+    "Name": "Stormplaty",
+    "🛡️": 2,
+    "❤️": "-",
+    "🌟": 4,
+    "Effect": "When defending, each player rolls a six-sided die. Each player discards cards from the top of their deck equal to the result on the die they rolled.",
+    "Flavor Text": "A Stormplaty's tail collects so much water from the clouds that it imitates a waterdrop.",
+    "Type": "Weird Beast",
+    "Artist": "Bellymouth"
+  },
+  "189": {
+    "Name": "Strong Rat",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 5,
+    "Effect": "Strong rat gains 1 power for each other Rat Beast you have on your sideline.",
+    "Flavor Text": "And here we have an absolutely DEVASTATING Birthday Bash, Strong Rat's signature move!",
+    "Type": "Rat Beast",
+    "Artist": "Sturner"
+  },
+  "190": {
+    "Name": "Stumpalump",
+    "🛡️": 0,
+    "❤️": "-",
+    "🌟": 6,
+    "Effect": "Stumpalump cannot be moved except with card effects.\n\nAt the start of your turn, if Stumpalump is above a Grotto, score a card.",
+    "Flavor Text": "Absolutely stumped on what the whole beast looks like... and frankly, too afraid to find out.",
+    "Type": "Mold Beast",
+    "Artist": "Bellymouth"
+  },
+  "191": {
+    "Name": "Sweet Tooth",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "When summoned, flip a coin and call it. If you win the flip, Sweet Tooth does not gain summoning sadness. If you lose the flip, rest Sweet Tooth.",
+    "Flavor Text": "An aggressive morsel! Its burn is worse than its bite.",
+    "Type": "Foodie Beast",
+    "Artist": "Melscribbles"
+  },
+  "192": {
+    "Name": "Tadpal",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 1,
+    "Effect": "When Tadpal is moved from your sideline to your team, you may choose a Beast on an opponent's sideline and move it to their team. If you do, the chosen Beast must defend this turn, if it is able to.",
+    "Flavor Text": "-",
+    "Type": "Aquatic Beast",
+    "Artist": "Sturner"
+  },
+  "193": {
+    "Name": "Thamacrow",
+    "🛡️": 3,
+    "❤️": "-",
+    "🌟": 4,
+    "Effect": "When an opponent summons a Wish, draw a card.",
+    "Flavor Text": "It is rumored that this ever-observant sorcerer is up to more than simply birdwatching.",
+    "Type": "Wizard Beast",
+    "Artist": "Bellymouth"
+  },
+  "194": {
+    "Name": "Thingamachicken",
+    "🛡️": 0,
+    "❤️": "-",
+    "🌟": 6,
+    "Effect": "Thingamachicken gains 1 power for each unique Beast type among Beasts you have in play.",
+    "Flavor Text": "A whole new meaning to \"working together\".",
+    "Type": "Chimera Beast",
+    "Artist": "Bellymouth"
+  },
+  "195": {
+    "Name": "Toadstool",
+    "🛡️": 0,
+    "❤️": "-",
+    "🌟": 5,
+    "Effect": "When summoned, you may choose a Beast in play and attach it face up onto Toadstool.\n\nToadstool's power is equal to the power of all face up Beasts attached to it.",
+    "Flavor Text": "Likely, mostly the fungi. But it's also very much the toad. It's... something new altogether?",
+    "Type": "✦Fungal Beast",
+    "Artist": "Hollulu"
+  },
+  "196": {
+    "Name": "Toyrex",
+    "🛡️": 5,
+    "❤️": "-",
+    "🌟": 6,
+    "Effect": "-",
+    "Flavor Text": "A small creature with a big attitude. Despite its size, it will take on any opponent if it is threatened and bored.",
+    "Type": "Techtic Beast",
+    "Artist": "Sturner"
+  },
+  "197": {
+    "Name": "Trickstircuit",
+    "🛡️": 2,
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "When summoned, attach two cards from the top of your deck face down onto Trickstircuit.",
+    "Flavor Text": "Despite being broken, it still can conduct an absurd amount of energy.",
+    "Type": "Techtic Beast",
+    "Artist": "Sturner"
+  },
+  "198": {
+    "Name": "Veggiroo",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 3,
+    "Effect": "When defending, each Beast you have in play above a Grotto gains 1 power until the end of the turn.",
+    "Flavor Text": "Very opportunistic, an absolute manace to farmers.",
+    "Type": "Plant Beast",
+    "Artist": "Sturner"
+  },
+  "199": {
+    "Name": "Weeniemutt",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "Weeniemutt gains 1 power for each Foodie Beast beside it.",
+    "Flavor Text": "Weeniemutt grows a new link every year!",
+    "Type": "Foodie Beast",
+    "Artist": "Sturner"
+  },
+  "200": {
+    "Name": "Zapbit",
+    "🛡️": 1,
+    "❤️": "-",
+    "🌟": 2,
+    "Effect": "When attacking or defending, you may discard up to three cards from you hand. Zapbit gains 1 power until the end of the turn for each card discarded in this way.",
+    "Flavor Text": "Quick as lightning, bold as thunder!",
+    "Type": "Wizard Beast",
+    "Artist": "Sturner"
+  }
+}
