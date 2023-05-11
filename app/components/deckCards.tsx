@@ -7,6 +7,8 @@ type Props = {}
 
 type State = {}
 
+var hack = true;
+
 var currDeckArr = [
   {cost: "0", name: "placeholder", imageName: "placeholder", count: "1", isEpic: true},
   {cost: "1", name: "Demon Lord Zeraxos", imageName: "placeholder", count: "1", isEpic: false},
@@ -27,15 +29,19 @@ var currDeckArr = [
 export default function deckCards(props: any) {
   
   const [deckArr, setDeckArr] = useState(currDeckArr);
-  console.log('deckArr', deckArr)
+  console.log('deckArr INIT', deckArr)
 
-  eventBus.on("addCardToDeck", (data: any) =>
-        {
-          var deckCopy = deckArr;
-          deckCopy.push(data.card);
-          setDeckArr([...deckCopy]);
-        }
-    );
+  if (hack) {
+    hack = false
+    eventBus.on("addCardToDeck", (data: any) =>
+      {
+        var deckCopy = deckArr;
+        deckCopy.push(data.card);
+        setDeckArr([...deckCopy]);
+        hack = true;
+      }
+    );  
+  }
 
     return (
       <div className='deckCards'  id="style-1">
