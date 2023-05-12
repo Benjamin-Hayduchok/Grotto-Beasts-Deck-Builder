@@ -5,13 +5,15 @@ import eventBus from './eventBus';
 
 function addCard(card: object) {
     console.log('card', card)
-    card = {cost: '3', name: 'placeholder', imageName: 'placeholder', count: '1', isEpic: false}
+    console.log('card', typeof card)
+
+    // card = {cost: '3', name: 'placeholder', imageName: 'placeholder', count: '1', isEpic: false}
     eventBus.dispatch("addCardToDeck", { card: card });
 }
 
 
 const Card = (props: 
-        { name: string, imageName: string, cardText: string }
+        { name: string, cardNum: string, imageName: string, cardText: string }
 ) => {
     const { name, imageName, cardText } = props;
     const inputRef = useRef<HTMLDivElement>(null);
