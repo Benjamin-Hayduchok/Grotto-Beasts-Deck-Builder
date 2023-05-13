@@ -9,6 +9,7 @@ type Props = {}
 type State = {}
 
 var hack = true;
+var currEpicName = ""
 
 const checkEpic = (cardType: string) => {
   if (cardType[0] === "✦") return true;
@@ -24,14 +25,6 @@ const toStringInc = (input: string) => {
 const getCardById = (id: string) =>{
   const cardListDict = cardList;
   var cardFromDict = cardListDict[id as keyof typeof cardListDict];
-
-  console.log('cardFromDict :>> ', cardFromDict);
-  // mutate card { cost: string; name: string; imageName: string; count: string; isEpic: boolean; }': cost, name, imageName, count, isEpic
-  // name={card.name}
-  // imageName={card.imageName}
-  // count={card.count}
-  // cost={card.cost}
-  // isEpic={card.isEpic}
   var returnCard = {
     name: cardFromDict.name.toString(),
     imageName: "placeholder, MUST REPLACE LATER!",
@@ -63,7 +56,6 @@ var currDeckArr = [
 export default function deckCards(props: any) {
   
   const [deckArr, setDeckArr] = useState(currDeckArr);
-  console.log('deckArr INIT', deckArr)
 
   if (hack) {
     hack = false
@@ -71,17 +63,24 @@ export default function deckCards(props: any) {
       {
         console.log('data', data);;
         var cardToAdd = getCardById(data.card.cardNum)
-        var isAddedToDeck = false;
+        console.log('currEpicName', currEpicName)
+        if (cardToAdd.isEpic && currEpicName != "" && cardToAdd.name != currEpicName) return;
+        var shouldBeAddedToDeck = true;
         for (var i = 0 ; i < deckArr.length; i++) {
-          var card = deckArr[i];
-          console.log('card', card)
-          if (cardToAdd.name === card.name) {
-            isAddedToDeck = true;
+          var cardFromDeck = deckArr[i];
+          if (cardToAdd.name === cardFromDeck.name) { // matched card to add to full card info from Card DB
+            if (parseInt(cardFromDeck.count) >= 3) {
+              var shouldBeAddedToDeck = false;
+              break;
+            }
             deckArr[i].count = toStringInc(deckArr[i].count);
+            shouldBeAddedToDeck = false;
             break;
           }
         }
-        if (!isAddedToDeck) deckArr.push(cardToAdd);
+        if (shouldBeAddedToDeck) deckArr.push(cardToAdd);
+        if (cardToAdd.isEpic) currEpicName = cardToAdd.name;
+        console.log('currEpicName', currEpicName)
         setDeckArr([...deckArr]);
         hack = true;
         console.log('deckArrUPDATE ', deckArr)
