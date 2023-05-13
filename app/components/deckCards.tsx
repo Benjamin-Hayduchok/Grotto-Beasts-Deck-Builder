@@ -56,7 +56,6 @@ var currDeckArr = [
 export default function deckCards(props: any) {
   
   const [deckArr, setDeckArr] = useState(currDeckArr);
-
   if (hack) {
     hack = false
     eventBus.on("addCardToDeck", (data: any) =>
@@ -64,23 +63,28 @@ export default function deckCards(props: any) {
         console.log('data', data);;
         var cardToAdd = getCardById(data.card.cardNum)
         console.log('currEpicName', currEpicName)
-        if (cardToAdd.isEpic && currEpicName != "" && cardToAdd.name != currEpicName) return;
-        var shouldBeAddedToDeck = true;
-        for (var i = 0 ; i < deckArr.length; i++) {
-          var cardFromDeck = deckArr[i];
-          if (cardToAdd.name === cardFromDeck.name) { // matched card to add to full card info from Card DB
-            if (parseInt(cardFromDeck.count) >= 3) {
-              var shouldBeAddedToDeck = false;
+        var skip = false;
+        if (cardToAdd.isEpic && currEpicName != "" && cardToAdd.name != currEpicName) {
+          skip = true;
+        }
+        if (!skip) {
+          var shouldBeAddedToDeck = true;
+          for (var i = 0 ; i < deckArr.length; i++) {
+            var cardFromDeck = deckArr[i];
+            if (cardToAdd.name === cardFromDeck.name) { // matched card to add to full card info from Card DB
+              if (parseInt(cardFromDeck.count) >= 3) {
+                var shouldBeAddedToDeck = false;
+                break;
+              }
+              deckArr[i].count = toStringInc(deckArr[i].count);
+              shouldBeAddedToDeck = false;
               break;
             }
-            deckArr[i].count = toStringInc(deckArr[i].count);
-            shouldBeAddedToDeck = false;
-            break;
           }
+          if (shouldBeAddedToDeck) deckArr.push(cardToAdd);
+          if (cardToAdd.isEpic) currEpicName = cardToAdd.name;
+          console.log('currEpicName', currEpicName)
         }
-        if (shouldBeAddedToDeck) deckArr.push(cardToAdd);
-        if (cardToAdd.isEpic) currEpicName = cardToAdd.name;
-        console.log('currEpicName', currEpicName)
         setDeckArr([...deckArr]);
         hack = true;
         console.log('deckArrUPDATE ', deckArr)
