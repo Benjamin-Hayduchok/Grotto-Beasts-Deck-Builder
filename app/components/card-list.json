@@ -307,8 +307,8 @@
     "flavorText": "-",
     "type": "Challenger",
     "artist": "Gwen M.",
-    "imageName": "30's+Milkman.webp",
-    "deckCardImage": "deckCard+30's+Milkman.webp",
+    "imageName": "30s+Milkman.webp",
+    "deckCardImage": "deckCard+30s+Milkman.webp",
     "cardNum": "24"
   },
   "25": {
@@ -606,8 +606,8 @@
     "flavorText": "A trained eye can see the future within the waters.",
     "type": "Grotto",
     "artist": "Sturner",
-    "imageName": "Ponderer's+Grove.webp",
-    "deckCardImage": "deckCard+Ponderer's+Grove.webp",
+    "imageName": "Ponderers+Grove.webp",
+    "deckCardImage": "deckCard+Ponderers+Grove.webp",
     "cardNum": "47"
   },
   "48": {
@@ -632,8 +632,8 @@
     "flavorText": "The air ducts have been inexplicably clean...",
     "type": "Grotto",
     "artist": "Sturner",
-    "imageName": "Skeld's+Factory.webp",
-    "deckCardImage": "deckCard+Skeld's+Factory.webp",
+    "imageName": "Skelds+Factory.webp",
+    "deckCardImage": "deckCard+Skelds+Factory.webp",
     "cardNum": "49"
   },
   "50": {
@@ -970,8 +970,8 @@
     "flavorText": "Surprisingly potent.",
     "type": "Wish",
     "artist": "Hollulu",
-    "imageName": "Frog's+Breath+Potion.webp",
-    "deckCardImage": "deckCard+Frog's+Breath+Potion.webp",
+    "imageName": "Frogs+Breath+Potion.webp",
+    "deckCardImage": "deckCard+Frogs+Breath+Potion.webp",
     "cardNum": "75"
   },
   "76": {
@@ -1035,8 +1035,8 @@
     "flavorText": "Proudly presented by the Jerma Baseball Association! Very sought after by the Phoenix Cavemen.",
     "type": "Wish",
     "artist": "Hollulu",
-    "imageName": "JBA+Power+Card:+Upgrade.webp",
-    "deckCardImage": "deckCard+JBA+Power+Card:+Upgrade.webp",
+    "imageName": "JBA+Power+Card_+Upgrade.webp",
+    "deckCardImage": "deckCard+JBA+Power+Card_+Upgrade.webp",
     "cardNum": "80"
   },
   "81": {
@@ -2166,8 +2166,8 @@
     "flavorText": "One... two... three..! And your time is up.",
     "type": "Surprise Beast",
     "artist": "Hollulu",
-    "imageName": "Poñata.webp",
-    "deckCardImage": "deckCard+Poñata.webp",
+    "imageName": "Ponata.webp",
+    "deckCardImage": "deckCard+Ponata.webp",
     "cardNum": "167"
   },
   "168": {
