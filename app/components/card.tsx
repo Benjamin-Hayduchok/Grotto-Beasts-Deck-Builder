@@ -13,9 +13,9 @@ function addCard(card: object) {
 
 
 const Card = (props: 
-        { name: string, cardNum: string, imageName: string, cardText: string }
+        { name: string, cardNum: string, imageName: string, effect: string }
 ) => {
-    const { name, imageName, cardText } = props;
+    const { name, imageName, effect } = props;
     const inputRef = useRef<HTMLDivElement>(null);
     const glowRef = useRef<HTMLDivElement>(null);
     const rotateToMouse = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
