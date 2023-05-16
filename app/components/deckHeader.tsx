@@ -1,18 +1,20 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import DeckCounter from './deckCounter'
+import eventBus from './eventBus';
 
-type Props = {}
 
-type State = {}
+export default function deckCards(props: any) {
 
-export default class deckHeader extends Component<Props, State> {
-  state = {}
+  const [currChallenger, setCurrChallenger] = useState("No Challenger Selected"); // currently a string, might make it an object in the future
 
-  render() {
-    return (
-      <div className="deckHeader">
-        <DeckCounter></DeckCounter>
-      </div>
-    )
-  }
+  eventBus.on("addChallengerToDeck", (data: any) => {
+      setCurrChallenger(data.card.name);
+    }
+  );  
+  return (
+    <div className="deckHeader">
+      <p className="challengerName">{currChallenger}</p>
+      <DeckCounter></DeckCounter>
+    </div>
+  )
 }
