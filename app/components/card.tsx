@@ -3,12 +3,12 @@ import React, { useEffect, useRef } from 'react';
 import './../../styles/globals.css';
 import eventBus from './eventBus';
 
-function addCard(card: object) {
-    console.log('card', card)
-    console.log('card', typeof card)
+function addCard(card: {cardNum: string}) {
+    console.log('ON CLICK card', card)
 
-    // card = {cost: '3', name: 'placeholder', imageName: 'placeholder', count: '1', isEpic: false}
-    eventBus.dispatch("addCardToDeck", { card: card });
+    if (parseInt(card.cardNum) <= 32) eventBus.dispatch("addChallengerToDeck", { card: card });
+    else eventBus.dispatch("addCardToDeck", { card: card });
+
 }
 
 
