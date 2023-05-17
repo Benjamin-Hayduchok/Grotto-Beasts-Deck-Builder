@@ -2,6 +2,7 @@ import React, { Component, useState } from 'react'
 import DeckCard from './deckCard'
 import eventBus from './eventBus';
 import cardList from './card-list.json'
+import util from './util'
 
 
 type Props = {}
@@ -14,12 +15,6 @@ var currEpicName = ""
 const checkEpic = (cardType: string) => {
   if (cardType[0] === "✦") return true;
   return false;
-}
-
-const toStringInc = (input: string) => {
-  var toStringCount = parseInt(input);
-  toStringCount++;
-  return toStringCount.toString();
 }
 
 const getCardById = (id: string) =>{
@@ -41,25 +36,8 @@ const isEpicUsed = (cardToAdd: {isEpic: boolean, name: string}) => {
 } 
 
 var currDeckArr: { cost: string, name: string, imageName: string, count: string, isEpic: boolean }[] = [];
-  // {cost: "0", name: "placeholder", imageName: "placeholder", count: "1", isEpic: true},
-  // {cost: "1", name: "Demon Lord Zeraxos", imageName: "placeholder", count: "1", isEpic: false},
-  // {cost: "2", name: "Maze of Many Ways", imageName: "placeholder", count: "1", isEpic: true},
-  // {cost: "3", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false},
-  // {cost: "4", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false},
-  // {cost: "5", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false},
-  // {cost: "6", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false},
-  // {cost: "7", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false},
-  // {cost: "9", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false},
-  // {cost: "9", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false},
-  // {cost: "9", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false},
-  // {cost: "9", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false},
-  // {cost: "9", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false},
-
-// ];
 
 console.log('currDeckArr', currDeckArr)
-// currDeckArr.push({cost: "0", name: "placeholder", imageName: "placeholder", count: "1", isEpic: true})
-
 
 export default function deckCards(props: any) {
   
@@ -77,12 +55,16 @@ export default function deckCards(props: any) {
                 var shouldBeAddedToDeck = false;
                 break;
               }
-              deckArr[i].count = toStringInc(deckArr[i].count);
+              deckArr[i].count = util.toStringInc(deckArr[i].count);
+              eventBus.dispatch("incrementDeckCounter", cardToAdd);
               shouldBeAddedToDeck = false;
               break;
             }
           }
-          if (shouldBeAddedToDeck) deckArr.push(cardToAdd);
+          if (shouldBeAddedToDeck) {
+            deckArr.push(cardToAdd);
+            eventBus.dispatch("incrementDeckCounter", cardToAdd);
+          }
           if (cardToAdd.isEpic) currEpicName = cardToAdd.name;
           console.log('currEpicName', currEpicName)
         }
