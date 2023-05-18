@@ -1,21 +1,20 @@
-import React, { Component } from 'react'
-import Container from 'react-bootstrap/Container';
+import React, { useState } from 'react'
+import eventBus from './eventBus';
+import util from './util'
 
-type Props = {}
-
-type State = {}
-
-export default class deckCounter extends Component<Props, State> {
-  state = {}
-
-  render() {
+export default function deckCounter(props: any) {
+  const [cardCount, setCardCount] = useState("0");
+  const [maxCount, setMaxCount] = useState("40"); // used specifically for byeah prime
+  eventBus.on("incrementDeckCounter", (data: any) => {
+      setCardCount(util.toStringInc(cardCount));
+    }
+  );  
     return (
         <div className="containerDeckCounter">
             <p className="deckCounter">
-              0/40    
+              {cardCount}/{maxCount} Cards
             </p>
         </div>
 
     )
-  }
 }
