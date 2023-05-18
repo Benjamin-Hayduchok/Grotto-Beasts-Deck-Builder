@@ -4,15 +4,15 @@ import util from './util'
 
 export default function deckCounter(props: any) {
   const [cardCount, setCardCount] = useState("0");
-  const [maxCount, setMaxCount] = useState("40");
+  const [maxCount, setMaxCount] = useState("40"); // used specifically for byeah prime
   eventBus.on("incrementDeckCounter", (data: any) => {
-    setCardCount(util.toStringInc(cardCount));
-  }
-);  
+      setCardCount(util.toStringInc(cardCount));
+    }
+  );  
     return (
         <div className="containerDeckCounter">
             <p className="deckCounter">
-              {cardCount}/{maxCount}   
+              {cardCount}/{maxCount} Cards
             </p>
         </div>
 

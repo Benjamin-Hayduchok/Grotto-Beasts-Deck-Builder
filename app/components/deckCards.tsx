@@ -33,7 +33,13 @@ const getCardById = (id: string) =>{
 
 const isEpicUsed = (cardToAdd: {isEpic: boolean, name: string}) => {
   return cardToAdd.isEpic && currEpicName != "" && cardToAdd.name != currEpicName;
-} 
+}
+
+const getAllowedLength = (currChallenger: string) => {
+  console.log('currChallenger', currChallenger)
+  if (currChallenger === "Byeah Prime") return 60;
+  return 40;
+}
 
 var currDeckArr: { cost: string, name: string, imageName: string, count: string, isEpic: boolean }[] = [];
 
@@ -42,9 +48,20 @@ console.log('currDeckArr', currDeckArr)
 export default function deckCards(props: any) {
   
   const [deckArr, setDeckArr] = useState(currDeckArr);
+  const [currChallenger, setCurrChallenger] = useState("No Challenger Selected");
+  const [deckCount, setDeckCount] = useState(0);
   if (hack) {
     hack = false
+    eventBus.on("addChallengerToDeck", (data: any) => {
+        setCurrChallenger(data.card.name);
+      }
+    );  
     eventBus.on("addCardToDeck", (data: any) => {
+        if (deckCount === getAllowedLength(currChallenger)) {
+          setDeckArr([...deckArr]);
+          hack = true;
+          return;
+        }
         var cardToAdd = getCardById(data.card.cardNum)
         if (!isEpicUsed(cardToAdd)) {
           var shouldBeAddedToDeck = true;
@@ -57,6 +74,7 @@ export default function deckCards(props: any) {
               }
               deckArr[i].count = util.toStringInc(deckArr[i].count);
               eventBus.dispatch("incrementDeckCounter", cardToAdd);
+              setDeckCount(deckCount + 1);
               shouldBeAddedToDeck = false;
               break;
             }
@@ -64,6 +82,7 @@ export default function deckCards(props: any) {
           if (shouldBeAddedToDeck) {
             deckArr.push(cardToAdd);
             eventBus.dispatch("incrementDeckCounter", cardToAdd);
+            setDeckCount(deckCount + 1);
           }
           if (cardToAdd.isEpic) currEpicName = cardToAdd.name;
           console.log('currEpicName', currEpicName)
