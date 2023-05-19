@@ -3,16 +3,19 @@ import React, { useEffect, useRef } from 'react';
 import './../../styles/globals.css';
 import eventBus from './eventBus';
 
-function addCard() {
-    console.log("cunt");
-    eventBus.dispatch("couponApply", { message: "coupone applied" });
+function addCard(card: {cardNum: string}) {
+    console.log('ON CLICK card', card)
+
+    if (parseInt(card.cardNum) <= 32) eventBus.dispatch("addChallengerToDeck", { card: card });
+    else eventBus.dispatch("addCardToDeck", { card: card });
+
 }
 
 
 const Card = (props: 
-        { name: string, imageName: string, cardText: string }
+        { name: string, cardNum: string, imageName: string, effect: string }
 ) => {
-    const { name, imageName, cardText } = props;
+    const { name, imageName, effect } = props;
     const inputRef = useRef<HTMLDivElement>(null);
     const glowRef = useRef<HTMLDivElement>(null);
     const rotateToMouse = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -58,7 +61,7 @@ const Card = (props:
     };
     useEffect(() => {});
     return (
-        <div className="cardContainer" onClick={addCard}>
+        <div className="cardContainer" onClick={() => addCard(props)}>
             <div
                 ref={inputRef}
                 className="card"
@@ -71,28 +74,6 @@ const Card = (props:
             </div>
         </div>
     );
-    // const card = document.querySelector(".card");
-    // console.log('card :>> ', card);
-    // const THRESHOLD = 15;
-    // function handleHover(e: Event) {
-    //     // TODO
-    // }
-    
-    // function resetStyles(e: Event) {
-    //     // TODO
-    // }
-    
-    // // card.addEventListener("mousemove", handleHover);
-    // // card.addEventListener("mouseleave", resetStyles);
-    //     return (
-    //             <article className="card" style={{ background: `url(${imageName}) no-repeat`, backgroundSize: "contain"}}>
-    //                 <div className="content">
-    //                     <h2>The Best Beaches</h2>
-    //                     <p>Check out these top 10 beaches this summer.</p>
-    //                     <button type="button">Explore</button>
-    //                 </div>
-    //             </article>
-    //     );
     }
 
 export default Card

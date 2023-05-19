@@ -1,45 +1,103 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import DeckCard from './deckCard'
 import eventBus from './eventBus';
+import cardList from './card-list.json'
+import util from './util'
 
 
 type Props = {}
 
 type State = {}
 
-var currDeckArr = [
-  {cost: "0", name: "placeholder", imageName: "placeholder", count: "1", isEpic: true},
-  {cost: "1", name: "Demon Lord Zeraxos", imageName: "placeholder", count: "1", isEpic: false},
-  {cost: "2", name: "Maze of Many Ways", imageName: "placeholder", count: "1", isEpic: true},
-  {cost: "3", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false},
-  {cost: "4", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false},
-  {cost: "5", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false},
-  {cost: "6", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false},
-  {cost: "7", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false},
-  // {cost: "9", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false},
-  // {cost: "9", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false},
-  // {cost: "9", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false},
-  // {cost: "9", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false},
-  // {cost: "9", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false},
+var hack = true;
+var currEpicName = ""
+var currChallengerName = ""
 
-];
+const checkEpic = (cardType: string) => {
+  if (cardType[0] === "✦") return true;
+  return false;
+}
 
-eventBus.on("couponApply", (data: any) =>
-        {
-            console.log("OMGGGGGG")
-            console.log(data)
-            currDeckArr.push({cost: "9", name: "placeholder", imageName: "placeholder", count: "1", isEpic: false})
-            console.log('currDeckArr', currDeckArr)
+const getCardById = (id: string) =>{
+  const cardListDict = cardList;
+  var cardFromDict = cardListDict[id as keyof typeof cardListDict];
+  var returnCard = {
+    name: cardFromDict.name.toString(),
+    imageName: "placeholder, MUST REPLACE LATER!",
+    count: "1", // MUST GENERATE THIS LATER BY DETERMINING IF THE CARD EXISTS IN THE LIST YET
+    cost: cardFromDict.cost.toString(),
+    isEpic: checkEpic(cardFromDict.type)
+  };
+  
+  return returnCard;
+}
+
+const canUseEpic = (cardToAdd: {isEpic: boolean, name: string}) => {
+  return currChallengerName === "JEX" || !cardToAdd.isEpic || currEpicName === "" || cardToAdd.name === currEpicName;
+}
+
+const getAllowedLength = (currChallenger: string) => {
+  console.log('currChallenger', currChallenger)
+  if (currChallenger === "Byeah Prime") return 60;
+  return 40;
+}
+
+var currDeckArr: { cost: string, name: string, imageName: string, count: string, isEpic: boolean }[] = [];
+
+console.log('currDeckArr', currDeckArr)
+
+export default function deckCards(props: any) {
+  const [deckArr, setDeckArr] = useState(currDeckArr);
+  const [deckCount, setDeckCount] = useState(0);
+
+  if (hack) {
+    hack = false
+    eventBus.on("addChallengerToDeck", (data: any) => {
+        currChallengerName = data.card.name;
+      }
+    );  
+    eventBus.on("addCardToDeck", (data: any) => {
+        if (deckCount === getAllowedLength(currChallengerName)) {
+          setDeckArr([...deckArr]);
+          hack = true;
+          return;
         }
-    );
+        var cardToAdd = getCardById(data.card.cardNum)
+        if (canUseEpic(cardToAdd)) {
+          var shouldBeAddedToDeck = true;
+          for (var i = 0 ; i < deckArr.length; i++) {
+            var cardFromDeck = deckArr[i];
+            if (cardToAdd.name === cardFromDeck.name) { // matched card to add to full card info from Card DB
+              if (parseInt(cardFromDeck.count) >= 3) {
+                var shouldBeAddedToDeck = false;
+                break;
+              }
+              deckArr[i].count = util.toStringInc(deckArr[i].count);
+              eventBus.dispatch("incrementDeckCounter", cardToAdd);
+              setDeckCount(deckCount + 1);
+              shouldBeAddedToDeck = false;
+              break;
+            }
+          }
+          if (shouldBeAddedToDeck) {
+            deckArr.push(cardToAdd);
+            eventBus.dispatch("incrementDeckCounter", cardToAdd);
+            setDeckCount(deckCount + 1);
+          }
+          if (cardToAdd.isEpic) currEpicName = cardToAdd.name;
+          console.log('currEpicName', currEpicName)
+        }
+        setDeckArr([...deckArr]);
+        hack = true;
+        console.log('deckArrUPDATE ', deckArr)
+        eventBus.remove("addCardToDeck")
+      }
+    );  
+  }
 
-export default class deckCards extends Component<Props, State> {
-  state = {}
-
-  render() {
     return (
       <div className='deckCards'  id="style-1">
-          {currDeckArr.map(card => (
+          {deckArr.map(card => (
               <DeckCard 
                   name={card.name}
                   imageName={card.imageName}
@@ -50,5 +108,4 @@ export default class deckCards extends Component<Props, State> {
           ))}
       </div>
     )
-  }
 }

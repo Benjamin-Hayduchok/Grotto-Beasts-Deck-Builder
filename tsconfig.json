@@ -34,7 +34,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "app/components/eventBus.js"  ],
+, "app/components/eventBus.js", "app/components/util.js"  ],
   "exclude": [
     "node_modules"
   ]
