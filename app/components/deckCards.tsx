@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react'
+import React, { useState } from 'react'
 import DeckCard from './deckCard'
 import eventBus from './eventBus';
 import cardList from './card-list.json'
@@ -11,6 +11,7 @@ type State = {}
 
 var hack = true;
 var currEpicName = ""
+var currChallengerName = ""
 
 const checkEpic = (cardType: string) => {
   if (cardType[0] === "✦") return true;
@@ -31,8 +32,8 @@ const getCardById = (id: string) =>{
   return returnCard;
 }
 
-const isEpicUsed = (cardToAdd: {isEpic: boolean, name: string}) => {
-  return cardToAdd.isEpic && currEpicName != "" && cardToAdd.name != currEpicName;
+const canUseEpic = (cardToAdd: {isEpic: boolean, name: string}) => {
+  return currChallengerName === "JEX" || !cardToAdd.isEpic || currEpicName === "" || cardToAdd.name === currEpicName;
 }
 
 const getAllowedLength = (currChallenger: string) => {
@@ -46,24 +47,23 @@ var currDeckArr: { cost: string, name: string, imageName: string, count: string,
 console.log('currDeckArr', currDeckArr)
 
 export default function deckCards(props: any) {
-  
   const [deckArr, setDeckArr] = useState(currDeckArr);
-  const [currChallenger, setCurrChallenger] = useState("No Challenger Selected");
   const [deckCount, setDeckCount] = useState(0);
+
   if (hack) {
     hack = false
     eventBus.on("addChallengerToDeck", (data: any) => {
-        setCurrChallenger(data.card.name);
+        currChallengerName = data.card.name;
       }
     );  
     eventBus.on("addCardToDeck", (data: any) => {
-        if (deckCount === getAllowedLength(currChallenger)) {
+        if (deckCount === getAllowedLength(currChallengerName)) {
           setDeckArr([...deckArr]);
           hack = true;
           return;
         }
         var cardToAdd = getCardById(data.card.cardNum)
-        if (!isEpicUsed(cardToAdd)) {
+        if (canUseEpic(cardToAdd)) {
           var shouldBeAddedToDeck = true;
           for (var i = 0 ; i < deckArr.length; i++) {
             var cardFromDeck = deckArr[i];
