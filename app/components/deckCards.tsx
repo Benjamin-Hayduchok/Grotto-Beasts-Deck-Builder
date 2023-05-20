@@ -22,6 +22,7 @@ const getCardById = (id: string) =>{
   const cardListDict = cardList;
   var cardFromDict = cardListDict[id as keyof typeof cardListDict];
   var returnCard = {
+    cardNum: cardFromDict.cardNum.toString(),
     name: cardFromDict.name.toString(),
     imageName: "placeholder, MUST REPLACE LATER!",
     count: "1", // MUST GENERATE THIS LATER BY DETERMINING IF THE CARD EXISTS IN THE LIST YET
@@ -42,7 +43,7 @@ const getAllowedLength = (currChallenger: string) => {
   return 40;
 }
 
-var currDeckArr: { cost: string, name: string, imageName: string, count: string, isEpic: boolean }[] = [];
+var currDeckArr: { cost: string, cardNum: string, name: string, imageName: string, count: string, isEpic: boolean }[] = [];
 
 console.log('currDeckArr', currDeckArr)
 
@@ -63,6 +64,7 @@ export default function deckCards(props: any) {
           return;
         }
         var cardToAdd = getCardById(data.card.cardNum)
+        console.log('cardToAdd', cardToAdd)
         if (canUseEpic(cardToAdd)) {
           var shouldBeAddedToDeck = true;
           for (var i = 0 ; i < deckArr.length; i++) {
@@ -99,6 +101,7 @@ export default function deckCards(props: any) {
       <div className='deckCards'  id="style-1">
           {deckArr.map(card => (
               <DeckCard 
+                  cardNum={card.cardNum}
                   name={card.name}
                   imageName={card.imageName}
                   count={card.count}
