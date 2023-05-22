@@ -1,12 +1,12 @@
 const eventBus = {
     on(event, callback) {
-      document.addEventListener(event, (e) => callback(e.detail), {once: true});
+      if (typeof document !== 'undefined') document.addEventListener(event, (e) => callback(e.detail), {once: true});
     },
     dispatch(event, data) {
-      document.dispatchEvent(new CustomEvent(event, { detail: data }));
+      if (typeof document !== 'undefined') document.dispatchEvent(new CustomEvent(event, { detail: data }));
     },
     remove(event, callback) {
-      document.removeEventListener(event, callback);
+      if (typeof document !== 'undefined') document.removeEventListener(event, callback);
     },
   };
   
