@@ -14,7 +14,7 @@ const DeckCard = (props: {cardNum:string, name: string, imageName: string, count
   
   const hideCardCountChange = (cardNum: string) => {
     console.log('HIDE cardNum', cardNum);
-    // setShowAdjustCount(false); UNCOMMENT BEN
+    setShowAdjustCount(false);
   }
 
 

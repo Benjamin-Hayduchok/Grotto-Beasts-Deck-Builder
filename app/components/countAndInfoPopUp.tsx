@@ -6,7 +6,9 @@ const CountAndInfoPopUp = (props: {showAdjustCount: boolean, count: string}) => 
   if (showAdjustCount) {
     return (
       <div className="countAndInfoPopUpContainer">
-        <span className="plus">+</span>
+        <input className="infoButt" type="button" value="i"/>
+        <input className="minusButt" type="button" value="-"/>
+        <input className="plusButt" type="button" value="+"/>
       </div>
     )
   }
