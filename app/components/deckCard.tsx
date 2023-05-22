@@ -29,6 +29,7 @@ const DeckCard = (props: {cardNum:string, name: string, imageName: string, count
       <CountAndInfoPopUp
         showAdjustCount={showAdjustCount}
         count={count}
+        cardNum={cardNum}
       />
       <p className="cardCount">{count}</p>
     </div>
