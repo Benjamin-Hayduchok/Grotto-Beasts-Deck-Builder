@@ -9,7 +9,9 @@ type Props = {}
 
 type State = {}
 
-var hack = true;
+var loadDec = true;
+var loadInc = true;
+var loadChallenger = true;
 var currEpicName = ""
 var currChallengerName = ""
 
@@ -51,16 +53,20 @@ export default function deckCards(props: any) {
   const [deckArr, setDeckArr] = useState(currDeckArr);
   const [deckCount, setDeckCount] = useState(0);
 
-  if (hack) {
-    hack = false
+  if (loadChallenger) {
+    loadChallenger = false;
     eventBus.on("addChallengerToDeck", (data: any) => {
         currChallengerName = data.card.name;
+        loadChallenger = true;
       }
-    );  
+    );
+  }
+  if (loadInc) {
+    loadInc = false;
     eventBus.on("addCardToDeck", (data: any) => {
         if (deckCount === getAllowedLength(currChallengerName)) {
           setDeckArr([...deckArr]);
-          hack = true;
+          loadInc = true;
           return;
         }
         var cardToAdd = getCardById(data.card.cardNum)
@@ -90,25 +96,48 @@ export default function deckCards(props: any) {
           console.log('currEpicName', currEpicName)
         }
         setDeckArr([...deckArr]);
-        hack = true;
+        loadInc = true;
         console.log('deckArrUPDATE ', deckArr)
         eventBus.remove("addCardToDeck")
       }
-    );  
+    );
   }
 
-    return (
-      <div className='deckCards'  id="style-1">
-          {deckArr.map(card => (
-              <DeckCard 
-                  cardNum={card.cardNum}
-                  name={card.name}
-                  imageName={card.imageName}
-                  count={card.count}
-                  cost={card.cost}
-                  isEpic={card.isEpic}
-              />
-          ))}
-      </div>
-    )
+  if (loadDec) {
+    loadDec = false;
+    eventBus.on("removeCardFromDeck", (data: any) => {
+        console.log("removeCardFromDeck hit");
+        console.log('data :>> ', data);
+        var cardToAdd = getCardById(data.card.cardNum);
+        console.log('cardToAdd', cardToAdd)
+        for (var i = 0; i < deckArr.length; i++) {
+          var currCard = deckArr[i];
+          if (currCard.cardNum === cardToAdd.cardNum) { // found card
+            console.log("FOUND CARRRDD")
+            deckArr[i].count = util.toStringDec(deckArr[i].count);
+            eventBus.dispatch("decrementDeckCounter", cardToAdd);
+            setDeckCount(deckCount - 1);
+          }
+        }
+        setDeckArr([...deckArr]);
+        loadDec = true;
+        eventBus.remove("removeCardFromDeck")
+      }
+    );
+  } 
+
+  return (
+    <div className='deckCards'  id="style-1">
+        {deckArr.map(card => (
+            <DeckCard 
+                cardNum={card.cardNum}
+                name={card.name}
+                imageName={card.imageName}
+                count={card.count}
+                cost={card.cost}
+                isEpic={card.isEpic}
+            />
+        ))}
+    </div>
+  )
 }
