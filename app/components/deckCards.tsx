@@ -48,8 +48,7 @@ const getAllowedLength = (currChallenger: string) => {
 var currDeckArr: { cost: string, cardNum: string, name: string, imageName: string, count: string, isEpic: boolean }[] = [];
 
 console.log('currDeckArr', currDeckArr)
-
-export default function deckCards(props: any) {
+const DeckCards = (props: any) => {
   const [deckArr, setDeckArr] = useState(currDeckArr);
   const [deckCount, setDeckCount] = useState(0);
 
@@ -96,8 +95,8 @@ export default function deckCards(props: any) {
           console.log('currEpicName', currEpicName)
         }
         setDeckArr([...deckArr]);
+        currDeckArr = deckArr
         loadInc = true;
-        console.log('deckArrUPDATE ', deckArr)
         eventBus.remove("addCardToDeck")
       }
     );
@@ -106,24 +105,29 @@ export default function deckCards(props: any) {
   if (loadDec) {
     loadDec = false;
     eventBus.on("removeCardFromDeck", (data: any) => {
-        console.log("removeCardFromDeck hit");
-        console.log('data :>> ', data);
-        var cardToAdd = getCardById(data.card.cardNum);
-        console.log('cardToAdd', cardToAdd)
-        for (var i = 0; i < deckArr.length; i++) {
-          var currCard = deckArr[i];
-          if (currCard.cardNum === cardToAdd.cardNum) { // found card
-            console.log("FOUND CARRRDD")
-            deckArr[i].count = util.toStringDec(deckArr[i].count);
-            eventBus.dispatch("decrementDeckCounter", cardToAdd);
-            setDeckCount(deckCount - 1);
+        setDeckArr(currDeckArr)
+        var cardToRemove = getCardById(data.card.cardNum);
+        for (var i = 0; i < currDeckArr.length; i++) {
+          var currCard = currDeckArr[i];
+          if (currCard.cardNum === cardToRemove.cardNum) { // found card
+            currDeckArr[i].count = util.toStringDec(currDeckArr[i].count);
+            if (currDeckArr[i].count === "0") {
+
+              currDeckArr.splice(i, 1);
+            }
+            eventBus.dispatch("decrementDeckCounter", cardToRemove);
+            if (deckCount > 0) {
+              setDeckCount(deckCount - 1);
+            }
+            break;
           }
         }
-        setDeckArr([...deckArr]);
+        setDeckArr(currDeckArr);
         loadDec = true;
         eventBus.remove("removeCardFromDeck")
       }
     );
+    setDeckArr([...deckArr]);
   } 
 
   return (
@@ -141,3 +145,5 @@ export default function deckCards(props: any) {
     </div>
   )
 }
+
+export default DeckCards

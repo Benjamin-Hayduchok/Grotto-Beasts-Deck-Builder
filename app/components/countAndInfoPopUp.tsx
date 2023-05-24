@@ -3,21 +3,19 @@ import eventBus from './eventBus';
 
 const CountAndInfoPopUp = (props: {showAdjustCount: boolean, count: string, cardNum: string}) => {
   const { showAdjustCount, count, cardNum } = props;
-  console.log('props', props)
-
 
   const showInfoCard = (cardNum: string) => {
-    console.log('SHOW INFO cardNum', cardNum);
+    // console.log('SHOW INFO cardNum', cardNum);
   }
 
   const decreaseCard = (cardNum: string) => {
-    console.log('DECREASE cardNum', cardNum);
+    // console.log('DECREASE cardNum', cardNum);
     var card = {cardNum: cardNum};
     eventBus.dispatch("removeCardFromDeck", { card: card });
   }
 
   const increaseCard = (cardNum: string) => {
-    console.log('INCREASE cardNum', cardNum);
+    // console.log('INCREASE cardNum', cardNum);
     var card = {cardNum: cardNum};
     eventBus.dispatch("addCardToDeck", { card: card });
   }
