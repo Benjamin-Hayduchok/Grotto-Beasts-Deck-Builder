@@ -40,14 +40,12 @@ const canUseEpic = (cardToAdd: {isEpic: boolean, name: string}) => {
 }
 
 const getAllowedLength = (currChallenger: string) => {
-  console.log('currChallenger', currChallenger)
   if (currChallenger === "Byeah Prime") return 60;
   return 40;
 }
 
 var currDeckArr: { cost: string, cardNum: string, name: string, imageName: string, count: string, isEpic: boolean }[] = [];
 
-console.log('currDeckArr', currDeckArr)
 const DeckCards = (props: any) => {
   const [deckArr, setDeckArr] = useState(currDeckArr);
   const [deckCount, setDeckCount] = useState(0);
@@ -69,17 +67,16 @@ const DeckCards = (props: any) => {
           return;
         }
         var cardToAdd = getCardById(data.card.cardNum)
-        console.log('cardToAdd', cardToAdd)
         if (canUseEpic(cardToAdd)) {
           var shouldBeAddedToDeck = true;
-          for (var i = 0 ; i < deckArr.length; i++) {
-            var cardFromDeck = deckArr[i];
+          for (var i = 0 ; i < currDeckArr.length; i++) {
+            var cardFromDeck = currDeckArr[i];
             if (cardToAdd.name === cardFromDeck.name) { // matched card to add to full card info from Card DB
               if (parseInt(cardFromDeck.count) >= 3) {
                 var shouldBeAddedToDeck = false;
                 break;
               }
-              deckArr[i].count = util.toStringInc(deckArr[i].count);
+              currDeckArr[i].count = util.toStringInc(currDeckArr[i].count);
               eventBus.dispatch("incrementDeckCounter", cardToAdd);
               setDeckCount(deckCount + 1);
               shouldBeAddedToDeck = false;
@@ -87,15 +84,13 @@ const DeckCards = (props: any) => {
             }
           }
           if (shouldBeAddedToDeck) {
-            deckArr.push(cardToAdd);
+            currDeckArr.push(cardToAdd);
             eventBus.dispatch("incrementDeckCounter", cardToAdd);
             setDeckCount(deckCount + 1);
           }
           if (cardToAdd.isEpic) currEpicName = cardToAdd.name;
-          console.log('currEpicName', currEpicName)
         }
-        setDeckArr([...deckArr]);
-        currDeckArr = deckArr
+        setDeckArr([...currDeckArr]);
         loadInc = true;
         eventBus.remove("addCardToDeck")
       }
@@ -112,7 +107,6 @@ const DeckCards = (props: any) => {
           if (currCard.cardNum === cardToRemove.cardNum) { // found card
             currDeckArr[i].count = util.toStringDec(currDeckArr[i].count);
             if (currDeckArr[i].count === "0") {
-
               currDeckArr.splice(i, 1);
             }
             eventBus.dispatch("decrementDeckCounter", cardToRemove);
@@ -127,7 +121,7 @@ const DeckCards = (props: any) => {
         eventBus.remove("removeCardFromDeck")
       }
     );
-    setDeckArr([...deckArr]);
+    setDeckArr([...currDeckArr]);
   } 
 
   return (
