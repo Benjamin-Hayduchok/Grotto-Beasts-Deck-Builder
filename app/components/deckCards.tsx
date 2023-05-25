@@ -3,6 +3,7 @@ import DeckCard from './deckCard'
 import eventBus from './eventBus';
 import cardList from './card-list.json'
 import util from './util'
+import Swal from 'sweetalert2'
 
 
 type Props = {}
@@ -44,6 +45,24 @@ const getAllowedLength = (currChallenger: string) => {
   return 40;
 }
 
+const checkForMultipleEpics = () => {
+  var foundInitialEpic = false;
+  for (var card of currDeckArr) {
+    if (card.isEpic && foundInitialEpic) {
+      Swal.fire({
+        title: '<strong>Warning!</strong>',
+        html: '<b>You currently have multiple Epics in your deck without using JEX. Please remove additional epics.</b>',
+        icon: 'error',
+        confirmButtonColor: '#257d52',
+        confirmButtonText: 'Thank you!'
+      });
+      break;
+    }
+    else if (card.isEpic) foundInitialEpic = true;
+  }
+}
+
+
 var currDeckArr: { cost: string, cardNum: string, name: string, imageName: string, count: string, isEpic: boolean }[] = [];
 
 const DeckCards = (props: any) => {
@@ -53,6 +72,8 @@ const DeckCards = (props: any) => {
   if (loadChallenger) {
     loadChallenger = false;
     eventBus.on("addChallengerToDeck", (data: any) => {
+      checkForMultipleEpics();
+        if (currChallengerName === "JEX" && data.card.name !== "JEX") checkForMultipleEpics();
         currChallengerName = data.card.name;
         loadChallenger = true;
       }
