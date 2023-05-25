@@ -12,8 +12,8 @@ type State = {}
 var loadDec = true;
 var loadInc = true;
 var loadChallenger = true;
-var currEpicName = ""
-var currChallengerName = ""
+var currEpicName = "";
+var currChallengerName = "";
 
 const checkEpic = (cardType: string) => {
   if (cardType[0] === "✦") return true;
@@ -108,6 +108,7 @@ const DeckCards = (props: any) => {
             currDeckArr[i].count = util.toStringDec(currDeckArr[i].count);
             if (currDeckArr[i].count === "0") {
               currDeckArr.splice(i, 1);
+              if (cardToRemove.isEpic) currEpicName = "";
             }
             eventBus.dispatch("decrementDeckCounter", cardToRemove);
             if (deckCount > 0) {
