@@ -9,12 +9,16 @@ export default function deckCounter(props: any) {
       setCardCount(util.toStringInc(cardCount));
     }
   );
+  eventBus.on("decrementDeckCounter", (data: any) => {
+      setCardCount(util.toStringDec(cardCount));
+    }
+  ); 
   eventBus.on("addChallengerToDeck", (data: any) => {
-    const challenger = data.card.name;
-    if (challenger === "Byeah Prime") setMaxCount("60");
-    else setMaxCount("40");
-  }
-);    
+      const challenger = data.card.name;
+      if (challenger === "Byeah Prime") setMaxCount("60");
+      else setMaxCount("40");
+    }
+  );
     return (
         <div className="containerDeckCounter">
             <p className="deckCounter">
