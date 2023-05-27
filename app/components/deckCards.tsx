@@ -72,10 +72,11 @@ const DeckCards = (props: any) => {
   if (loadChallenger) {
     loadChallenger = false;
     eventBus.on("addChallengerToDeck", (data: any) => {
-      checkForMultipleEpics();
+        checkForMultipleEpics();
         if (currChallengerName === "JEX" && data.card.name !== "JEX") checkForMultipleEpics();
         currChallengerName = data.card.name;
         loadChallenger = true;
+        setDeckArr([...currDeckArr]);
       }
     );
   }
@@ -83,7 +84,7 @@ const DeckCards = (props: any) => {
     loadInc = false;
     eventBus.on("addCardToDeck", (data: any) => {
         if (deckCount === getAllowedLength(currChallengerName)) {
-          setDeckArr([...deckArr]);
+          setDeckArr([...currDeckArr]);
           loadInc = true;
           return;
         }

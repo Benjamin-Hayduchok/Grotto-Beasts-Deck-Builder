@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import eventBus from './eventBus';
-import util from './util'
+import util from './util';
+import Swal from 'sweetalert2';
 
 export default function deckCounter(props: any) {
   const [cardCount, setCardCount] = useState("0");
@@ -15,8 +16,21 @@ export default function deckCounter(props: any) {
   ); 
   eventBus.on("addChallengerToDeck", (data: any) => {
       const challenger = data.card.name;
-      if (challenger === "Byeah Prime") setMaxCount("60");
+      var tempMax = "40";
+      if (challenger === "Byeah Prime") {
+        setMaxCount("60");
+        tempMax = "60";
+      }
       else setMaxCount("40");
+      if (parseInt(cardCount) > parseInt(tempMax)  ) {
+        Swal.fire({
+          title: '<strong>Warning!</strong>',
+          html: '<b>You currently have more cards than the maximum allowed cards. Please remove extra cards.</b>',
+          icon: 'error',
+          confirmButtonColor: '#257d52',
+          confirmButtonText: 'Thank you!'
+        });
+      }
     }
   );
     return (
