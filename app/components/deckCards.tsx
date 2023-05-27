@@ -15,6 +15,7 @@ var loadInc = true;
 var loadChallenger = true;
 var currEpicName = "";
 var currChallengerName = "";
+var deckCount = 0;
 
 const checkEpic = (cardType: string) => {
   if (cardType[0] === "✦") return true;
@@ -41,6 +42,7 @@ const canUseEpic = (cardToAdd: {isEpic: boolean, name: string}) => {
 }
 
 const getAllowedLength = (currChallenger: string) => {
+  console.log('currChallenger', currChallenger)
   if (currChallenger === "Byeah Prime") return 60;
   return 40;
 }
@@ -67,7 +69,7 @@ var currDeckArr: { cost: string, cardNum: string, name: string, imageName: strin
 
 const DeckCards = (props: any) => {
   const [deckArr, setDeckArr] = useState(currDeckArr);
-  const [deckCount, setDeckCount] = useState(0);
+  // const [deckCount, setDeckCount] = useState(0);
 
   if (loadChallenger) {
     loadChallenger = false;
@@ -83,7 +85,9 @@ const DeckCards = (props: any) => {
   if (loadInc) {
     loadInc = false;
     eventBus.on("addCardToDeck", (data: any) => {
-        if (deckCount === getAllowedLength(currChallengerName)) {
+      console.log('getAllowedLength(currChallengerName)', getAllowedLength(currChallengerName))
+      console.log('deckCount', deckCount)
+        if (deckCount >= getAllowedLength(currChallengerName)) {
           setDeckArr([...currDeckArr]);
           loadInc = true;
           return;
@@ -100,7 +104,7 @@ const DeckCards = (props: any) => {
               }
               currDeckArr[i].count = util.toStringInc(currDeckArr[i].count);
               eventBus.dispatch("incrementDeckCounter", cardToAdd);
-              setDeckCount(deckCount + 1);
+              deckCount++;
               shouldBeAddedToDeck = false;
               break;
             }
@@ -108,7 +112,7 @@ const DeckCards = (props: any) => {
           if (shouldBeAddedToDeck) {
             currDeckArr.push(cardToAdd);
             eventBus.dispatch("incrementDeckCounter", cardToAdd);
-            setDeckCount(deckCount + 1);
+            deckCount++;
           }
           if (cardToAdd.isEpic) currEpicName = cardToAdd.name;
         }
@@ -134,7 +138,7 @@ const DeckCards = (props: any) => {
             }
             eventBus.dispatch("decrementDeckCounter", cardToRemove);
             if (deckCount > 0) {
-              setDeckCount(deckCount - 1);
+              deckCount--;
             }
             break;
           }
