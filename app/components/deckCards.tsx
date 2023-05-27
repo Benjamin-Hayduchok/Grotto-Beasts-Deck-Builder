@@ -3,15 +3,19 @@ import DeckCard from './deckCard'
 import eventBus from './eventBus';
 import cardList from './card-list.json'
 import util from './util'
+import Swal from 'sweetalert2'
 
 
 type Props = {}
 
 type State = {}
 
-var hack = true;
-var currEpicName = ""
-var currChallengerName = ""
+var loadDec = true;
+var loadInc = true;
+var loadChallenger = true;
+var currEpicName = "";
+var currChallengerName = "";
+var deckCount = 0;
 
 const checkEpic = (cardType: string) => {
   if (cardType[0] === "✦") return true;
@@ -43,72 +47,124 @@ const getAllowedLength = (currChallenger: string) => {
   return 40;
 }
 
+const checkForMultipleEpics = () => {
+  var foundInitialEpic = false;
+  for (var card of currDeckArr) {
+    if (card.isEpic && foundInitialEpic) {
+      Swal.fire({
+        title: '<strong>Warning!</strong>',
+        html: '<b>You currently have multiple Epics in your deck without using JEX. Please remove additional epics.</b>',
+        icon: 'error',
+        confirmButtonColor: '#257d52',
+        confirmButtonText: 'Thank you!'
+      });
+      break;
+    }
+    else if (card.isEpic) foundInitialEpic = true;
+  }
+}
+
+
 var currDeckArr: { cost: string, cardNum: string, name: string, imageName: string, count: string, isEpic: boolean }[] = [];
 
-console.log('currDeckArr', currDeckArr)
-
-export default function deckCards(props: any) {
+const DeckCards = (props: any) => {
   const [deckArr, setDeckArr] = useState(currDeckArr);
-  const [deckCount, setDeckCount] = useState(0);
+  // const [deckCount, setDeckCount] = useState(0);
 
-  if (hack) {
-    hack = false
+  if (loadChallenger) {
+    loadChallenger = false;
     eventBus.on("addChallengerToDeck", (data: any) => {
+        checkForMultipleEpics();
+        if (currChallengerName === "JEX" && data.card.name !== "JEX") checkForMultipleEpics();
         currChallengerName = data.card.name;
+        loadChallenger = true;
+        setDeckArr([...currDeckArr]);
       }
-    );  
+    );
+  }
+  if (loadInc) {
+    loadInc = false;
     eventBus.on("addCardToDeck", (data: any) => {
-        if (deckCount === getAllowedLength(currChallengerName)) {
-          setDeckArr([...deckArr]);
-          hack = true;
+      console.log('getAllowedLength(currChallengerName)', getAllowedLength(currChallengerName))
+      console.log('deckCount', deckCount)
+        if (deckCount >= getAllowedLength(currChallengerName)) {
+          setDeckArr([...currDeckArr]);
+          loadInc = true;
           return;
         }
         var cardToAdd = getCardById(data.card.cardNum)
-        console.log('cardToAdd', cardToAdd)
         if (canUseEpic(cardToAdd)) {
           var shouldBeAddedToDeck = true;
-          for (var i = 0 ; i < deckArr.length; i++) {
-            var cardFromDeck = deckArr[i];
+          for (var i = 0 ; i < currDeckArr.length; i++) {
+            var cardFromDeck = currDeckArr[i];
             if (cardToAdd.name === cardFromDeck.name) { // matched card to add to full card info from Card DB
               if (parseInt(cardFromDeck.count) >= 3) {
                 var shouldBeAddedToDeck = false;
                 break;
               }
-              deckArr[i].count = util.toStringInc(deckArr[i].count);
+              currDeckArr[i].count = util.toStringInc(currDeckArr[i].count);
               eventBus.dispatch("incrementDeckCounter", cardToAdd);
-              setDeckCount(deckCount + 1);
+              deckCount++;
               shouldBeAddedToDeck = false;
               break;
             }
           }
           if (shouldBeAddedToDeck) {
-            deckArr.push(cardToAdd);
+            currDeckArr.push(cardToAdd);
             eventBus.dispatch("incrementDeckCounter", cardToAdd);
-            setDeckCount(deckCount + 1);
+            deckCount++;
           }
           if (cardToAdd.isEpic) currEpicName = cardToAdd.name;
-          console.log('currEpicName', currEpicName)
         }
-        setDeckArr([...deckArr]);
-        hack = true;
-        console.log('deckArrUPDATE ', deckArr)
+        setDeckArr([...currDeckArr]);
+        loadInc = true;
         eventBus.remove("addCardToDeck")
       }
-    );  
+    );
   }
 
-    return (
-      <div className='deckCards'  id="style-1">
-          {deckArr.map(card => (
-              <DeckCard 
-                  cardNum={card.cardNum}
-                  name={card.name}
-                  imageName={card.imageName}
-                  count={card.count}
-                  cost={card.cost}
-                  isEpic={card.isEpic}
-              />
-          ))}
-      </div>
-    )
+  if (loadDec) {
+    loadDec = false;
+    eventBus.on("removeCardFromDeck", (data: any) => {
+        setDeckArr(currDeckArr)
+        var cardToRemove = getCardById(data.card.cardNum);
+        for (var i = 0; i < currDeckArr.length; i++) {
+          var currCard = currDeckArr[i];
+          if (currCard.cardNum === cardToRemove.cardNum) { // found card
+            currDeckArr[i].count = util.toStringDec(currDeckArr[i].count);
+            if (currDeckArr[i].count === "0") {
+              currDeckArr.splice(i, 1);
+              if (cardToRemove.isEpic) currEpicName = "";
+            }
+            eventBus.dispatch("decrementDeckCounter", cardToRemove);
+            if (deckCount > 0) {
+              deckCount--;
+            }
+            break;
+          }
+        }
+        setDeckArr(currDeckArr);
+        loadDec = true;
+        eventBus.remove("removeCardFromDeck")
+      }
+    );
+    setDeckArr([...currDeckArr]);
+  } 
+
+  return (
+    <div className='deckCards'  id="style-1">
+        {deckArr.map(card => (
+            <DeckCard 
+                cardNum={card.cardNum}
+                name={card.name}
+                imageName={card.imageName}
+                count={card.count}
+                cost={card.cost}
+                isEpic={card.isEpic}
+            />
+        ))}
+    </div>
+  )
 }
+
+export default DeckCards
