@@ -215,6 +215,7 @@ button {
   border-style: outset;
   margin:auto;
   margin-top: 1%;
+  position: relative;
 }
 
 #style-1::-webkit-scrollbar-track
@@ -302,4 +303,71 @@ button {
   font-weight: bold;
   margin-left: 5%;
   margin-top: 1%;
+}
+
+.minus, .plus{
+  width:20px;
+  height:20px;
+  background:#f2f2f2;
+  border-radius:4px;
+  padding:8px 5px 8px 5px;
+  border:1px solid #ddd;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.countAndInfoPopUpContainer {
+  border: 2px solid brown;
+  border-radius: 10px;
+  background-color: rgb(255, 217, 0, 0.8);
+  position: absolute;
+  width: 30%;
+  float: right;
+  z-index: 9;
+  margin-left: 42%;
+  height: 100%;
+  display: flex;
+}
+
+.infoButt {
+  font-family: "AclonicaRegular";
+  font-size: 1.35vw;
+  font-weight: bold;
+  color: black;
+  border: 1px outset blue;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  height:100%;
+  width: 100%;
+  cursor:pointer;
+}
+
+.minusButt {
+  font-family: "AclonicaRegular";
+  font-size: 1.35vw;
+  font-weight: bold;
+  color: black;
+  border: 1px outset blue;
+  height:100%;
+  width: 100%;
+  cursor:pointer;
+}
+
+.plusButt {
+  font-family: "AclonicaRegular";
+  font-size: 1.35vw;
+  font-weight: bold;
+  color: black;
+  border: 1px outset blue;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height:100%;
+  width: 100%;
+  cursor:pointer;
+}
+
+.infoButt:hover, .minusButt:hover, .plusButt:hover {
+  background-color: lightsalmon;
+  color: brown;
 }
