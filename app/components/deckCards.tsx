@@ -98,7 +98,7 @@ const DeckCards = (props: any) => {
           for (var i = 0 ; i < currDeckArr.length; i++) {
             var cardFromDeck = currDeckArr[i];
             if (cardToAdd.name === cardFromDeck.name) { // matched card to add to full card info from Card DB
-              if (parseInt(cardFromDeck.count) >= 3) {
+              if (parseInt(cardFromDeck.count) >= 3 && cardToAdd.name !== "Byeah Beast") {
                 var shouldBeAddedToDeck = false;
                 break;
               }
