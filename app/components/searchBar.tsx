@@ -1,15 +1,28 @@
 import React from 'react';
+import eventBus from './eventBus'
 
 const SearchBar = () => {
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    console.log("yay!");
-    e.preventDefault()
+  const submitSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (typeof document !== 'undefined') {
+      const searchObj = {
+        name: (document.getElementById("cardName") as HTMLInputElement).value,
+        type: (document.getElementById("cardType") as HTMLInputElement).value,
+        epic: (document.getElementById("cardEpic") as HTMLInputElement).value,
+        power: (document.getElementById("cardPower") as HTMLInputElement).value,
+        goal: (document.getElementById("cardGoal") as HTMLInputElement).value,
+        cost: (document.getElementById("cardCost") as HTMLInputElement).value,
+        effect: (document.getElementById("cardEffect") as HTMLInputElement).value
+      }
+      console.log('searchObj :>> ', searchObj);
+      eventBus.dispatch("searchSubmit", searchObj);
+    }
 }
 
   return (
     <div className="searchContainer">
-      <form className="formGroup" onSubmit={handleSubmit}>
+      <form className="formGroup" onSubmit={submitSearch}>
 
         <div className="formRow">
           <div className="inputGroup">
