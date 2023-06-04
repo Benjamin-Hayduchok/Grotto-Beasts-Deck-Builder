@@ -18,6 +18,9 @@ export default function RootLayout({
             <Link href="/collection">
               Collection
             </Link>
+            <Link href="/deckbuilder">
+              Deck Builder
+            </Link>
           </nav>
           {children}
         </main>

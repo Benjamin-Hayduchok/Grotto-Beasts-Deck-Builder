@@ -7,12 +7,7 @@ import Deck from './components/deck'
 export default function HomePage() {
     return (
         <div>
-            <StickyBox className='deckSticky' offsetTop={20} offsetBottom={20}>
-                <Deck>
-                </Deck>
-            </StickyBox>
-            <br></br>
-            <CardList></CardList>
+            HOME PAGE FOR NOW AHHH
         </div>
     )
 }
