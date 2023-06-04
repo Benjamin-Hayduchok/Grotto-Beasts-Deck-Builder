@@ -11,6 +11,14 @@ export default function RootLayout({
     <html>
       <body>
         <main>
+        <nav>
+            <Link href="/">
+              Home
+            </Link>
+            <Link href="/collection">
+              Collection
+            </Link>
+          </nav>
           {children}
         </main>
       </body>
