@@ -73,7 +73,8 @@ button {
 .containerCardList {
   margin-right: 15vh;
   margin-left: 5vw;
-  width: 75vw;
+  width: 65vw;
+  border:orange 1px solid;
 }
 
 .card {
@@ -174,7 +175,7 @@ button {
   position: relative;
 
   color: rgb(252, 209, 68);
-  font-family: "Brush Script MT";
+  font-family: "AclonicaRegular";
   font-size:  22px;
   display: flex;
 
@@ -318,7 +319,7 @@ button {
 }
 
 .countAndInfoPopUpContainer {
-  border: 2px solid brown;
+  border: 2px solid rgb(94, 69, 37);
   border-radius: 10px;
   background-color: rgb(255, 217, 0, 0.8);
   position: absolute;
@@ -368,6 +369,116 @@ button {
 }
 
 .infoButt:hover, .minusButt:hover, .plusButt:hover {
-  background-color: lightsalmon;
-  color: brown;
+  background-color: darkgreen;
+  color: yellow;
+}
+
+.searchContainer {
+  position: sticky;
+  width: 100%;
+  margin: auto;
+  border: 2px solid red;
+  background-color: rgb(70, 48, 38);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.formRow {
+  border-top: 1px solid #ddd;
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 8px;
+  padding: 8px 0 8px 8px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-grow: 1;
+}
+
+.cardSearchLabel {
+  align-items: center;
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: large;
+  margin-right: 8px;
+}
+
+.cardNameInput {
+  border: 1px solid #ddd;
+  flex-grow: 1;
+  margin-right: 8px;
+  min-width: 0;
+  padding: 1px 2px;
+  color: black;
+}
+
+.cardTypeInput {
+  border: 1px solid #ddd;
+  flex-grow: 1;
+  margin-right: 8px;
+  width: 70%;
+  padding: 1px 2px;
+  color: black;
+}
+
+.cardEpicInput {
+  border: 1px solid #ddd;
+  flex-grow: 1;
+  margin-right: 8px;
+  width: 30%;
+  padding: 1px 2px;
+  color: black;
+}
+
+.cardPowerInput {
+  border: 1px solid #ddd;
+  flex-grow: 1;
+  margin-right: 8px;
+  width: 33.3333%;
+  padding: 1px 2px;
+  color: black;
+}
+
+.cardGoalInput {
+  border: 1px solid #ddd;
+  flex-grow: 1;
+  margin-right: 8px;
+  width: 33.3333%;
+  padding: 1px 2px;
+  color: black;
+}
+
+.cardCostInput {
+  border: 1px solid #ddd;
+  flex-grow: 1;
+  margin-right: 8px;
+  width: 33.3333%;
+  padding: 1px 2px;
+  color: black;
+}
+
+.cardEffectInput {
+  border: 1px solid #ddd;
+  flex-grow: 1;
+  margin-right: 8px;
+  width: 33.3333%;
+  padding: 1px 2px;
+  color: black;
+}
+
+.submitCardSearch {
+  background-color: #04aa6d;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: larger;
+  height: 64px;
+  margin: 4px 2px;
+  padding: 16px 32px;
+  text-decoration: none;
+  width: 99%;
 }

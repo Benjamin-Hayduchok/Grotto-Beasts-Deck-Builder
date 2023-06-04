@@ -1,50 +1,85 @@
 "use client"; 
 
 import './../../styles/globals.css';
-import Card from './card';
+import Card from'./card';
 import Container from 'react-bootstrap/Container';
-import allCards from './card-list.json'
+import SearchBar from './searchBar';
+import allCards from './card-list.json';
+import eventBus from './eventBus';
+import React, { useState } from 'react'
 
-// var cardArray = [
-//     {name: "Mr. Greenz", cardNum: "6", imageName: "Mr.+Greenz.webp", cardText: "When a card effect has you roll exactly one die, roll an additional die. You may choose which die result to use for the card effect. When you roll exactly two dice, if the result on both die is the same number, score three cards."},
-//     {name: "Green Screen", cardNum: "16", imageName: "Green+Screen.webp", cardText: "When a Grotto you have in play is discarded, you may attach it face up onto Green Screen instead. When you would score a card, you may discard the top three cards of your deck instead. If you do, choose a Grotto attached to Green Screen and summon it free of cost."},
-//     {name: "Mr. Greenz", cardNum: "2", imageName: "B.F.+Bugleberry.webp", cardText: "When a card effect has you roll exactly one die, roll an additional die. You may choose which die result to use for the card effect. When you roll exactly two dice, if the result on both die is the same number, score three cards."},
-//     {name: "Mr. Greenz", cardNum: "15", imageName: "Bat+Boy.webp", cardText: "When a card effect has you roll exactly one die, roll an additional die. You may choose which die result to use for the card effect. When you roll exactly two dice, if the result on both die is the same number, score three cards."},
-//     {name: "Mr. Greenz", cardNum: "14", imageName: "Byeah+Prime.webp", cardText: "When a card effect has you roll exactly one die, roll an additional die. You may choose which die result to use for the card effect. When you roll exactly two dice, if the result on both die is the same number, score three cards."},
-//     {name: "Mr. Greenz", cardNum: "8", imageName: "Carl+Griffinsteed.webp", cardText: "When a card effect has you roll exactly one die, roll an additional die. You may choose which die result to use for the card effect. When you roll exactly two dice, if the result on both die is the same number, score three cards."},
-//     {name: "Mr. Greenz", cardNum: "4", imageName: "Demon+Lord+Zeraxos.webp", cardText: "When a card effect has you roll exactly one die, roll an additional die. You may choose which die result to use for the card effect. When you roll exactly two dice, if the result on both die is the same number, score three cards."},
-//     {name: "Mr. Greenz", cardNum: "1", imageName: "Glueman.webp", cardText: "When a card effect has you roll exactly one die, roll an additional die. You may choose which die result to use for the card effect. When you roll exactly two dice, if the result on both die is the same number, score three cards."},
-//     {name: "Mr. Greenz", cardNum: "3", imageName: "Grandpa.webp", cardText: "When a card effect has you roll exactly one die, roll an additional die. You may choose which die result to use for the card effect. When you roll exactly two dice, if the result on both die is the same number, score three cards."},
-//     {name: "Mr. Greenz", cardNum: "7", imageName: "Jerma.webp", cardText: "When a card effect has you roll exactly one die, roll an additional die. You may choose which die result to use for the card effect. When you roll exactly two dice, if the result on both die is the same number, score three cards."},
-//     {name: "Mr. Greenz", cardNum: "9", imageName: "Jerma+Earth.webp", cardText: "When a card effect has you roll exactly one die, roll an additional die. You may choose which die result to use for the card effect. When you roll exactly two dice, if the result on both die is the same number, score three cards."},
-//     {name: "Mr. Greenz", cardNum: "10", imageName: "Jerma+Moon.webp", cardText: "When a card effect has you roll exactly one die, roll an additional die. You may choose which die result to use for the card effect. When you roll exactly two dice, if the result on both die is the same number, score three cards."},
-//     {name: "Mr. Greenz", cardNum: "11", imageName: "Jerma+Venus.webp", cardText: "When a card effect has you roll exactly one die, roll an additional die. You may choose which die result to use for the card effect. When you roll exactly two dice, if the result on both die is the same number, score three cards."},
-//     {name: "Mr. Greenz", cardNum: "12", imageName: "Jerma+Pluto.webp", cardText: "When a card effect has you roll exactly one die, roll an additional die. You may choose which die result to use for the card effect. When you roll exactly two dice, if the result on both die is the same number, score three cards."},
-//     {name: "Mr. Greenz", cardNum: "5", imageName: "JEX.webp", cardText: "When a card effect has you roll exactly one die, roll an additional die. You may choose which die result to use for the card effect. When you roll exactly two dice, if the result on both die is the same number, score three cards."},
-//     {name: "Mr. Greenz", cardNum: "13", imageName: "The+Jerm.webp", cardText: "When a card effect has you roll exactly one die, roll an additional die. You may choose which die result to use for the card effect. When you roll exactly two dice, if the result on both die is the same number, score three cards."}
-// ]
+var loadEventBus = true;
 
-var cardTest = [];
+var formattedAllCards: { name: string, power: any, goal: any, cost: any, effect: string, flavorText: string, type: string, artist: string, imageName: string, deckCardImage: string, cardNum: string }[] = [];
+
+// var currDeckArr: { cost: string, cardNum: string, name: string, imageName: string, count: string, isEpic: boolean }[] = [];
 for (var card in allCards) {
-    console.log('card :>> ', typeof card);
-    cardTest.push(allCards[card as keyof typeof allCards])
+    formattedAllCards.push(allCards[card as keyof typeof allCards]);
 }
-console.log('cardTest :>> ', cardTest);
-var cardArray = cardTest
-// const cardArrayUse = useState();
+var cardArray = formattedAllCards;
+console.log('cardArray :>> ', cardArray);
 
-// componentDidMount() {
-//     eventBus.on("couponApply", (data) =>
-//       this.setState({ message: data.message })
-//     );
-//   }
+const isSearchInCardValue = (search: string, value: string) => {
+    return value.toLowerCase().includes(search.toLowerCase());
+}
 
+const isEpicInCardValue = (search: string, value: string) => {
+    return search === "Any" || (search === "yes" && value[0] === '✦') || (search === "no" && value[0] !== '✦');
+}
 
+const isNumberInCardValue = (search: string, value: string) => {
+    if (search == "") return true;
+    if (value == "-") return false; // it is not applicable to this card if it has -
+    const re = /(\d.*)/g;
+    var numMatch: string | number | RegExpExecArray | null = re.exec(search);
+    if (numMatch) {
+        var num = numMatch.pop()
+        if (num) {
+            var numSearch = parseInt(num);
+            var opMatch = search.replaceAll(re, "");
+            switch (opMatch) {
+                case "<":   return parseInt(value) < numSearch;
+                case ">":   return parseInt(value) > numSearch;
+                case "<=":  return parseInt(value) <= numSearch;
+                case ">=":  return parseInt(value) >= numSearch;
+                case "!=":  return parseInt(value) != numSearch;
+                case "=":  return parseInt(value) == numSearch;
+                default:    return parseInt(value) == numSearch;
+            }
+        }
+    }
+    return false;
+}
 
 const CardList = () => {
+    const [cardList, setCardList] = useState(cardArray);
+
+    if (loadEventBus) {
+        loadEventBus = false;
+        eventBus.on("searchSubmit", (search: any) => {
+                console.log('cardList :>> ', cardList);
+                console.log('CARD LIST HIT search :>> ', search);
+                loadEventBus = true;
+                var newList = formattedAllCards.filter(currCard => {
+                    return  isSearchInCardValue(search.name, currCard.name) &&
+                            isSearchInCardValue(search.type, currCard.type) &&
+                            isEpicInCardValue(search.epic, currCard.type) &&
+                            isNumberInCardValue(search.power, currCard.power) &&
+                            isNumberInCardValue(search.goal, currCard.goal) &&
+                            isNumberInCardValue(search.cost, currCard.cost) &&
+                            isSearchInCardValue(search.effect, currCard.effect)
+                });
+                console.log('newList :>> ', newList);
+                setCardList([...newList])
+            }
+        );
+    }
+
     return (
         <Container className="containerCardList">
-            {cardArray.map(card => (
+            <SearchBar></SearchBar>
+
+            {cardList.map(card => (
                 <Card
                     name={card.name}
                     imageName={card.imageName}
