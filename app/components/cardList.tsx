@@ -27,7 +27,9 @@ const isEpicInCardValue = (search: string, value: string) => {
     return search === "Any" || (search === "yes" && value[0] === '✦') || (search === "no" && value[0] !== '✦');
 }
 
-const isPowerInCardValue = (search: string, value: string) => {
+const isNumberInCardValue = (search: string, value: string) => {
+    if (search == "") return true;
+    if (value == "-") return false; // it is not applicable to this card if it has -
     const re = /(\d.*)/g;
     var numMatch: string | number | RegExpExecArray | null = re.exec(search);
     if (numMatch) {
@@ -36,20 +38,13 @@ const isPowerInCardValue = (search: string, value: string) => {
             var numSearch = parseInt(num);
             var opMatch = search.replaceAll(re, "");
             switch (opMatch) {
-                case "<":
-                    return parseInt(value) < numSearch;
-                case ">":
-                    return parseInt(value) > numSearch;
-                case "<=":
-                    return parseInt(value) <= numSearch;
-                case ">=":
-                    return parseInt(value) >= numSearch;
-                case "!=":
-                    return parseInt(value) != numSearch;
-                case "=":
-                    return parseInt(value) == numSearch;
-                default:
-                    return parseInt(value) == numSearch;
+                case "<":   return parseInt(value) < numSearch;
+                case ">":   return parseInt(value) > numSearch;
+                case "<=":  return parseInt(value) <= numSearch;
+                case ">=":  return parseInt(value) >= numSearch;
+                case "!=":  return parseInt(value) != numSearch;
+                case "=":  return parseInt(value) == numSearch;
+                default:    return parseInt(value) == numSearch;
             }
         }
     }
@@ -69,7 +64,10 @@ const CardList = () => {
                     return  isSearchInCardValue(search.name, currCard.name) &&
                             isSearchInCardValue(search.type, currCard.type) &&
                             isEpicInCardValue(search.epic, currCard.type) &&
-                            isPowerInCardValue(search.power, currCard.power)
+                            isNumberInCardValue(search.power, currCard.power) &&
+                            isNumberInCardValue(search.goal, currCard.goal) &&
+                            isNumberInCardValue(search.cost, currCard.cost) &&
+                            isSearchInCardValue(search.effect, currCard.effect)
                 });
                 console.log('newList :>> ', newList);
                 setCardList([...newList])
