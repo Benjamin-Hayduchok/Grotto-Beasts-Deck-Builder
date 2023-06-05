@@ -52,9 +52,12 @@ const isNumberInCardValue = (search: string, value: string) => {
 }
 
 const CardList = () => {
+    console.log("AHHH WHAT")
+    console.log('loadEventBus', loadEventBus)
     const [cardList, setCardList] = useState(cardArray);
 
     if (loadEventBus) {
+        console.log("LOADED EVENT BUS")
         loadEventBus = false;
         eventBus.on("searchSubmit", (search: any) => {
                 console.log('cardList :>> ', cardList);
