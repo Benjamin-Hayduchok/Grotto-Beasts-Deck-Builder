@@ -27,8 +27,6 @@ export default function RootLayout({
           </section>
         </nav>
           <nav>
-            <a href="/collection">Collection!!!</a>
-            <a href="/deckbuilder">Deck Builder</a>
           <BrowserRouter>
             <Routes>
             <Route path="/">  
