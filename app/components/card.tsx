@@ -69,7 +69,7 @@ const Card = (props:
                 onMouseLeave={removeListener}
                 onMouseMove={rotateToMouse}
             >
-                3D Card
+                i
                 <div ref={glowRef} className="glow" />
             </div>
         </div>
