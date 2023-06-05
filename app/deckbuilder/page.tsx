@@ -7,7 +7,6 @@ import Deck from '../components/deck'
 export default function DeckBuilder() {
     return (
         <div>
-            deck builder
             <StickyBox className='deckSticky' offsetTop={20} offsetBottom={20}>
                 <Deck>
                 </Deck>
