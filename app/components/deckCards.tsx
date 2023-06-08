@@ -67,7 +67,7 @@ const checkForMultipleEpics = () => {
 
 var currDeckArr: { cost: string, cardNum: string, name: string, imageName: string, count: string, isEpic: boolean }[] = [];
 
-const DeckCards = (props: any) => {
+const DeckCards = (props: {collectionView: boolean, children: React.ReactNode}) => {
   const [deckArr, setDeckArr] = useState(currDeckArr);
   // const [deckCount, setDeckCount] = useState(0);
 
