@@ -12,12 +12,10 @@ var loadEventBus = true;
 
 var formattedAllCards: { name: string, power: any, goal: any, cost: any, effect: string, flavorText: string, type: string, artist: string, imageName: string, deckCardImage: string, cardNum: string }[] = [];
 
-// var currDeckArr: { cost: string, cardNum: string, name: string, imageName: string, count: string, isEpic: boolean }[] = [];
 for (var card in allCards) {
     formattedAllCards.push(allCards[card as keyof typeof allCards]);
 }
 var cardArray = formattedAllCards;
-console.log('cardArray :>> ', cardArray);
 
 const isSearchInCardValue = (search: string, value: string) => {
     return value.toLowerCase().includes(search.toLowerCase());
@@ -51,17 +49,12 @@ const isNumberInCardValue = (search: string, value: string) => {
     return false;
 }
 
-const CardList = () => {
-    console.log("AHHH WHAT")
-    console.log('loadEventBus', loadEventBus)
+const CardList = (props: {collectionView: boolean}) => {
     const [cardList, setCardList] = useState(cardArray);
 
     if (loadEventBus) {
-        console.log("LOADED EVENT BUS")
         loadEventBus = false;
         eventBus.on("searchSubmit", (search: any) => {
-                console.log('cardList :>> ', cardList);
-                console.log('CARD LIST HIT search :>> ', search);
                 loadEventBus = true;
                 var newList = formattedAllCards.filter(currCard => {
                     return  isSearchInCardValue(search.name, currCard.name) &&
@@ -72,7 +65,6 @@ const CardList = () => {
                             isNumberInCardValue(search.cost, currCard.cost) &&
                             isSearchInCardValue(search.effect, currCard.effect)
                 });
-                console.log('newList :>> ', newList);
                 setCardList([...newList])
             }
         );
@@ -88,6 +80,7 @@ const CardList = () => {
                     imageName={card.imageName}
                     effect ={card.effect}
                     cardNum = {card.cardNum}
+                    collectionView = {props.collectionView}
                 />
             ))}
         </Container>
