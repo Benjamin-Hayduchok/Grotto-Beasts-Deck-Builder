@@ -12,7 +12,7 @@ const CollectionPage = (props: any) => {
                 <Deck collectionView={true}>
                 </Deck>
             </StickyBox>
-            <CardList></CardList>
+            <CardList collectionView={true}></CardList>
         </div>
     )
 }

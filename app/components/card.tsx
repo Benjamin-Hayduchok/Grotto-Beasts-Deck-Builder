@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import './../../styles/globals.css';
 import eventBus from './eventBus';
+import CollectionCardHover from './collectionCardHover';
 
 function addCard(card: {cardNum: string}) {
     console.log('ON CLICK card', card)
@@ -13,7 +14,7 @@ function addCard(card: {cardNum: string}) {
 
 
 const Card = (props: 
-        { name: string, cardNum: string, imageName: string, effect: string }
+        { name: string, cardNum: string, imageName: string, effect: string, collectionView: boolean}
 ) => {
     const { name, imageName, effect } = props;
     const inputRef = useRef<HTMLDivElement>(null);
@@ -61,18 +62,22 @@ const Card = (props:
     };
     useEffect(() => {});
     return (
-        <div className="cardContainer" onClick={() => addCard(props)}>
-            <div
-                ref={inputRef}
-                className="card"
-                style={{ backgroundImage: `url(${imageName})`, backgroundRepeat: "no-repeat", backgroundSize: "contain", border: "red 1px solid"}}
-                onMouseLeave={removeListener}
-                onMouseMove={rotateToMouse}
-            >
-                i
-                <div ref={glowRef} className="glow" />
+            <div className="cardContainer" onClick={() => addCard(props)}>
+                <div
+                    ref={inputRef}
+                    className="card"
+                    style={{ backgroundImage: `url(${imageName})`, backgroundRepeat: "no-repeat", backgroundSize: "contain", border: "red 1px solid"}}
+                    onMouseLeave={removeListener}
+                    onMouseMove={rotateToMouse}
+                >
+                    i
+                    <div ref={glowRef} className="glow"/>
+                </div>
+            <CollectionCardHover collectionView={props.collectionView}></CollectionCardHover>
+
             </div>
-        </div>
+
+
     );
     }
 

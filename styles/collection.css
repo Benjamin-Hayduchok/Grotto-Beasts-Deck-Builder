@@ -1,0 +1,91 @@
+@font-face {
+    font-family: "AclonicaRegular";
+    src: local("AclonicaRegular"),
+     url("./../app/fonts/Aclonica-Regular.ttf") format("truetype");
+   }
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #b07d50;
+	font-family: "AclonicaRegular";
+	font-size: 18px;
+}
+
+.collectionPlusButt {
+    font-family: "AclonicaRegular";
+    font-size: 1.35vw;
+    font-weight: bold;
+    color: black;
+    border: 1px outset blue;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height:100%;
+    width: 100%;
+    cursor:pointer;
+    position: relative;
+    z-index: 5;
+  }
+
+  .collectionMinusButt {
+    font-family: "AclonicaRegular";
+    font-size: 1.35vw;
+    font-weight: bold;
+    color: black;
+    border: 1px outset blue;
+    height:100%;
+    width: 100%;
+    cursor:pointer;
+    position: relative;
+    z-index: 5;
+  }
+
+  .collectionCardHoverContainer {
+    position: relative;
+    display: flex;
+    margin-top: 2vh;
+  }
+
+  .infoButt:hover, .collectionMinusButt:hover, .collectionPlusButt:hover {
+    background-color: darkgreen;
+    color: yellow;
+  }
+
+  .collectionCardCount {
+    width: 33%;
+    text-align: center;
+	font-size: 1.5em;
+  }
+
+  .fancyButton {
+	  display: inline-block;
+	  margin-right: 5px;
+	  height: 3.5vh;
+	  min-width: 100px;
+	  background-color: #348aa7;
+	  border: none;
+	  outline: none;
+	  color: white;
+	  font-family: inherit;
+	  font-weight: 400;
+	  font-size: 1.5em;
+	  border-radius: 3px;
+	  box-shadow: 0 5px 0px #348aa7;
+	  border-bottom: 2px solid #30809b;
+	  text-align: center;
+ }
+
+  .fancyButton:hover {
+	  background: #2e7a94;
+	  box-shadow: 0 4px 1px #2e7a94;
+	  border-bottom: 2px solid #2a7088;
+	  transition: all 0.1s ease-in;
+ }
+
+  .fancyButton:active {
+	  transform: translateY(4px);
+	  border-bottom-width: 2px;
+	  box-shadow: none;
+ }
+
+ 
