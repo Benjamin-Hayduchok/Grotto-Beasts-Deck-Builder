@@ -5,9 +5,9 @@ const util = {
         return toStringCount.toString();
     },
     toStringDec(input) {
+        if (input === "0") return "0";
         var toStringCount = parseInt(input);
         toStringCount--;
-        console.log('toStringCount', toStringCount)
         return toStringCount.toString();
     }
 }
