@@ -3,7 +3,17 @@ import eventBus from './eventBus';
 import util from './util';
 import Swal from 'sweetalert2';
 
-export default function deckCounter(props: any) {
+export default function deckCounter(props: {collectionView: boolean}) {
+  if (props.collectionView) {
+    const [deckListCount, setDeckListCount] = useState("0");
+    return (
+      <div className="containerDeckCounter">
+        <p className="deckCounter">
+          {deckListCount} Decks
+        </p>
+    </div>
+    )
+  }
   const [cardCount, setCardCount] = useState("0");
   const [maxCount, setMaxCount] = useState("40"); // used specifically for byeah prime
   eventBus.on("incrementDeckCounter", (data: any) => {

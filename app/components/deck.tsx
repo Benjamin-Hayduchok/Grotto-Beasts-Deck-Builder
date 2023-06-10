@@ -2,21 +2,21 @@ import React, { Component } from 'react'
 import DeckHeader from './deckHeader'
 import DeckCards from './deckCards'
 
-type Props = {}
+type DeckProps = {
+  collectionView: boolean;
+  children: React.ReactNode;
+};
 
-type State = {}
+const Deck = (props: DeckProps) => {
 
-export default class deck extends Component<Props, State> {
-  state = {}
-
-  render() {
     return (
         <div className="deck">
-            <DeckHeader>
+            <DeckHeader collectionView={props.collectionView}>
             </DeckHeader>
-            <DeckCards>
+            <DeckCards collectionView={props.collectionView}>
             </DeckCards>
         </div>
     )
-  }
 }
+
+export default Deck;
