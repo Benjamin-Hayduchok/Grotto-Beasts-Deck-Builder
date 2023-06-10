@@ -1,17 +1,12 @@
 import React from 'react';
 import './../../styles/collection.css';
 
-const minusButtonPressed = () => {
-    console.log("- PRESSED")
-    return;
-}
-
-export default function CardMinusButton() {
+export default function CardMinusButton(props: any) {
     return (
         <input
             style={{backgroundColor: "#348aa7"}}
             className="fancyButton" type="button" value="-"
-            onClick={() => minusButtonPressed()}
+            onClick={() => props.cardDec()}
         />
     )
 }
