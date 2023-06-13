@@ -81,6 +81,7 @@ const CardList = (props: {collectionView: boolean}) => {
                     effect ={card.effect}
                     cardNum = {card.cardNum}
                     collectionView = {props.collectionView}
+                    key={card.cardNum}
                 />
             ))}
         </Container>

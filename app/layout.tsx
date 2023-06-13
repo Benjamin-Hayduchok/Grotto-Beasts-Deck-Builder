@@ -28,7 +28,7 @@ export default function RootLayout({
             </section>
           </nav>
           <nav>
-          <BrowserRouter>
+          {/* <BrowserRouter>
             <Routes>
               <Route path="/">  
                 Home
@@ -44,7 +44,7 @@ export default function RootLayout({
               </Route>
             </Routes>
 
-          </BrowserRouter>
+          </BrowserRouter> */}
           </nav>
           
             

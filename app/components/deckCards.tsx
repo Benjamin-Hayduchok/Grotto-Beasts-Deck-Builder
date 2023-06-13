@@ -6,12 +6,12 @@ import util from './util'
 import Swal from 'sweetalert2'
 
 async function getDeckList() {
-  const res = await fetch(
-    'http://127.0.0.1:8090/api/collections/deckLists/records?filter=(user.username="Test")',
-    {cache: 'no-store'}
-  );
-  const data = await res.json();
-  console.log('data', data)
+  // const res = await fetch(
+  //   'http://127.0.0.1:8090/api/collections/deckLists/records?filter=(user.username="Test")',
+  //   {cache: 'no-store'}
+  // );
+  // const data = await res.json();
+  // console.log('data', data)
 }
 
 
@@ -171,6 +171,7 @@ const DeckCards = (props: {collectionView: boolean, children: React.ReactNode}) 
                 count={card.count}
                 cost={card.cost}
                 isEpic={card.isEpic}
+                key={card.cardNum}
             />
         ))}
     </div>

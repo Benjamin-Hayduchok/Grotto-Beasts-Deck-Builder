@@ -3,7 +3,7 @@ import DeckCounter from './deckCounter'
 import eventBus from './eventBus';
 
 
-export default function deckCards(props: {collectionView: boolean, children: React.ReactNode}) {
+export default function DeckHeader(props: {collectionView: boolean, children: React.ReactNode}) {
 
   const [currChallenger, setCurrChallenger] = useState("No Challenger Selected"); // currently a string, might make it an object in the future
 
