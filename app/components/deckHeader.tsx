@@ -4,8 +4,8 @@ import eventBus from './eventBus';
 
 
 export default function DeckHeader(props: {collectionView: boolean, children: React.ReactNode}) {
-
   const [currChallenger, setCurrChallenger] = useState("No Challenger Selected"); // currently a string, might make it an object in the future
+  const [force, setForce] = useState(0)
 
   if (props.collectionView) {
     return (
@@ -17,6 +17,7 @@ export default function DeckHeader(props: {collectionView: boolean, children: Re
   }
   eventBus.on("addChallengerToDeck", (data: any) => {
       setCurrChallenger(data.card.name);
+      setForce(force + 1);
     }
   );
   return (

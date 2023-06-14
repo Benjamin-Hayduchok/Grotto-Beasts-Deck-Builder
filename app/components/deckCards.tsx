@@ -51,7 +51,6 @@ const canUseEpic = (cardToAdd: {isEpic: boolean, name: string}) => {
 }
 
 const getAllowedLength = (currChallenger: string) => {
-  console.log('currChallenger', currChallenger)
   if (currChallenger === "Byeah Prime") return 60;
   return 40;
 }
@@ -95,8 +94,6 @@ const DeckCards = (props: {collectionView: boolean, children: React.ReactNode}) 
   if (loadInc) {
     loadInc = false;
     eventBus.on("addCardToDeck", (data: any) => {
-      console.log('getAllowedLength(currChallengerName)', getAllowedLength(currChallengerName))
-      console.log('deckCount', deckCount)
         if (deckCount >= getAllowedLength(currChallengerName)) {
           setDeckArr([...currDeckArr]);
           loadInc = true;
@@ -160,7 +157,6 @@ const DeckCards = (props: {collectionView: boolean, children: React.ReactNode}) 
     );
     setDeckArr([...currDeckArr]);
   } 
-  console.log('currDeckArr', currDeckArr)
   return (
     <div className='deckCards'  id="style-1">
         {deckArr.map(card => (
