@@ -1,7 +1,8 @@
 import React from 'react';
 import '../../../styles/login.css';
+import Swal from "sweetalert2";
 
-export default function RegisterForm(props: any) {
+const RegisterForm = (props: any) => {
     async function createAccount(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         if (typeof document !== 'undefined') {
@@ -19,6 +20,30 @@ export default function RegisterForm(props: any) {
             //     body: JSON.stringify(userObj)
             // });
             // console.log('response', response)
+            const response = await fetch("https://grotto-beasts-test.fly.dev/api/collections/users/records", {   
+                method: "POST",
+                cache: "no-cache",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(userObj)
+            });
+            console.log('response', response)
+            // var response = {status: 200};
+            if (response.status === 200) {
+                Swal.fire({
+                    title: '<p>You have created an account. Redirecting you now!</p>',
+                    icon: 'success',
+                    confirmButtonColor: '#257d52',
+                    confirmButtonText: 'Continue'
+                }).then(() => {
+                    if (typeof window !== "undefined" && typeof window.location !== "undefined") {
+                        const url = new URL(window.location.href);
+                        window.location.href = url.origin + "/collection"
+                    };
+                });
+            }
+
         }
     }
     return (
@@ -38,3 +63,5 @@ export default function RegisterForm(props: any) {
         </form>
     )
 }
+
+export default RegisterForm;

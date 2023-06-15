@@ -12,6 +12,12 @@ async function getDeckList() {
   // );
   // const data = await res.json();
   // console.log('data', data)
+  // const res = await fetch(
+  // 'http://127.0.0.1:8090/api/collections/deckLists/records?filter=(user.username="Test")',
+  // {cache: 'no-store'}
+  // );
+  // const data = await res.json();
+  // console.log('data', data)
 }
 
 
