@@ -7,7 +7,7 @@ const RegisterForm = (props: any) => {
         e.preventDefault();
         if (typeof document !== 'undefined') {
             const userObj = {
-              username: (document.getElementById("usernameLogin") as HTMLInputElement).value,
+              email: (document.getElementById("emailLogin") as HTMLInputElement).value,
               password: (document.getElementById("passwordLogin") as HTMLInputElement).value,
               passwordConfirm: (document.getElementById("passwordConfirmLogin") as HTMLInputElement).value
             }
@@ -39,7 +39,7 @@ const RegisterForm = (props: any) => {
                 }).then(() => {
                     if (typeof window !== "undefined" && typeof window.location !== "undefined") {
                         const url = new URL(window.location.href);
-                        window.location.href = url.origin + "/collection"
+                        window.location.href = url.origin + "/collection";
                     };
                 });
             }
@@ -48,7 +48,7 @@ const RegisterForm = (props: any) => {
     }
     return (
         <form className="login-form" onSubmit={createAccount}>   
-            <input type="text" placeholder="username" id="usernameLogin"/>
+            <input type="email" placeholder="email" id="emailLogin"/>
             <input type="password" placeholder="password" id="passwordLogin"/>
             <input type="password" placeholder="confirm password" id="passwordConfirmLogin"/>
             <button>
