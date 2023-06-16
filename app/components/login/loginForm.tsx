@@ -2,21 +2,21 @@ import React from 'react';
 import '../../../styles/login.css';
 
 export default function LoginForm(props: any) {
-    const login = (e: React.FormEvent<HTMLFormElement>) => {
+    const login = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (typeof document !== 'undefined') {
             const userObj = {
-              username: (document.getElementById("usernameRegister") as HTMLInputElement).value,
-              password: (document.getElementById("passwordRegister") as HTMLInputElement).value,
-              passwordConfirm: (document.getElementById("passwordConfirmRegister") as HTMLInputElement).value
+                email: (document.getElementById("emailRegister") as HTMLInputElement).value,
+                password: (document.getElementById("passwordRegister") as HTMLInputElement).value,
             }
+            const url = new URL(window.location.href);
+            window.location.href = url.origin + "/collection";
         }
     }
     return (
         <form className="login-form" onSubmit={login}>
-            <input type="text" placeholder="username" id="usernameRegister"/>
+            <input type="email" placeholder="email" id="emailRegister"/>
             <input type="password" placeholder="password" id="passwordRegister"/>
-            <input type="password" placeholder="confirm password" id="passwordConfirmRegister"/>
             <button>
                 login
             </button>
