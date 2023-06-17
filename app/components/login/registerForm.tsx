@@ -1,56 +1,32 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../../../styles/login.css';
 import Swal from "sweetalert2";
+import util from '../../components/util';
 
 const RegisterForm = (props: any) => {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [passwordConfirm, setPasswordConfirm] = useState("");
+
     async function createAccount(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        if (typeof document !== 'undefined') {
-            const userObj = {
-              email: (document.getElementById("emailLogin") as HTMLInputElement).value,
-              password: (document.getElementById("passwordLogin") as HTMLInputElement).value,
-              passwordConfirm: (document.getElementById("passwordConfirmLogin") as HTMLInputElement).value
-            }
-            // const response = await fetch("http://127.0.0.1:8090/api/collections/users/records", {   
-            //     method: "POST",
-            //     cache: "no-cache",
-            //     headers: {
-            //         "Content-Type": "application/json",
-            //     },
-            //     body: JSON.stringify(userObj)
-            // });
-            // console.log('response', response)
-            const response = await fetch("https://grotto-beasts-test.fly.dev/api/collections/users/records", {   
-                method: "POST",
-                cache: "no-cache",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(userObj)
+        if (typeof document === 'undefined') return;
+        if ((await util.registerToAPI(username, password, passwordConfirm)).status === 200) {
+            Swal.fire({
+                title: '<p>You have created an account. Redirecting you now!</p>',
+                icon: 'success',
+                confirmButtonColor: '#257d52',
+                confirmButtonText: 'Continue'
+            }).then(() => {
+                window.location.href = new URL(window.location.href).origin + "/collection";
             });
-            console.log('response', response)
-            // var response = {status: 200};
-            if (response.status === 200) {
-                Swal.fire({
-                    title: '<p>You have created an account. Redirecting you now!</p>',
-                    icon: 'success',
-                    confirmButtonColor: '#257d52',
-                    confirmButtonText: 'Continue'
-                }).then(() => {
-                    if (typeof window !== "undefined" && typeof window.location !== "undefined") {
-                        const url = new URL(window.location.href);
-                        window.location.href = url.origin + "/collection";
-                    };
-                });
-            }
-
         }
     }
     return (
         <form className="login-form" onSubmit={createAccount}>   
-            <input type="email" placeholder="email" id="emailLogin"/>
-            <input type="password" placeholder="password" id="passwordLogin"/>
-            <input type="password" placeholder="confirm password" id="passwordConfirmLogin"/>
+            <input type="text" placeholder="username" id="usernameReg" onChange={e=> {setUsername(e.target.value)}}/>
+            <input type="password" placeholder="password" id="passwordReg" onChange={e=> {setPassword(e.target.value)}}/>
+            <input type="password" placeholder="confirm password" id="passwordConfirmReg" onChange={e=> {setPasswordConfirm(e.target.value)}}/>
             <button>
                 create
             </button>
