@@ -1,7 +1,6 @@
 "use client";
 
-import "./../../styles/globals.css";
-import Card from "./card";
+import { Card } from "./tailwindComponents/card/card";
 import Container from "react-bootstrap/Container";
 import SearchBar from "./searchBar";
 import allCards from "./card-list.json";
@@ -98,16 +97,18 @@ const CardList = (props: { collectionView: boolean }) => {
     <Container className="containerCardList">
       <SearchBar></SearchBar>
 
-      {cardList.map((card) => (
-        <Card
-          name={card.name}
-          imageName={card.imageName}
-          effect={card.effect}
-          cardNum={card.cardNum}
-          collectionView={props.collectionView}
-          key={card.cardNum}
-        />
-      ))}
+      <div className="flex gap-6 flex-wrap justify-center">
+        {cardList.map((card) => (
+          <Card
+            name={card.name}
+            imageName={card.imageName}
+            effect={card.effect}
+            cardNum={card.cardNum}
+            collectionView={props.collectionView}
+            key={card.cardNum}
+          />
+        ))}
+      </div>
     </Container>
   );
 };

@@ -36,7 +36,6 @@ body {
   background-color: red;
 }
 
-
 p {
   margin-top: 0;
   font-size: 20px;
@@ -68,9 +67,10 @@ button {
   margin-right: 15vh;
   margin-left: 5vw;
   width: 65vw;
-  border:orange 1px solid;
+  border: orange 1px solid;
 }
 
+/* NV - REPLACED BY TW COMPONENT */
 .card {
   font-weight: bold;
   padding: 1em;
@@ -98,6 +98,7 @@ button {
   box-shadow: 0 5px 20px 5px #00000044;
 }
 
+/* NV - REPLACED BY TW COMPONENT */
 .card .glow {
   position: absolute;
   width: 100%;
@@ -108,9 +109,10 @@ button {
   background-image: radial-gradient(circle at 50% -20%, #ffffff22, #0000000f);
 }
 
+/* NV - REPLACED BY TW COMPONENT */
 .cardContainer {
   perspective: 1500px;
-  max-width:50%;
+  max-width: 50%;
   display: inline-block;
   padding: 1%;
 }
@@ -137,7 +139,6 @@ button {
   background-color: rgb(92, 64, 51);
   background-repeat: no-repeat;
   background-size: cover;
-
 }
 
 .deck {
@@ -152,7 +153,11 @@ button {
   border-radius: 5px;
   margin-top: -2%;
   background-color: rgb(127, 90, 58);
-  background-image: linear-gradient(to bottom right, rgb(121, 66, 18) , rgb(184, 146, 114));
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(121, 66, 18),
+    rgb(184, 146, 114)
+  );
   z-index: 3;
 }
 
@@ -170,7 +175,7 @@ button {
 
   color: rgb(252, 209, 68);
   font-family: "AclonicaRegular";
-  font-size:  22px;
+  font-size: 22px;
   display: flex;
 
   min-width: 20px;
@@ -192,11 +197,10 @@ button {
   height: 89%;
 }
 
-#style-1::-webkit-scrollbar-track
-{
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	border-radius: 10px;
-	background-color: #F5F5F5;
+#style-1::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #f5f5f5;
 }
 
 .deckCard {
@@ -205,32 +209,29 @@ button {
   width: 96%;
   justify-content: center;
   background-color: rgb(215, 167, 67);
-  border: 3px solid rgb(42, 40, 40); 
+  border: 3px solid rgb(42, 40, 40);
   border-radius: 5px;
   border-style: outset;
-  margin:auto;
+  margin: auto;
   margin-top: 1%;
   position: relative;
 }
 
-#style-1::-webkit-scrollbar-track
-{
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	border-radius: 10px;
-	background-color: #F5F5F5;
+#style-1::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #f5f5f5;
 }
 
-#style-1::-webkit-scrollbar
-{
-	width: 12px;
-	background-color: #F5F5F5;
+#style-1::-webkit-scrollbar {
+  width: 12px;
+  background-color: #f5f5f5;
 }
 
-#style-1::-webkit-scrollbar-thumb
-{
-	border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: #555;
+#style-1::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #555;
 }
 
 .deckCardName {
@@ -258,10 +259,10 @@ button {
 @font-face {
   font-family: "AclonicaRegular";
   src: local("AclonicaRegular"),
-   url("./../app/fonts/Aclonica-Regular.ttf") format("truetype");
- }
+    url("./../app/fonts/Aclonica-Regular.ttf") format("truetype");
+}
 
- .epicTag {
+.epicTag {
   font-family: "AclonicaRegular";
   text-shadow: 0px 0px 4px white;
   font-size: 1.5vw;
@@ -273,7 +274,7 @@ button {
   transform: translateY(-50%);
 }
 
-.cardCount{
+.cardCount {
   font-family: "AclonicaRegular";
   color: black;
   text-shadow: 2px 2px 10px whitesmoke;
@@ -300,13 +301,14 @@ button {
   margin-top: 1%;
 }
 
-.minus, .plus{
-  width:20px;
-  height:20px;
-  background:#f2f2f2;
-  border-radius:4px;
-  padding:8px 5px 8px 5px;
-  border:1px solid #ddd;
+.minus,
+.plus {
+  width: 20px;
+  height: 20px;
+  background: #f2f2f2;
+  border-radius: 4px;
+  padding: 8px 5px 8px 5px;
+  border: 1px solid #ddd;
   display: inline-block;
   vertical-align: middle;
   text-align: center;
@@ -333,9 +335,9 @@ button {
   border: 1px outset blue;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  height:100%;
+  height: 100%;
   width: 100%;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .minusButt {
@@ -344,9 +346,9 @@ button {
   font-weight: bold;
   color: black;
   border: 1px outset blue;
-  height:100%;
+  height: 100%;
   width: 100%;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .plusButt {
@@ -357,12 +359,14 @@ button {
   border: 1px outset blue;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  height:100%;
+  height: 100%;
   width: 100%;
-  cursor:pointer;
+  cursor: pointer;
 }
 
-.infoButt:hover, .minusButt:hover, .plusButt:hover {
+.infoButt:hover,
+.minusButt:hover,
+.plusButt:hover {
   background-color: darkgreen;
   color: yellow;
 }
