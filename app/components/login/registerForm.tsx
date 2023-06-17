@@ -7,11 +7,27 @@ const RegisterForm = (props: any) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirm, setPasswordConfirm] = useState("");
+    const [questionSelect, setQuestionSelect] = useState("");
+    const [answer, setAnswer] = useState("");
 
     async function createAccount(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
+        if (questionSelect === "none" || answer === "") {
+            Swal.fire({
+                title: '<p>Please properly select security question and insert an answer.</p>',
+                icon: 'warning',
+                confirmButtonColor: '#257d52',
+                confirmButtonText: 'Continue'
+            });
+            return;
+        }
         if (typeof document === 'undefined') return;
-        if ((await util.registerToAPI(username, password, passwordConfirm)).status === 200) {
+        const response = await util.registerToAPI(username, password, passwordConfirm);
+        console.log('response', response)
+        if (response.id) {
+            // do security question and answer insert
+            await util.addQuestionToAPI(response.id, questionSelect);
+            await util.addAnswerToAPI(response.id, answer);
             Swal.fire({
                 title: '<p>You have created an account. Redirecting you now!</p>',
                 icon: 'success',
@@ -27,6 +43,13 @@ const RegisterForm = (props: any) => {
             <input type="text" placeholder="username" id="usernameReg" onChange={e=> {setUsername(e.target.value)}}/>
             <input type="password" placeholder="password" id="passwordReg" onChange={e=> {setPassword(e.target.value)}}/>
             <input type="password" placeholder="confirm password" id="passwordConfirmReg" onChange={e=> {setPasswordConfirm(e.target.value)}}/>
+            <select className="securitySelect" name="securityQuestion" id="securityQuestion" onChange={e=> {setQuestionSelect(e.target.value)}}>
+                <option className="option" value="none">Select Security Question</option>
+                <option className="option" value="What was the first concert you attended?">What was the first concert you attended?</option>
+                <option className="option" value="What was the make and model of your first car?">What was the make and model of your first car?</option>
+                <option className="option"  value="What is the name of your first pet?">What is the name of your first pet?</option>
+            </select>
+            <input type="text" placeholder="Security Question Answer" id="securityAnswer" onChange={e=> {setAnswer(e.target.value)}}/>
             <button>
                 create
             </button>

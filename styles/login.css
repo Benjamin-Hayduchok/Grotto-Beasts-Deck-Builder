@@ -5,7 +5,8 @@
  }
 
 .login-page {
-  width: 360px;
+  width: 25%;
+  min-width: 420px;
   padding: 8% 0 0;
   margin: auto;
 }
@@ -13,7 +14,7 @@
   position: relative;
   z-index: 1;
   background: #FFFFFF;
-  max-width: 360px;
+  width: 100%;;
   margin: 0 auto 100px;
   padding: 45px;
   text-align: center;
@@ -107,4 +108,10 @@ body {
 }
 .failMessage {
   color: darkred;
+}
+.securitySelect {
+  font-size: small;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 15px;
 }
