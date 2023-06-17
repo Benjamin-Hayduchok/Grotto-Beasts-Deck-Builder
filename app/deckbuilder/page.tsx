@@ -8,11 +8,11 @@ export default function DeckBuilder() {
     return (
         <div>
             <StickyBox className='deckSticky' offsetTop={20} offsetBottom={20}>
-                <Deck>
+                <Deck collectionView={false}>
                 </Deck>
             </StickyBox>
             <br></br>
-            <CardList></CardList>
+            <CardList collectionView={false}></CardList>
         </div>
     )
 }
