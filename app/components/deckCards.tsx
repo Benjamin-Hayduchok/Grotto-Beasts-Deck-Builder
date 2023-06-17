@@ -5,6 +5,21 @@ import cardList from './card-list.json'
 import util from './util'
 import Swal from 'sweetalert2'
 
+async function getDeckList() {
+  // const res = await fetch(
+  //   'http://127.0.0.1:8090/api/collections/deckLists/records?filter=(user.username="Test")',
+  //   {cache: 'no-store'}
+  // );
+  // const data = await res.json();
+  // console.log('data', data)
+  // const res = await fetch(
+  // 'http://127.0.0.1:8090/api/collections/deckLists/records?filter=(user.username="Test")',
+  // {cache: 'no-store'}
+  // );
+  // const data = await res.json();
+  // console.log('data', data)
+}
+
 
 type Props = {}
 
@@ -42,7 +57,6 @@ const canUseEpic = (cardToAdd: {isEpic: boolean, name: string}) => {
 }
 
 const getAllowedLength = (currChallenger: string) => {
-  console.log('currChallenger', currChallenger)
   if (currChallenger === "Byeah Prime") return 60;
   return 40;
 }
@@ -68,6 +82,7 @@ const checkForMultipleEpics = () => {
 var currDeckArr: { cost: string, cardNum: string, name: string, imageName: string, count: string, isEpic: boolean }[] = [];
 
 const DeckCards = (props: {collectionView: boolean, children: React.ReactNode}) => {
+  getDeckList();
   const [deckArr, setDeckArr] = useState(currDeckArr);
   // const [deckCount, setDeckCount] = useState(0);
 
@@ -85,8 +100,6 @@ const DeckCards = (props: {collectionView: boolean, children: React.ReactNode}) 
   if (loadInc) {
     loadInc = false;
     eventBus.on("addCardToDeck", (data: any) => {
-      console.log('getAllowedLength(currChallengerName)', getAllowedLength(currChallengerName))
-      console.log('deckCount', deckCount)
         if (deckCount >= getAllowedLength(currChallengerName)) {
           setDeckArr([...currDeckArr]);
           loadInc = true;
@@ -150,7 +163,6 @@ const DeckCards = (props: {collectionView: boolean, children: React.ReactNode}) 
     );
     setDeckArr([...currDeckArr]);
   } 
-
   return (
     <div className='deckCards'  id="style-1">
         {deckArr.map(card => (
@@ -161,6 +173,7 @@ const DeckCards = (props: {collectionView: boolean, children: React.ReactNode}) 
                 count={card.count}
                 cost={card.cost}
                 isEpic={card.isEpic}
+                key={card.cardNum}
             />
         ))}
     </div>

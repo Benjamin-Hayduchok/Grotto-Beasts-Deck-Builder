@@ -15,7 +15,6 @@ const SearchBar = () => {
         cost: (document.getElementById("cardCost") as HTMLInputElement).value,
         effect: (document.getElementById("cardEffect") as HTMLInputElement).value
       }
-      console.log('searchObj :>> ', searchObj);
       eventBus.dispatch("searchSubmit", searchObj);
     }
 }

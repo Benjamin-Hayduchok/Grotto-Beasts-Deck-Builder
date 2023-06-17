@@ -9,11 +9,11 @@ export default function HomePage() {
         <div>
             home page
             <StickyBox className='deckSticky' offsetTop={20} offsetBottom={20}>
-                <Deck>
+                <Deck collectionView={false}>
                 </Deck>
             </StickyBox>
             <br></br>
-            <CardList></CardList>
+            <CardList collectionView={false}></CardList>
         </div>
     )
 }
