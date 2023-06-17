@@ -23,11 +23,12 @@ export default function RootLayout({
               <ul className="navigation-menu__labels">
                 <li><a href="/collection">Collection</a></li>
                 <li><a href="/deckbuilder">Deck Builder</a></li>
+                <li><a href="/login">Login Page</a></li>
               </ul>
             </section>
           </nav>
           <nav>
-          <BrowserRouter>
+          {/* <BrowserRouter>
             <Routes>
               <Route path="/">  
                 Home
@@ -43,7 +44,7 @@ export default function RootLayout({
               </Route>
             </Routes>
 
-          </BrowserRouter>
+          </BrowserRouter> */}
           </nav>
           
             
