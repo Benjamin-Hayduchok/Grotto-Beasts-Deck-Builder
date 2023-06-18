@@ -21,19 +21,18 @@ const RegisterForm = (props: any) => {
             });
             return;
         }
-        if (typeof document === 'undefined') return;
         const response = await util.registerToAPI(username, password, passwordConfirm);
-        console.log('response', response)
         if (response.id) {
             // do security question and answer insert
-            await util.addQuestionToAPI(response.id, questionSelect);
-            await util.addAnswerToAPI(response.id, answer);
+            await util.addQuestionToAPI(response.id, questionSelect, username);
+            await util.addAnswerToAPI(response.id, answer, username);
             Swal.fire({
                 title: '<p>You have created an account. Redirecting you now!</p>',
                 icon: 'success',
                 confirmButtonColor: '#257d52',
                 confirmButtonText: 'Continue'
             }).then(() => {
+                sessionStorage.setItem("userId", response.id);
                 window.location.href = new URL(window.location.href).origin + "/collection";
             });
         }

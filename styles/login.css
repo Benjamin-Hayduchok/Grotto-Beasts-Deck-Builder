@@ -115,3 +115,7 @@ body {
   height: 50px;
   margin-bottom: 15px;
 }
+.questionMessage {
+  font-size: medium;
+  margin-bottom: 100px;
+}
