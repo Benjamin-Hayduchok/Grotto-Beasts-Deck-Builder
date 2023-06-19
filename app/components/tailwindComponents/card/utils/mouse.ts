@@ -45,6 +45,9 @@ export const useRotateToMouse = (
     if (inputRef.current) {
       inputRef.current.style.transform = "";
     }
+    if (glowRef.current) {
+      glowRef.current.style.backgroundImage = "none";
+    }
   };
 
   return { rotateToMouse, removeListener };
