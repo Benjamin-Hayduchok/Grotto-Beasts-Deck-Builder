@@ -48,11 +48,7 @@ export const Card: FC<CardProps> = ({
           "font-bold",
           "text-right",
           "font-black",
-          "max-w-sm",
           "grow",
-          "min-w-[300px]",
-          // "w-[300px]",
-          // "h-[400px]",
           "shadow-md",
           "hover:shadow-xl",
           "rounded-3xl",
@@ -60,25 +56,18 @@ export const Card: FC<CardProps> = ({
           "bg-no-repeat",
           "bg-contain",
           "overflow-hidden"
-          // "border border-red-600"
         )}
-        style={
-          {
-            // backgroundImage: `url(${imageName})`,
-            // backgroundRepeat: "no-repeat",
-            // backgroundSize: "contain",
-            // border: "red 1px solid",
-          }
-        }
         onMouseLeave={removeListener}
         onMouseMove={rotateToMouse}
       >
         <img
-          className="w-full h-full scale-100"
+          className={classNames(
+            "w-full h-full scale-100",
+            "max-w-[150px] md:max-w-[240px]"
+          )}
           src={imageName}
           alt={`card-${cardNum}`}
         />
-        {/* <div ref={glowRef} className="glow" /> */}
         <div className={"absolute bg-white right-[4%] top-[4%]"}>i</div>
         <div
           ref={glowRef}
