@@ -25,11 +25,10 @@ export const Card: FC<CardProps> = ({
 
   const { rotateToMouse, removeListener } = useRotateToMouse(inputRef, glowRef);
 
-  function addCard(card: { cardNum: string }) {
+  function addCard(card: { cardNum: string, name: string }) {
     console.log("ON CLICK card", card);
 
-    if (parseInt(card.cardNum) <= 32)
-      eventBus.dispatch("addChallengerToDeck", { card: card });
+    if (parseInt(card.cardNum) <= 32) eventBus.dispatch("addChallengerToDeck", { card: card });
     else eventBus.dispatch("addCardToDeck", { card: card });
   }
 
@@ -39,7 +38,7 @@ export const Card: FC<CardProps> = ({
       style={{
         perspective: "1500px",
       }}
-      onClick={() => addCard({ cardNum })}
+      onClick={() => addCard({ cardNum, name })}
     >
       <div
         ref={inputRef}
