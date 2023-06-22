@@ -5,6 +5,7 @@ import {
   ReactNode,
   createContext,
   useContext,
+  useEffect,
   useState,
 } from "react";
 import { XIcon } from "../icons/XIcon";
@@ -24,11 +25,29 @@ export const ModalProvider: FC<PropsWithChildren> = ({ children }) => {
   const openModal = (content: ReactNode) => {
     setModalContent(content);
     setIsModalOpen(true);
+    document.body.classList.add("modal-open");
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
+    document.body.classList.remove("modal-open");
   };
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        closeModal();
+      }
+    };
+
+    if (isModalOpen) {
+      window.addEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isModalOpen]);
 
   const contextValue: ModalContextProps = {
     openModal,
