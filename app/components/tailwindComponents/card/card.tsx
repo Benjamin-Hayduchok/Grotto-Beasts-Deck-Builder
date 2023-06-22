@@ -4,6 +4,7 @@ import { useRotateToMouse } from "./utils/mouse";
 import CollectionCardHover from "../../collectionCardHover";
 import eventBus from "../../eventBus";
 import { InfoIcon } from "./InfoIcon";
+import { useModal } from "../../modalProvider/ModalProvider";
 
 export type CardProps = {
   name: string;
@@ -24,6 +25,7 @@ export const Card: FC<CardProps> = ({
   const glowRef = useRef<HTMLDivElement>(null);
 
   const { rotateToMouse, removeListener } = useRotateToMouse(inputRef, glowRef);
+  const { openModal } = useModal();
 
   function addCard(card: { cardNum: string }) {
     console.log("ON CLICK card", card);
@@ -71,7 +73,10 @@ export const Card: FC<CardProps> = ({
         >
           <div
             className="rounded-full shadow  hover:cursor-pointer hover:brightness-125"
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e) => {
+              e.stopPropagation();
+              openModal(<div>asdf</div>);
+            }}
           >
             <InfoIcon />
           </div>
