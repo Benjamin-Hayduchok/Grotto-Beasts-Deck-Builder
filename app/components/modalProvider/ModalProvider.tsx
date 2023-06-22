@@ -7,10 +7,12 @@ import {
   useContext,
   useState,
 } from "react";
+import { XIcon } from "../icons/XIcon";
 
 interface ModalContextProps {
   openModal: (content: ReactNode) => void;
   closeModal: () => void;
+  isModalOpen: boolean | undefined;
 }
 
 const ModalContext = createContext<ModalContextProps | undefined>(undefined);
@@ -31,13 +33,31 @@ export const ModalProvider: FC<PropsWithChildren> = ({ children }) => {
   const contextValue: ModalContextProps = {
     openModal,
     closeModal,
+    isModalOpen,
   };
 
   return (
     <ModalContext.Provider value={contextValue}>
       {children}
       {isModalOpen && (
-        <div className={classNames("ModalOverlay", "bg-black bg-opacity-50")}>
+        <div
+          className={classNames(
+            "ModalOverlay",
+            "flex items-center justify-center",
+            "fixed top-0 z-50",
+            "bg-black bg-opacity-75",
+            "w-full h-full"
+          )}
+        >
+          <div
+            className={classNames(
+              "absolute top-8 right-8 text-white",
+              "hover:brightness-125 hover:cursor-pointer"
+            )}
+            onClick={() => closeModal()}
+          >
+            <XIcon />
+          </div>
           <div className="ModalContent">{modalContent}</div>
         </div>
       )}

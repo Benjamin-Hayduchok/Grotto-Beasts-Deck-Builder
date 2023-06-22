@@ -14,8 +14,8 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        <main>
-          <ModalProvider>
+        <ModalProvider>
+          <main>
             <nav className="navigation-menu navigation-container">
               <a href="#" className="site-identity-logo">
                 Grotto Beasts! - Decklist & Collection Tracker
@@ -59,8 +59,8 @@ export default function RootLayout({
             </nav>
 
             {children}
-          </ModalProvider>
-        </main>
+          </main>
+        </ModalProvider>
       </body>
     </html>
   );
