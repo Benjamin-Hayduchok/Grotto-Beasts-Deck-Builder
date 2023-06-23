@@ -5,6 +5,7 @@ import CollectionCardHover from "../../collectionCardHover";
 import eventBus from "../../eventBus";
 import { InfoIcon } from "../../icons/InfoIcon";
 import { useModal } from "../../providers/modalProvider/ModalProvider";
+import { CardInfoCarousel } from "../../cardInfo/cardInfoCarousel";
 
 export type CardProps = {
   name: string;
@@ -12,6 +13,14 @@ export type CardProps = {
   imageName: string;
   effect: string;
   collectionView: boolean;
+  showInfoButton?: boolean;
+  glow?: {
+    show: boolean;
+  };
+  cardDimensions?: {
+    maxWidth: string;
+    maxHeight?: string;
+  };
 };
 
 export const Card: FC<CardProps> = ({
@@ -20,6 +29,13 @@ export const Card: FC<CardProps> = ({
   effect,
   collectionView,
   cardNum,
+  showInfoButton = true,
+  glow = {
+    show: true,
+  },
+  cardDimensions = {
+    maxWidth: "max-w-[150px] md:max-w-[240px]",
+  },
 }) => {
   const inputRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
@@ -71,24 +87,30 @@ export const Card: FC<CardProps> = ({
             "z-20"
           )}
         >
-          <div
-            className="rounded-full shadow  hover:cursor-pointer hover:brightness-125"
-            onClick={(e) => {
-              e.stopPropagation();
-              openModal(<div></div>);
-            }}
-          >
-            <InfoIcon />
-          </div>
+          {showInfoButton && (
+            <div
+              className="rounded-full shadow  hover:cursor-pointer hover:brightness-125"
+              onClick={(e) => {
+                e.stopPropagation();
+                // openModal(<div></div>);
+                openModal(<CardInfoCarousel cardNum={parseInt(cardNum)} />);
+              }}
+            >
+              <InfoIcon />
+            </div>
+          )}
         </div>
         <div
           className={classNames(
             "overflow-hidden",
             "rounded-3xl",
-            "max-w-[150px] md:max-w-[240px]",
+            cardDimensions
+              ? cardDimensions.maxWidth
+              : "max-w-[150px] md:max-w-[240px]",
             "shadow-md",
             "transition-all ease-in-out duration-100",
-            "group-hover:shadow-2xl shadow group-hover:shadow-yellow-50"
+            glow?.show &&
+              "group-hover:shadow-2xl shadow group-hover:shadow-yellow-50"
           )}
         >
           <img
