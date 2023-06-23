@@ -7,7 +7,8 @@ export type CardInfoCarouselProps = {
 
 export const CardInfoCarousel: FC<CardInfoCarouselProps> = ({ cardNum }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const { cardsData } = useContext(CardDataContext);
+  const cardsData  = useContext(CardDataContext);
+  console.log('cardsData', cardsData)
 
   const handlePrevious = () => {
     setCurrentIndex((prevIndex) =>
