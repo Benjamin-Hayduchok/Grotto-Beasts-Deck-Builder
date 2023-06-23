@@ -27,7 +27,7 @@ export const XIcon = () => {
           width="188"
           height="184"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
           <feFlood flood-opacity="0" result="BackgroundImageFix" />
           <feBlend
@@ -88,7 +88,7 @@ export const XIcon = () => {
           width="159"
           height="160"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
           <feFlood flood-opacity="0" result="BackgroundImageFix" />
           <feBlend
@@ -119,7 +119,7 @@ export const XIcon = () => {
           width="94.4"
           height="68.16"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
           <feFlood flood-opacity="0" result="BackgroundImageFix" />
           <feColorMatrix
