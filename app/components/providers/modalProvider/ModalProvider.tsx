@@ -8,7 +8,7 @@ import {
   useEffect,
   useState,
 } from "react";
-import { XIcon } from "../icons/XIcon";
+import { XIcon } from "../../icons/XIcon";
 
 interface ModalContextProps {
   openModal: (content: ReactNode) => void;

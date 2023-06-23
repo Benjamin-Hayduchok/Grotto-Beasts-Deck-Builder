@@ -4,8 +4,9 @@ import Link from "next/link";
 import "./../styles/globals.css";
 import "./../styles/nav.css";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import { ModalProvider } from "./components/modalProvider/ModalProvider";
+import { ModalProvider } from "./components/providers/modalProvider/ModalProvider";
 import { FC, PropsWithChildren } from "react";
+import { CardDataProvider } from "./components/providers/cardDataProvider/CardDataProvider";
 
 export default function RootLayout({
   children,
@@ -15,9 +16,11 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        <ModalProvider>
-          <MainContent>{children}</MainContent>
-        </ModalProvider>
+        <CardDataProvider>
+          <ModalProvider>
+            <MainContent>{children}</MainContent>
+          </ModalProvider>
+        </CardDataProvider>
       </body>
     </html>
   );
