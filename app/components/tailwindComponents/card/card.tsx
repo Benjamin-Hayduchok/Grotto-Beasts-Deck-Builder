@@ -3,7 +3,7 @@ import { FC, useRef } from "react";
 import { useRotateToMouse } from "./utils/mouse";
 import CollectionCardHover from "../../collectionCardHover";
 import eventBus from "../../eventBus";
-import { InfoIcon } from "./InfoIcon";
+import { InfoIcon } from "../../icons/InfoIcon";
 import { useModal } from "../../modalProvider/ModalProvider";
 
 export type CardProps = {
@@ -27,10 +27,11 @@ export const Card: FC<CardProps> = ({
   const { rotateToMouse, removeListener } = useRotateToMouse(inputRef, glowRef);
   const { openModal } = useModal();
 
-  function addCard(card: { cardNum: string, name: string }) {
+  function addCard(card: { cardNum: string; name: string }) {
     console.log("ON CLICK card", card);
 
-    if (parseInt(card.cardNum) <= 32) eventBus.dispatch("addChallengerToDeck", { card: card });
+    if (parseInt(card.cardNum) <= 32)
+      eventBus.dispatch("addChallengerToDeck", { card: card });
     else eventBus.dispatch("addCardToDeck", { card: card });
   }
 

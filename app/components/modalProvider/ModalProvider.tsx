@@ -64,7 +64,7 @@ export const ModalProvider: FC<PropsWithChildren> = ({ children }) => {
             "ModalOverlay",
             "flex items-center justify-center",
             "fixed top-0 z-50",
-            "bg-black bg-opacity-75",
+            "bg-black bg-opacity-90",
             "w-full h-full"
           )}
         >
