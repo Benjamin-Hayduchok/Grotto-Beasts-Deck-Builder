@@ -19,11 +19,6 @@
 body {
   background-color: salmon;
 }
-
-body.modal-open {
-  overflow: hidden;
-}
-
 .cardListOuter {
   margin: auto;
   width: 50%;

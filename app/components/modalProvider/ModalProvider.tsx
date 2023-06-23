@@ -25,12 +25,12 @@ export const ModalProvider: FC<PropsWithChildren> = ({ children }) => {
   const openModal = (content: ReactNode) => {
     setModalContent(content);
     setIsModalOpen(true);
-    document.body.classList.add("modal-open");
+    document.body.classList.add("overflow-hidden");
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
-    document.body.classList.remove("modal-open");
+    document.body.classList.remove("overflow-hidden");
   };
 
   useEffect(() => {
