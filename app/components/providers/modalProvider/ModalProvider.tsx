@@ -77,7 +77,9 @@ export const ModalProvider: FC<PropsWithChildren> = ({ children }) => {
           >
             <XIcon />
           </div>
-          <div className="ModalContent">{modalContent}</div>
+          <div className="ModalContent flex justify-center items-center w-full h-full">
+            {modalContent}
+          </div>
         </div>
       )}
     </ModalContext.Provider>
