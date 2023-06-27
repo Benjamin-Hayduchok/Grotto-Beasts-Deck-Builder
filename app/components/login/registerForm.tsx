@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import '../../../styles/login.css';
 import Swal from "sweetalert2";
 import util from '../../components/util';
 
