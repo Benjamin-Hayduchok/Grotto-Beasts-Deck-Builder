@@ -19,7 +19,7 @@ export const CardInfoCarousel: FC<CardInfoCarouselProps> = ({ cardNum }) => {
 
   useEffect(() => {
     if (cardsData) {
-      setCurrentItem(cardsData[currentIndex]);
+      setCurrentItem(cardsData[cardNum - 1]); // needs to be subtracted by 1 because arrays start from index 0
     }
   }, [currentIndex, cardsData]);
 
