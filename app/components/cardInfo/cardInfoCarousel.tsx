@@ -13,13 +13,13 @@ export type CardInfoCarouselProps = {
 
 export const CardInfoCarousel: FC<CardInfoCarouselProps> = ({ cardNum }) => {
   const cardsData = useContext(CardDataContext);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(cardNum - 1); // needs to be subtracted by 1 because arrays start from index 0
   const [currentItem, setCurrentItem] = useState<CardsData>();
   const [touchStartX, setTouchStartX] = useState(0);
 
   useEffect(() => {
     if (cardsData) {
-      setCurrentItem(cardsData[cardNum - 1]); // needs to be subtracted by 1 because arrays start from index 0
+      setCurrentItem(cardsData[currentIndex]);
     }
   }, [currentIndex, cardsData]);
 
