@@ -23,8 +23,6 @@ export const CardInfoCarousel: FC<CardInfoCarouselProps> = ({ cardNum }) => {
     }
   }, [currentIndex, cardsData]);
 
-  console.log("Current item", currentItem);
-
   const handlePrevious = (data: CardsData[]) => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? data.length - 1 : prevIndex - 1
@@ -48,10 +46,14 @@ export const CardInfoCarousel: FC<CardInfoCarouselProps> = ({ cardNum }) => {
     const touchEndX = event.changedTouches[0].clientX;
     const touchDiff = touchEndX - touchStartX;
 
-    if (touchDiff > 0) {
-      handlePrevious(data);
-    } else if (touchDiff < 0) {
-      handleNext(data);
+    const threshold = 100;
+
+    if (Math.abs(touchDiff) > threshold) {
+      if (touchDiff > threshold) {
+        handlePrevious(data);
+      } else if (touchDiff < threshold) {
+        handleNext(data);
+      }
     }
   };
 
@@ -73,7 +75,9 @@ export const CardInfoCarousel: FC<CardInfoCarouselProps> = ({ cardNum }) => {
             "flex flex-row",
             "items-center justify-center",
             "text-slate-50",
-            "w-full max-w-4xl"
+            "w-full max-w-4xl",
+            "absolute top-12 ",
+            "md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2"
           )}
           onTouchStart={handleTouchStart}
           onTouchEnd={(e) => handleTouchEnd(e, cardsData)}
@@ -86,8 +90,8 @@ export const CardInfoCarousel: FC<CardInfoCarouselProps> = ({ cardNum }) => {
           </div>
           <div
             className={classNames(
-              "flex flex-col w-full justify-center items-center",
-              "gap-16 ",
+              "flex flex-col w-full items-center",
+              "gap-8 md:gap-16",
               "p-8 md:px-4",
               "md:flex-row md:items-start md:justify-start"
             )}
@@ -109,22 +113,25 @@ export const CardInfoCarousel: FC<CardInfoCarouselProps> = ({ cardNum }) => {
                 {currentItem?.name}
               </h2>
               <div className="text-slate-200">
-                <p
-                  className={classNames(
-                    "text-base font-normal font-serif",
-                    "text-gray-400 italic",
-                    "mb-4"
-                  )}
-                >
-                  {currentItem?.flavorText === "-"
-                    ? undefined
-                    : `"${currentItem?.flavorText}"`}
-                </p>
-                <p className="font-sans font-normal text-base mb-6">
-                  {currentItem?.effect === "-"
-                    ? undefined
-                    : currentItem?.effect}
-                </p>
+                {currentItem?.flavorText !== "-" && (
+                  <p
+                    className={classNames(
+                      "text-base font-normal font-serif",
+                      "text-gray-400 italic",
+                      "mb-4"
+                    )}
+                  >
+                    {currentItem?.flavorText}
+                  </p>
+                )}
+
+                {currentItem?.effect !== "-" && (
+                  <p className="font-sans font-normal text-base mb-6">
+                    {currentItem?.effect === "-"
+                      ? undefined
+                      : currentItem?.effect}
+                  </p>
+                )}
                 <ul
                   className={classNames(
                     "font-sans font-normal text-base",

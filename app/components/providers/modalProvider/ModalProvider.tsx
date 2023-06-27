@@ -68,17 +68,18 @@ export const ModalProvider: FC<PropsWithChildren> = ({ children }) => {
             "w-full h-full"
           )}
         >
+          <div className="ModalContent absolute flex w-full h-full overflow-y-scroll">
+            {modalContent}
+          </div>
           <div
             className={classNames(
-              "absolute top-8 right-8 text-white",
+              "absolute top-4 right-4 text-white z-1000",
+              "md:top-8 md:right-8",
               "hover:brightness-125 hover:cursor-pointer"
             )}
             onClick={() => closeModal()}
           >
             <XIcon />
-          </div>
-          <div className="ModalContent flex justify-center items-center w-full h-full">
-            {modalContent}
           </div>
         </div>
       )}
