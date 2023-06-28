@@ -1,7 +1,20 @@
 import React from 'react';
 import classNames from "classnames";
+import PocketBase from 'pocketbase';
 
 export default function GoogleButton() {
+
+    const googleLogin = async () => {
+        const pb = new PocketBase('https://grotto-beasts-test.fly.dev'); 
+        const authData = await pb.collection('users').authWithOAuth2({ provider: 'google' });
+
+        if (pb.authStore.isValid) {
+            // login user
+            window.location.href = new URL(window.location.href).origin + "/collection";
+        }
+        // prevent login
+    }
+
     return (
         <div
             className={classNames(
@@ -25,6 +38,7 @@ export default function GoogleButton() {
                     "top-1/3",
                     "left-1/4",
                 )}
+                onClick= {googleLogin}
             >
             </div>
         </div>
