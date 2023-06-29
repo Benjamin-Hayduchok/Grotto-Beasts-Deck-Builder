@@ -1,15 +1,10 @@
 "use client";
 import React from 'react';
-import "../../styles/login.css"
-import FormChoice from "../components/login/formChoice"
+import OAuth2Login from "../components/login/oAuth2Login"
 
 export default function Login() {
 
     return (
-        <div className="login-page">
-            <div className="form">
-                <FormChoice/>
-            </div>
-        </div>
+        <OAuth2Login/>
     )
 }
