@@ -29,14 +29,9 @@ export default function GoogleButton() {
                     border: "none"
                 }}
                 className={classNames(
-                    "h-[90px]",
-                    "cursor-pointer",
-                    "w-1/2",
-                    "content-center",
-                    "hover:opacity-75",
-                    "absolute",
-                    "top-1/3",
-                    "left-1/4",
+                    "w-1/2 h-[90px]",
+                    "cursor-pointer hover:opacity-75",
+                    "content-center absolute top-1/3 left-1/4"
                 )}
                 onClick= {googleLogin}
             >
