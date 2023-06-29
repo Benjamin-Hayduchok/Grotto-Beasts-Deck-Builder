@@ -5,7 +5,7 @@ import StickyBox from "react-sticky-box";
 import Deck from './components/deck'
 
 export default function HomePage() {
-    if (window) window.location.href = new URL(window.location.href).origin + "/deckbuilder?new";
+    if (typeof window !== "undefined") window.location.href = new URL(window.location.href).origin + "/deckbuilder/new";
     // Will likely add something here once the stack has enough to display for a homepage if decided upon
     // return (
     //     <div>
