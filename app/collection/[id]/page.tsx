@@ -3,12 +3,12 @@
 import CardList from '../../components/cardList';
 import StickyBox from "react-sticky-box";
 import Deck from '../../components/deck';
-import PocketBase from 'pocketbase';
+import { PocketBaseContext } from "../../components/providers/pocketBaseProvider/PocketBaseProvider";
+import { useContext } from "react";
 
-const CollectionPage = (props: any) => {
-    const pb = new PocketBase('https://grotto-beasts-test.fly.dev'); 
-    console.log(pb.authStore.token);
-
+const CollectionPage = ({ params }: any) => {
+    console.log('params.id', params.id);    
+    const pocketBaseConnection = useContext(PocketBaseContext);
 
     return (
         <div>
