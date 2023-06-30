@@ -18,6 +18,7 @@ const Card = (props: {
   imageName: string;
   effect: string;
   collectionView: boolean;
+  collectionCount: number;
 }) => {
   const { name, imageName, effect } = props;
   const inputRef = useRef<HTMLDivElement>(null);
@@ -82,6 +83,7 @@ const Card = (props: {
       </div>
       <CollectionCardHover
         collectionView={props.collectionView}
+        collectionCount={props.collectionCount}
       ></CollectionCardHover>
     </div>
   );

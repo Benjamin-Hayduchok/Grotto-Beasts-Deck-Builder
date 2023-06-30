@@ -29,6 +29,7 @@ export const Card: FC<CardProps> = ({
   imageName,
   effect,
   collectionView,
+  collectionCount,
   cardNum,
   showInfoButton = true,
   glow = {
@@ -135,6 +136,7 @@ export const Card: FC<CardProps> = ({
         {/* TODO: NV - Update this component as well */}
         <CollectionCardHover
           collectionView={collectionView}
+          collectionCount={collectionCount}
         ></CollectionCardHover>
       </div>
     </div>

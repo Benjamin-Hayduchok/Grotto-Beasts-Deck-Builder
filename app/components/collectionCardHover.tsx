@@ -7,15 +7,15 @@ import util from "./util";
 
 
 
-export default function CollectionCardHover(props: {collectionView: boolean}) {
-    const [cardCount, setCardCount] = useState("0");
+export default function CollectionCardHover(props: {collectionView: boolean, collectionCount: number}) {
+    const [cardCount, setCardCount] = useState(props.collectionCount);
 
     const plusPressed = () => {
-        setCardCount(util.toStringInc(cardCount));
+        setCardCount(cardCount + 1);
     }
 
     const minusPressed = () => {
-        setCardCount(util.toStringDec(cardCount));
+        if (cardCount > 0) setCardCount(cardCount - 1);
     }
 
     if (props.collectionView) {
