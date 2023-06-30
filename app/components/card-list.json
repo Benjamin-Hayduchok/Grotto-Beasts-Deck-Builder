@@ -10,7 +10,8 @@
     "artist": "Ashlelang",
     "imageName": "Glueman.webp",
     "deckCardImage": "deckCard+Glueman.webp",
-    "cardNum": "1"
+    "cardNum": "1",
+    "collectionCount": 0
   },
   "2": {
     "name": "B.F. Bugleberry",
@@ -23,7 +24,8 @@
     "artist": "Jason Rainville",
     "imageName": "B.F.+Bugleberry.webp",
     "deckCardImage": "deckCard+B.F.+Bugleberry.webp",
-    "cardNum": "2"
+    "cardNum": "2",
+    "collectionCount": 0
   },
   "3": {
     "name": "Grandpa",
@@ -36,20 +38,22 @@
     "artist": "Gwen M.",
     "imageName": "Grandpa.webp",
     "deckCardImage": "deckCard+Grandpa.webp",
-    "cardNum": "3"
+    "cardNum": "3",
+    "collectionCount": 0
   },
   "4": {
     "name": "Demon Lord Zeraxos",
     "power": 3,
     "goal": 18,
     "cost": "-",
-    "effect": "At the start of each player's turn, if they have more Beasts in play than their opponents, that player may discard a Beast they own. If they don't, their opponents score a card.",  
+    "effect": "At the start of each player's turn, if they have more Beasts in play than their opponents, that player may discard a Beast they own. If they don't, their opponents score a card.",
     "flavorText": "-",
     "type": "Challenger",
     "artist": "Snoozincopter",
     "imageName": "Demon+Lord+Zeraxos.webp",
     "deckCardImage": "deckCard+Demon+Lord+Zeraxos.webp",
-    "cardNum": "4"
+    "cardNum": "4",
+    "collectionCount": 0
   },
   "5": {
     "name": "JEX",
@@ -62,7 +66,8 @@
     "artist": "Jason Rainville",
     "imageName": "JEX.webp",
     "deckCardImage": "deckCard+JEX.webp",
-    "cardNum": "5"
+    "cardNum": "5",
+    "collectionCount": 0
   },
   "6": {
     "name": "Mr. Greenz",
@@ -75,7 +80,8 @@
     "artist": "Slab Mangrave",
     "imageName": "Mr.+Greenz.webp",
     "deckCardImage": "deckCard+Mr.+Greenz.webp",
-    "cardNum": "6"
+    "cardNum": "6",
+    "collectionCount": 0
   },
   "7": {
     "name": "Jerma",
@@ -88,7 +94,8 @@
     "artist": "kevins_computer",
     "imageName": "Jerma.webp",
     "deckCardImage": "deckCard+Jerma.webp",
-    "cardNum": "7"
+    "cardNum": "7",
+    "collectionCount": 0
   },
   "8": {
     "name": "Carl Griffinsteed",
@@ -101,7 +108,8 @@
     "artist": "WiseSeaMonster",
     "imageName": "Carl+Griffinsteed.webp",
     "deckCardImage": "deckCard+Carl+Griffinsteed.webp",
-    "cardNum": "8"
+    "cardNum": "8",
+    "collectionCount": 0
   },
   "9": {
     "name": "Jerma Earth",
@@ -114,7 +122,8 @@
     "artist": "kevins_computer",
     "imageName": "Jerma+Earth.webp",
     "deckCardImage": "deckCard+Jerma+Earth.webp",
-    "cardNum": "9"
+    "cardNum": "9",
+    "collectionCount": 0
   },
   "10": {
     "name": "Jerma Moon",
@@ -127,7 +136,8 @@
     "artist": "Milkbox",
     "imageName": "Jerma+Moon.webp",
     "deckCardImage": "deckCard+Jerma+Moon.webp",
-    "cardNum": "10"
+    "cardNum": "10",
+    "collectionCount": 0
   },
   "11": {
     "name": "Jerma Venus",
@@ -140,20 +150,22 @@
     "artist": "Hollulu",
     "imageName": "Jerma+Venus.webp",
     "deckCardImage": "deckCard+Jerma+Venus.webp",
-    "cardNum": "11"
+    "cardNum": "11",
+    "collectionCount": 0
   },
   "12": {
     "name": "Jerma Pluto",
     "power": 0,
     "goal": 12,
     "cost": "-",
-    "effect": "You may look at the cards in any player's score pile at any time.\n\nAt the start of your turn, if you have the fewest number of cards scored than any other player, draw a card.",  
+    "effect": "You may look at the cards in any player's score pile at any time.\n\nAt the start of your turn, if you have the fewest number of cards scored than any other player, draw a card.",
     "flavorText": "-",
     "type": "Challenger",
     "artist": "Tree",
     "imageName": "Jerma+Pluto.webp",
     "deckCardImage": "deckCard+Jerma+Pluto.webp",
-    "cardNum": "12"
+    "cardNum": "12",
+    "collectionCount": 0
   },
   "13": {
     "name": "The Jerm",
@@ -166,7 +178,8 @@
     "artist": "Blordow",
     "imageName": "The+Jerm.webp",
     "deckCardImage": "deckCard+The+Jerm.webp",
-    "cardNum": "13"
+    "cardNum": "13",
+    "collectionCount": 0
   },
   "14": {
     "name": "Byeah Prime",
@@ -179,7 +192,8 @@
     "artist": "Gwen M.",
     "imageName": "Byeah+Prime.webp",
     "deckCardImage": "deckCard+Byeah+Prime.webp",
-    "cardNum": "14"
+    "cardNum": "14",
+    "collectionCount": 0
   },
   "15": {
     "name": "Bat Boy",
@@ -192,7 +206,8 @@
     "artist": "Hollulu",
     "imageName": "Bat+Boy.webp",
     "deckCardImage": "deckCard+Bat+Boy.webp",
-    "cardNum": "15"
+    "cardNum": "15",
+    "collectionCount": 0
   },
   "16": {
     "name": "Green Screen",
@@ -205,7 +220,8 @@
     "artist": "Hollulu",
     "imageName": "Green+Screen.webp",
     "deckCardImage": "deckCard+Green+Screen.webp",
-    "cardNum": "16"
+    "cardNum": "16",
+    "collectionCount": 0
   },
   "17": {
     "name": "The Giant Rat",
@@ -218,7 +234,8 @@
     "artist": "Hollulu",
     "imageName": "The+Giant+Rat.webp",
     "deckCardImage": "deckCard+The+Giant+Rat.webp",
-    "cardNum": "17"
+    "cardNum": "17",
+    "collectionCount": 0
   },
   "18": {
     "name": "Sus Guy",
@@ -231,20 +248,22 @@
     "artist": "Corax",
     "imageName": "Sus+Guy.webp",
     "deckCardImage": "deckCard+Sus+Guy.webp",
-    "cardNum": "18"
+    "cardNum": "18",
+    "collectionCount": 0
   },
   "19": {
     "name": "The Jem Wizard",
     "power": 0,
     "goal": 14,
     "cost": "-",
-    "effect": "The top card of your deck is always revealed to all players.\n\nYou may summon the top card of your deck as if it was in your hand. If it is a Wish, its summoning cost is 1 less.", 
+    "effect": "The top card of your deck is always revealed to all players.\n\nYou may summon the top card of your deck as if it was in your hand. If it is a Wish, its summoning cost is 1 less.",
     "flavorText": "-",
     "type": "Challenger",
     "artist": "Hollulu",
     "imageName": "The+Jem+Wizard.webp",
     "deckCardImage": "deckCard+The+Jem+Wizard.webp",
-    "cardNum": "19"
+    "cardNum": "19",
+    "collectionCount": 0
   },
   "20": {
     "name": "Otto",
@@ -257,20 +276,22 @@
     "artist": "Melscribbles",
     "imageName": "Otto.webp",
     "deckCardImage": "deckCard+Otto.webp",
-    "cardNum": "20"
+    "cardNum": "20",
+    "collectionCount": 0
   },
   "21": {
     "name": "Scritchy Scratch",
     "power": 2,
     "goal": 15,
     "cost": "-",
-    "effect": "At the start of each opponent's turn, that player discards the top card of their deck.\n\nWhen an opponent shuffles their deck, that player discards the top card of their deck.",   
+    "effect": "At the start of each opponent's turn, that player discards the top card of their deck.\n\nWhen an opponent shuffles their deck, that player discards the top card of their deck.",
     "flavorText": "-",
     "type": "Challenger",
     "artist": "Hollulu",
     "imageName": "Scritchy+Scratch.webp",
     "deckCardImage": "deckCard+Scritchy+Scratch.webp",
-    "cardNum": "21"
+    "cardNum": "21",
+    "collectionCount": 0
   },
   "22": {
     "name": "Wall Dad",
@@ -283,7 +304,8 @@
     "artist": "Gwen M.",
     "imageName": "Wall+Dad.webp",
     "deckCardImage": "deckCard+Wall+Dad.webp",
-    "cardNum": "22"
+    "cardNum": "22",
+    "collectionCount": 0
   },
   "23": {
     "name": "Giant Enemy Spider",
@@ -296,7 +318,8 @@
     "artist": "Sturner",
     "imageName": "Giant+Enemy+Spider.webp",
     "deckCardImage": "deckCard+Giant+Enemy+Spider.webp",
-    "cardNum": "23"
+    "cardNum": "23",
+    "collectionCount": 0
   },
   "24": {
     "name": "30's Milkman",
@@ -309,7 +332,8 @@
     "artist": "Gwen M.",
     "imageName": "30s+Milkman.webp",
     "deckCardImage": "deckCard+30s+Milkman.webp",
-    "cardNum": "24"
+    "cardNum": "24",
+    "collectionCount": 0
   },
   "25": {
     "name": "Michael the Birthday Boy",
@@ -322,7 +346,8 @@
     "artist": "Hollulu",
     "imageName": "Michael+the+Birthday+Boy.webp",
     "deckCardImage": "deckCard+Michael+the+Birthday+Boy.webp",
-    "cardNum": "25"
+    "cardNum": "25",
+    "collectionCount": 0
   },
   "26": {
     "name": "One Guy",
@@ -335,7 +360,8 @@
     "artist": "Jerma",
     "imageName": "One+Guy.webp",
     "deckCardImage": "deckCard+One+Guy.webp",
-    "cardNum": "26"
+    "cardNum": "26",
+    "collectionCount": 0
   },
   "27": {
     "name": "Pirouette",
@@ -348,46 +374,50 @@
     "artist": "Hollulu",
     "imageName": "Pirouette.webp",
     "deckCardImage": "deckCard+Pirouette.webp",
-    "cardNum": "27"
+    "cardNum": "27",
+    "collectionCount": 0
   },
   "28": {
     "name": "Abacus 1.0",
     "power": 2,
     "goal": 14,
     "cost": "-",
-    "effect": "When a Beast or Grotto you have in play is discarded from play, you may move any cards attached to it onto any number of other Beasts or Grottos you have in play.",
+    "effect": "When a Beast or Grotto you have in play is discarded from play, you may move any cards attached to it onto any number of other Beasts or Grottos you have in play.",      
     "flavorText": "-",
     "type": "Challenger",
     "artist": "Sturner",
     "imageName": "Abacus+1.0.webp",
     "deckCardImage": "deckCard+Abacus+1.0.webp",
-    "cardNum": "28"
+    "cardNum": "28",
+    "collectionCount": 0
   },
   "29": {
     "name": "The Big Baker",
     "power": 2,
     "goal": 13,
     "cost": "-",
-    "effect": "During game setup, search your deck for six cards and put them into your hand. This becomes your starting hand for the game. Shuffle your deck when you're done.",
+    "effect": "During game setup, search your deck for six cards and put them into your hand. This becomes your starting hand for the game. Shuffle your deck when you're done.",        
     "flavorText": "-",
     "type": "Challenger",
     "artist": "Hollulu",
     "imageName": "The+Big+Baker.webp",
     "deckCardImage": "deckCard+The+Big+Baker.webp",
-    "cardNum": "29"
+    "cardNum": "29",
+    "collectionCount": 0
   },
   "30": {
     "name": "Cloud King",
     "power": 0,
     "goal": 18,
     "cost": "-",
-    "effect": "Cloud King gains 1 power for each Wish attached to it.\n\nWhen you score a card, reveal it to all players. If the revealed card is a Wish, attach it face up onto Cloud King.",      
+    "effect": "Cloud King gains 1 power for each Wish attached to it.\n\nWhen you score a card, reveal it to all players. If the revealed card is a Wish, attach it face up onto Cloud King.",
     "flavorText": "-",
     "type": "Challenger",
     "artist": "Hollulu",
     "imageName": "Cloud+King.webp",
     "deckCardImage": "deckCard+Cloud+King.webp",
-    "cardNum": "30"
+    "cardNum": "30",
+    "collectionCount": 0
   },
   "31": {
     "name": "Pine Princess",
@@ -400,7 +430,8 @@
     "artist": "Hollulu",
     "imageName": "Pine+Princess.webp",
     "deckCardImage": "deckCard+Pine+Princess.webp",
-    "cardNum": "31"
+    "cardNum": "31",
+    "collectionCount": 0
   },
   "32": {
     "name": "Naturalist Langston",
@@ -413,7 +444,8 @@
     "artist": "Hollulu",
     "imageName": "Naturalist+Langston.webp",
     "deckCardImage": "deckCard+Naturalist+Langston.webp",
-    "cardNum": "32"
+    "cardNum": "32",
+    "collectionCount": 0
   },
   "33": {
     "name": "Bittersweet Peaks",
@@ -426,7 +458,8 @@
     "artist": "Hollulu",
     "imageName": "Bittersweet+Peaks.webp",
     "deckCardImage": "deckCard+Bittersweet+Peaks.webp",
-    "cardNum": "33"
+    "cardNum": "33",
+    "collectionCount": 0
   },
   "34": {
     "name": "Brightlight Casino",
@@ -439,7 +472,8 @@
     "artist": "Sturner",
     "imageName": "Brightlight+Casino.webp",
     "deckCardImage": "deckCard+Brightlight+Casino.webp",
-    "cardNum": "34"
+    "cardNum": "34",
+    "collectionCount": 0
   },
   "35": {
     "name": "Carnival Kingdom",
@@ -452,7 +486,8 @@
     "artist": "Hollulu",
     "imageName": "Carnival+Kingdom.webp",
     "deckCardImage": "deckCard+Carnival+Kingdom.webp",
-    "cardNum": "35"
+    "cardNum": "35",
+    "collectionCount": 0
   },
   "36": {
     "name": "Cloudtop Observatory",
@@ -465,7 +500,8 @@
     "artist": "Hollulu",
     "imageName": "Cloudtop+Observatory.webp",
     "deckCardImage": "deckCard+Cloudtop+Observatory.webp",
-    "cardNum": "36"
+    "cardNum": "36",
+    "collectionCount": 0
   },
   "37": {
     "name": "Coral Shoal",
@@ -478,7 +514,8 @@
     "artist": "Sturner",
     "imageName": "Coral+Shoal.webp",
     "deckCardImage": "deckCard+Coral+Shoal.webp",
-    "cardNum": "37"
+    "cardNum": "37",
+    "collectionCount": 0
   },
   "38": {
     "name": "Dank Sewer",
@@ -491,33 +528,36 @@
     "artist": "Sturner",
     "imageName": "Dank+Sewer.webp",
     "deckCardImage": "deckCard+Dank+Sewer.webp",
-    "cardNum": "38"
+    "cardNum": "38",
+    "collectionCount": 0
   },
   "39": {
     "name": "Forgotten Tableau",
     "power": "-",
     "goal": "-",
     "cost": 5,
-    "effect": "At the end of your turn, if you have one of each Beast named Jup the 1st, Jup the 2nd, Jup the 3rd, and Jup the 4th on your sideline, score each of them and Forgotten Tableau.",    
+    "effect": "At the end of your turn, if you have one of each Beast named Jup the 1st, Jup the 2nd, Jup the 3rd, and Jup the 4th on your sideline, score each of them and Forgotten Tableau.",
     "flavorText": "No one knows what'd happen if the glyphs were returned.",
-    "type": "✦Grotto",
+    "type": "\u2726Grotto",
     "artist": "Hollulu",
     "imageName": "Forgotten+Tableau.webp",
     "deckCardImage": "deckCard+Forgotten+Tableau.webp",
-    "cardNum": "39"
+    "cardNum": "39",
+    "collectionCount": 0
   },
   "40": {
     "name": "Fossil Ridge",
     "power": "-",
     "goal": "-",
     "cost": 2,
-    "effect": "When a card effect an opponent activates causes you to discard cards from your hand or your deck, you may choose to put those cards on the top of your summoning pool instead.",     
+    "effect": "When a card effect an opponent activates causes you to discard cards from your hand or your deck, you may choose to put those cards on the top of your summoning pool instead.",
     "flavorText": "-",
     "type": "Grotto",
     "artist": "Hollulu",
     "imageName": "Fossil+Ridge.webp",
     "deckCardImage": "deckCard+Fossil+Ridge.webp",
-    "cardNum": "40"
+    "cardNum": "40",
+    "collectionCount": 0
   },
   "41": {
     "name": "Fruit Jungle",
@@ -530,7 +570,8 @@
     "artist": "Melscribbles",
     "imageName": "Fruit+Jungle.webp",
     "deckCardImage": "deckCard+Fruit+Jungle.webp",
-    "cardNum": "41"
+    "cardNum": "41",
+    "collectionCount": 0
   },
   "42": {
     "name": "Glowing Cavern",
@@ -543,20 +584,22 @@
     "artist": "Sturner",
     "imageName": "Glowing+Cavern.webp",
     "deckCardImage": "deckCard+Glowing+Cavern.webp",
-    "cardNum": "42"
+    "cardNum": "42",
+    "collectionCount": 0
   },
   "43": {
     "name": "Haunted Manor",
     "power": "-",
     "goal": "-",
     "cost": 4,
-    "effect": "At the end of your turn, if you have two or fewer cards in your hand, you may choose a card in your discard pile, reveal it to all players, and put it into your hand.",
+    "effect": "At the end of your turn, if you have two or fewer cards in your hand, you may choose a card in your discard pile, reveal it to all players, and put it into your hand.",  
     "flavorText": "Don't go near, if the lights go on.",
     "type": "Grotto",
     "artist": "Hollulu",
     "imageName": "Haunted+Manor.webp",
     "deckCardImage": "deckCard+Haunted+Manor.webp",
-    "cardNum": "43"
+    "cardNum": "43",
+    "collectionCount": 0
   },
   "44": {
     "name": "Magical Canopy",
@@ -569,7 +612,8 @@
     "artist": "Hollulu",
     "imageName": "Magical+Canopy.webp",
     "deckCardImage": "deckCard+Magical+Canopy.webp",
-    "cardNum": "44"
+    "cardNum": "44",
+    "collectionCount": 0
   },
   "45": {
     "name": "Maze of Many Ways",
@@ -578,11 +622,12 @@
     "cost": 4,
     "effect": "At the start of your turn, you may discard the Beast above Maze of Many Ways. If you do, search your deck for a Beast with a summoning cost of exactly 1 more than the discarded Beast and summon it above Maze of Many Ways free of cost. Shuffle your deck when you're done.",
     "flavorText": "-",
-    "type": "✦Grotto",
+    "type": "\u2726Grotto",
     "artist": "Hollulu",
     "imageName": "Maze+of+Many+Ways.webp",
     "deckCardImage": "deckCard+Maze+of+Many+Ways.webp",
-    "cardNum": "45"
+    "cardNum": "45",
+    "collectionCount": 0
   },
   "46": {
     "name": "Metrometropolis",
@@ -595,20 +640,22 @@
     "artist": "Hollulu",
     "imageName": "Metrometropolis.webp",
     "deckCardImage": "deckCard+Metrometropolis.webp",
-    "cardNum": "46"
+    "cardNum": "46",
+    "collectionCount": 0
   },
   "47": {
     "name": "Ponderer's Grove",
     "power": "-",
     "goal": "-",
     "cost": 3,
-    "effect": "At the start of your turn, you may choose to look at the top two cards of your deck. If you do, put one of them on bottom of your deck and the other back on the top of your deck.", 
+    "effect": "At the start of your turn, you may choose to look at the top two cards of your deck. If you do, put one of them on bottom of your deck and the other back on the top of your deck.",
     "flavorText": "A trained eye can see the future within the waters.",
     "type": "Grotto",
     "artist": "Sturner",
     "imageName": "Ponderers+Grove.webp",
     "deckCardImage": "deckCard+Ponderers+Grove.webp",
-    "cardNum": "47"
+    "cardNum": "47",
+    "collectionCount": 0
   },
   "48": {
     "name": "Rumble Ring",
@@ -617,11 +664,12 @@
     "cost": 5,
     "effect": "When the Beast or Challenger above Rumble Ring attacks alone, the attacked player may only choose up to one Beast or Challenger to defend this turn.",
     "flavorText": "Lord Zeraxos may have brought chaos to this world, but he also delivered the Jerma Rumble to all.",
-    "type": "✦Grotto",
+    "type": "\u2726Grotto",
     "artist": "Bellymouth",
     "imageName": "Rumble+Ring.webp",
     "deckCardImage": "deckCard+Rumble+Ring.webp",
-    "cardNum": "48"
+    "cardNum": "48",
+    "collectionCount": 0
   },
   "49": {
     "name": "Skeld's Factory",
@@ -634,7 +682,8 @@
     "artist": "Sturner",
     "imageName": "Skelds+Factory.webp",
     "deckCardImage": "deckCard+Skelds+Factory.webp",
-    "cardNum": "49"
+    "cardNum": "49",
+    "collectionCount": 0
   },
   "50": {
     "name": "Skull Valley",
@@ -647,7 +696,8 @@
     "artist": "Sturner & Hollulu",
     "imageName": "Skull+Valley.webp",
     "deckCardImage": "deckCard+Skull+Valley.webp",
-    "cardNum": "50"
+    "cardNum": "50",
+    "collectionCount": 0
   },
   "51": {
     "name": "Sportball Stadium",
@@ -660,7 +710,8 @@
     "artist": "Sturner",
     "imageName": "Sportball+Stadium.webp",
     "deckCardImage": "deckCard+Sportball+Stadium.webp",
-    "cardNum": "51"
+    "cardNum": "51",
+    "collectionCount": 0
   },
   "52": {
     "name": "Sunspring Field",
@@ -673,7 +724,8 @@
     "artist": "Hollulu",
     "imageName": "Sunspring+Field.webp",
     "deckCardImage": "deckCard+Sunspring+Field.webp",
-    "cardNum": "52"
+    "cardNum": "52",
+    "collectionCount": 0
   },
   "53": {
     "name": "Volca Isle",
@@ -686,7 +738,8 @@
     "artist": "Hollulu",
     "imageName": "Volca+Isle.webp",
     "deckCardImage": "deckCard+Volca+Isle.webp",
-    "cardNum": "53"
+    "cardNum": "53",
+    "collectionCount": 0
   },
   "54": {
     "name": "+2",
@@ -699,7 +752,8 @@
     "artist": "Sturner",
     "imageName": "+2.webp",
     "deckCardImage": "deckCard++2.webp",
-    "cardNum": "54"
+    "cardNum": "54",
+    "collectionCount": 0
   },
   "55": {
     "name": "-2",
@@ -712,7 +766,8 @@
     "artist": "Sturner",
     "imageName": "-2.webp",
     "deckCardImage": "deckCard+-2.webp",
-    "cardNum": "55"
+    "cardNum": "55",
+    "collectionCount": 0
   },
   "56": {
     "name": "Batter Up!",
@@ -725,7 +780,8 @@
     "artist": "Absterarts",
     "imageName": "Batter+Up!.webp",
     "deckCardImage": "deckCard+Batter+Up!.webp",
-    "cardNum": "56"
+    "cardNum": "56",
+    "collectionCount": 0
   },
   "57": {
     "name": "Bonus Luck",
@@ -738,7 +794,8 @@
     "artist": "Hollulu",
     "imageName": "Bonus+Luck.webp",
     "deckCardImage": "deckCard+Bonus+Luck.webp",
-    "cardNum": "57"
+    "cardNum": "57",
+    "collectionCount": 0
   },
   "58": {
     "name": "Book of Wonder",
@@ -751,7 +808,8 @@
     "artist": "Hollulu",
     "imageName": "Book+of+Wonder.webp",
     "deckCardImage": "deckCard+Book+of+Wonder.webp",
-    "cardNum": "58"
+    "cardNum": "58",
+    "collectionCount": 0
   },
   "59": {
     "name": "Bounty Board",
@@ -764,7 +822,8 @@
     "artist": "Hollulu",
     "imageName": "Bounty+Board.webp",
     "deckCardImage": "deckCard+Bounty+Board.webp",
-    "cardNum": "59"
+    "cardNum": "59",
+    "collectionCount": 0
   },
   "60": {
     "name": "Breakdance Boots",
@@ -777,7 +836,8 @@
     "artist": "Hollulu",
     "imageName": "Breakdance+Boots.webp",
     "deckCardImage": "deckCard+Breakdance+Boots.webp",
-    "cardNum": "60"
+    "cardNum": "60",
+    "collectionCount": 0
   },
   "61": {
     "name": "Call for Help",
@@ -790,7 +850,8 @@
     "artist": "Bellymouth",
     "imageName": "Call+for+Help.webp",
     "deckCardImage": "deckCard+Call+for+Help.webp",
-    "cardNum": "61"
+    "cardNum": "61",
+    "collectionCount": 0
   },
   "62": {
     "name": "Clip That!",
@@ -803,7 +864,8 @@
     "artist": "Sturner",
     "imageName": "Clip+That!.webp",
     "deckCardImage": "deckCard+Clip+That!.webp",
-    "cardNum": "62"
+    "cardNum": "62",
+    "collectionCount": 0
   },
   "63": {
     "name": "Copycat",
@@ -816,7 +878,8 @@
     "artist": "Melscribbles",
     "imageName": "Copycat.webp",
     "deckCardImage": "deckCard+Copycat.webp",
-    "cardNum": "63"
+    "cardNum": "63",
+    "collectionCount": 0
   },
   "64": {
     "name": "Crazy Stunt",
@@ -829,7 +892,8 @@
     "artist": "Bellymouth",
     "imageName": "Crazy+Stunt.webp",
     "deckCardImage": "deckCard+Crazy+Stunt.webp",
-    "cardNum": "64"
+    "cardNum": "64",
+    "collectionCount": 0
   },
   "65": {
     "name": "Dance-Off",
@@ -842,7 +906,8 @@
     "artist": "SodaSneb",
     "imageName": "Dance-Off.webp",
     "deckCardImage": "deckCard+Dance-Off.webp",
-    "cardNum": "65"
+    "cardNum": "65",
+    "collectionCount": 0
   },
   "66": {
     "name": "Dire Escape",
@@ -855,7 +920,8 @@
     "artist": "Hollulu",
     "imageName": "Dire+Escape.webp",
     "deckCardImage": "deckCard+Dire+Escape.webp",
-    "cardNum": "66"
+    "cardNum": "66",
+    "collectionCount": 0
   },
   "67": {
     "name": "Double or Nothing",
@@ -868,7 +934,8 @@
     "artist": "Slab Mangrave",
     "imageName": "Double+or+Nothing.webp",
     "deckCardImage": "deckCard+Double+or+Nothing.webp",
-    "cardNum": "67"
+    "cardNum": "67",
+    "collectionCount": 0
   },
   "68": {
     "name": "Dunk Tank",
@@ -881,7 +948,8 @@
     "artist": "Siins",
     "imageName": "Dunk+Tank.webp",
     "deckCardImage": "deckCard+Dunk+Tank.webp",
-    "cardNum": "68"
+    "cardNum": "68",
+    "collectionCount": 0
   },
   "69": {
     "name": "Eat It Up!",
@@ -894,7 +962,8 @@
     "artist": "Hollulu",
     "imageName": "Eat+It+Up!.webp",
     "deckCardImage": "deckCard+Eat+It+Up!.webp",
-    "cardNum": "69"
+    "cardNum": "69",
+    "collectionCount": 0
   },
   "70": {
     "name": "Emergency Rescue",
@@ -907,7 +976,8 @@
     "artist": "Hollulu",
     "imageName": "Emergency+Rescue.webp",
     "deckCardImage": "deckCard+Emergency+Rescue.webp",
-    "cardNum": "70"
+    "cardNum": "70",
+    "collectionCount": 0
   },
   "71": {
     "name": "Encouraging Cheer",
@@ -920,7 +990,8 @@
     "artist": "kevins_computer",
     "imageName": "Encouraging+Cheer.webp",
     "deckCardImage": "deckCard+Encouraging+Cheer.webp",
-    "cardNum": "71"
+    "cardNum": "71",
+    "collectionCount": 0
   },
   "72": {
     "name": "Energizing Drink",
@@ -933,7 +1004,8 @@
     "artist": "Hollulu",
     "imageName": "Energizing+Drink.webp",
     "deckCardImage": "deckCard+Energizing+Drink.webp",
-    "cardNum": "72"
+    "cardNum": "72",
+    "collectionCount": 0
   },
   "73": {
     "name": "Excavate",
@@ -946,7 +1018,8 @@
     "artist": "SodaSneb",
     "imageName": "Excavate.webp",
     "deckCardImage": "deckCard+Excavate.webp",
-    "cardNum": "73"
+    "cardNum": "73",
+    "collectionCount": 0
   },
   "74": {
     "name": "Frog Slap",
@@ -959,7 +1032,8 @@
     "artist": "Sturner",
     "imageName": "Frog+Slap.webp",
     "deckCardImage": "deckCard+Frog+Slap.webp",
-    "cardNum": "74"
+    "cardNum": "74",
+    "collectionCount": 0
   },
   "75": {
     "name": "Frog's Breath Potion",
@@ -972,7 +1046,8 @@
     "artist": "Hollulu",
     "imageName": "Frogs+Breath+Potion.webp",
     "deckCardImage": "deckCard+Frogs+Breath+Potion.webp",
-    "cardNum": "75"
+    "cardNum": "75",
+    "collectionCount": 0
   },
   "76": {
     "name": "Game Wipe",
@@ -981,11 +1056,12 @@
     "cost": 4,
     "effect": "Each player discards all Beasts they have in play.",
     "flavorText": "We're going to start a new game.\" -Jerma",
-    "type": "✦Wish",
+    "type": "\u2726Wish",
     "artist": "WiseSeaMonster",
     "imageName": "Game+Wipe.webp",
     "deckCardImage": "deckCard+Game+Wipe.webp",
-    "cardNum": "76"
+    "cardNum": "76",
+    "collectionCount": 0
   },
   "77": {
     "name": "Greedy Grinner",
@@ -994,11 +1070,12 @@
     "cost": 4,
     "effect": "Set aside any number of cards from your score pile, then choose an opponent and they do the same. Then you both play a game of Rock-Paper-Scissors. The winner scores cards from the top of their deck equal to the number of cards they set aside and returns the set aside cards to their score pile. The loser discards the cards they set aside. If there is a draw, both players return their set aside cards to their score pile.",
     "flavorText": "I'll be takin' that one!' -The Greedy Grinner",
-    "type": "✦Wish",
+    "type": "\u2726Wish",
     "artist": "Jason Rainville",
     "imageName": "Greedy+Grinner.webp",
     "deckCardImage": "deckCard+Greedy+Grinner.webp",
-    "cardNum": "77"
+    "cardNum": "77",
+    "collectionCount": 0
   },
   "78": {
     "name": "Up in the Air",
@@ -1011,7 +1088,8 @@
     "artist": "Bellymouth",
     "imageName": "Up+in+the+Air.webp",
     "deckCardImage": "deckCard+Up+in+the+Air.webp",
-    "cardNum": "78"
+    "cardNum": "78",
+    "collectionCount": 0
   },
   "79": {
     "name": "Intimidate",
@@ -1024,7 +1102,8 @@
     "artist": "Absterarts",
     "imageName": "Intimidate.webp",
     "deckCardImage": "deckCard+Intimidate.webp",
-    "cardNum": "79"
+    "cardNum": "79",
+    "collectionCount": 0
   },
   "80": {
     "name": "JBA Power Card: Upgrade",
@@ -1037,7 +1116,8 @@
     "artist": "Hollulu",
     "imageName": "JBA+Power+Card_+Upgrade.webp",
     "deckCardImage": "deckCard+JBA+Power+Card_+Upgrade.webp",
-    "cardNum": "80"
+    "cardNum": "80",
+    "collectionCount": 0
   },
   "81": {
     "name": "Open Geode",
@@ -1045,12 +1125,13 @@
     "goal": "-",
     "cost": 1,
     "effect": "Look at the top four cards of your deck. Put one of them into your hand and the rest back on top of your deck in any order.",
-    "flavorText": "You never know— inspiration may wait inside.",
+    "flavorText": "You never know\u2014 inspiration may wait inside.",
     "type": "Wish",
     "artist": "Hollulu",
     "imageName": "Open+Geode.webp",
     "deckCardImage": "deckCard+Open+Geode.webp",
-    "cardNum": "81"
+    "cardNum": "81",
+    "collectionCount": 0
   },
   "82": {
     "name": "Presto Majesto",
@@ -1063,7 +1144,8 @@
     "artist": "Melscribbles",
     "imageName": "Presto+Majesto.webp",
     "deckCardImage": "deckCard+Presto+Majesto.webp",
-    "cardNum": "82"
+    "cardNum": "82",
+    "collectionCount": 0
   },
   "83": {
     "name": "Reckless Offroading",
@@ -1076,20 +1158,22 @@
     "artist": "Bellymouth",
     "imageName": "Reckless+Offroading.webp",
     "deckCardImage": "deckCard+Reckless+Offroading.webp",
-    "cardNum": "83"
+    "cardNum": "83",
+    "collectionCount": 0
   },
   "84": {
     "name": "Reorganize",
     "power": "-",
     "goal": "-",
     "cost": 1,
-    "effect": "Count the number of cards in your score pile and put all your scored cards into your hand. Then put that many cards from your hand into your score pile face down.",
+    "effect": "Count the number of cards in your score pile and put all your scored cards into your hand. Then put that many cards from your hand into your score pile face down.",      
     "flavorText": "The Movers appear in dreams to deliver gifts. They seem to enjoy tomfoolery, fire, and interior design.",
     "type": "Wish",
     "artist": "Hollulu",
     "imageName": "Reorganize.webp",
     "deckCardImage": "deckCard+Reorganize.webp",
-    "cardNum": "84"
+    "cardNum": "84",
+    "collectionCount": 0
   },
   "85": {
     "name": "Similar Company",
@@ -1102,7 +1186,8 @@
     "artist": "Hollulu",
     "imageName": "Similar+Company.webp",
     "deckCardImage": "deckCard+Similar+Company.webp",
-    "cardNum": "85"
+    "cardNum": "85",
+    "collectionCount": 0
   },
   "86": {
     "name": "Smushed",
@@ -1115,7 +1200,8 @@
     "artist": "SammNnn & Sturner",
     "imageName": "Smushed.webp",
     "deckCardImage": "deckCard+Smushed.webp",
-    "cardNum": "86"
+    "cardNum": "86",
+    "collectionCount": 0
   },
   "87": {
     "name": "Sneak Thief",
@@ -1128,20 +1214,22 @@
     "artist": "Sturner",
     "imageName": "Sneak+Thief.webp",
     "deckCardImage": "deckCard+Sneak+Thief.webp",
-    "cardNum": "87"
+    "cardNum": "87",
+    "collectionCount": 0
   },
   "88": {
     "name": "Sole Survivor",
     "power": "-",
     "goal": "-",
     "cost": 5,
-    "effect": "If you only have one Beast or Challenger on your team, score a card. If it attacked this turn, score another card. If an opponent dealt battle damage to it, score another card.",   
+    "effect": "If you only have one Beast or Challenger on your team, score a card. If it attacked this turn, score another card. If an opponent dealt battle damage to it, score another card.",
     "flavorText": "The Disco Diaper... He never was eliminated! Everyone just forgot about him.\" -Jerma",
     "type": "Wish",
     "artist": "Hollulu",
     "imageName": "Sole+Survivor.webp",
     "deckCardImage": "deckCard+Sole+Survivor.webp",
-    "cardNum": "88"
+    "cardNum": "88",
+    "collectionCount": 0
   },
   "89": {
     "name": "Song of Protection",
@@ -1154,7 +1242,8 @@
     "artist": "Milkbox",
     "imageName": "Song+of+Protection.webp",
     "deckCardImage": "deckCard+Song+of+Protection.webp",
-    "cardNum": "89"
+    "cardNum": "89",
+    "collectionCount": 0
   },
   "90": {
     "name": "Starbit Cluster",
@@ -1167,20 +1256,22 @@
     "artist": "Hollulu",
     "imageName": "Starbit+Cluster.webp",
     "deckCardImage": "deckCard+Starbit+Cluster.webp",
-    "cardNum": "90"
+    "cardNum": "90",
+    "collectionCount": 0
   },
   "91": {
     "name": "Surprise Snack",
     "power": "-",
     "goal": "-",
     "cost": 1,
-    "effect": "Reveal the top card of your deck to all players. If the revealed card has the same name as any card in play, score the revealed card. Otherwise, put it into your hand.",
+    "effect": "Reveal the top card of your deck to all players. If the revealed card has the same name as any card in play, score the revealed card. Otherwise, put it into your hand.", 
     "flavorText": "Dude the thing that everybody!\" -Jerma",
     "type": "Wish",
     "artist": "Tree",
     "imageName": "Surprise+Snack.webp",
     "deckCardImage": "deckCard+Surprise+Snack.webp",
-    "cardNum": "91"
+    "cardNum": "91",
+    "collectionCount": 0
   },
   "92": {
     "name": "Tactical Rocket Launcher",
@@ -1193,7 +1284,8 @@
     "artist": "Hollulu",
     "imageName": "Tactical+Rocket+Launcher.webp",
     "deckCardImage": "deckCard+Tactical+Rocket+Launcher.webp",
-    "cardNum": "92"
+    "cardNum": "92",
+    "collectionCount": 0
   },
   "93": {
     "name": "The Cauldron",
@@ -1206,7 +1298,8 @@
     "artist": "Sturner",
     "imageName": "The+Cauldron.webp",
     "deckCardImage": "deckCard+The+Cauldron.webp",
-    "cardNum": "93"
+    "cardNum": "93",
+    "collectionCount": 0
   },
   "94": {
     "name": "Top Rope",
@@ -1219,7 +1312,8 @@
     "artist": "Siins",
     "imageName": "Top+Rope.webp",
     "deckCardImage": "deckCard+Top+Rope.webp",
-    "cardNum": "94"
+    "cardNum": "94",
+    "collectionCount": 0
   },
   "95": {
     "name": "Try Another!",
@@ -1232,7 +1326,8 @@
     "artist": "SammNnn",
     "imageName": "Try+Another!.webp",
     "deckCardImage": "deckCard+Try+Another!.webp",
-    "cardNum": "95"
+    "cardNum": "95",
+    "collectionCount": 0
   },
   "96": {
     "name": "Wild Dreams",
@@ -1241,11 +1336,12 @@
     "cost": 3,
     "effect": "Each player switches their discard pile with their summoning pool.",
     "flavorText": "You want a test if you're dreaming? Flick a light switch. If it doesn't work, you're dreaming!\" -Jerma",
-    "type": "✦Wish",
+    "type": "\u2726Wish",
     "artist": "Blordow",
     "imageName": "Wild+Dreams.webp",
     "deckCardImage": "deckCard+Wild+Dreams.webp",
-    "cardNum": "96"
+    "cardNum": "96",
+    "collectionCount": 0
   },
   "97": {
     "name": "2-Moon Jelly",
@@ -1258,7 +1354,8 @@
     "artist": "Melscribbles & Hollulu",
     "imageName": "2-Moon+Jelly.webp",
     "deckCardImage": "deckCard+2-Moon+Jelly.webp",
-    "cardNum": "97"
+    "cardNum": "97",
+    "collectionCount": 0
   },
   "98": {
     "name": "AiMbot-3940",
@@ -1266,12 +1363,13 @@
     "goal": "-",
     "cost": 4,
     "effect": "When attacking or defending, roll a six-sided die. AiMbot-3940 gains power equal to the result until the end of turn.",
-    "flavorText": "Don't underestimate this little robot catapult— it can process thousands of users inputs at once!",
+    "flavorText": "Don't underestimate this little robot catapult\u2014 it can process thousands of users inputs at once!",
     "type": "Techtic Beast",
     "artist": "Sturner",
     "imageName": "AiMbot-3940.webp",
     "deckCardImage": "deckCard+AiMbot-3940.webp",
-    "cardNum": "98"
+    "cardNum": "98",
+    "collectionCount": 0
   },
   "99": {
     "name": "Alieums",
@@ -1280,11 +1378,12 @@
     "cost": 9,
     "effect": "As you summon Alieums, you may discard any number of face down cards attached to Beasts and Grottos you have in play. Alieums's summoning cost is 1 less for each card you discard in this way.",
     "flavorText": "-",
-    "type": "✦Galactic Beast",
+    "type": "\u2726Galactic Beast",
     "artist": "Bellymouth",
     "imageName": "Alieums.webp",
     "deckCardImage": "deckCard+Alieums.webp",
-    "cardNum": "99"
+    "cardNum": "99",
+    "collectionCount": 0
   },
   "100": {
     "name": "Anhybite",
@@ -1297,7 +1396,8 @@
     "artist": "Bellymouth",
     "imageName": "Anhybite.webp",
     "deckCardImage": "deckCard+Anhybite.webp",
-    "cardNum": "100"
+    "cardNum": "100",
+    "collectionCount": 0
   },
   "101": {
     "name": "Awoobis",
@@ -1310,7 +1410,8 @@
     "artist": "Sturner",
     "imageName": "Awoobis.webp",
     "deckCardImage": "deckCard+Awoobis.webp",
-    "cardNum": "101"
+    "cardNum": "101",
+    "collectionCount": 0
   },
   "102": {
     "name": "Baghost",
@@ -1323,7 +1424,8 @@
     "artist": "Sturner",
     "imageName": "Baghost.webp",
     "deckCardImage": "deckCard+Baghost.webp",
-    "cardNum": "102"
+    "cardNum": "102",
+    "collectionCount": 0
   },
   "103": {
     "name": "Baroot",
@@ -1336,7 +1438,8 @@
     "artist": "Sturner",
     "imageName": "Baroot.webp",
     "deckCardImage": "deckCard+Baroot.webp",
-    "cardNum": "103"
+    "cardNum": "103",
+    "collectionCount": 0
   },
   "104": {
     "name": "Beelt",
@@ -1349,7 +1452,8 @@
     "artist": "Melscribbles",
     "imageName": "Beelt.webp",
     "deckCardImage": "deckCard+Beelt.webp",
-    "cardNum": "104"
+    "cardNum": "104",
+    "collectionCount": 0
   },
   "105": {
     "name": "Biogator",
@@ -1362,7 +1466,8 @@
     "artist": "Bellymouth",
     "imageName": "Biogator.webp",
     "deckCardImage": "deckCard+Biogator.webp",
-    "cardNum": "105"
+    "cardNum": "105",
+    "collectionCount": 0
   },
   "106": {
     "name": "Birds of Fortune",
@@ -1375,7 +1480,8 @@
     "artist": "Hollulu",
     "imageName": "Birds+of+Fortune.webp",
     "deckCardImage": "deckCard+Birds+of+Fortune.webp",
-    "cardNum": "106"
+    "cardNum": "106",
+    "collectionCount": 0
   },
   "107": {
     "name": "Birthday Basher",
@@ -1388,7 +1494,8 @@
     "artist": "Melscribbles",
     "imageName": "Birthday+Basher.webp",
     "deckCardImage": "deckCard+Birthday+Basher.webp",
-    "cardNum": "107"
+    "cardNum": "107",
+    "collectionCount": 0
   },
   "108": {
     "name": "Blademaus",
@@ -1397,11 +1504,12 @@
     "cost": 1,
     "effect": "You cannot summon Blademaus if you have another Blademaus in play.",
     "flavorText": "The modified sewing needle Blademaus skillfuly weilds is a memento from an old friend.",
-    "type": "✦Scout Beast",
+    "type": "\u2726Scout Beast",
     "artist": "Bellymouth",
     "imageName": "Blademaus.webp",
     "deckCardImage": "deckCard+Blademaus.webp",
-    "cardNum": "108"
+    "cardNum": "108",
+    "collectionCount": 0
   },
   "109": {
     "name": "Bobbin",
@@ -1414,7 +1522,8 @@
     "artist": "Sturner",
     "imageName": "Bobbin.webp",
     "deckCardImage": "deckCard+Bobbin.webp",
-    "cardNum": "109"
+    "cardNum": "109",
+    "collectionCount": 0
   },
   "110": {
     "name": "Bottled Nightmare",
@@ -1427,7 +1536,8 @@
     "artist": "Bellymouth",
     "imageName": "Bottled+Nightmare.webp",
     "deckCardImage": "deckCard+Bottled+Nightmare.webp",
-    "cardNum": "110"
+    "cardNum": "110",
+    "collectionCount": 0
   },
   "111": {
     "name": "Byeah Beast",
@@ -1436,11 +1546,12 @@
     "cost": 2,
     "effect": "Your deck may contain any number of cards named Byeah Beast.",
     "flavorText": "Cheeseburgers. Hotdogs. Donuts. Bar fightin'. Bug collection.",
-    "type": "✦Byeah Beast",
+    "type": "\u2726Byeah Beast",
     "artist": "Snoozincopter",
     "imageName": "Byeah+Beast.webp",
     "deckCardImage": "deckCard+Byeah+Beast.webp",
-    "cardNum": "111"
+    "cardNum": "111",
+    "collectionCount": 0
   },
   "112": {
     "name": "Cauldrosaur",
@@ -1453,7 +1564,8 @@
     "artist": "Sturner",
     "imageName": "Cauldrosaur.webp",
     "deckCardImage": "deckCard+Cauldrosaur.webp",
-    "cardNum": "112"
+    "cardNum": "112",
+    "collectionCount": 0
   },
   "113": {
     "name": "Centilead",
@@ -1466,7 +1578,8 @@
     "artist": "Sturner",
     "imageName": "Centilead.webp",
     "deckCardImage": "deckCard+Centilead.webp",
-    "cardNum": "113"
+    "cardNum": "113",
+    "collectionCount": 0
   },
   "114": {
     "name": "Chromanova",
@@ -1475,11 +1588,12 @@
     "cost": 6,
     "effect": "Beasts on your team that are above a Grotto gain 1 power.\n\nBeasts on your team that are beside Chromanova gain 1 power.",
     "flavorText": "It is said that once you get a glimpse of the rare Chromanova, you'll never be lucky again.",
-    "type": "✦Mystic Beast",
+    "type": "\u2726Mystic Beast",
     "artist": "Melscribbles",
     "imageName": "Chromanova.webp",
     "deckCardImage": "deckCard+Chromanova.webp",
-    "cardNum": "114"
+    "cardNum": "114",
+    "collectionCount": 0
   },
   "115": {
     "name": "Connival",
@@ -1492,7 +1606,8 @@
     "artist": "Sturner",
     "imageName": "Connival.webp",
     "deckCardImage": "deckCard+Connival.webp",
-    "cardNum": "115"
+    "cardNum": "115",
+    "collectionCount": 0
   },
   "116": {
     "name": "Crabcha",
@@ -1505,7 +1620,8 @@
     "artist": "Bellymouth",
     "imageName": "Crabcha.webp",
     "deckCardImage": "deckCard+Crabcha.webp",
-    "cardNum": "116"
+    "cardNum": "116",
+    "collectionCount": 0
   },
   "117": {
     "name": "Dig Dog",
@@ -1518,7 +1634,8 @@
     "artist": "Sturner",
     "imageName": "Dig+Dog.webp",
     "deckCardImage": "deckCard+Dig+Dog.webp",
-    "cardNum": "117"
+    "cardNum": "117",
+    "collectionCount": 0
   },
   "118": {
     "name": "Dragossom",
@@ -1531,7 +1648,8 @@
     "artist": "Melscribbles",
     "imageName": "Dragossom.webp",
     "deckCardImage": "deckCard+Dragossom.webp",
-    "cardNum": "118"
+    "cardNum": "118",
+    "collectionCount": 0
   },
   "119": {
     "name": "Dream-Eater Bat",
@@ -1544,7 +1662,8 @@
     "artist": "Sturner",
     "imageName": "Dream-Eater+Bat.webp",
     "deckCardImage": "deckCard+Dream-Eater+Bat.webp",
-    "cardNum": "119"
+    "cardNum": "119",
+    "collectionCount": 0
   },
   "120": {
     "name": "Dredgelord",
@@ -1553,11 +1672,12 @@
     "cost": 4,
     "effect": "When summoned, attach five cards from the top of your deck face down onto Dredgelord.\n\nDredgelord cannot attack or defend if it has cards attached to it.",
     "flavorText": "Deep within the magma chambers, it slumbers...",
-    "type": "✦Dragon Beast",
+    "type": "\u2726Dragon Beast",
     "artist": "Sturner",
     "imageName": "Dredgelord.webp",
     "deckCardImage": "deckCard+Dredgelord.webp",
-    "cardNum": "120"
+    "cardNum": "120",
+    "collectionCount": 0
   },
   "121": {
     "name": "Droplganger",
@@ -1570,7 +1690,8 @@
     "artist": "Bellymouth",
     "imageName": "Droplganger.webp",
     "deckCardImage": "deckCard+Droplganger.webp",
-    "cardNum": "121"
+    "cardNum": "121",
+    "collectionCount": 0
   },
   "122": {
     "name": "Dustbunny",
@@ -1583,7 +1704,8 @@
     "artist": "Hollulu",
     "imageName": "Dustbunny.webp",
     "deckCardImage": "deckCard+Dustbunny.webp",
-    "cardNum": "122"
+    "cardNum": "122",
+    "collectionCount": 0
   },
   "123": {
     "name": "EEE-Vamp",
@@ -1591,12 +1713,13 @@
     "goal": "-",
     "cost": 2,
     "effect": "When an opponent summons a Wish, that player discards the top card of their deck.",
-    "flavorText": "Beware the cardioid mic— an EEE-Vamp's song can hit you right in the heart!",
+    "flavorText": "Beware the cardioid mic\u2014 an EEE-Vamp's song can hit you right in the heart!",
     "type": "Musical Beast",
     "artist": "Melscribbles",
     "imageName": "EEE-Vamp.webp",
     "deckCardImage": "deckCard+EEE-Vamp.webp",
-    "cardNum": "123"
+    "cardNum": "123",
+    "collectionCount": 0
   },
   "124": {
     "name": "Exbeelosion",
@@ -1609,7 +1732,8 @@
     "artist": "Bellymouth",
     "imageName": "Exbeelosion.webp",
     "deckCardImage": "deckCard+Exbeelosion.webp",
-    "cardNum": "124"
+    "cardNum": "124",
+    "collectionCount": 0
   },
   "125": {
     "name": "Excasaur",
@@ -1622,7 +1746,8 @@
     "artist": "Sturner",
     "imageName": "Excasaur.webp",
     "deckCardImage": "deckCard+Excasaur.webp",
-    "cardNum": "125"
+    "cardNum": "125",
+    "collectionCount": 0
   },
   "126": {
     "name": "Festive Mimic",
@@ -1631,11 +1756,12 @@
     "cost": 3,
     "effect": "When summoned, roll a six-sided die. Draw a number of cards equal to the result on the die.",
     "flavorText": "Surprise!",
-    "type": "✦Surprise Beast",
+    "type": "\u2726Surprise Beast",
     "artist": "Hollulu",
     "imageName": "Festive+Mimic.webp",
     "deckCardImage": "deckCard+Festive+Mimic.webp",
-    "cardNum": "126"
+    "cardNum": "126",
+    "collectionCount": 0
   },
   "127": {
     "name": "Fleech",
@@ -1648,7 +1774,8 @@
     "artist": "Sturner",
     "imageName": "Fleech.webp",
     "deckCardImage": "deckCard+Fleech.webp",
-    "cardNum": "127"
+    "cardNum": "127",
+    "collectionCount": 0
   },
   "128": {
     "name": "Fretzel",
@@ -1656,12 +1783,13 @@
     "goal": "-",
     "cost": 1,
     "effect": "When defending, draw a card.",
-    "flavorText": "Fretzels are highly mischevious— they often steal snacks, and enjoy the antics on the Carnival Grounds!",
+    "flavorText": "Fretzels are highly mischevious\u2014 they often steal snacks, and enjoy the antics on the Carnival Grounds!",
     "type": "Foodie Beast",
     "artist": "Melscribbles",
     "imageName": "Fretzel.webp",
     "deckCardImage": "deckCard+Fretzel.webp",
-    "cardNum": "128"
+    "cardNum": "128",
+    "collectionCount": 0
   },
   "129": {
     "name": "Friendtriloquist",
@@ -1674,7 +1802,8 @@
     "artist": "Sturner",
     "imageName": "Friendtriloquist.webp",
     "deckCardImage": "deckCard+Friendtriloquist.webp",
-    "cardNum": "129"
+    "cardNum": "129",
+    "collectionCount": 0
   },
   "130": {
     "name": "Frostbite",
@@ -1682,12 +1811,13 @@
     "goal": "-",
     "cost": 4,
     "effect": "-",
-    "flavorText": "These Beasts shepherd wandering spirits from completely losing their way. In turn, the ice that forms on them from prolonged ghostly exposure acts as armor.",
+    "flavorText": "These Beasts shepherd wandering spirits from completely losing their way. In turn, the ice that forms on them from prolonged ghostly exposure acts as armor.",        
     "type": "Icy Beast",
     "artist": "Hollulu & Sturner",
     "imageName": "Frostbite.webp",
     "deckCardImage": "deckCard+Frostbite.webp",
-    "cardNum": "130"
+    "cardNum": "130",
+    "collectionCount": 0
   },
   "131": {
     "name": "Gachatron",
@@ -1700,7 +1830,8 @@
     "artist": "Sturner",
     "imageName": "Gachatron.webp",
     "deckCardImage": "deckCard+Gachatron.webp",
-    "cardNum": "131"
+    "cardNum": "131",
+    "collectionCount": 0
   },
   "132": {
     "name": "Ghastlight",
@@ -1713,7 +1844,8 @@
     "artist": "Sturner",
     "imageName": "Ghastlight.webp",
     "deckCardImage": "deckCard+Ghastlight.webp",
-    "cardNum": "132"
+    "cardNum": "132",
+    "collectionCount": 0
   },
   "133": {
     "name": "Glow Angel",
@@ -1726,7 +1858,8 @@
     "artist": "Melscribbles",
     "imageName": "Glow+Angel.webp",
     "deckCardImage": "deckCard+Glow+Angel.webp",
-    "cardNum": "133"
+    "cardNum": "133",
+    "collectionCount": 0
   },
   "134": {
     "name": "Googlow",
@@ -1739,20 +1872,22 @@
     "artist": "Sturner",
     "imageName": "Googlow.webp",
     "deckCardImage": "deckCard+Googlow.webp",
-    "cardNum": "134"
+    "cardNum": "134",
+    "collectionCount": 0
   },
   "135": {
     "name": "Gourmander",
     "power": 2,
     "goal": "-",
     "cost": 5,
-    "effect": "When summoned, attacking, or defending, you may seach your deck for a Foodie Beast card, reveal it to all players, and put it into your hand. Shuffle your deck when you're done.",  
+    "effect": "When summoned, attacking, or defending, you may seach your deck for a Foodie Beast card, reveal it to all players, and put it into your hand. Shuffle your deck when you're done.",
     "flavorText": "Gourmander's appetite for culinary excellence is as voracious as its... well, appetite.",
-    "type": "✦Chef Beast",
+    "type": "\u2726Chef Beast",
     "artist": "Bellymouth",
     "imageName": "Gourmander.webp",
     "deckCardImage": "deckCard+Gourmander.webp",
-    "cardNum": "135"
+    "cardNum": "135",
+    "collectionCount": 0
   },
   "136": {
     "name": "Harlefin",
@@ -1765,7 +1900,8 @@
     "artist": "Hollulu",
     "imageName": "Harlefin.webp",
     "deckCardImage": "deckCard+Harlefin.webp",
-    "cardNum": "136"
+    "cardNum": "136",
+    "collectionCount": 0
   },
   "137": {
     "name": "Highland Destrier",
@@ -1778,7 +1914,8 @@
     "artist": "Bellymouth",
     "imageName": "Highland+Destrier.webp",
     "deckCardImage": "deckCard+Highland+Destrier.webp",
-    "cardNum": "137"
+    "cardNum": "137",
+    "collectionCount": 0
   },
   "138": {
     "name": "Highlyre",
@@ -1791,7 +1928,8 @@
     "artist": "Sturner",
     "imageName": "Highlyre.webp",
     "deckCardImage": "deckCard+Highlyre.webp",
-    "cardNum": "138"
+    "cardNum": "138",
+    "collectionCount": 0
   },
   "139": {
     "name": "Hypnodaze",
@@ -1804,20 +1942,22 @@
     "artist": "Melscribbles",
     "imageName": "Hypnodaze.webp",
     "deckCardImage": "deckCard+Hypnodaze.webp",
-    "cardNum": "139"
+    "cardNum": "139",
+    "collectionCount": 0
   },
   "140": {
     "name": "Hydraxolotl",
     "power": 4,
     "goal": "-",
     "cost": 7,
-    "effect": "During either of your action phases at any time, you may attach a Wish from your hand face up onto Hydraxolotl. \n\nHydraxolotl gains 1 power for each Wish attached to it.",        
+    "effect": "During either of your action phases at any time, you may attach a Wish from your hand face up onto Hydraxolotl. \n\nHydraxolotl gains 1 power for each Wish attached to it.",
     "flavorText": "Their song ripples with wondrous healing powers!",
     "type": "Titanic Beast",
     "artist": "Hollulu",
     "imageName": "Hydraxolotl.webp",
     "deckCardImage": "deckCard+Hydraxolotl.webp",
-    "cardNum": "140"
+    "cardNum": "140",
+    "collectionCount": 0
   },
   "141": {
     "name": "Invasive Wavestrider",
@@ -1830,7 +1970,8 @@
     "artist": "Bellymouth",
     "imageName": "Invasive+Wavestrider.webp",
     "deckCardImage": "deckCard+Invasive+Wavestrider.webp",
-    "cardNum": "141"
+    "cardNum": "141",
+    "collectionCount": 0
   },
   "142": {
     "name": "Jelly Monkey",
@@ -1843,7 +1984,8 @@
     "artist": "Bellymouth",
     "imageName": "Jelly+Monkey.webp",
     "deckCardImage": "deckCard+Jelly+Monkey.webp",
-    "cardNum": "142"
+    "cardNum": "142",
+    "collectionCount": 0
   },
   "143": {
     "name": "Jestapod",
@@ -1856,7 +1998,8 @@
     "artist": "Sturner",
     "imageName": "Jestapod.webp",
     "deckCardImage": "deckCard+Jestapod.webp",
-    "cardNum": "143"
+    "cardNum": "143",
+    "collectionCount": 0
   },
   "144": {
     "name": "Jukeboxer",
@@ -1869,7 +2012,8 @@
     "artist": "Melscribbles",
     "imageName": "Jukeboxer.webp",
     "deckCardImage": "deckCard+Jukeboxer.webp",
-    "cardNum": "144"
+    "cardNum": "144",
+    "collectionCount": 0
   },
   "145": {
     "name": "Jup the 1st",
@@ -1882,7 +2026,8 @@
     "artist": "Hollulu",
     "imageName": "Jup+the+1st.webp",
     "deckCardImage": "deckCard+Jup+the+1st.webp",
-    "cardNum": "145"
+    "cardNum": "145",
+    "collectionCount": 0
   },
   "146": {
     "name": "Jup the 2nd",
@@ -1895,7 +2040,8 @@
     "artist": "Sturner",
     "imageName": "Jup+the+2nd.webp",
     "deckCardImage": "deckCard+Jup+the+2nd.webp",
-    "cardNum": "146"
+    "cardNum": "146",
+    "collectionCount": 0
   },
   "147": {
     "name": "Jup the 3rd",
@@ -1908,7 +2054,8 @@
     "artist": "Bellymouth",
     "imageName": "Jup+the+3rd.webp",
     "deckCardImage": "deckCard+Jup+the+3rd.webp",
-    "cardNum": "147"
+    "cardNum": "147",
+    "collectionCount": 0
   },
   "148": {
     "name": "Jup the 4th",
@@ -1921,7 +2068,8 @@
     "artist": "Melscribbles",
     "imageName": "Jup+the+4th.webp",
     "deckCardImage": "deckCard+Jup+the+4th.webp",
-    "cardNum": "148"
+    "cardNum": "148",
+    "collectionCount": 0
   },
   "149": {
     "name": "Kelpdrake Root",
@@ -1934,7 +2082,8 @@
     "artist": "Sturner",
     "imageName": "Kelpdrake+Root.webp",
     "deckCardImage": "deckCard+Kelpdrake+Root.webp",
-    "cardNum": "149"
+    "cardNum": "149",
+    "collectionCount": 0
   },
   "150": {
     "name": "Lavabrys Shark",
@@ -1947,7 +2096,8 @@
     "artist": "Sturner",
     "imageName": "Lavabrys+Shark.webp",
     "deckCardImage": "deckCard+Lavabrys+Shark.webp",
-    "cardNum": "150"
+    "cardNum": "150",
+    "collectionCount": 0
   },
   "151": {
     "name": "Leozard",
@@ -1960,7 +2110,8 @@
     "artist": "Sturner",
     "imageName": "Leozard.webp",
     "deckCardImage": "deckCard+Leozard.webp",
-    "cardNum": "151"
+    "cardNum": "151",
+    "collectionCount": 0
   },
   "152": {
     "name": "Lizard Wizard",
@@ -1973,7 +2124,8 @@
     "artist": "Melscribbles",
     "imageName": "Lizard+Wizard.webp",
     "deckCardImage": "deckCard+Lizard+Wizard.webp",
-    "cardNum": "152"
+    "cardNum": "152",
+    "collectionCount": 0
   },
   "153": {
     "name": "Lobboss",
@@ -1986,7 +2138,8 @@
     "artist": "Sturner",
     "imageName": "Lobboss.webp",
     "deckCardImage": "deckCard+Lobboss.webp",
-    "cardNum": "153"
+    "cardNum": "153",
+    "collectionCount": 0
   },
   "154": {
     "name": "Meowdy",
@@ -1999,7 +2152,8 @@
     "artist": "Melscribbles",
     "imageName": "Meowdy.webp",
     "deckCardImage": "deckCard+Meowdy.webp",
-    "cardNum": "154"
+    "cardNum": "154",
+    "collectionCount": 0
   },
   "155": {
     "name": "Metranomatone",
@@ -2012,7 +2166,8 @@
     "artist": "Sturner",
     "imageName": "Metranomatone.webp",
     "deckCardImage": "deckCard+Metranomatone.webp",
-    "cardNum": "155"
+    "cardNum": "155",
+    "collectionCount": 0
   },
   "156": {
     "name": "Minereel",
@@ -2025,7 +2180,8 @@
     "artist": "Sturner",
     "imageName": "Minereel.webp",
     "deckCardImage": "deckCard+Minereel.webp",
-    "cardNum": "156"
+    "cardNum": "156",
+    "collectionCount": 0
   },
   "157": {
     "name": "Moosaic",
@@ -2038,7 +2194,8 @@
     "artist": "Melscribbles",
     "imageName": "Moosaic.webp",
     "deckCardImage": "deckCard+Moosaic.webp",
-    "cardNum": "157"
+    "cardNum": "157",
+    "collectionCount": 0
   },
   "158": {
     "name": "Mountidary",
@@ -2051,7 +2208,8 @@
     "artist": "Melscribbles",
     "imageName": "Mountidary.webp",
     "deckCardImage": "deckCard+Mountidary.webp",
-    "cardNum": "158"
+    "cardNum": "158",
+    "collectionCount": 0
   },
   "159": {
     "name": "Mr. Anycard",
@@ -2064,7 +2222,8 @@
     "artist": "Hollulu",
     "imageName": "Mr.+Anycard.webp",
     "deckCardImage": "deckCard+Mr.+Anycard.webp",
-    "cardNum": "159"
+    "cardNum": "159",
+    "collectionCount": 0
   },
   "160": {
     "name": "Nebula Ray",
@@ -2077,7 +2236,8 @@
     "artist": "Hollulu",
     "imageName": "Nebula+Ray.webp",
     "deckCardImage": "deckCard+Nebula+Ray.webp",
-    "cardNum": "160"
+    "cardNum": "160",
+    "collectionCount": 0
   },
   "161": {
     "name": "Nightmite",
@@ -2090,7 +2250,8 @@
     "artist": "Sturner",
     "imageName": "Nightmite.webp",
     "deckCardImage": "deckCard+Nightmite.webp",
-    "cardNum": "161"
+    "cardNum": "161",
+    "collectionCount": 0
   },
   "162": {
     "name": "Nyxwing",
@@ -2103,7 +2264,8 @@
     "artist": "Sturner",
     "imageName": "Nyxwing.webp",
     "deckCardImage": "deckCard+Nyxwing.webp",
-    "cardNum": "162"
+    "cardNum": "162",
+    "collectionCount": 0
   },
   "163": {
     "name": "Optimal Illusion",
@@ -2112,11 +2274,12 @@
     "cost": 5,
     "effect": "You may summon Beasts and Grottos from your discard pile as if they were in your hand.\n\nWhen you summon a Wish, you may choose a Beast in play and it rests.",
     "flavorText": "Behold: The Grand Finale!",
-    "type": "✦Wizard Beast",
+    "type": "\u2726Wizard Beast",
     "artist": "Hollulu",
     "imageName": "Optimal+Illusion.webp",
     "deckCardImage": "deckCard+Optimal+Illusion.webp",
-    "cardNum": "163"
+    "cardNum": "163",
+    "collectionCount": 0
   },
   "164": {
     "name": "Paintergeist",
@@ -2129,7 +2292,8 @@
     "artist": "Sturner",
     "imageName": "Paintergeist.webp",
     "deckCardImage": "deckCard+Paintergeist.webp",
-    "cardNum": "164"
+    "cardNum": "164",
+    "collectionCount": 0
   },
   "165": {
     "name": "Peep-Peep",
@@ -2142,7 +2306,8 @@
     "artist": "Hollulu",
     "imageName": "Peep-Peep.webp",
     "deckCardImage": "deckCard+Peep-Peep.webp",
-    "cardNum": "165"
+    "cardNum": "165",
+    "collectionCount": 0
   },
   "166": {
     "name": "Plunky",
@@ -2155,20 +2320,22 @@
     "artist": "Bellymouth",
     "imageName": "Plunky.webp",
     "deckCardImage": "deckCard+Plunky.webp",
-    "cardNum": "166"
+    "cardNum": "166",
+    "collectionCount": 0
   },
   "167": {
-    "name": "Poñata",
+    "name": "Po\u00f1ata",
     "power": 2,
     "goal": "-",
     "cost": 2,
-    "effect": "When defending, if Poñata would be discarded from play during combat, flip a coin and call it. If you win the flip, move Poñata to your Sideline instead. If you can't or you lose the flip, discard Poñata and each opponent draws two cards.",
+    "effect": "When defending, if Po\u00f1ata would be discarded from play during combat, flip a coin and call it. If you win the flip, move Po\u00f1ata to your Sideline instead. If you can't or you lose the flip, discard Po\u00f1ata and each opponent draws two cards.",
     "flavorText": "One... two... three..! And your time is up.",
     "type": "Surprise Beast",
     "artist": "Hollulu",
     "imageName": "Ponata.webp",
     "deckCardImage": "deckCard+Ponata.webp",
-    "cardNum": "167"
+    "cardNum": "167",
+    "collectionCount": 0
   },
   "168": {
     "name": "Pourcelain",
@@ -2181,7 +2348,8 @@
     "artist": "Melscribbles",
     "imageName": "Pourcelain.webp",
     "deckCardImage": "deckCard+Pourcelain.webp",
-    "cardNum": "168"
+    "cardNum": "168",
+    "collectionCount": 0
   },
   "169": {
     "name": "Protojammer",
@@ -2190,11 +2358,12 @@
     "cost": 5,
     "effect": "When summoned, you may attach any number of Wishes from you hand face up onto Protojammer.\n\nDuring either of your action phases at any time, you may rest Protojammer. When you do, summon a face up wish attached to Protojammer free of cost. It remains attached to Protojammer.",
     "flavorText": "-",
-    "type": "✦Musical Beast",
+    "type": "\u2726Musical Beast",
     "artist": "Melscribbles",
     "imageName": "Protojammer.webp",
     "deckCardImage": "deckCard+Protojammer.webp",
-    "cardNum": "169"
+    "cardNum": "169",
+    "collectionCount": 0
   },
   "170": {
     "name": "Pteroducktyl",
@@ -2207,7 +2376,8 @@
     "artist": "Melscribbles",
     "imageName": "Pteroducktyl.webp",
     "deckCardImage": "deckCard+Pteroducktyl.webp",
-    "cardNum": "170"
+    "cardNum": "170",
+    "collectionCount": 0
   },
   "171": {
     "name": "Puddle Puppy",
@@ -2220,7 +2390,8 @@
     "artist": "Melscribbles",
     "imageName": "Puddle+Puppy.webp",
     "deckCardImage": "deckCard+Puddle+Puppy.webp",
-    "cardNum": "171"
+    "cardNum": "171",
+    "collectionCount": 0
   },
   "172": {
     "name": "Radroot",
@@ -2233,7 +2404,8 @@
     "artist": "Hollulu",
     "imageName": "Radroot.webp",
     "deckCardImage": "deckCard+Radroot.webp",
-    "cardNum": "172"
+    "cardNum": "172",
+    "collectionCount": 0
   },
   "173": {
     "name": "Razzleposs",
@@ -2246,7 +2418,8 @@
     "artist": "Bellymouth",
     "imageName": "Razzleposs.webp",
     "deckCardImage": "deckCard+Razzleposs.webp",
-    "cardNum": "173"
+    "cardNum": "173",
+    "collectionCount": 0
   },
   "174": {
     "name": "Rich Rat",
@@ -2259,7 +2432,8 @@
     "artist": "Sturner",
     "imageName": "Rich+Rat.webp",
     "deckCardImage": "deckCard+Rich+Rat.webp",
-    "cardNum": "174"
+    "cardNum": "174",
+    "collectionCount": 0
   },
   "175": {
     "name": "Rummage Rat",
@@ -2272,7 +2446,8 @@
     "artist": "Sturner",
     "imageName": "Rummage+Rat.webp",
     "deckCardImage": "deckCard+Rummage+Rat.webp",
-    "cardNum": "175"
+    "cardNum": "175",
+    "collectionCount": 0
   },
   "176": {
     "name": "Scorptus",
@@ -2280,12 +2455,13 @@
     "goal": "-",
     "cost": 3,
     "effect": "When defending, choose an attacking Beast. At the end of battle, the chosen Beast is discarded.",
-    "flavorText": "A living, venomous ballista— an angry one, too.",
+    "flavorText": "A living, venomous ballista\u2014 an angry one, too.",
     "type": "Plant Beast",
     "artist": "Sturner",
     "imageName": "Scorptus.webp",
     "deckCardImage": "deckCard+Scorptus.webp",
-    "cardNum": "176"
+    "cardNum": "176",
+    "collectionCount": 0
   },
   "177": {
     "name": "Seasprinter",
@@ -2298,7 +2474,8 @@
     "artist": "Melscribbles",
     "imageName": "Seasprinter.webp",
     "deckCardImage": "deckCard+Seasprinter.webp",
-    "cardNum": "177"
+    "cardNum": "177",
+    "collectionCount": 0
   },
   "178": {
     "name": "Serachime",
@@ -2311,7 +2488,8 @@
     "artist": "Sturner",
     "imageName": "Serachime.webp",
     "deckCardImage": "deckCard+Serachime.webp",
-    "cardNum": "178"
+    "cardNum": "178",
+    "collectionCount": 0
   },
   "179": {
     "name": "Sheetopillar",
@@ -2324,7 +2502,8 @@
     "artist": "Sturner",
     "imageName": "Sheetopillar.webp",
     "deckCardImage": "deckCard+Sheetopillar.webp",
-    "cardNum": "179"
+    "cardNum": "179",
+    "collectionCount": 0
   },
   "180": {
     "name": "Sir Greaves",
@@ -2333,11 +2512,12 @@
     "cost": 9,
     "effect": "Sir Greaves costs 1 less to summon for each Beast in your discard pile.\n\nWhen Sir Greaves is discarded from play, shuffle it into your deck instead.",
     "flavorText": "Endlessly searching. He is never without his dragon companion.",
-    "type": "✦Ghostly Beast",
+    "type": "\u2726Ghostly Beast",
     "artist": "Hollulu",
     "imageName": "Sir+Greaves.webp",
     "deckCardImage": "deckCard+Sir+Greaves.webp",
-    "cardNum": "180"
+    "cardNum": "180",
+    "collectionCount": 0
   },
   "181": {
     "name": "Sludge",
@@ -2350,7 +2530,8 @@
     "artist": "Sturner",
     "imageName": "Sludge.webp",
     "deckCardImage": "deckCard+Sludge.webp",
-    "cardNum": "181"
+    "cardNum": "181",
+    "collectionCount": 0
   },
   "182": {
     "name": "Small Enemy Spider",
@@ -2363,7 +2544,8 @@
     "artist": "Bellymouth",
     "imageName": "Small+Enemy+Spider.webp",
     "deckCardImage": "deckCard+Small+Enemy+Spider.webp",
-    "cardNum": "182"
+    "cardNum": "182",
+    "collectionCount": 0
   },
   "183": {
     "name": "Snailsman",
@@ -2371,12 +2553,13 @@
     "goal": "-",
     "cost": 5,
     "effect": "When you would score a card from the top of your deck, you may choose to score any card from your discard pile instead.",
-    "flavorText": "A crawling bazaar, offering the most bizarre deals— Don't miss out!",
+    "flavorText": "A crawling bazaar, offering the most bizarre deals\u2014 Don't miss out!",
     "type": "Entrepreneur Beast",
     "artist": "Bellymouth",
     "imageName": "Snailsman.webp",
     "deckCardImage": "deckCard+Snailsman.webp",
-    "cardNum": "183"
+    "cardNum": "183",
+    "collectionCount": 0
   },
   "184": {
     "name": "Snaptrap",
@@ -2389,7 +2572,8 @@
     "artist": "Melscribbles",
     "imageName": "Snaptrap.webp",
     "deckCardImage": "deckCard+Snaptrap.webp",
-    "cardNum": "184"
+    "cardNum": "184",
+    "collectionCount": 0
   },
   "185": {
     "name": "Sneaky Rat",
@@ -2402,7 +2586,8 @@
     "artist": "Sturner",
     "imageName": "Sneaky+Rat.webp",
     "deckCardImage": "deckCard+Sneaky+Rat.webp",
-    "cardNum": "185"
+    "cardNum": "185",
+    "collectionCount": 0
   },
   "186": {
     "name": "Sneezie",
@@ -2415,7 +2600,8 @@
     "artist": "Sturner",
     "imageName": "Sneezie.webp",
     "deckCardImage": "deckCard+Sneezie.webp",
-    "cardNum": "186"
+    "cardNum": "186",
+    "collectionCount": 0
   },
   "187": {
     "name": "Spectocular",
@@ -2428,7 +2614,8 @@
     "artist": "Hollulu",
     "imageName": "Spectocular.webp",
     "deckCardImage": "deckCard+Spectocular.webp",
-    "cardNum": "187"
+    "cardNum": "187",
+    "collectionCount": 0
   },
   "188": {
     "name": "Stormplaty",
@@ -2441,7 +2628,8 @@
     "artist": "Bellymouth",
     "imageName": "Stormplaty.webp",
     "deckCardImage": "deckCard+Stormplaty.webp",
-    "cardNum": "188"
+    "cardNum": "188",
+    "collectionCount": 0
   },
   "189": {
     "name": "Strong Rat",
@@ -2454,7 +2642,8 @@
     "artist": "Sturner",
     "imageName": "Strong+Rat.webp",
     "deckCardImage": "deckCard+Strong+Rat.webp",
-    "cardNum": "189"
+    "cardNum": "189",
+    "collectionCount": 0
   },
   "190": {
     "name": "Stumpalump",
@@ -2467,7 +2656,8 @@
     "artist": "Bellymouth",
     "imageName": "Stumpalump.webp",
     "deckCardImage": "deckCard+Stumpalump.webp",
-    "cardNum": "190"
+    "cardNum": "190",
+    "collectionCount": 0
   },
   "191": {
     "name": "Sweet Tooth",
@@ -2480,7 +2670,8 @@
     "artist": "Melscribbles",
     "imageName": "Sweet+Tooth.webp",
     "deckCardImage": "deckCard+Sweet+Tooth.webp",
-    "cardNum": "191"
+    "cardNum": "191",
+    "collectionCount": 0
   },
   "192": {
     "name": "Tadpal",
@@ -2493,7 +2684,8 @@
     "artist": "Sturner",
     "imageName": "Tadpal.webp",
     "deckCardImage": "deckCard+Tadpal.webp",
-    "cardNum": "192"
+    "cardNum": "192",
+    "collectionCount": 0
   },
   "193": {
     "name": "Thamacrow",
@@ -2506,7 +2698,8 @@
     "artist": "Bellymouth",
     "imageName": "Thamacrow.webp",
     "deckCardImage": "deckCard+Thamacrow.webp",
-    "cardNum": "193"
+    "cardNum": "193",
+    "collectionCount": 0
   },
   "194": {
     "name": "Thingamachicken",
@@ -2519,20 +2712,22 @@
     "artist": "Bellymouth",
     "imageName": "Thingamachicken.webp",
     "deckCardImage": "deckCard+Thingamachicken.webp",
-    "cardNum": "194"
+    "cardNum": "194",
+    "collectionCount": 0
   },
   "195": {
     "name": "Toadstool",
     "power": 0,
     "goal": "-",
     "cost": 5,
-    "effect": "When summoned, you may choose a Beast in play and attach it face up onto Toadstool.\n\nToadstool's power is equal to the power of all face up Beasts attached to it.",
+    "effect": "When summoned, you may choose a Beast in play and attach it face up onto Toadstool.\n\nToadstool's power is equal to the power of all face up Beasts attached to it.",    
     "flavorText": "Likely, mostly the fungi. But it's also very much the toad. It's... something new altogether?",
-    "type": "✦Fungal Beast",
+    "type": "\u2726Fungal Beast",
     "artist": "Hollulu",
     "imageName": "Toadstool.webp",
     "deckCardImage": "deckCard+Toadstool.webp",
-    "cardNum": "195"
+    "cardNum": "195",
+    "collectionCount": 0
   },
   "196": {
     "name": "Toyrex",
@@ -2545,7 +2740,8 @@
     "artist": "Sturner",
     "imageName": "Toyrex.webp",
     "deckCardImage": "deckCard+Toyrex.webp",
-    "cardNum": "196"
+    "cardNum": "196",
+    "collectionCount": 0
   },
   "197": {
     "name": "Trickstircuit",
@@ -2558,7 +2754,8 @@
     "artist": "Sturner",
     "imageName": "Trickstircuit.webp",
     "deckCardImage": "deckCard+Trickstircuit.webp",
-    "cardNum": "197"
+    "cardNum": "197",
+    "collectionCount": 0
   },
   "198": {
     "name": "Veggiroo",
@@ -2571,7 +2768,8 @@
     "artist": "Sturner",
     "imageName": "Veggiroo.webp",
     "deckCardImage": "deckCard+Veggiroo.webp",
-    "cardNum": "198"
+    "cardNum": "198",
+    "collectionCount": 0
   },
   "199": {
     "name": "Weeniemutt",
@@ -2584,19 +2782,21 @@
     "artist": "Sturner",
     "imageName": "Weeniemutt.webp",
     "deckCardImage": "deckCard+Weeniemutt.webp",
-    "cardNum": "199"
+    "cardNum": "199",
+    "collectionCount": 0
   },
   "200": {
     "name": "Zapbit",
     "power": 1,
     "goal": "-",
     "cost": 2,
-    "effect": "When attacking or defending, you may discard up to three cards from you hand. Zapbit gains 1 power until the end of the turn for each card discarded in this way.",
+    "effect": "When attacking or defending, you may discard up to three cards from you hand. Zapbit gains 1 power until the end of the turn for each card discarded in this way.",       
     "flavorText": "Quick as lightning, bold as thunder!",
     "type": "Wizard Beast",
     "artist": "Sturner",
     "imageName": "Zapbit.webp",
     "deckCardImage": "deckCard+Zapbit.webp",
-    "cardNum": "200"
+    "cardNum": "200",
+    "collectionCount": 0
   }
 }

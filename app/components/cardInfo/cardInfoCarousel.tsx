@@ -103,6 +103,7 @@ export const CardInfoCarousel: FC<CardInfoCarouselProps> = ({ cardNum }) => {
                 imageName={currentItem.imageName}
                 effect={currentItem.effect}
                 collectionView={false}
+                collectionCount={currentItem.collectionCount}
                 showInfoButton={false}
                 glow={{ show: false }}
                 cardDimensions={{ maxWidth: "max-w-[300px]" }}

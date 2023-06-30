@@ -19,6 +19,7 @@ export type CardsData = {
   imageName: string;
   deckCardImage: string;
   cardNum: string;
+  collectionCount: number;
 };
 
 export const CardDataContext = createContext<CardsData[] | undefined>(

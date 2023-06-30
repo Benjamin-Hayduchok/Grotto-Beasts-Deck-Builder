@@ -13,6 +13,7 @@ export type CardProps = {
   imageName: string;
   effect: string;
   collectionView: boolean;
+  collectionCount: number;
   showInfoButton?: boolean;
   glow?: {
     show: boolean;
