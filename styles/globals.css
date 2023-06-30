@@ -19,6 +19,11 @@
 body {
   background-color: salmon;
 }
+
+body * {
+  box-sizing: border-box;
+}
+
 .cardListOuter {
   margin: auto;
   width: 50%;
@@ -66,7 +71,7 @@ button {
   margin-right: 15vh;
   margin-left: 5vw;
   width: 65vw;
-  border: orange 1px solid;
+  /* border: orange 1px solid; */
 }
 
 /* NV - REPLACED BY TW COMPONENT */

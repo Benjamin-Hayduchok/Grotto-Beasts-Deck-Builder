@@ -5,7 +5,8 @@ import Container from "react-bootstrap/Container";
 import SearchBar from "./searchBar";
 import allCards from "./card-list.json";
 import eventBus from "./eventBus";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { CardDataContext } from "./providers/cardDataProvider/CardDataProvider";
 
 var loadEventBus = true;
 
@@ -73,6 +74,8 @@ const isNumberInCardValue = (search: string, value: string) => {
 
 const CardList = (props: { collectionView: boolean }) => {
   const [cardList, setCardList] = useState(cardArray);
+  // const cardData = useContext(CardDataContext);
+  // console.log(cardData);
 
   if (loadEventBus) {
     loadEventBus = false;
