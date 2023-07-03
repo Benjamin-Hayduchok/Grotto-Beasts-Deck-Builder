@@ -24,17 +24,6 @@ var formattedAllCards: {
   collectionCount: number
 }[] = [];
 
-var collectionCountDict: {
-  [collectionCount: number]: number
-} = {
-  0: 1,
-  1:3,
-  4:2,
-  5:0
-};
-
-console.log('collectionCountDict', collectionCountDict)
-
 for (var card in allCards) {
   formattedAllCards.push(allCards[card as keyof typeof allCards]);
 }
