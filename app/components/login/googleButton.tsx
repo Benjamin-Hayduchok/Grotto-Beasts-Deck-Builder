@@ -15,7 +15,7 @@ export default function GoogleButton() {
             else {
                 localStorage.setItem("collectionCountId", authData.record.collectionCountId);
                 // login user
-                window.location.href = new URL(window.location.href).origin + `/collection/${authData.record.collectionCountId}`;
+                if (typeof window !== "undefined") window.location.href = new URL(window.location.href).origin + `/collection/${authData.record.collectionCountId}`;
             }
         }
         // prevent login

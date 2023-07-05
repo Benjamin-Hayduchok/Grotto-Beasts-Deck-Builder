@@ -7,7 +7,7 @@ const CollectionPage = (props: any) => {
     const pocketBaseConnection = useContext(PocketBaseContext);
     console.log('pocketBaseConnection', pocketBaseConnection);
     if (typeof window !== "undefined" && !pocketBaseConnection?.authStore.isValid) window.location.href = new URL(window.location.href).origin + "/collection/new";
-    else window.location.href = new URL(window.location.href).origin + "/collection/IDVALUEINSERTLATER"; // should check if collectionId is in localStorage
+    else if (typeof window !== "undefined") window.location.href = new URL(window.location.href).origin + "/collection/IDVALUEINSERTLATER"; // should check if collectionId is in localStorage
     // note: should not redirect them to their respective collection if the token is valid based on token
 
 
