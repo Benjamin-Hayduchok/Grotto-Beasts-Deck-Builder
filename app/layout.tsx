@@ -1,12 +1,12 @@
 "use client";
 
-import Link from "next/link";
 import "./../styles/globals.css";
 import "./../styles/nav.css";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { ModalProvider } from "./components/providers/modalProvider/ModalProvider";
 import { FC, PropsWithChildren } from "react";
 import { CardDataProvider } from "./components/providers/cardDataProvider/CardDataProvider";
+import { PocketBaseProvider } from "./components/providers/pocketBaseProvider/PocketBaseProvider";
+
 
 export default function RootLayout({
   children,
@@ -16,11 +16,13 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        <CardDataProvider>
-          <ModalProvider>
-            <MainContent>{children}</MainContent>
-          </ModalProvider>
-        </CardDataProvider>
+        <PocketBaseProvider>
+          <CardDataProvider>
+            <ModalProvider>
+              <MainContent>{children}</MainContent>
+            </ModalProvider>
+          </CardDataProvider>
+        </PocketBaseProvider>
       </body>
     </html>
   );

@@ -115,7 +115,7 @@ export const Card: FC<CardProps> = ({
         >
           <img
             className={classNames("w-full h-full scale-100")}
-            src={imageName}
+            src={`/${imageName}`}
             alt={`card-${cardNum}`}
           />
           <div
