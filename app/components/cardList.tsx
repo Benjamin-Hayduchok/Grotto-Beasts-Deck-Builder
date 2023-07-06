@@ -98,8 +98,6 @@ const CardList = (props: { collectionView: boolean }) => {
 
   return (
     <Container className="containerCardList">
-      <SearchBar></SearchBar>
-
       <div className="flex gap-6 flex-wrap justify-center">
         {cardList.map((card) => (
           <Card
