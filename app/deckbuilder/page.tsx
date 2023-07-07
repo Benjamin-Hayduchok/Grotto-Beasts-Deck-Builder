@@ -14,7 +14,7 @@ export default function DeckBuilder() {
     <div>
       <SearchBar></SearchBar>
       <StickyBox className="deckSticky" offsetTop={20} offsetBottom={20}>
-        <Deck collectionView={false}></Deck>
+        <Deck collectionView={false} />
       </StickyBox>
       <br></br>
       <CardList collectionView={false}></CardList>
