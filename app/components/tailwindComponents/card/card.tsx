@@ -14,6 +14,7 @@ export type CardProps = {
   effect: string;
   collectionView: boolean;
   collectionCount: number;
+  updateCollectionCount: Function;
   showInfoButton?: boolean;
   glow?: {
     show: boolean;
@@ -30,6 +31,7 @@ export const Card: FC<CardProps> = ({
   effect,
   collectionView,
   collectionCount,
+  updateCollectionCount,
   cardNum,
   showInfoButton = true,
   glow = {
@@ -137,6 +139,8 @@ export const Card: FC<CardProps> = ({
         <CollectionCardHover
           collectionView={collectionView}
           collectionCount={collectionCount}
+          cardNum={cardNum}
+          updateCollectionCount={updateCollectionCount}
         ></CollectionCardHover>
       </div>
     </div>
