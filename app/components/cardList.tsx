@@ -5,11 +5,11 @@ import Container from "react-bootstrap/Container";
 import SearchBar from "./searchBar";
 import allCards from "./card-list.json";
 import eventBus from "./eventBus";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 var loadEventBus = true;
 
-var formattedAllCards: {
+export type CardsData = {
   name: string;
   power: any;
   goal: any;
@@ -21,13 +21,8 @@ var formattedAllCards: {
   imageName: string;
   deckCardImage: string;
   cardNum: string;
-  collectionCount: number
-}[] = [];
-
-for (var card in allCards) {
-  formattedAllCards.push(allCards[card as keyof typeof allCards]);
-}
-var cardArray = formattedAllCards;
+  collectionCount: number;
+};
 
 const isSearchInCardValue = (search: string, value: string) => {
   return value.toLowerCase().includes(search.toLowerCase());
@@ -72,14 +67,18 @@ const isNumberInCardValue = (search: string, value: string) => {
   return false;
 };
 
-const CardList = (props: { collectionView: boolean }) => {
-  const [cardList, setCardList] = useState(cardArray);
+const CardList = (props: { collectionView: boolean, cardArray: CardsData[]}) => {
+  const [cardList, setCardList] = useState(props.cardArray);
+
+  useEffect(() => {
+    setCardList(props.cardArray);
+  },[]);
 
   if (loadEventBus) {
     loadEventBus = false;
     eventBus.on("searchSubmit", (search: any) => {
       loadEventBus = true;
-      var newList = formattedAllCards.filter((currCard) => {
+      var newList = props.cardArray.filter((currCard) => {
         return (
           isSearchInCardValue(search.name, currCard.name) &&
           isSearchInCardValue(search.type, currCard.type) &&

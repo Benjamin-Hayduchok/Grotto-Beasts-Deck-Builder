@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './../../styles/collection.css';
 import CardPlusButtom from './cardPlusButton';
 import CardMinusButton from './cardMinusButton';
 import CollectionCardCount from './collectionCardCount'
-import util from "./util";
 
 
 
 export default function CollectionCardHover(props: {collectionView: boolean, collectionCount: number}) {
     const [cardCount, setCardCount] = useState(props.collectionCount);
+
+    useEffect(() => {
+        setCardCount(props.collectionCount);
+    }) 
 
     const plusPressed = () => {
         setCardCount(cardCount + 1);
@@ -22,7 +25,7 @@ export default function CollectionCardHover(props: {collectionView: boolean, col
         return (
             <div className='collectionCardHoverContainer'>
                 <CardMinusButton cardDec={minusPressed}/>
-                <CollectionCardCount count={cardCount}/>
+                <CollectionCardCount count={cardCount.toString()}/>
                 <CardPlusButtom cardInc={plusPressed}/>
             </div>
         )
