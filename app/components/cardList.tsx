@@ -75,14 +75,14 @@ const CardList = (props: { collectionView: boolean, cardArray: CardsData[]}) => 
   },[]);
 
   const updateCollectionCount = (isIncremented: boolean, cardNum: string) => {
+    var cardToUpdateIndex = cardList.findIndex(card => card.cardNum === cardNum)
     if (isIncremented) {
-      var cardToUpdateIndex = cardList.findIndex(card => card.cardNum === cardNum)
       cardList[cardToUpdateIndex].collectionCount++; // need to update to find the card with that cardNum instead of querying the index value right away
       setCardList(cardList);
       // setCardList([...cardList]); // WORKS BUT IS SO SLOW
       return;
     }
-    cardList[parseInt(cardNum) - 1].collectionCount--;
+    cardList[cardToUpdateIndex].collectionCount--;
     setCardList(cardList);
     // setCardList([...cardList]); // WORKS BUT IS SO SLOW
   }
