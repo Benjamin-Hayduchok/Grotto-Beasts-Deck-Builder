@@ -30,6 +30,7 @@ export default function CollectionPage({ params }: any) {
     const [cardList, setCardList] = useState(Object.assign({}, cardsData));
 
     useEffect(() => {
+        if (params.id === "new") return;
         getCollectionCount(params.id, cardsData).then(
             result => setCardList(result));
     },[]);
