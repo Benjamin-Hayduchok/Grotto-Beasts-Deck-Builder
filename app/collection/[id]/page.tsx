@@ -3,6 +3,7 @@
 import CardList from '../../components/cardList';
 import StickyBox from "react-sticky-box";
 import Deck from '../../components/deck';
+import SaveButton from '../../components/saveButton'
 import { useContext, useEffect, useState } from "react";
 import {
     CardDataContext,
@@ -41,6 +42,7 @@ export default function CollectionPage({ params }: any) {
             <StickyBox className='deckSticky' offsetTop={20} offsetBottom={20}>
                 <Deck collectionView={true}>
                 </Deck>
+                <SaveButton/>
             </StickyBox>
             <CardList collectionView={true} cardArray={Object.values(cardList)}></CardList>
         </div>
