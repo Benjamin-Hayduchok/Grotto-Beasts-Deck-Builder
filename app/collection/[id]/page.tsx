@@ -9,6 +9,7 @@ import {
     CardsData,
     CardDataContext,
 } from "../../components/providers/cardDataProvider/CardDataProvider";
+import { PocketBaseContext } from "../../components/providers/pocketBaseProvider/PocketBaseProvider";
 import Swal from 'sweetalert2';
 
 type collectionCountObjType = { [key: number]: number };
@@ -42,7 +43,6 @@ const createCollectionCountObj = (cardList: CardsData[]) => {
 
 async function saveCollectionCount(id: string, collectionCountObj: collectionCountObjType, userId: string) {
     const patchData = {collection: collectionCountObj, user: userId};
-    console.log('JSON.stringify(patchData)', JSON.stringify(patchData))
     const res = await fetch(
         `https://grotto-beasts-test.fly.dev/api/collections/cardCollection/records/${id}`,
         {
@@ -68,6 +68,7 @@ async function saveCollectionCount(id: string, collectionCountObj: collectionCou
 
 export default function CollectionPage({ params }: any) {
     const cardsData = useContext(CardDataContext);
+    const pocketBaseConnection = useContext(PocketBaseContext);
     const [cardList, setCardList] = useState(Object.assign({}, cardsData));
     const [userId, setUserId] = useState("");
 
@@ -83,6 +84,16 @@ export default function CollectionPage({ params }: any) {
 
     const saveCollection = () => {
         const collectionCountObj = createCollectionCountObj(cardList);
+        if (!pocketBaseConnection?.authStore.isValid) {
+            Swal.fire({
+                title: '<strong>YOU ARE NOT LOGGED IN</strong>',
+                html: '<a href="/login" style="color:blue;"><u>Click here to go to the Login Page...<u></a>',
+                icon: 'error',
+                confirmButtonColor: '#f27474',
+                confirmButtonText: 'Close'
+              });
+            return;
+        }
         saveCollectionCount(params.id, collectionCountObj, userId).then(
             result => console.log('result', result)
         );
