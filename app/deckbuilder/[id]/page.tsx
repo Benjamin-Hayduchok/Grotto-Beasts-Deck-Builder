@@ -2,11 +2,12 @@
 
 import CardList from "../../components/cardList";
 import StickyBox from "react-sticky-box";
-import Deck from '../../components/deck'
+import Deck from '../../components/deck';
 import { useContext, useEffect, useState } from "react";
 import {
     CardDataContext,
 } from "../../components/providers/cardDataProvider/CardDataProvider";
+import SearchBar from "@/app/components/searchBar";
 
 export default function DeckBuilder() {
     const cardsData = useContext(CardDataContext);
@@ -14,6 +15,7 @@ export default function DeckBuilder() {
 
     return (
         <div>
+            <SearchBar></SearchBar>
             <StickyBox className='deckSticky' offsetTop={20} offsetBottom={20}>
               <Deck collectionView={false} />
             </StickyBox>
