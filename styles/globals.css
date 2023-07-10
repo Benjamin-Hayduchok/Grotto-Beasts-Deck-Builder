@@ -17,8 +17,14 @@
 }
 
 body {
-  background-color: salmon;
+  /* background-color: salmon; */
+  background-color: #e2bd9d !important;
 }
+
+body * {
+  box-sizing: border-box;
+}
+
 .cardListOuter {
   margin: auto;
   width: 50%;
@@ -49,7 +55,7 @@ h2 {
   margin-bottom: 15px;
 }
 
-button {
+/* button {
   background: #e85757;
   border: none;
   border-radius: 30px;
@@ -60,13 +66,13 @@ button {
   padding: 16px;
   width: 120px;
   color: #fff;
-}
+} */
 
 .containerCardList {
   margin-right: 15vh;
   margin-left: 5vw;
   width: 65vw;
-  border: orange 1px solid;
+  /* border: orange 1px solid; */
 }
 
 /* NV - REPLACED BY TW COMPONENT */
