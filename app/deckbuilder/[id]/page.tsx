@@ -1,6 +1,6 @@
 "use client";
 
-import CardList from '../../components/cardList';
+import CardList from "../../components/cardList";
 import StickyBox from "react-sticky-box";
 import Deck from '../../components/deck'
 import { useContext, useEffect, useState } from "react";
@@ -15,8 +15,7 @@ export default function DeckBuilder() {
     return (
         <div>
             <StickyBox className='deckSticky' offsetTop={20} offsetBottom={20}>
-                <Deck collectionView={false}>
-                </Deck>
+              <Deck collectionView={false} />
             </StickyBox>
             <br></br>
             <CardList collectionView={true} cardArray={Object.values(cardList)}></CardList>

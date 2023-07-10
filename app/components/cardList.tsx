@@ -5,7 +5,8 @@ import Container from "react-bootstrap/Container";
 import SearchBar from "./searchBar";
 import allCards from "./card-list.json";
 import eventBus from "./eventBus";
-import React, { useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
+import { CardDataContext } from "./providers/cardDataProvider/CardDataProvider";
 
 var loadEventBus = true;
 
@@ -108,8 +109,6 @@ const CardList = (props: { collectionView: boolean, cardArray: CardsData[]}) => 
 
   return (
     <Container className="containerCardList">
-      <SearchBar></SearchBar>
-
       <div className="flex gap-6 flex-wrap justify-center">
         {cardList.map((card) => (
           <Card

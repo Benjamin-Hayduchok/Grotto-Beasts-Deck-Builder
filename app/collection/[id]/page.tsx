@@ -1,6 +1,6 @@
 "use client";
 
-import CardList from '../../components/cardList';
+import CardList from "../../components/cardList";
 import StickyBox from "react-sticky-box";
 import Deck from '../../components/deck';
 import { SaveButton}  from '../../components/saveButton'
@@ -103,8 +103,7 @@ export default function CollectionPage({ params }: any) {
         <div>
             <br></br>
             <StickyBox className='deckSticky' offsetTop={20} offsetBottom={20}>
-                <Deck collectionView={true}>
-                </Deck>
+                <Deck collectionView={true} />
                 <SaveButton
                     save={saveCollection}
                 />
