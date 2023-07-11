@@ -1,28 +1,38 @@
-import React, { useState } from "react";
+  import React, { useState, useEffect } from "react";
 import './../../styles/collection.css';
 import CardPlusButtom from './cardPlusButton';
 import CardMinusButton from './cardMinusButton';
 import CollectionCardCount from './collectionCardCount'
-import util from "./util";
 
 
 
-export default function CollectionCardHover(props: {collectionView: boolean}) {
-    const [cardCount, setCardCount] = useState("0");
+export default function CollectionCardHover(props: {collectionView: boolean, collectionCount: number, cardNum: string, updateCollectionCount: Function}) {
+    const [cardCount, setCardCount] = useState(props.collectionCount);
+    const [init, setInit] = useState(false);
+
+    useEffect(() => {
+        if (!init) setCardCount(props.collectionCount);
+    }) 
 
     const plusPressed = () => {
-        setCardCount(util.toStringInc(cardCount));
+        setCardCount(cardCount + 1);
+        setInit(true);
+        props.updateCollectionCount(true, props.cardNum)
     }
 
     const minusPressed = () => {
-        setCardCount(util.toStringDec(cardCount));
+        if (cardCount > 0) {
+            setCardCount(cardCount - 1);
+            setInit(true);
+            props.updateCollectionCount(false, props.cardNum)
+        }
     }
 
     if (props.collectionView) {
         return (
             <div className='collectionCardHoverContainer'>
                 <CardMinusButton cardDec={minusPressed}/>
-                <CollectionCardCount count={cardCount}/>
+                <CollectionCardCount count={cardCount.toString()}/>
                 <CardPlusButtom cardInc={plusPressed}/>
             </div>
         )

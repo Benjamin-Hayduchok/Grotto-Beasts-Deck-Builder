@@ -5,12 +5,12 @@ import Container from "react-bootstrap/Container";
 import SearchBar from "./searchBar";
 import allCards from "./card-list.json";
 import eventBus from "./eventBus";
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { CardDataContext } from "./providers/cardDataProvider/CardDataProvider";
 
 var loadEventBus = true;
 
-var formattedAllCards: {
+export type CardsData = {
   name: string;
   power: any;
   goal: any;
@@ -22,12 +22,8 @@ var formattedAllCards: {
   imageName: string;
   deckCardImage: string;
   cardNum: string;
-}[] = [];
-
-for (var card in allCards) {
-  formattedAllCards.push(allCards[card as keyof typeof allCards]);
-}
-var cardArray = formattedAllCards;
+  collectionCount: number;
+};
 
 const isSearchInCardValue = (search: string, value: string) => {
   return value.toLowerCase().includes(search.toLowerCase());
@@ -72,16 +68,31 @@ const isNumberInCardValue = (search: string, value: string) => {
   return false;
 };
 
-const CardList = (props: { collectionView: boolean }) => {
-  const [cardList, setCardList] = useState(cardArray);
-  // const cardData = useContext(CardDataContext);
-  // console.log(cardData);
+const CardList = (props: { collectionView: boolean, cardArray: CardsData[]}) => {
+  const [cardList, setCardList] = useState(props.cardArray);
+
+  useEffect(() => {
+    setCardList(props.cardArray);
+  },[]);
+
+  const updateCollectionCount = (isIncremented: boolean, cardNum: string) => {
+    var cardToUpdateIndex = cardList.findIndex(card => card.cardNum === cardNum)
+    if (isIncremented) {
+      cardList[cardToUpdateIndex].collectionCount++; // need to update to find the card with that cardNum instead of querying the index value right away
+      setCardList(cardList);
+      // setCardList([...cardList]); // WORKS BUT IS SO SLOW
+      return;
+    }
+    cardList[cardToUpdateIndex].collectionCount--;
+    setCardList(cardList);
+    // setCardList([...cardList]); // WORKS BUT IS SO SLOW
+  }
 
   if (loadEventBus) {
     loadEventBus = false;
     eventBus.on("searchSubmit", (search: any) => {
       loadEventBus = true;
-      var newList = formattedAllCards.filter((currCard) => {
+      var newList = props.cardArray.filter((currCard) => {
         return (
           isSearchInCardValue(search.name, currCard.name) &&
           isSearchInCardValue(search.type, currCard.type) &&
@@ -106,6 +117,8 @@ const CardList = (props: { collectionView: boolean }) => {
             effect={card.effect}
             cardNum={card.cardNum}
             collectionView={props.collectionView}
+            collectionCount={card.collectionCount}
+            updateCollectionCount={updateCollectionCount}
             key={card.cardNum}
           />
         ))}

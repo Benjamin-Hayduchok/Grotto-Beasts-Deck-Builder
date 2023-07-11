@@ -2,7 +2,6 @@ import {
   FC,
   PropsWithChildren,
   createContext,
-  useEffect,
   useState,
 } from "react";
 import allCards from "../../card-list.json";
@@ -19,6 +18,7 @@ export type CardsData = {
   imageName: string;
   deckCardImage: string;
   cardNum: string;
+  collectionCount: number;
 };
 
 export const CardDataContext = createContext<CardsData[] | undefined>(
@@ -29,7 +29,7 @@ export const CardDataProvider: FC<PropsWithChildren> = ({ children }) => {
   const [allCardsData, setAllCardsData] = useState<CardsData[]>(
     Object.values(allCards)
   );
-
+  
   return (
     <CardDataContext.Provider value={allCardsData}>
       {children}

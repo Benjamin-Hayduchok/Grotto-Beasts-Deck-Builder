@@ -7,10 +7,16 @@ export default function GoogleButton() {
     const googleLogin = async () => {
         const pb = new PocketBase('https://grotto-beasts-test.fly.dev'); 
         const authData = await pb.collection('users').authWithOAuth2({ provider: 'google' });
-
+        console.log('authData', authData)
         if (pb.authStore.isValid) {
-            // login user
-            window.location.href = new URL(window.location.href).origin + "/collection";
+            if (!authData.record.collectionCountId) {
+                // INSERT COLLECTION ID into db now
+            }
+            else {
+                localStorage.setItem("collectionCountId", authData.record.collectionCountId);
+                // login user
+                if (typeof window !== "undefined") window.location.href = new URL(window.location.href).origin + `/collection/${authData.record.collectionCountId}`;
+            }
         }
         // prevent login
     }
