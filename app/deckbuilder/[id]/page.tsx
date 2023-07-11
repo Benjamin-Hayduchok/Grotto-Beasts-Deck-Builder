@@ -19,7 +19,6 @@ export default function DeckBuilder() {
             <StickyBox className='deckSticky' offsetTop={20} offsetBottom={20}>
               <Deck collectionView={false} />
             </StickyBox>
-            <br></br>
             <CardList collectionView={true} cardArray={Object.values(cardList)}></CardList>
         </div>
     )
