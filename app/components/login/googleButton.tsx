@@ -51,6 +51,10 @@ export default function GoogleButton() {
                     });
                     return;
                 }
+                Swal.fire({
+                    title: '<strong>Logging in now...</strong>',
+                    icon: 'success',
+                });
                 if (typeof window !== "undefined") window.location.href = new URL(window.location.href).origin + `/collection/${collectionCountId}`;
 
             }
@@ -59,12 +63,14 @@ export default function GoogleButton() {
                 if (typeof window !== "undefined") window.location.href = new URL(window.location.href).origin + `/collection/${authData.record.collectionCountId}`;
             }
         }
-        Swal.fire({
-            title: '<strong>Was unable to login user.<br></br>Please try again.</strong>',
-            icon: 'error',
-            confirmButtonColor: '#f27474',
-            confirmButtonText: 'OK'
-        });
+        else {
+            Swal.fire({
+                title: '<strong>Was unable to login user.<br></br>Please try again.</strong>',
+                icon: 'error',
+                confirmButtonColor: '#f27474',
+                confirmButtonText: 'OK'
+            });
+        }  
     }
 
     return (
