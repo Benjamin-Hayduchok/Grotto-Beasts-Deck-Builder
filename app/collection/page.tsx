@@ -14,13 +14,7 @@ const CollectionPage = (props: any) => {
             return;
         }
     }
-    window.location.href = new URL(window.location.href).origin + "/collection/new"; // should check if collectionId is in localStorage
-    // note: should not redirect them to their respective collection if the token is valid based on token
-
-
-    // const pb = new PocketBase('https://grotto-beasts-test.fly.dev'); 
-    // console.log(pb.authStore.token);
-
+    if (typeof window !== "undefined") window.location.href = new URL(window.location.href).origin + "/collection/new";
 
     // return (
     //     <div>
