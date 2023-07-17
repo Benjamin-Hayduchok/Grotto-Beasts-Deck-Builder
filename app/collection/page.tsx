@@ -6,8 +6,15 @@ import { useContext } from "react";
 const CollectionPage = (props: any) => {
     const pocketBaseConnection = useContext(PocketBaseContext);
     console.log('pocketBaseConnection', pocketBaseConnection);
-    if (typeof window !== "undefined" && !pocketBaseConnection?.authStore.isValid) window.location.href = new URL(window.location.href).origin + "/collection/new";
-    else if (typeof window !== "undefined") window.location.href = new URL(window.location.href).origin + "/collection/IDVALUEINSERTLATER"; // should check if collectionId is in localStorage
+
+    if (typeof window !== "undefined" && pocketBaseConnection?.authStore.isValid) {
+        const collectionId = localStorage.getItem('collectionCountId');
+        if (collectionId !== null && collectionId.length > 0) {
+            window.location.href = new URL(window.location.href).origin + "/collection/" + collectionId;
+            return;
+        }
+    }
+    window.location.href = new URL(window.location.href).origin + "/collection/new"; // should check if collectionId is in localStorage
     // note: should not redirect them to their respective collection if the token is valid based on token
 
 
