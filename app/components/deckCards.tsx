@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DeckCard from "./deckCard";
 import eventBus from "./eventBus";
 import cardList from "./card-list.json";
@@ -36,14 +36,14 @@ const checkEpic = (cardType: string) => {
   return false;
 };
 
-const getCardById = (id: string) => {
+const getCardById = (id: string, count: string = "1") => {
   const cardListDict = cardList;
   var cardFromDict = cardListDict[id as keyof typeof cardListDict];
   var returnCard = {
     cardNum: cardFromDict.cardNum.toString(),
     name: cardFromDict.name.toString(),
     imageName: "placeholder, MUST REPLACE LATER!",
-    count: "1", // MUST GENERATE THIS LATER BY DETERMINING IF THE CARD EXISTS IN THE LIST YET
+    count: count, // MUST GENERATE THIS LATER BY DETERMINING IF THE CARD EXISTS IN THE LIST YET
     cost: cardFromDict.cost.toString(),
     isEpic: checkEpic(cardFromDict.type),
   };
@@ -90,10 +90,41 @@ var currDeckArr: {
   isEpic: boolean;
 }[] = [];
 
-const DeckCards = (props: { collectionView: boolean }) => {
-  getDeckList();
+type DeckProps = {
+  collectionView: boolean;
+  deckList?: dbDeckListObjType | undefined;
+};
+
+type dbDeckListObjType = { [key: string]: string };
+
+const insertDeckList = (dbDeckList: dbDeckListObjType | undefined) => {
+  console.log('dbDeckList', dbDeckList)
+  for (var card in dbDeckList) {
+    const cardCount = dbDeckList[parseInt(card)];
+    var cardToAdd = getCardById(card, cardCount);
+    console.log('cardToAdd', cardToAdd)
+    currDeckArr.push(cardToAdd);
+  }
+  console.log('currDeckArr', currDeckArr)
+  return currDeckArr;
+}
+
+const DeckCards = (props: DeckProps) => {
   const [deckArr, setDeckArr] = useState(currDeckArr);
+  const [init, setInit] = useState(false);
   // const [deckCount, setDeckCount] = useState(0);
+
+  useEffect(() => {
+      console.log('props.deckList', props.deckList)
+      if (typeof props.deckList !== "undefined") {
+        console.log("inside")
+        if (!init) {
+          setDeckArr(...[insertDeckList(props.deckList)]);
+          setInit(true);
+        }
+      }
+    },[props]);
+
 
   if (loadChallenger) {
     loadChallenger = false;
