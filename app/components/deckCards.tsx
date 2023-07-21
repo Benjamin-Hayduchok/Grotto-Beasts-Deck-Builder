@@ -120,9 +120,8 @@ const DeckCards = (props: DeckProps) => {
   useEffect(() => {
       console.log('props.deckList', props.deckList)
       if (typeof props.deckList !== "undefined") {
-        console.log("inside")
         if (!init) {
-          setDeckArr(...[insertDeckList(props.deckList)]);
+          setDeckArr(insertDeckList(props.deckList));
           setInit(true);
         }
       }
