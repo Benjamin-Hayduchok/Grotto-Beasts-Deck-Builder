@@ -1,12 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import eventBus from './eventBus';
 import util from './util';
 import Swal from 'sweetalert2';
 
-export default function DeckCounter(props: {collectionView: boolean}) {
+type counterProps = {
+  collectionView: boolean;
+  cardCount: number;
+};
+
+export default function DeckCounter(props: counterProps) {
   const [deckListCount, setDeckListCount] = useState("0");
-  const [cardCount, setCardCount] = useState("0");
+  const [cardCount, setCardCount] = useState(props.cardCount);
   const [maxCount, setMaxCount] = useState("40"); // used specifically for byeah prime
+
+  useEffect(() => {
+    setCardCount(props.cardCount)
+  }, [props])
 
   if (props.collectionView) {
     return (
@@ -19,11 +28,11 @@ export default function DeckCounter(props: {collectionView: boolean}) {
   }
 
   eventBus.on("incrementDeckCounter", (data: any) => {
-      setCardCount(util.toStringInc(cardCount));
+      setCardCount(cardCount + 1);
     }
   );
   eventBus.on("decrementDeckCounter", (data: any) => {
-      setCardCount(util.toStringDec(cardCount));
+      setCardCount(cardCount - 1);
     }
   ); 
   eventBus.on("addChallengerToDeck", (data: any) => {
@@ -34,7 +43,7 @@ export default function DeckCounter(props: {collectionView: boolean}) {
         tempMax = "60";
       }
       else setMaxCount("40");
-      if (parseInt(cardCount) > parseInt(tempMax)  ) {
+      if (cardCount > parseInt(tempMax)  ) {
         Swal.fire({
           title: '<strong>Warning!</strong>',
           html: '<b>You currently have more cards than the maximum allowed cards. Please remove extra cards.</b>',

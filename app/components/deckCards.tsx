@@ -43,7 +43,7 @@ const getCardById = (id: string, count: string = "1") => {
     cardNum: cardFromDict.cardNum.toString(),
     name: cardFromDict.name.toString(),
     imageName: "placeholder, MUST REPLACE LATER!",
-    count: count, // MUST GENERATE THIS LATER BY DETERMINING IF THE CARD EXISTS IN THE LIST YET
+    count: count,
     cost: cardFromDict.cost.toString(),
     isEpic: checkEpic(cardFromDict.type),
   };
@@ -98,14 +98,17 @@ type DeckProps = {
 type dbDeckListObjType = { [key: string]: string };
 
 const insertDeckList = (dbDeckList: dbDeckListObjType | undefined) => {
-  console.log('dbDeckList', dbDeckList)
   for (var card in dbDeckList) {
     const cardCount = dbDeckList[parseInt(card)];
     var cardToAdd = getCardById(card, cardCount);
-    console.log('cardToAdd', cardToAdd)
-    currDeckArr.push(cardToAdd);
+    if (parseInt(cardToAdd.cardNum) <= 32) {
+      // eventBus.dispatch("addChallengerToDeck", { card: cardToAdd });
+    }
+    else {
+      currDeckArr.push(cardToAdd);
+    }
+    
   }
-  console.log('currDeckArr', currDeckArr)
   return currDeckArr;
 }
 

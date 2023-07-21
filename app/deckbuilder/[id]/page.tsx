@@ -30,6 +30,7 @@ export default function DeckBuilder({ params }: any) {
     const cardsData = useContext(CardDataContext);
     const [cardList, setCardList] = useState(Object.assign({}, cardsData));
     const [deckList, setDeckList] = useState();
+    const [challenger, setChallenger] = useState("No Challenger Selected")
     const [userId, setUserId] = useState("");
 
     useEffect(() => {
@@ -37,6 +38,7 @@ export default function DeckBuilder({ params }: any) {
         getDecklist(params.id).then(
             data => {
                 setDeckList(data?.decklist);
+                setChallenger(data?.challenger)
                 setUserId(data?.user);
             }
         )
@@ -48,7 +50,7 @@ export default function DeckBuilder({ params }: any) {
         <div>
             <SearchBar></SearchBar>
             <StickyBox className='deckSticky' offsetTop={20} offsetBottom={20}>
-              <Deck collectionView={false} deckList={deckList}/>
+              <Deck collectionView={false} deckList={deckList} challenger={challenger}/>
             </StickyBox>
             <CardList collectionView={true} cardArray={Object.values(cardList)}></CardList>
         </div>

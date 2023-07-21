@@ -1,18 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DeckCounter from "./deckCounter";
 import eventBus from "./eventBus";
 
-export default function DeckHeader(props: { collectionView: boolean }) {
+type headerProps = {
+  collectionView: boolean;
+  challenger?: string | undefined;
+  cardCount: number;
+};
+
+export default function DeckHeader(props: headerProps) {
   const [currChallenger, setCurrChallenger] = useState(
-    "No Challenger Selected"
+    props.challenger
   ); // currently a string, might make it an object in the future
   const [force, setForce] = useState(0);
+  const [cardCount, setCardCount] = useState(props.cardCount)
+
+  useEffect(() => {
+    setCurrChallenger(props.challenger)
+    if (typeof props.cardCount !== "undefined") {
+      setCardCount(props.cardCount)
+    }
+    else {
+      setCardCount(0);
+    }
+  }, [props])
 
   if (props.collectionView) {
     return (
       <div className="deckHeader">
         <p className="challengerName">Deck Lists</p>
-        <DeckCounter collectionView={props.collectionView}></DeckCounter>
+        <DeckCounter collectionView={props.collectionView} cardCount={cardCount}></DeckCounter>
       </div>
     );
   }
@@ -23,7 +40,7 @@ export default function DeckHeader(props: { collectionView: boolean }) {
   return (
     <div className="deckHeader">
       <p className="challengerName">{currChallenger}</p>
-      <DeckCounter collectionView={props.collectionView}></DeckCounter>
+      <DeckCounter collectionView={props.collectionView} cardCount={cardCount}></DeckCounter>
     </div>
   );
 }
