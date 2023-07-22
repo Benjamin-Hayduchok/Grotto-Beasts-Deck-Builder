@@ -33,7 +33,7 @@ const Deck = (props: DeckProps) => {
   return (
     <div className="deck">
       <DeckHeader collectionView={props.collectionView} challenger={challenger} cardCount={cardCount}></DeckHeader>
-      <DeckCards collectionView={props.collectionView} deckList={deckList}></DeckCards>
+      <DeckCards collectionView={props.collectionView} deckList={deckList} challenger={challenger}></DeckCards>
     </div>
   );
 };

@@ -8,6 +8,8 @@ import {
     CardDataContext,
 } from "../../components/providers/cardDataProvider/CardDataProvider";
 import SearchBar from "@/app/components/searchBar";
+import { SaveButton } from "@/app/components/saveButton";
+import Swal from "sweetalert2";
 
 async function getDecklist(id: string) {
     const res = await fetch(
@@ -44,6 +46,54 @@ export default function DeckBuilder({ params }: any) {
         )
     },[]);
 
+    const formatDeckObj = (currDeckString: string) => {
+        var currDeckObj = JSON.parse(currDeckString);
+        type collectionCountObjType = { [key: number]: number };
+        var returnObj : { [key: number]: number } = {};
+        for (var card of currDeckObj) {
+            if (card.count > 0) {
+                returnObj[card.cardNum] = card.count;
+            }
+        }
+        console.log('returnObj', returnObj)
+        return returnObj;
+    }
+
+    const saveDecklist = async () => {
+        var currDeckArr = localStorage.getItem("currDeckArr");
+        var currChallengerName = localStorage.getItem("currChallengerName");
+
+        console.log('currDeckArr', currDeckArr)
+        console.log('currChallengerName', currChallengerName)
+
+        if (currDeckArr == null) {
+            return;
+        }
+        const saveDeck = formatDeckObj(currDeckArr);
+        const patchData = {challenger: currChallengerName, decklist: saveDeck};
+        const res = await fetch(
+            `https://grotto-beasts-test.fly.dev/api/collections/decklists/records/${params.id}`,
+            {
+                method: "PATCH",
+                cache: "no-cache",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(patchData)
+            }
+        );
+        if (res.status === 200) {
+            Swal.fire({
+                title: '<strong>Collection Saved!</strong>',
+                icon: 'success',
+                confirmButtonColor: '#257d52',
+                confirmButtonText: 'OK'
+            });
+        }
+        const data = await res.json();
+        return data;
+    } 
+
     console.log('original deckList', deckList)
 
     return (
@@ -51,6 +101,9 @@ export default function DeckBuilder({ params }: any) {
             <SearchBar></SearchBar>
             <StickyBox className='deckSticky' offsetTop={20} offsetBottom={20}>
               <Deck collectionView={false} deckList={deckList} challenger={challenger}/>
+              <SaveButton
+                    save={saveDecklist}
+                />
             </StickyBox>
             <CardList collectionView={true} cardArray={Object.values(cardList)}></CardList>
         </div>

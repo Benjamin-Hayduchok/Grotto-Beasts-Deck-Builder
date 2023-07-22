@@ -5,17 +5,13 @@ import PocketBase from 'pocketbase';
 
 const test = async () => {
     const pb = new PocketBase('https://grotto-beasts-test.fly.dev'); 
-    console.log("1")
     const authData = await pb.collection('users').authWithOAuth2({ provider: 'google' });
     // Authenticates a record with OAuth2 code.
     var provider = "google", code = "test"
 
     // pb.collection('users').authWithOAuth2Code(provider, code, codeVerifier, redirectUrl, createData = {}, bodyParams = {}, queryParams = {});
 
-    console.log('2');
     // after the above you can also access the auth data from the authStore
-    console.log(pb.authStore.isValid);
-    console.log(pb.authStore.token);
     // console.log(pb.authStore.model.id);
 }
 
