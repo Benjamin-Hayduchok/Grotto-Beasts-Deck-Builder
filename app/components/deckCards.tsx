@@ -212,7 +212,7 @@ const DeckCards = (props: DeckProps) => {
           break;
         }
       }
-      setDeckArr(currDeckArr);
+      setDeckArr([...currDeckArr]);
       loadDec = true;
       eventBus.remove("removeCardFromDeck");
     });
