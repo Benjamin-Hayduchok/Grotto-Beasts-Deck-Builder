@@ -7,6 +7,7 @@ import { useContext, useEffect, useState } from "react";
 import {
     CardDataContext,
 } from "../../components/providers/cardDataProvider/CardDataProvider";
+import { PocketBaseContext } from "../../components/providers/pocketBaseProvider/PocketBaseProvider";
 import SearchBar from "@/app/components/searchBar";
 import { SaveButton } from "@/app/components/saveButton";
 import Swal from "sweetalert2";
@@ -30,9 +31,10 @@ const constructDeckListObj = (collectionCounts: any, cardsData: any) => {
 
 export default function DeckBuilder({ params }: any) {
     const cardsData = useContext(CardDataContext);
+    const pocketBaseConnection = useContext(PocketBaseContext);
     const [cardList, setCardList] = useState(Object.assign({}, cardsData));
     const [deckList, setDeckList] = useState();
-    const [challenger, setChallenger] = useState("No Challenger Selected")
+    const [challenger, setChallenger] = useState("No Challenger Selected");
     const [userId, setUserId] = useState("");
 
     useEffect(() => {
@@ -69,29 +71,28 @@ export default function DeckBuilder({ params }: any) {
         if (currDeckArr == null) {
             return;
         }
-        const saveDeck = formatDeckObj(currDeckArr);
-        const patchData = {challenger: currChallengerName, decklist: saveDeck};
-        const res = await fetch(
-            `https://grotto-beasts-test.fly.dev/api/collections/decklists/records/${params.id}`,
-            {
-                method: "PATCH",
-                cache: "no-cache",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(patchData)
-            }
-        );
-        if (res.status === 200) {
+
+        const patchData = {challenger: currChallengerName, decklist: formatDeckObj(currDeckArr)};
+        
+        try {
+            const record = await pocketBaseConnection?.collection('decklists').update(params.id, patchData);
+            console.log('record', record);
             Swal.fire({
-                title: '<strong>Collection Saved!</strong>',
+                title: '<strong>Decklist Saved!</strong>',
                 icon: 'success',
                 confirmButtonColor: '#257d52',
                 confirmButtonText: 'OK'
             });
         }
-        const data = await res.json();
-        return data;
+        catch {
+            Swal.fire({
+                title: '<strong>Error!</strong>',
+                html: '<b>Unable to update a decklist that is not yours.</b>',
+                icon: 'error',
+                confirmButtonColor: '#257d52',
+                confirmButtonText: 'OK'
+            });
+        }
     } 
 
     console.log('original deckList', deckList)
