@@ -38,7 +38,7 @@ export const Card: FC<CardProps> = ({
     show: true,
   },
   cardDimensions = {
-    maxWidth: "max-w-[150px] md:max-w-[240px]",
+    maxWidth: "max-w-[240px]",
   },
 }) => {
   const inputRef = useRef<HTMLDivElement>(null);
@@ -57,7 +57,7 @@ export const Card: FC<CardProps> = ({
 
   return (
     <div
-      className={"relative"}
+      className={"relative cursor-pointer"}
       style={{
         perspective: "1500px",
       }}
@@ -93,10 +93,9 @@ export const Card: FC<CardProps> = ({
         >
           {showInfoButton && (
             <div
-              className="rounded-full shadow  hover:cursor-pointer hover:brightness-125"
+              className="rounded-full shadow hover:cursor-pointer hover:brightness-125"
               onClick={(e) => {
                 e.stopPropagation();
-                // openModal(<div></div>);
                 openModal(<CardInfoCarousel cardNum={parseInt(cardNum)} />);
               }}
             >
@@ -135,14 +134,14 @@ export const Card: FC<CardProps> = ({
             )}
           />
         </div>
-        {/* TODO: NV - Update this component as well */}
-        <CollectionCardHover
-          collectionView={collectionView}
-          collectionCount={collectionCount}
-          cardNum={cardNum}
-          updateCollectionCount={updateCollectionCount!}
-        ></CollectionCardHover>
       </div>
+      {/* TODO: NV - Update this component as well */}
+      <CollectionCardHover
+        collectionView={collectionView}
+        collectionCount={collectionCount}
+        cardNum={cardNum}
+        updateCollectionCount={updateCollectionCount!}
+      ></CollectionCardHover>
     </div>
   );
 };
