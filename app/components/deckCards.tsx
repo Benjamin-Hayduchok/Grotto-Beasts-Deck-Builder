@@ -93,6 +93,7 @@ var currDeckArr: {
 type DeckProps = {
   collectionView: boolean;
   deckList?: dbDeckListObjType | undefined;
+  challenger?: string | undefined;
 };
 
 type dbDeckListObjType = { [key: string]: string };
@@ -109,6 +110,7 @@ const insertDeckList = (dbDeckList: dbDeckListObjType | undefined) => {
     }
     
   }
+  localStorage.setItem("currDeckArr", JSON.stringify(currDeckArr));
   return currDeckArr;
 }
 
@@ -122,6 +124,10 @@ const DeckCards = (props: DeckProps) => {
       if (typeof props.deckList !== "undefined") {
         if (!init) {
           setDeckArr(insertDeckList(props.deckList));
+          if (typeof props.challenger == "string") {
+            currChallengerName = props.challenger;
+            localStorage.setItem("currChallengerName", currChallengerName);
+          }
           setInit(true);
         }
       }
@@ -135,6 +141,7 @@ const DeckCards = (props: DeckProps) => {
       if (currChallengerName === "JEX" && data.card.name !== "JEX")
         checkForMultipleEpics();
       currChallengerName = data.card.name;
+      localStorage.setItem("currChallengerName", currChallengerName);
       loadChallenger = true;
       setDeckArr([...currDeckArr]);
     });
@@ -162,6 +169,7 @@ const DeckCards = (props: DeckProps) => {
               break;
             }
             currDeckArr[i].count = util.toStringInc(currDeckArr[i].count);
+            localStorage.setItem("currDeckArr", JSON.stringify(currDeckArr));
             eventBus.dispatch("incrementDeckCounter", cardToAdd);
             deckCount++;
             shouldBeAddedToDeck = false;
@@ -170,6 +178,7 @@ const DeckCards = (props: DeckProps) => {
         }
         if (shouldBeAddedToDeck) {
           currDeckArr.push(cardToAdd);
+          localStorage.setItem("currDeckArr", JSON.stringify(currDeckArr));
           eventBus.dispatch("incrementDeckCounter", cardToAdd);
           deckCount++;
         }
@@ -191,6 +200,7 @@ const DeckCards = (props: DeckProps) => {
         if (currCard.cardNum === cardToRemove.cardNum) {
           // found card
           currDeckArr[i].count = util.toStringDec(currDeckArr[i].count);
+          localStorage.setItem("currDeckArr", JSON.stringify(currDeckArr));
           if (currDeckArr[i].count === "0") {
             currDeckArr.splice(i, 1);
             if (cardToRemove.isEpic) currEpicName = "";
@@ -202,7 +212,7 @@ const DeckCards = (props: DeckProps) => {
           break;
         }
       }
-      setDeckArr(currDeckArr);
+      setDeckArr([...currDeckArr]);
       loadDec = true;
       eventBus.remove("removeCardFromDeck");
     });
