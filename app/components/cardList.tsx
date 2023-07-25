@@ -68,15 +68,20 @@ const isNumberInCardValue = (search: string, value: string) => {
   return false;
 };
 
-const CardList = (props: { collectionView: boolean, cardArray: CardsData[]}) => {
+const CardList = (props: {
+  collectionView: boolean;
+  cardArray: CardsData[];
+}) => {
   const [cardList, setCardList] = useState(props.cardArray);
 
   useEffect(() => {
     setCardList(props.cardArray);
-  },[]);
+  }, []);
 
   const updateCollectionCount = (isIncremented: boolean, cardNum: string) => {
-    var cardToUpdateIndex = cardList.findIndex(card => card.cardNum === cardNum)
+    var cardToUpdateIndex = cardList.findIndex(
+      (card) => card.cardNum === cardNum
+    );
     if (isIncremented) {
       cardList[cardToUpdateIndex].collectionCount++; // need to update to find the card with that cardNum instead of querying the index value right away
       setCardList(cardList);
@@ -86,7 +91,7 @@ const CardList = (props: { collectionView: boolean, cardArray: CardsData[]}) => 
     cardList[cardToUpdateIndex].collectionCount--;
     setCardList(cardList);
     // setCardList([...cardList]); // WORKS BUT IS SO SLOW
-  }
+  };
 
   if (loadEventBus) {
     loadEventBus = false;
@@ -108,22 +113,22 @@ const CardList = (props: { collectionView: boolean, cardArray: CardsData[]}) => 
   }
 
   return (
-    <Container className="containerCardList">
-      <div className="flex gap-6 flex-wrap justify-center">
-        {cardList.map((card) => (
-          <Card
-            name={card.name}
-            imageName={card.imageName}
-            effect={card.effect}
-            cardNum={card.cardNum}
-            collectionView={props.collectionView}
-            collectionCount={card.collectionCount}
-            updateCollectionCount={updateCollectionCount}
-            key={card.cardNum}
-          />
-        ))}
-      </div>
-    </Container>
+    // <Container className="containerCardList">
+    <div className="flex w-full gap-6 flex-wrap justify-center">
+      {cardList.map((card) => (
+        <Card
+          name={card.name}
+          imageName={card.imageName}
+          effect={card.effect}
+          cardNum={card.cardNum}
+          collectionView={props.collectionView}
+          collectionCount={card.collectionCount}
+          updateCollectionCount={updateCollectionCount}
+          key={card.cardNum}
+        />
+      ))}
+    </div>
+    // </Container>
   );
 };
 

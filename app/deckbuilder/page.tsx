@@ -2,18 +2,16 @@
 
 import CardList from "../components/cardList";
 import StickyBox from "react-sticky-box";
-import Deck from "../components/deck";
+import Deck from "../components/deck/deck";
 import SearchBar from "../components/searchBar";
 import { useContext, useEffect, useState } from "react";
-import {
-  CardDataContext,
-} from "../components/providers/cardDataProvider/CardDataProvider";
+import { CardDataContext } from "../components/providers/cardDataProvider/CardDataProvider";
 
 export default function DeckBuilder() {
   if (typeof window !== "undefined")
     window.location.href =
       new URL(window.location.href).origin + "/deckbuilder/new";
-  
+
   // const cardsData = useContext(CardDataContext);
   // const [cardList, setCardList] = useState(Object.assign({}, cardsData));
 

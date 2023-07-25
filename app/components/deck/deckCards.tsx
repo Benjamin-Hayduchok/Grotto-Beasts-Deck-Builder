@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import DeckCard from "./deckCard";
-import eventBus from "./eventBus";
-import cardList from "./card-list.json";
-import util from "./util";
+import eventBus from "../eventBus";
+import cardList from "../card-list.json";
+import util from "../util";
 import Swal from "sweetalert2";
+// import cardList from "../cardList";
 
 async function getDeckList() {
   // const res = await fetch(
