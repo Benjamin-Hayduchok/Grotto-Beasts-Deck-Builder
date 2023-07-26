@@ -3,75 +3,73 @@ import classNames from "classnames";
 import PocketBase from 'pocketbase';
 import Swal from "sweetalert2";
 
-const createNewCollection = async (user: string) => {
-    const res = await fetch(
-        `https://grotto-beasts-test.fly.dev/api/collections/cardCollection/records`, {   
-            method: "POST",
-            cache: "no-cache",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({user: user, collection: {}})
-    });
-    const data = await res.json();
-    return data.id;
+const createNewCollection = async (pb: PocketBase, user: string) => {
+    try {
+        const record = await pb.collection('cardCollection').create(JSON.stringify({user: user, collection: {}}));
+        return record.id;
+    }
+    catch {
+        return; // returns undefined to be checked in previous func
+    }
 }
+    
 
-const insertCollectionIdIntoUser = async (user: string, collectionCountId: string) => {
-    const res = await fetch(
-        `https://grotto-beasts-test.fly.dev/api/collections/users/records/${user}`, {   
-            method: "PATCH",
-            cache: "no-cache",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({collectionCountId: collectionCountId})
-    });
-    return res.status;
+const insertCollectionIdIntoUser = async (pb: PocketBase, user: string, collectionCountId: string) => {
+    try {
+        const record = await pb.collection('users').update(user, JSON.stringify({collectionCountId: collectionCountId}));
+        return record;
+    }
+    catch {
+        return; // returns undefiend for previous func to check
+    }
 }
 
 export default function GoogleButton() {
 
     const googleLogin = async () => {
-        const pb = new PocketBase('https://grotto-beasts-test.fly.dev'); 
+        const pb = new PocketBase('https://grotto-beasts-test.fly.dev');
         const authData = await pb.collection('users').authWithOAuth2({ provider: 'google' });
-        console.log('authData', authData)
-        if (pb.authStore.isValid) {
-            if (!authData.record.collectionCountId || authData.record.collectionCountId == "") {
-                const collectionCountId = await createNewCollection(authData.record.id);
-                localStorage.setItem("collectionCountId", collectionCountId);
-
-                const result = await insertCollectionIdIntoUser(authData.record.id, collectionCountId);
-                if (result !== 200) {
-                    Swal.fire({
-                        title: '<strong>Was unable to properly create user.<br></br>Please try again.</strong>',
-                        icon: 'error',
-                        confirmButtonColor: '#f27474',
-                        confirmButtonText: 'OK'
-                    });
-                    return;
-                }
-                Swal.fire({
-                    title: '<strong>Logging in now...</strong>',
-                    icon: 'success',
-                });
-                if (typeof window !== "undefined") window.location.href = new URL(window.location.href).origin + `/collection/${collectionCountId}`;
-
-            }
-            else { // set collection count and login user
-                localStorage.setItem("collectionCountId", authData.record.collectionCountId);
-                if (typeof window !== "undefined") window.location.href = new URL(window.location.href).origin + `/collection/${authData.record.collectionCountId}`;
-            }
+        if (!pb.authStore.isValid) {
+          Swal.fire({
+            title: '<strong>Was unable to login user.<br></br>Please try again.</strong>',
+            icon: 'error',
+            confirmButtonColor: '#f27474',
+            confirmButtonText: 'OK'
+          });
+          return;
         }
-        else {
+        let collectionCountId = authData.record.collectionCountId;
+        if (!collectionCountId || collectionCountId === "") {
+          collectionCountId = await createNewCollection(pb, authData.record.id);
+          if (typeof collectionCountId === "undefined") {
             Swal.fire({
-                title: '<strong>Was unable to login user.<br></br>Please try again.</strong>',
+                title: '<strong>Was unable to properly create user.<br></br>Please try again.</strong>',
                 icon: 'error',
                 confirmButtonColor: '#f27474',
                 confirmButtonText: 'OK'
+              });
+              return;
+          }
+          const result = await insertCollectionIdIntoUser(pb, authData.record.id, collectionCountId);
+          if (typeof result === "undefined") {
+            Swal.fire({
+              title: '<strong>Was unable to properly create user.<br></br>Please try again.</strong>',
+              icon: 'error',
+              confirmButtonColor: '#f27474',
+              confirmButtonText: 'OK'
             });
-        }  
-    }
+            return;
+          }
+          Swal.fire({
+            title: '<strong>Logging in now...</strong>',
+            icon: 'success',
+          });
+        }
+        localStorage.setItem("collectionCountId", collectionCountId);
+        if (typeof window !== "undefined") {
+            window.location.href = new URL(window.location.href).origin + `/collection/${collectionCountId}`;
+        }
+      };
 
     return (
         <div
