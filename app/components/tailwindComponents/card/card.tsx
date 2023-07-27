@@ -1,11 +1,14 @@
 import classNames from "classnames";
-import { FC, useRef } from "react";
+import { FC, useRef, useContext } from "react";
 import { useRotateToMouse } from "./utils/mouse";
 import CollectionCardHover from "../../collectionCardHover";
 import eventBus from "../../eventBus";
 import { InfoIcon } from "../../icons/InfoIcon";
 import { useModal } from "../../providers/modalProvider/ModalProvider";
 import { CardInfoCarousel } from "../../cardInfo/cardInfoCarousel";
+import { DeckListContext } from "../../providers/deckListProvider/DeckListProvider";
+import { CardDataContext } from "../../providers/cardDataProvider/CardDataProvider";
+import util from "../../util";
 
 export type CardProps = {
   name: string;
@@ -41,15 +44,46 @@ export const Card: FC<CardProps> = ({
     maxWidth: "max-w-[240px]",
   },
 }) => {
+  const {deckList, addToDeckList} = useContext(DeckListContext);
+  const CardData = useContext(CardDataContext);
+
   const inputRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
 
   const { rotateToMouse, removeListener } = useRotateToMouse(inputRef, glowRef);
   const { openModal } = useModal();
 
+  const addCardToDeckList = () => {
+    if (typeof CardData === "undefined" || typeof deckList === "undefined") {
+      return
+    }
+    for (var index in deckList) {
+      var deckCard = deckList[index];
+      if (cardNum === deckCard.cardNum) {
+        if (deckCard.count !== "3") {
+          deckList[index].count = util.toStringInc(deckList[index].count);
+        }
+        return;
+      }
+    }
+    var cardObj = CardData[parseInt(cardNum) - 1]
+    var parsedCard = {
+      cost: cardObj.cost,
+      cardNum: cardObj.cardNum,
+      name: cardObj.name,
+      imageName: cardObj.deckCardImage,
+      count: "1",
+      isEpic: cardObj.type[0] === '✦'
+    }
+    deckList.push(parsedCard);
+  }
+
   function addCard(card: { cardNum: string; name: string }) {
     console.log("ON CLICK card", card);
-
+    console.log(' ADD CARD AFTER ADDED DeckList', deckList)
+    addToDeckList(cardNum);
+    // addCardToDeckList();
+    console.log('AFTER deckList', deckList)
     if (parseInt(card.cardNum) <= 32)
       eventBus.dispatch("addChallengerToDeck", { card: card });
     else eventBus.dispatch("addCardToDeck", { card: card });

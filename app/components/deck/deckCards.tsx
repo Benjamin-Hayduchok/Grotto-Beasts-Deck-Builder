@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import DeckCard from "./deckCard";
 import eventBus from "../eventBus";
 import cardList from "../card-list.json";
 import util from "../util";
 import Swal from "sweetalert2";
+import { DeckListContext } from "../providers/deckListProvider/DeckListProvider";
 // import cardList from "../cardList";
 
 async function getDeckList() {
@@ -93,7 +94,9 @@ var currDeckArr: {
 
 const DeckCards = (props: { collectionView: boolean }) => {
   getDeckList();
-  const [deckArr, setDeckArr] = useState(currDeckArr);
+  const {deckList, addToDeckList} = useContext(DeckListContext);
+  console.log('DECK CARDS deckList', deckList)
+  const [deckArr, setDeckArr] = useState(deckList);
   // const [deckCount, setDeckCount] = useState(0);
 
   if (loadChallenger) {
@@ -176,9 +179,10 @@ const DeckCards = (props: { collectionView: boolean }) => {
     });
     setDeckArr([...currDeckArr]);
   }
+  console.log('deckArr', deckArr)
   return (
     <div className="deckCards" id="style-1">
-      {deckArr.map((card) => (
+      {deckArr?.map((card) => (
         <DeckCard
           cardNum={card.cardNum}
           name={card.name}
