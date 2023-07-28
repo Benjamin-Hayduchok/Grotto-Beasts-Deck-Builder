@@ -1,11 +1,12 @@
 import classNames from "classnames";
-import { FC, useRef } from "react";
+import { FC, useContext, useRef } from "react";
 import { useRotateToMouse } from "./utils/mouse";
 import CollectionCardHover from "../../collectionCardHover";
 import eventBus from "../../eventBus";
 import { InfoIcon } from "../../icons/InfoIcon";
 import { useModal } from "../../providers/modalProvider/ModalProvider";
 import { CardInfoCarousel } from "../../cardInfo/cardInfoCarousel";
+import { CardDataContext, PageTypes } from "../../providers/cardDataProvider";
 
 export type CardProps = {
   name: string;
@@ -41,6 +42,8 @@ export const Card: FC<CardProps> = ({
     maxWidth: "max-w-[240px]",
   },
 }) => {
+  const { pageType } = useContext(CardDataContext);
+
   const inputRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
 
@@ -135,13 +138,14 @@ export const Card: FC<CardProps> = ({
           />
         </div>
       </div>
-      {/* TODO: NV - Update this component as well */}
-      <CollectionCardHover
-        collectionView={collectionView}
-        collectionCount={collectionCount}
-        cardNum={cardNum}
-        updateCollectionCount={updateCollectionCount!}
-      ></CollectionCardHover>
+      {pageType === PageTypes.COLLECTION && (
+        <CollectionCardHover
+          collectionView={collectionView}
+          collectionCount={collectionCount}
+          cardNum={cardNum}
+          updateCollectionCount={updateCollectionCount!}
+        />
+      )}
     </div>
   );
 };
