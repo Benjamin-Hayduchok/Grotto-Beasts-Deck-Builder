@@ -1,18 +1,15 @@
 import { FC, useContext, useEffect, useState } from "react";
-import {
-  CardDataContext,
-  CardsData,
-} from "../providers/cardDataProvider/CardDataProvider";
 import classNames from "classnames";
 import { Card } from "../tailwindComponents/card/card";
 import { ArrowIcon } from "../icons/ArrowIcon";
+import { CardDataContext, CardsData } from "../providers/cardDataProvider";
 
 export type CardInfoCarouselProps = {
   cardNum: number;
 };
 
 export const CardInfoCarousel: FC<CardInfoCarouselProps> = ({ cardNum }) => {
-  const cardsData = useContext(CardDataContext);
+  const { cardsData } = useContext(CardDataContext);
   const [currentIndex, setCurrentIndex] = useState(cardNum - 1); // needs to be subtracted by 1 because arrays start from index 0
   const [currentItem, setCurrentItem] = useState<CardsData>();
   const [touchStartX, setTouchStartX] = useState(0);

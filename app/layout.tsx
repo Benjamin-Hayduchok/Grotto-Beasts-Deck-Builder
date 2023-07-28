@@ -4,9 +4,8 @@ import "./../styles/globals.css";
 import "./../styles/nav.css";
 import { ModalProvider } from "./components/providers/modalProvider/ModalProvider";
 import { FC, PropsWithChildren } from "react";
-import { CardDataProvider } from "./components/providers/cardDataProvider/CardDataProvider";
+import { CardDataProvider } from "./components/providers/cardDataProvider";
 import { PocketBaseProvider } from "./components/providers/pocketBaseProvider/PocketBaseProvider";
-
 
 export default function RootLayout({
   children,

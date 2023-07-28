@@ -6,7 +6,6 @@ import SearchBar from "./searchBar";
 import allCards from "./card-list.json";
 import eventBus from "./eventBus";
 import React, { useContext, useState, useEffect } from "react";
-import { CardDataContext } from "./providers/cardDataProvider/CardDataProvider";
 
 var loadEventBus = true;
 

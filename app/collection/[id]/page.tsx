@@ -9,7 +9,7 @@ import { useContext, useEffect, useState } from "react";
 import {
   CardsData,
   CardDataContext,
-} from "../../components/providers/cardDataProvider/CardDataProvider";
+} from "../../components/providers/cardDataProvider";
 import { PocketBaseContext } from "../../components/providers/pocketBaseProvider/PocketBaseProvider";
 import Swal from "sweetalert2";
 
@@ -73,7 +73,7 @@ async function saveCollectionCount(
 }
 
 export default function CollectionPage({ params }: any) {
-  const cardsData = useContext(CardDataContext);
+  const { cardsData } = useContext(CardDataContext);
   const pocketBaseConnection = useContext(PocketBaseContext);
   const [cardList, setCardList] = useState(Object.assign({}, cardsData));
   const [userId, setUserId] = useState("");
