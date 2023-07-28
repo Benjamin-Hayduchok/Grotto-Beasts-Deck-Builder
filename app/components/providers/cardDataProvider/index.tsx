@@ -1,4 +1,10 @@
-import { FC, PropsWithChildren, createContext, useMemo, useState } from "react";
+import {
+  FC,
+  PropsWithChildren,
+  createContext,
+  useEffect,
+  useState,
+} from "react";
 import allCards from "../../card-list.json";
 
 export type CardsData = {
@@ -35,13 +41,27 @@ export const CardDataProvider: FC<PropsWithChildren> = ({ children }) => {
   const [allCardsData, setAllCardsData] = useState<CardsData[]>(
     Object.values(allCards)
   );
+  const [pageType, setPageType] = useState<PageTypes>();
 
-  const path = window.location.pathname;
-  const pageType: PageTypes = useMemo(() => {
-    return path.split("/").includes(PageTypes.COLLECTION)
-      ? PageTypes.COLLECTION
-      : PageTypes.DECKBUILDER;
-  }, [path]);
+  useEffect(() => {
+    const handleURLChange = () => {
+      const path = window.location.pathname;
+      setPageType(
+        path.split("/").includes(PageTypes.COLLECTION)
+          ? PageTypes.COLLECTION
+          : PageTypes.DECKBUILDER
+      );
+    };
+
+    handleURLChange();
+
+    // Listen for URL changes
+    window.addEventListener("popstate", handleURLChange);
+
+    return () => {
+      window.removeEventListener("popstate", handleURLChange);
+    };
+  }, []);
 
   return (
     <CardDataContext.Provider
