@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import eventBus from "../eventBus";
 import util from "../util";
 import Swal from "sweetalert2";
+import classNames from "classnames";
 
 export default function DeckCounter(props: { collectionView: boolean }) {
   const [deckListCount, setDeckListCount] = useState("0");
@@ -40,10 +41,11 @@ export default function DeckCounter(props: { collectionView: boolean }) {
     }
   });
   return (
-    <div className="containerDeckCounter">
-      <p className="deckCounter">
-        {cardCount}/{maxCount} Cards
-      </p>
+    <div className={classNames("flex justify-between text-lg ")}>
+      Cards:
+      <span>
+        {cardCount}/{maxCount}
+      </span>
     </div>
   );
 }

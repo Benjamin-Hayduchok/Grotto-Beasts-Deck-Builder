@@ -5,9 +5,7 @@ import classNames from "classnames";
 import eventBus from "../eventBus";
 
 export default function DeckHeader(props: { collectionView: boolean }) {
-  const [currChallenger, setCurrChallenger] = useState(
-    "No Challenger Selected"
-  ); // currently a string, might make it an object in the future
+  const [currChallenger, setCurrChallenger] = useState("None"); // currently a string, might make it an object in the future
   const [force, setForce] = useState(0);
 
   if (props.collectionView) {
@@ -23,9 +21,16 @@ export default function DeckHeader(props: { collectionView: boolean }) {
     setForce(force + 1);
   });
   return (
-    // <div className={classNames("border-4  inset-5 bg-gb-brown")}>
-    <div className="deckHeader !bg-gradient-to-br from-gb-brown">
-      <p className="challengerName">{currChallenger}</p>
+    <div
+      className={classNames(
+        "deckHeader !bg-gradient-to-br from-gb-brown",
+        "text-[rgb(252,209,68)] p-4"
+      )}
+    >
+      <div className="flex justify-between flex-wrap text-xl mb-4">
+        Challenger:
+        <div className="">{currChallenger}</div>
+      </div>
       <DeckCounter collectionView={props.collectionView}></DeckCounter>
     </div>
   );
