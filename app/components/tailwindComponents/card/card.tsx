@@ -44,7 +44,7 @@ export const Card: FC<CardProps> = ({
     maxWidth: "max-w-[240px]",
   },
 }) => {
-  const {deckList, addToDeckList} = useContext(DeckListContext);
+  const {deckList, addToDeckList, removeFromDeckList, forceRender, forceRenderDispatch} = useContext(DeckListContext);
   const CardData = useContext(CardDataContext);
 
   const inputRef = useRef<HTMLDivElement>(null);
@@ -80,13 +80,12 @@ export const Card: FC<CardProps> = ({
 
   function addCard(card: { cardNum: string; name: string }) {
     console.log("ON CLICK card", card);
-    console.log(' ADD CARD AFTER ADDED DeckList', deckList)
     addToDeckList(cardNum);
     // addCardToDeckList();
-    console.log('AFTER deckList', deckList)
-    if (parseInt(card.cardNum) <= 32)
-      eventBus.dispatch("addChallengerToDeck", { card: card });
-    else eventBus.dispatch("addCardToDeck", { card: card });
+    forceRenderDispatch();
+    // if (parseInt(card.cardNum) <= 32)
+    //   eventBus.dispatch("addChallengerToDeck", { card: card });
+    // else eventBus.dispatch("addCardToDeck", { card: card });
   }
 
   return (

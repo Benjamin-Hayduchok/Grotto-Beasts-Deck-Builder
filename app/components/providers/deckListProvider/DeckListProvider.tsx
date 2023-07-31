@@ -3,7 +3,8 @@ import {
     PropsWithChildren,
     createContext,
     useState,
-    useContext
+    useContext,
+    useReducer
   } from "react";
   import util from "../../util";
   import { CardDataContext } from "../cardDataProvider/CardDataProvider";
@@ -21,18 +22,23 @@ import {
     deckList: DeckListType[] | undefined;
     addToDeckList: (cardNum: string) => void;
     removeFromDeckList: (cardNum: string) => void;
+    forceRender: boolean;
+    forceRenderDispatch: () => void;
   };
   
   export const DeckListContext = createContext<DeckListContextType>({
         deckList: undefined,
         addToDeckList: () => {},
-        removeFromDeckList: () => {}
+        removeFromDeckList: () => {},
+        forceRender: false,
+        forceRenderDispatch: () => {}
   });
   
   export const DeckListProvider: FC<PropsWithChildren> = ({ children }) => {
     const [deckList, setDeckList] = useState<DeckListType[]>(
       [] // should be populated with API call to get decklist
     );
+    const [forceRender, forceRenderDispatch] = useReducer((state) => !state, false);
     const CardData = useContext(CardDataContext);
 
     const addToDeckList = (cardNum: string) => {
@@ -70,7 +76,9 @@ import {
             value={{
                 deckList,
                 addToDeckList,
-                removeFromDeckList
+                removeFromDeckList,
+                forceRender,
+                forceRenderDispatch
             }}
         >
             {children}

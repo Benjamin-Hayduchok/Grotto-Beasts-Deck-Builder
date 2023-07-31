@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import DeckCard from "./deckCard";
 import eventBus from "../eventBus";
 import cardList from "../card-list.json";
@@ -95,9 +95,11 @@ var currDeckArr: {
 const DeckCards = (props: { collectionView: boolean }) => {
   getDeckList();
   const {deckList, addToDeckList} = useContext(DeckListContext);
-  console.log('DECK CARDS deckList', deckList)
   const [deckArr, setDeckArr] = useState(deckList);
   // const [deckCount, setDeckCount] = useState(0);
+  useEffect(() => {
+    setDeckArr(...[deckList]);
+  }, [DeckListContext])
 
   if (loadChallenger) {
     loadChallenger = false;
