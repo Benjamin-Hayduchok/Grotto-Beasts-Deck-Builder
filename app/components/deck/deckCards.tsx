@@ -98,9 +98,7 @@ const DeckCards = (props: { collectionView: boolean }) => {
   const [deckArr, setDeckArr] = useState(deckList);
   // const [deckCount, setDeckCount] = useState(0);
   useEffect(() => {
-    if (!deckList) {
-      setDeckArr(...[deckList]);
-    }
+    deckList && setDeckArr(...[deckList]);
   }, [DeckListContext])
 
   if (loadChallenger) {
