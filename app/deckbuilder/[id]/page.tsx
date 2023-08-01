@@ -1,7 +1,6 @@
 "use client";
 
-import StickyBox from "react-sticky-box";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { CardDataContext } from "../../components/providers/cardDataProvider";
 import { PageContent } from "@/app/components/pageContent";
 

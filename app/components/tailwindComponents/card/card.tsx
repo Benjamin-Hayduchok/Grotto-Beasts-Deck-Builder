@@ -1,11 +1,12 @@
 import classNames from "classnames";
-import { FC, useContext, useRef } from "react";
+import { FC, useRef, useContext } from "react";
 import { useRotateToMouse } from "./utils/mouse";
 import CollectionCardHover from "../../collectionCardHover";
-import eventBus from "../../eventBus";
 import { InfoIcon } from "../../icons/InfoIcon";
 import { useModal } from "../../providers/modalProvider/ModalProvider";
 import { CardInfoCarousel } from "../../cardInfo/cardInfoCarousel";
+import { DeckListContext } from "../../providers/deckListProvider/DeckListProvider";
+import util from "../../util";
 import { CardDataContext, PageTypes } from "../../providers/cardDataProvider";
 
 export type CardProps = {
@@ -42,7 +43,8 @@ export const Card: FC<CardProps> = ({
     maxWidth: "max-w-[240px]",
   },
 }) => {
-  const { pageType } = useContext(CardDataContext);
+  const {deckList, addToDeckList, removeFromDeckList, forceRender, forceRenderDispatch} = useContext(DeckListContext);
+  const { cardsData, pageType } = useContext(CardDataContext);
 
   const inputRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
@@ -50,12 +52,39 @@ export const Card: FC<CardProps> = ({
   const { rotateToMouse, removeListener } = useRotateToMouse(inputRef, glowRef);
   const { openModal } = useModal();
 
+  const addCardToDeckList = () => {
+    if (typeof cardsData === "undefined" || typeof deckList === "undefined") {
+      return
+    }
+    for (var index in deckList) {
+      var deckCard = deckList[index];
+      if (cardNum === deckCard.cardNum) {
+        if (deckCard.count !== "3") {
+          deckList[index].count = util.toStringInc(deckList[index].count);
+        }
+        return;
+      }
+    }
+    var cardObj = cardsData[parseInt(cardNum) - 1]
+    var parsedCard = {
+      cost: cardObj.cost,
+      cardNum: cardObj.cardNum,
+      name: cardObj.name,
+      imageName: cardObj.deckCardImage,
+      count: "1",
+      isEpic: cardObj.type[0] === '✦'
+    }
+    deckList.push(parsedCard);
+  }
+
   function addCard(card: { cardNum: string; name: string }) {
     console.log("ON CLICK card", card);
-
-    if (parseInt(card.cardNum) <= 32)
-      eventBus.dispatch("addChallengerToDeck", { card: card });
-    else eventBus.dispatch("addCardToDeck", { card: card });
+    addToDeckList(cardNum);
+    // addCardToDeckList();
+    forceRenderDispatch();
+    // if (parseInt(card.cardNum) <= 32)
+    //   eventBus.dispatch("addChallengerToDeck", { card: card });
+    // else eventBus.dispatch("addCardToDeck", { card: card });
   }
 
   return (
