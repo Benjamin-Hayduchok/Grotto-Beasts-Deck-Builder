@@ -7,7 +7,7 @@ import {
     useReducer
   } from "react";
   import util from "../../util";
-  import { CardDataContext } from "../cardDataProvider/CardDataProvider";
+  import { CardDataContext } from "../cardDataProvider";
   
   export type DeckListType = {
     cost: string;
@@ -39,23 +39,24 @@ import {
       [] // should be populated with API call to get decklist
     );
     const [forceRender, forceRenderDispatch] = useReducer((state) => !state, false);
-    const CardData = useContext(CardDataContext);
+    const { cardsData } = useContext(CardDataContext);
 
     const addToDeckList = (cardNum: string) => {
         console.log("context adding")
-        if (typeof CardData === "undefined" || typeof deckList === "undefined") {
+        if (typeof cardsData === "undefined" || typeof deckList === "undefined") {
             return
         }
-        for (var index in deckList) {
-            var deckCard = deckList[index];
+        var copyDeckList = [...deckList];
+        for (var index in copyDeckList) {
+            var deckCard = copyDeckList[index];
             if (cardNum === deckCard.cardNum) {
                 if (deckCard.count !== "3") {
-                    deckList[index].count = util.toStringInc(deckList[index].count);
+                    copyDeckList[index].count = util.toStringInc(copyDeckList[index].count);
                 }
                 return;
             }
         }
-        var cardObj = CardData[parseInt(cardNum) - 1]
+        var cardObj = cardsData[parseInt(cardNum) - 1]
         var parsedCard = {
             cost: cardObj.cost,
             cardNum: cardObj.cardNum,
@@ -64,7 +65,8 @@ import {
             count: "1",
             isEpic: cardObj.type[0] === '✦'
         }
-        deckList.push(parsedCard);
+        copyDeckList.push(parsedCard);
+        setDeckList([...copyDeckList]);
     }
 
     const removeFromDeckList = (cardNum: string) => {

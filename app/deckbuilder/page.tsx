@@ -5,7 +5,6 @@ import StickyBox from "react-sticky-box";
 import Deck from "../components/deck/deck";
 import SearchBar from "../components/searchBar";
 import { useContext, useEffect, useState } from "react";
-import { CardDataContext } from "../components/providers/cardDataProvider/CardDataProvider";
 
 export default function DeckBuilder() {
   if (typeof window !== "undefined")

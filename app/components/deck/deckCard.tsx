@@ -30,7 +30,11 @@ const DeckCard = (props: {
       onMouseOver={() => showCardCountChange(cardNum)}
       onMouseLeave={() => hideCardCountChange(cardNum)}
     >
-      <img className="costIcon" src={"../cost+" + cost + ".png"}></img>
+      <img
+        className="costIcon"
+        src={"../cost+" + cost + ".png"}
+        alt={`cost-${cost}`}
+      ></img>
       <p className="deckCardName">{name}</p>
       <div className="spacing">
         <EpicTag isEpic={isEpic}></EpicTag>

@@ -2,13 +2,12 @@ import classNames from "classnames";
 import { FC, useRef, useContext } from "react";
 import { useRotateToMouse } from "./utils/mouse";
 import CollectionCardHover from "../../collectionCardHover";
-import eventBus from "../../eventBus";
 import { InfoIcon } from "../../icons/InfoIcon";
 import { useModal } from "../../providers/modalProvider/ModalProvider";
 import { CardInfoCarousel } from "../../cardInfo/cardInfoCarousel";
 import { DeckListContext } from "../../providers/deckListProvider/DeckListProvider";
-import { CardDataContext } from "../../providers/cardDataProvider/CardDataProvider";
 import util from "../../util";
+import { CardDataContext, PageTypes } from "../../providers/cardDataProvider";
 
 export type CardProps = {
   name: string;
@@ -45,7 +44,7 @@ export const Card: FC<CardProps> = ({
   },
 }) => {
   const {deckList, addToDeckList, removeFromDeckList, forceRender, forceRenderDispatch} = useContext(DeckListContext);
-  const CardData = useContext(CardDataContext);
+  const { cardsData, pageType } = useContext(CardDataContext);
 
   const inputRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
@@ -54,7 +53,7 @@ export const Card: FC<CardProps> = ({
   const { openModal } = useModal();
 
   const addCardToDeckList = () => {
-    if (typeof CardData === "undefined" || typeof deckList === "undefined") {
+    if (typeof cardsData === "undefined" || typeof deckList === "undefined") {
       return
     }
     for (var index in deckList) {
@@ -66,7 +65,7 @@ export const Card: FC<CardProps> = ({
         return;
       }
     }
-    var cardObj = CardData[parseInt(cardNum) - 1]
+    var cardObj = cardsData[parseInt(cardNum) - 1]
     var parsedCard = {
       cost: cardObj.cost,
       cardNum: cardObj.cardNum,
@@ -168,13 +167,14 @@ export const Card: FC<CardProps> = ({
           />
         </div>
       </div>
-      {/* TODO: NV - Update this component as well */}
-      <CollectionCardHover
-        collectionView={collectionView}
-        collectionCount={collectionCount}
-        cardNum={cardNum}
-        updateCollectionCount={updateCollectionCount!}
-      ></CollectionCardHover>
+      {pageType === PageTypes.COLLECTION && (
+        <CollectionCardHover
+          collectionView={collectionView}
+          collectionCount={collectionCount}
+          cardNum={cardNum}
+          updateCollectionCount={updateCollectionCount!}
+        />
+      )}
     </div>
   );
 };

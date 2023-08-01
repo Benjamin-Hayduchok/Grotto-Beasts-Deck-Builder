@@ -9,9 +9,10 @@ import { useContext, useEffect, useState } from "react";
 import {
   CardsData,
   CardDataContext,
-} from "../../components/providers/cardDataProvider/CardDataProvider";
+} from "../../components/providers/cardDataProvider";
 import { PocketBaseContext } from "../../components/providers/pocketBaseProvider/PocketBaseProvider";
 import Swal from "sweetalert2";
+import { PageContent } from "@/app/components/pageContent";
 
 type collectionCountObjType = { [key: number]: number };
 
@@ -73,7 +74,7 @@ async function saveCollectionCount(
 }
 
 export default function CollectionPage({ params }: any) {
-  const cardsData = useContext(CardDataContext);
+  const { cardsData } = useContext(CardDataContext);
   const pocketBaseConnection = useContext(PocketBaseContext);
   const [cardList, setCardList] = useState(Object.assign({}, cardsData));
   const [userId, setUserId] = useState("");
@@ -103,17 +104,5 @@ export default function CollectionPage({ params }: any) {
     );
   };
 
-  return (
-    <div>
-      <SearchBar></SearchBar>
-      <StickyBox className="deckSticky" offsetTop={20} offsetBottom={20}>
-        <Deck collectionView={true} />
-        <SaveButton save={saveCollection} />
-      </StickyBox>
-      <CardList
-        collectionView={true}
-        cardArray={Object.values(cardList)}
-      ></CardList>
-    </div>
-  );
+  return <PageContent cardList={cardList} />;
 }

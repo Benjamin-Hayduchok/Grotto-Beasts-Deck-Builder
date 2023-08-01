@@ -96,10 +96,10 @@ const DeckCards = (props: { collectionView: boolean }) => {
   getDeckList();
   const {deckList, addToDeckList} = useContext(DeckListContext);
   const [deckArr, setDeckArr] = useState(deckList);
-  // const [deckCount, setDeckCount] = useState(0);
+
   useEffect(() => {
     deckList && setDeckArr([...deckList]);
-  }, [DeckListContext])
+  }, [deckList])
 
   if (loadChallenger) {
     loadChallenger = false;
