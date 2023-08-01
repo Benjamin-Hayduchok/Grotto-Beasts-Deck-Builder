@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import eventBus from './eventBus';
+import { DeckListContext } from './providers/deckListProvider/DeckListProvider';
 
 const CountAndInfoPopUp = (props: {showAdjustCount: boolean, count: string, cardNum: string}) => {
   const { showAdjustCount, count, cardNum } = props;
+  const {addToDeckList, forceRenderDispatch} = useContext(DeckListContext);
 
   const showInfoCard = (cardNum: string) => {
     // console.log('SHOW INFO cardNum', cardNum);
@@ -15,9 +17,8 @@ const CountAndInfoPopUp = (props: {showAdjustCount: boolean, count: string, card
   }
 
   const increaseCard = (cardNum: string) => {
-    // console.log('INCREASE cardNum', cardNum);
-    var card = {cardNum: cardNum};
-    eventBus.dispatch("addCardToDeck", { card: card });
+    addToDeckList(cardNum);
+    forceRenderDispatch();
   }
 
 
