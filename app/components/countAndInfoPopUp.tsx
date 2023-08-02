@@ -4,7 +4,7 @@ import { DeckListContext } from "./providers/deckListProvider/DeckListProvider";
 
 const CountAndInfoPopUp = (props: {
   showAdjustCount: boolean;
-  count: string;
+  count: number;
   cardNum: string;
 }) => {
   const { showAdjustCount, count, cardNum } = props;

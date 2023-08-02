@@ -6,7 +6,7 @@ const DeckCard = (props: {
   cardNum: string;
   name: string;
   imageName: string;
-  count: string;
+  count: number;
   cost: string;
   isEpic: boolean;
 }) => {
