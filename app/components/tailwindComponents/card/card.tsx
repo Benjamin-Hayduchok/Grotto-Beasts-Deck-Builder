@@ -52,31 +52,6 @@ export const Card: FC<CardProps> = ({
   const { rotateToMouse, removeListener } = useRotateToMouse(inputRef, glowRef);
   const { openModal } = useModal();
 
-  const addCardToDeckList = () => {
-    if (typeof cardsData === "undefined" || typeof deckList === "undefined") {
-      return
-    }
-    for (var index in deckList) {
-      var deckCard = deckList[index];
-      if (cardNum === deckCard.cardNum) {
-        if (deckCard.count !== "3") {
-          deckList[index].count = util.toStringInc(deckList[index].count);
-        }
-        return;
-      }
-    }
-    var cardObj = cardsData[parseInt(cardNum) - 1]
-    var parsedCard = {
-      cost: cardObj.cost,
-      cardNum: cardObj.cardNum,
-      name: cardObj.name,
-      imageName: cardObj.deckCardImage,
-      count: "1",
-      isEpic: cardObj.type[0] === '✦'
-    }
-    deckList.push(parsedCard);
-  }
-
   function addCard(card: { cardNum: string; name: string }) {
     console.log("ON CLICK card", card);
     addToDeckList(cardNum);
