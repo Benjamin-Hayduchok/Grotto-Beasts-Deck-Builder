@@ -5,7 +5,6 @@ import { useContext } from "react";
 
 const CollectionPage = () => {
     const pocketBaseConnection = useContext(PocketBaseContext);
-    console.log('pocketBaseConnection', pocketBaseConnection);
 
     if (typeof window === "undefined") {
         return;

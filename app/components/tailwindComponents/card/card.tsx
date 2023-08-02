@@ -53,7 +53,6 @@ export const Card: FC<CardProps> = ({
   const { openModal } = useModal();
 
   function addCard(card: { cardNum: string; name: string }) {
-    console.log("ON CLICK card", card);
     addToDeckList(cardNum);
     forceRenderDispatch();
   }

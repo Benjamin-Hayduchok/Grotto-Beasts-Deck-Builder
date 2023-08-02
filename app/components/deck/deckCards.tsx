@@ -181,7 +181,6 @@ const DeckCards = (props: { collectionView: boolean }) => {
     });
     // setDeckArr([...currDeckArr]);
   }
-  console.log('deckArr', deckArr)
   return (
     <div className="deckCards" id="style-1">
       {deckArr?.map((card) => (
