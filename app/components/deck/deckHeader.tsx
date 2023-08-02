@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import DeckCounter from "./deckCounter";
-// import eventBus from "./eventBus";
 import classNames from "classnames";
-import eventBus from "../eventBus";
+import { DeckListContext } from "../providers/deckListProvider/DeckListProvider";
 
 export default function DeckHeader(props: { collectionView: boolean }) {
-  const [currChallenger, setCurrChallenger] = useState("None"); // currently a string, might make it an object in the future
-  const [force, setForce] = useState(0);
-
+  const {challenger} = useContext(DeckListContext);
+  const [currChallenger, setCurrChallenger] = useState(challenger); // currently a string, might make it an object in the future
+  useEffect(() => {
+    setCurrChallenger(challenger);
+  }, [challenger])
   if (props.collectionView) {
     return (
       <div className="deckHeader">
@@ -16,10 +17,6 @@ export default function DeckHeader(props: { collectionView: boolean }) {
       </div>
     );
   }
-  eventBus.on("addChallengerToDeck", (data: any) => {
-    setCurrChallenger(data.card.name);
-    setForce(force + 1);
-  });
   return (
     <div
       className={classNames(
