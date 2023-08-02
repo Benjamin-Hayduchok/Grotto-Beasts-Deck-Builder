@@ -15,7 +15,7 @@ export type DeckListType = {
   cardNum: string;
   name: string;
   imageName: string;
-  count: string;
+  count: number;
   isEpic: boolean;
 };
 
@@ -71,7 +71,6 @@ export const DeckListProvider: FC<PropsWithChildren> = ({ children }) => {
       setChallenger(cardObj.name);
       return; // nothing else to be added, just updating challenger
     }
-    var copyDeckList = [...deckList];
 
     var deckListLimit = challenger === "Byeah Prime" ? 60 : 40;
 
@@ -86,6 +85,7 @@ export const DeckListProvider: FC<PropsWithChildren> = ({ children }) => {
       return; // BEN NOTE: MIGHT UPDATE THIS LATER TO SHOW SWAL IF CHANGING FROM BYEAH PRIME
     }
     if (
+      cardObj.type[0] === "✦" && // if card is epic
       epicArray.length !== 0 &&
       challenger !== "JEX" &&
       !epicArray.includes(cardObj.cardNum)
@@ -99,15 +99,15 @@ export const DeckListProvider: FC<PropsWithChildren> = ({ children }) => {
       return; // can't have more than one epic if you don't have jex
     }
 
+    var copyDeckList = [...deckList];
+
     for (var index in copyDeckList) {
       // attempting to add card to decklist
       var deckCard = copyDeckList[index];
       if (cardNum === deckCard.cardNum) {
-        if (deckCard.count !== "3" || cardObj.name === "Byeah Beast") {
+        if (deckCard.count !== 3 || cardObj.name === "Byeah Beast") {
           // can have unlimited byeah beast
-          copyDeckList[index].count = util.toStringInc(
-            copyDeckList[index].count
-          );
+          copyDeckList[index].count++;
           setDeckListLength(deckListLength + 1);
         }
         return;
@@ -118,7 +118,7 @@ export const DeckListProvider: FC<PropsWithChildren> = ({ children }) => {
       cardNum: cardObj.cardNum,
       name: cardObj.name,
       imageName: cardObj.deckCardImage,
-      count: "1",
+      count: 1,
       isEpic: cardObj.type[0] === "✦",
     };
     copyDeckList.push(parsedCard);
@@ -129,6 +129,27 @@ export const DeckListProvider: FC<PropsWithChildren> = ({ children }) => {
 
   const removeFromDeckList = (cardNum: string) => {
     console.log("context remove hit");
+    console.log("cardNum", cardNum);
+    if (typeof cardsData === "undefined" || typeof deckList === "undefined") {
+      return;
+    }
+    var cardObj = cardsData[parseInt(cardNum) - 1];
+    var copyDeckList = [...deckList];
+    for (var index in copyDeckList) {
+      // attempting to remove card from decklist
+      var deckCard = copyDeckList[index];
+      if (cardNum === deckCard.cardNum) {
+        // found card to remove
+        if (deckCard.count <= 1) {
+          // can have unlimited byeah beast
+          // REMOVE CARD
+          // setDeckListLength(deckListLength + 1);
+        } else {
+          // decrement card
+        }
+        return;
+      }
+    }
   };
 
   return (
