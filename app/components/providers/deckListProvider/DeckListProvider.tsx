@@ -101,13 +101,13 @@ export const DeckListProvider: FC<PropsWithChildren> = ({ children }) => {
 
     var copyDeckList = [...deckList];
 
-    for (var index in copyDeckList) {
+    for (var i = 0; i < copyDeckList.length; i++) {
       // attempting to add card to decklist
-      var deckCard = copyDeckList[index];
+      var deckCard = copyDeckList[i];
       if (cardNum === deckCard.cardNum) {
         if (deckCard.count !== 3 || cardObj.name === "Byeah Beast") {
           // can have unlimited byeah beast
-          copyDeckList[index].count++;
+          copyDeckList[i].count++;
           setDeckListLength(deckListLength + 1);
         }
         return;
@@ -128,28 +128,31 @@ export const DeckListProvider: FC<PropsWithChildren> = ({ children }) => {
   };
 
   const removeFromDeckList = (cardNum: string) => {
-    console.log("context remove hit");
-    console.log("cardNum", cardNum);
     if (typeof cardsData === "undefined" || typeof deckList === "undefined") {
       return;
     }
     var cardObj = cardsData[parseInt(cardNum) - 1];
     var copyDeckList = [...deckList];
-    for (var index in copyDeckList) {
+    for (var i = 0; i < copyDeckList.length; i++) {
       // attempting to remove card from decklist
-      var deckCard = copyDeckList[index];
+      var deckCard = copyDeckList[i];
       if (cardNum === deckCard.cardNum) {
         // found card to remove
         if (deckCard.count <= 1) {
-          // can have unlimited byeah beast
-          // REMOVE CARD
-          // setDeckListLength(deckListLength + 1);
+          // delete card from array
+          copyDeckList.splice(i, 1);
+          cardObj.type[0] === "✦" &&
+            setEpicArray(
+              epicArray.filter((currCardNum) => currCardNum !== cardNum)
+            );
         } else {
-          // decrement card
+          copyDeckList[i].count--;
         }
-        return;
+        setDeckListLength(deckListLength - 1);
+        break;
       }
     }
+    setDeckList([...copyDeckList]);
   };
 
   return (
