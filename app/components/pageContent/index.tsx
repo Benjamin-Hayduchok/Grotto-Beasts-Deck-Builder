@@ -7,12 +7,13 @@ import { DeckListProvider } from "../providers/deckListProvider/DeckListProvider
 
 export type PageContentProps = {
   cardList: CardsData[];
+  id: string;
 };
 
-export const PageContent: FC<PageContentProps> = ({ cardList }) => {
+export const PageContent: FC<PageContentProps> = ({ cardList, id }) => {
   return (
     <div>
-      <DeckListProvider>
+      <DeckListProvider id={id}>
         <SearchBar></SearchBar>
         <div className={"flex p-8"}>
           <CardList collectionView={true} cardArray={Object.values(cardList)} />

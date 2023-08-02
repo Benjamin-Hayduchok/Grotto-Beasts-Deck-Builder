@@ -2,13 +2,48 @@ import {
   FC,
   PropsWithChildren,
   createContext,
+  useEffect,
   useState,
   useContext,
   useReducer,
+  ReactNode,
 } from "react";
-import util from "../../util";
 import { CardDataContext } from "../cardDataProvider";
 import Swal from "sweetalert2";
+
+const parseCardIntoDeckCard = (cardObj: any) => {
+  return {
+    cost: cardObj.cost,
+    cardNum: cardObj.cardNum,
+    name: cardObj.name,
+    imageName: cardObj.deckCardImage,
+    count: 1,
+    isEpic: cardObj.type[0] === "✦",
+  };
+};
+
+type dbDeckListObjType = { [key: string]: string };
+
+async function getDeckList(id: string) {
+  const res = await fetch(
+    `https://grotto-beasts-test.fly.dev/api/collections/decklists/records/${id}`
+  );
+  const data = await res.json();
+  return data;
+}
+
+function createDeckListObj(deckList: dbDeckListObjType, cardsData: any) {
+  if (!cardsData) {
+    return [];
+  }
+  var deckListInit: DeckListType[] = [];
+  for (var cardNum in deckList) {
+    var cardObj = cardsData[parseInt(cardNum) - 1];
+    var parsedCard = parseCardIntoDeckCard(cardObj);
+    deckListInit.push(parsedCard);
+  }
+  return deckListInit;
+}
 
 export type DeckListType = {
   cost: string;
@@ -41,7 +76,12 @@ export const DeckListContext = createContext<DeckListContextType>({
   forceRenderDispatch: () => {},
 });
 
-export const DeckListProvider: FC<PropsWithChildren> = ({ children }) => {
+type test = {
+  children: ReactNode;
+  id: string;
+};
+
+export const DeckListProvider: FC<test> = ({ children, id }) => {
   const [deckList, setDeckList] = useState<DeckListType[]>(
     [] // should be populated with API call to get decklist
   );
@@ -58,6 +98,16 @@ export const DeckListProvider: FC<PropsWithChildren> = ({ children }) => {
     (state) => !state,
     false
   );
+
+  useEffect(() => {
+    if (id === "new") return;
+    getDeckList(id).then((data) => {
+      setDeckList(createDeckListObj(data?.decklist, cardsData));
+      setChallenger(data?.challenger || "None");
+      setDeckListLength(data?.decklistLength || 0);
+    });
+  }, []);
+
   const { cardsData } = useContext(CardDataContext);
 
   const addToDeckList = (cardNum: string) => {
@@ -113,14 +163,7 @@ export const DeckListProvider: FC<PropsWithChildren> = ({ children }) => {
         return;
       }
     }
-    var parsedCard = {
-      cost: cardObj.cost,
-      cardNum: cardObj.cardNum,
-      name: cardObj.name,
-      imageName: cardObj.deckCardImage,
-      count: 1,
-      isEpic: cardObj.type[0] === "✦",
-    };
+    var parsedCard = parseCardIntoDeckCard(cardObj);
     copyDeckList.push(parsedCard);
     parsedCard.isEpic && setEpicArray([...epicArray, parsedCard.cardNum]);
     setDeckListLength(deckListLength + 1);
