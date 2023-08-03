@@ -171,31 +171,32 @@ export const DeckListProvider: FC<test> = ({ children, id }) => {
   };
 
   const removeFromDeckList = (cardNum: string) => {
-    if (typeof cardsData === "undefined" || typeof deckList === "undefined") {
+    if (!cardsData || !deckList) {
       return;
     }
-    var cardObj = cardsData[parseInt(cardNum) - 1];
-    var copyDeckList = [...deckList];
-    for (var i = 0; i < copyDeckList.length; i++) {
-      // attempting to remove card from decklist
-      var deckCard = copyDeckList[i];
-      if (cardNum === deckCard.cardNum) {
-        // found card to remove
-        if (deckCard.count <= 1) {
-          // delete card from array
-          copyDeckList.splice(i, 1);
-          cardObj.type[0] === "✦" &&
-            setEpicArray(
-              epicArray.filter((currCardNum) => currCardNum !== cardNum)
-            );
-        } else {
-          copyDeckList[i].count--;
-        }
-        setDeckListLength(deckListLength - 1);
-        break;
-      }
+    const cardObj = cardsData[parseInt(cardNum) - 1];
+    // Find the index of the card in the deckList
+    const cardIndex = deckList.findIndex(
+      (deckCard) => deckCard.cardNum === cardNum
+    );
+    // Return early if the card is not found in the deckList
+    if (cardIndex === -1) {
+      return;
     }
-    setDeckList([...copyDeckList]);
+    const copyDeckList = [...deckList];
+    if (copyDeckList[cardIndex].count <= 1) {
+      copyDeckList.splice(cardIndex, 1);
+      // Remove the card from the epicArray when its count is 0
+      if (cardObj.type[0] === "✦") {
+        setEpicArray((prevEpicArray) =>
+          prevEpicArray.filter((currCardNum) => currCardNum !== cardNum)
+        );
+      }
+    } else {
+      copyDeckList[cardIndex].count--;
+    }
+    setDeckListLength((prevDeckListLength) => prevDeckListLength - 1);
+    setDeckList(copyDeckList);
   };
 
   return (
