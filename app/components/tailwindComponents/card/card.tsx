@@ -1,11 +1,13 @@
 import classNames from "classnames";
-import { FC, useRef } from "react";
+import { FC, useRef, useContext } from "react";
 import { useRotateToMouse } from "./utils/mouse";
 import CollectionCardHover from "../../collectionCardHover";
-import eventBus from "../../eventBus";
 import { InfoIcon } from "../../icons/InfoIcon";
 import { useModal } from "../../providers/modalProvider/ModalProvider";
 import { CardInfoCarousel } from "../../cardInfo/cardInfoCarousel";
+import { DeckListContext } from "../../providers/deckListProvider/DeckListProvider";
+import util from "../../util";
+import { CardDataContext, PageTypes } from "../../providers/cardDataProvider";
 
 export type CardProps = {
   name: string;
@@ -38,9 +40,12 @@ export const Card: FC<CardProps> = ({
     show: true,
   },
   cardDimensions = {
-    maxWidth: "max-w-[150px] md:max-w-[240px]",
+    maxWidth: "max-w-[240px]",
   },
 }) => {
+  const {deckList, addToDeckList, forceRenderDispatch} = useContext(DeckListContext);
+  const { cardsData, pageType } = useContext(CardDataContext);
+
   const inputRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
 
@@ -48,16 +53,13 @@ export const Card: FC<CardProps> = ({
   const { openModal } = useModal();
 
   function addCard(card: { cardNum: string; name: string }) {
-    console.log("ON CLICK card", card);
-
-    if (parseInt(card.cardNum) <= 32)
-      eventBus.dispatch("addChallengerToDeck", { card: card });
-    else eventBus.dispatch("addCardToDeck", { card: card });
+    addToDeckList(cardNum);
+    forceRenderDispatch();
   }
 
   return (
     <div
-      className={"relative"}
+      className={"relative cursor-pointer"}
       style={{
         perspective: "1500px",
       }}
@@ -93,10 +95,9 @@ export const Card: FC<CardProps> = ({
         >
           {showInfoButton && (
             <div
-              className="rounded-full shadow  hover:cursor-pointer hover:brightness-125"
+              className="rounded-full shadow hover:cursor-pointer hover:brightness-125"
               onClick={(e) => {
                 e.stopPropagation();
-                // openModal(<div></div>);
                 openModal(<CardInfoCarousel cardNum={parseInt(cardNum)} />);
               }}
             >
@@ -135,14 +136,15 @@ export const Card: FC<CardProps> = ({
             )}
           />
         </div>
-        {/* TODO: NV - Update this component as well */}
+      </div>
+      {pageType === PageTypes.COLLECTION && (
         <CollectionCardHover
           collectionView={collectionView}
           collectionCount={collectionCount}
           cardNum={cardNum}
           updateCollectionCount={updateCollectionCount!}
-        ></CollectionCardHover>
-      </div>
+        />
+      )}
     </div>
   );
 };

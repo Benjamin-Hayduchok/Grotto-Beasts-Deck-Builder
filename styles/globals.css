@@ -156,7 +156,6 @@ h2 {
   border: 6px solid rgb(224, 180, 34);
   border-style: inset;
   border-radius: 5px;
-  margin-top: -2%;
   background-color: rgb(127, 90, 58);
   background-image: linear-gradient(
     to bottom right,
@@ -166,6 +165,7 @@ h2 {
   z-index: 3;
 }
 
+/* TODO: Remove */
 .containerDeckCounter {
   position: relative;
   display: flex;
@@ -175,6 +175,7 @@ h2 {
   margin-top: 2vh;
 }
 
+/* TODO: Remove */
 .deckCounter {
   position: relative;
 
@@ -196,10 +197,10 @@ h2 {
   z-index: -1;
 
   height: 80vh; */
-  margin-top: -5%;
+  margin-top: -7%;
   border-top: 3vh solid rgb(127, 90, 58);
   overflow: auto;
-  height: 89%;
+  height: 88%;
 }
 
 #style-1::-webkit-scrollbar-track {
@@ -243,9 +244,8 @@ h2 {
   font-family: "AclonicaRegular";
   color: black;
   text-shadow: 0px 0px 4px white;
-  font-size: 1.1vw;
+  /* font-size: 1.1vw; */
   font-weight: bold;
-  width: 13vw;
   /* position: relative; */
   top: 50%;
   -webkit-transform: translateY(32%);

@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import DeckCard from "./deckCard";
-import eventBus from "./eventBus";
-import cardList from "./card-list.json";
-import util from "./util";
+import eventBus from "../eventBus";
+import cardList from "../card-list.json";
+import util from "../util";
 import Swal from "sweetalert2";
+import { DeckListContext } from "../providers/deckListProvider/DeckListProvider";
+// import cardList from "../cardList";
 
 async function getDeckList() {
   // const res = await fetch(
@@ -92,8 +94,12 @@ var currDeckArr: {
 
 const DeckCards = (props: { collectionView: boolean }) => {
   getDeckList();
-  const [deckArr, setDeckArr] = useState(currDeckArr);
-  // const [deckCount, setDeckCount] = useState(0);
+  const {deckList, addToDeckList} = useContext(DeckListContext);
+  const [deckArr, setDeckArr] = useState(deckList);
+
+  useEffect(() => {
+    deckList && setDeckArr([...deckList]);
+  }, [deckList])
 
   if (loadChallenger) {
     loadChallenger = false;
@@ -103,14 +109,14 @@ const DeckCards = (props: { collectionView: boolean }) => {
         checkForMultipleEpics();
       currChallengerName = data.card.name;
       loadChallenger = true;
-      setDeckArr([...currDeckArr]);
+      // setDeckArr([...currDeckArr]);
     });
   }
   if (loadInc) {
     loadInc = false;
     eventBus.on("addCardToDeck", (data: any) => {
       if (deckCount >= getAllowedLength(currChallengerName)) {
-        setDeckArr([...currDeckArr]);
+        // setDeckArr([...currDeckArr]);
         loadInc = true;
         return;
       }
@@ -142,7 +148,7 @@ const DeckCards = (props: { collectionView: boolean }) => {
         }
         if (cardToAdd.isEpic) currEpicName = cardToAdd.name;
       }
-      setDeckArr([...currDeckArr]);
+      // setDeckArr([...currDeckArr]);
       loadInc = true;
       eventBus.remove("addCardToDeck");
     });
@@ -151,7 +157,7 @@ const DeckCards = (props: { collectionView: boolean }) => {
   if (loadDec) {
     loadDec = false;
     eventBus.on("removeCardFromDeck", (data: any) => {
-      setDeckArr(currDeckArr);
+      // setDeckArr(currDeckArr);
       var cardToRemove = getCardById(data.card.cardNum);
       for (var i = 0; i < currDeckArr.length; i++) {
         var currCard = currDeckArr[i];
@@ -169,15 +175,15 @@ const DeckCards = (props: { collectionView: boolean }) => {
           break;
         }
       }
-      setDeckArr(currDeckArr);
+      // setDeckArr(currDeckArr);
       loadDec = true;
       eventBus.remove("removeCardFromDeck");
     });
-    setDeckArr([...currDeckArr]);
+    // setDeckArr([...currDeckArr]);
   }
   return (
     <div className="deckCards" id="style-1">
-      {deckArr.map((card) => (
+      {deckArr?.map((card) => (
         <DeckCard
           cardNum={card.cardNum}
           name={card.name}

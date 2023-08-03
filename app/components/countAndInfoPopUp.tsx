@@ -1,47 +1,55 @@
-import React from 'react';
-import eventBus from './eventBus';
+import React, { useContext } from "react";
+import eventBus from "./eventBus";
+import { DeckListContext } from "./providers/deckListProvider/DeckListProvider";
 
-const CountAndInfoPopUp = (props: {showAdjustCount: boolean, count: string, cardNum: string}) => {
+const CountAndInfoPopUp = (props: {
+  showAdjustCount: boolean;
+  count: number;
+  cardNum: string;
+}) => {
   const { showAdjustCount, count, cardNum } = props;
+  const { addToDeckList, removeFromDeckList, forceRenderDispatch } =
+    useContext(DeckListContext);
 
   const showInfoCard = (cardNum: string) => {
     // console.log('SHOW INFO cardNum', cardNum);
-  }
+  };
 
   const decreaseCard = (cardNum: string) => {
-    // console.log('DECREASE cardNum', cardNum);
-    var card = {cardNum: cardNum};
-    eventBus.dispatch("removeCardFromDeck", { card: card });
-  }
+    removeFromDeckList(cardNum);
+    forceRenderDispatch();
+  };
 
   const increaseCard = (cardNum: string) => {
-    // console.log('INCREASE cardNum', cardNum);
-    var card = {cardNum: cardNum};
-    eventBus.dispatch("addCardToDeck", { card: card });
-  }
-
+    addToDeckList(cardNum);
+    forceRenderDispatch();
+  };
 
   if (showAdjustCount) {
     return (
       <div className="countAndInfoPopUpContainer">
-        <input 
-          className="infoButt" type="button" value="i"
+        <input
+          className="infoButt"
+          type="button"
+          value="i"
           onClick={() => showInfoCard(cardNum)}
         />
         <input
-          className="minusButt" type="button" value="-"
+          className="minusButt"
+          type="button"
+          value="-"
           onClick={() => decreaseCard(cardNum)}
         />
         <input
-          className="plusButt" type="button" value="+"
+          className="plusButt"
+          type="button"
+          value="+"
           onClick={() => increaseCard(cardNum)}
         />
       </div>
-    )
+    );
   }
-  return (
-      <p></p>
-  )
-} 
+  return <p></p>;
+};
 
-export default CountAndInfoPopUp
+export default CountAndInfoPopUp;
