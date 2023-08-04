@@ -1,16 +1,16 @@
-import React, { Component } from "react";
-import DeckHeader from "./deckHeader";
+import React, { Component, FC } from "react";
+import { DeckHeader } from "./deckHeader";
 import DeckCards from "./deckCards";
 
-type DeckProps = {
-  collectionView: boolean;
+export type DeckProps = {
+  isCollection: boolean;
 };
 
-const Deck = (props: DeckProps) => {
+const Deck: FC<DeckProps> = ({ isCollection }) => {
   return (
-    <div className="deck">
-      <DeckHeader collectionView={props.collectionView}></DeckHeader>
-      <DeckCards collectionView={props.collectionView}></DeckCards>
+    <div className="h-full flex flex-col">
+      <DeckHeader isCollection={isCollection}></DeckHeader>
+      <DeckCards collectionView={isCollection}></DeckCards>
     </div>
   );
 };
