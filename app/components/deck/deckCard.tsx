@@ -11,7 +11,7 @@ export type DeckCardProps = {
 const DeckCard: FC<DeckCardProps> = ({ card }) => {
   // const { name, cardNum, imageName, count, cost, isEpic } = props;
 
-  const [showAdjustCount, setShowAdjustCount] = useState(false);
+  const [showAdjustCount, setShowAdjustCount] = useState(true);
 
   const showCardCountChange = (cardNum: string) => {
     // console.log('SHOW cardNum', cardNum)
@@ -25,16 +25,14 @@ const DeckCard: FC<DeckCardProps> = ({ card }) => {
 
   return (
     <div
-      // className="deckCard"
       className={classNames(
-        "relative",
+        "group",
+        "relative overflow-clip",
         "flex items-center py-1 pl-10 pr-4",
         "border-2 border-yellow-400 border-opacity-50 rounded-2xl",
         "bg-[rgb(31,45,74)] bg-opacity-90",
         "leading-0 text-gray-100 text-base"
       )}
-      onMouseOver={() => showCardCountChange(card.cardNum)}
-      onMouseLeave={() => hideCardCountChange(card.cardNum)}
     >
       <img
         className="absolute -left-1 w-10 h-10"
@@ -42,11 +40,12 @@ const DeckCard: FC<DeckCardProps> = ({ card }) => {
         alt={`cost-${card.cost}`}
       ></img>
       <div className="w-full flex justify-between">
-        <div className="">{card.name}</div>
-        <div className="">
+        <div className="flex">
+          {card.name}
           <EpicTag isEpic={card.isEpic}></EpicTag>
         </div>
         <CountAndInfoPopUp
+          className="invisible group-hover:visible group-focus:visible"
           showAdjustCount={showAdjustCount}
           count={card.count}
           cardNum={card.cardNum}

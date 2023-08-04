@@ -1,15 +1,20 @@
-import React, { useContext } from "react";
+import React, { FC, ReactNode, useContext } from "react";
 import eventBus from "./eventBus";
 import { DeckListContext } from "./providers/deckListProvider/DeckListProvider";
+import classNames from "classnames";
+import { useModal } from "./providers/modalProvider/ModalProvider";
+import { CardInfoCarousel } from "./cardInfo/cardInfoCarousel";
 
 const CountAndInfoPopUp = (props: {
   showAdjustCount: boolean;
   count: number;
   cardNum: string;
+  className: string;
 }) => {
-  const { showAdjustCount, count, cardNum } = props;
+  const { showAdjustCount, count, cardNum, className } = props;
   const { addToDeckList, removeFromDeckList, forceRenderDispatch } =
     useContext(DeckListContext);
+  const { openModal } = useModal();
 
   const showInfoCard = (cardNum: string) => {
     // console.log('SHOW INFO cardNum', cardNum);
@@ -27,25 +32,25 @@ const CountAndInfoPopUp = (props: {
 
   if (showAdjustCount) {
     return (
-      <div className="countAndInfoPopUpContainer">
-        <input
-          className="infoButt"
-          type="button"
-          value="i"
-          onClick={() => showInfoCard(cardNum)}
+      <div
+        className={classNames(
+          "absolute right-10 top-1/2 -translate-y-1/2",
+          "flex w-[150px]",
+          "divide-x-2 divide-white divide-opacity-25",
+          "bg-black bg-opacity-50",
+          "text-yellow-400",
+          className
+        )}
+      >
+        <CardActionButton
+          label={"i"}
+          onClick={(e) => {
+            e.stopPropagation();
+            openModal(<CardInfoCarousel cardNum={parseInt(cardNum)} />);
+          }}
         />
-        <input
-          className="minusButt"
-          type="button"
-          value="-"
-          onClick={() => decreaseCard(cardNum)}
-        />
-        <input
-          className="plusButt"
-          type="button"
-          value="+"
-          onClick={() => increaseCard(cardNum)}
-        />
+        <CardActionButton label={"-"} onClick={() => decreaseCard(cardNum)} />
+        <CardActionButton label={"+"} onClick={() => increaseCard(cardNum)} />
       </div>
     );
   }
@@ -53,3 +58,23 @@ const CountAndInfoPopUp = (props: {
 };
 
 export default CountAndInfoPopUp;
+
+type CardActionButtonProps = {
+  onClick: (e: any) => void;
+  label: ReactNode;
+};
+
+const CardActionButton: FC<CardActionButtonProps> = ({ onClick, label }) => {
+  return (
+    <div
+      className={classNames(
+        "flex grow justify-center",
+        "p-2 cursor-pointer",
+        "text-xl"
+      )}
+      onClick={onClick}
+    >
+      {label}
+    </div>
+  );
+};
