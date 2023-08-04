@@ -104,5 +104,5 @@ export default function CollectionPage({ params }: any) {
     );
   };
 
-  return <PageContent cardList={cardList} id={params.id}/>;
+  return <PageContent cardList={cardList} id={params.id} saveType={"collection"}/>;
 }

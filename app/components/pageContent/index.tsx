@@ -4,13 +4,15 @@ import CardList, { CardsData } from "../cardList";
 import { ResponsiveDeckWrapper } from "../responsiveDeckWrapper/ResponsiveDeckWrapper";
 import Deck from "../deck/deck";
 import { DeckListProvider } from "../providers/deckListProvider/DeckListProvider";
+import { SaveButton } from "../saveButton";
 
 export type PageContentProps = {
   cardList: CardsData[];
   id: string;
+  saveType: string;
 };
 
-export const PageContent: FC<PageContentProps> = ({ cardList, id }) => {
+export const PageContent: FC<PageContentProps> = ({ cardList, id, saveType }) => {
   return (
     <div>
       <DeckListProvider id={id}>
@@ -21,6 +23,7 @@ export const PageContent: FC<PageContentProps> = ({ cardList, id }) => {
             <div className="bg-gb-brown rounded-md h-full w-full shadow-2xl">
               <Deck collectionView={false} />
             </div>
+            <SaveButton saveType={saveType}></SaveButton>
           </ResponsiveDeckWrapper>
         </div>
       </DeckListProvider>

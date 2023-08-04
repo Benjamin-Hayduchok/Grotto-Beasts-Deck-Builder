@@ -1,6 +1,5 @@
 import {
   FC,
-  PropsWithChildren,
   createContext,
   useEffect,
   useState,
@@ -10,14 +9,15 @@ import {
 } from "react";
 import { CardDataContext } from "../cardDataProvider";
 import Swal from "sweetalert2";
+import { PocketBaseContext } from "../pocketBaseProvider/PocketBaseProvider";
 
-const parseCardIntoDeckCard = (cardObj: any) => {
+const parseCardIntoDeckCard = (cardObj: any, cardCount: number = 1) => {
   return {
     cost: cardObj.cost,
     cardNum: cardObj.cardNum,
     name: cardObj.name,
     imageName: cardObj.deckCardImage,
-    count: 1,
+    count: cardCount,
     isEpic: cardObj.type[0] === "✦",
   };
 };
@@ -39,11 +39,22 @@ function createDeckListObj(deckList: dbDeckListObjType, cardsData: any) {
   var deckListInit: DeckListType[] = [];
   for (var cardNum in deckList) {
     var cardObj = cardsData[parseInt(cardNum) - 1];
-    var parsedCard = parseCardIntoDeckCard(cardObj);
+    var cardCount = deckList[cardNum];
+    var parsedCard = parseCardIntoDeckCard(cardObj, parseInt(cardCount));
     deckListInit.push(parsedCard);
   }
   return deckListInit;
 }
+
+const formatDeckObj = (currDeckObj: any) => {
+  var returnObj: { [key: number]: number } = {};
+  for (var card of currDeckObj) {
+    if (card.count > 0) {
+      returnObj[card.cardNum] = card.count;
+    }
+  }
+  return returnObj;
+};
 
 export type DeckListType = {
   cost: string;
@@ -63,6 +74,7 @@ type DeckListContextType = {
   removeFromDeckList: (cardNum: string) => void;
   forceRender: boolean;
   forceRenderDispatch: () => void;
+  saveDeckList: () => void;
 };
 
 export const DeckListContext = createContext<DeckListContextType>({
@@ -74,14 +86,20 @@ export const DeckListContext = createContext<DeckListContextType>({
   removeFromDeckList: () => {},
   forceRender: false,
   forceRenderDispatch: () => {},
+  saveDeckList: () => {},
 });
 
-type test = {
+type DeckListProviderType = {
   children: ReactNode;
   id: string;
 };
 
-export const DeckListProvider: FC<test> = ({ children, id }) => {
+export const DeckListProvider: FC<DeckListProviderType> = ({
+  children,
+  id,
+}) => {
+  const pocketBaseConnection = useContext(PocketBaseContext);
+
   const [deckList, setDeckList] = useState<DeckListType[]>(
     [] // should be populated with API call to get decklist
   );
@@ -90,6 +108,9 @@ export const DeckListProvider: FC<test> = ({ children, id }) => {
   );
   const [deckListLength, setDeckListLength] = useState<number>(
     0 // should be populated with API call to get decklist
+  );
+  const [userId, setUserId] = useState<string>(
+    "" // should be populated with API call to get decklist
   );
   const [epicArray, setEpicArray] = useState<String[]>(
     [] // should be populated with API call to get decklist
@@ -105,6 +126,8 @@ export const DeckListProvider: FC<test> = ({ children, id }) => {
       setDeckList(createDeckListObj(data?.decklist, cardsData));
       setChallenger(data?.challenger || "None");
       setDeckListLength(data?.decklistLength || 0);
+      setUserId(data?.user);
+      setEpicArray(data?.epicArray);
     });
   }, []);
 
@@ -199,6 +222,61 @@ export const DeckListProvider: FC<test> = ({ children, id }) => {
     setDeckList(copyDeckList);
   };
 
+  // need to add collectionId to this in some way. will likely grab from local storage as it should be stored there
+  const saveDeckToDB = async (deckObj: any) => {
+    const data = {
+      user: userId,
+      decklist: deckObj,
+      challenger: challenger,
+      decklistLength: deckListLength,
+      collectionid: localStorage.getItem("collectionCountId"), // possibly need to be updated
+      epicArray: epicArray,
+    };
+    try {
+      const record = await pocketBaseConnection
+        ?.collection("decklists")
+        .update(id, data);
+      return record;
+    } catch {
+      return;
+    }
+  };
+
+  const saveDeckList = () => {
+    if (!deckList) {
+      return;
+    }
+    if (!pocketBaseConnection?.authStore.isValid) {
+      Swal.fire({
+        title: "<strong>YOU ARE NOT LOGGED IN</strong>",
+        html: '<a href="/login" style="color:blue;"><u>Click here to go to the Login Page...<u></a>',
+        icon: "error",
+        confirmButtonColor: "#f27474",
+        confirmButtonText: "Close",
+      });
+      return;
+    }
+    saveDeckToDB(formatDeckObj(deckList)).then((result) => {
+      console.log("result", result);
+      if (result) {
+        Swal.fire({
+          title: "<strong>Decklist Saved!</strong>",
+          icon: "success",
+          confirmButtonColor: "#257d52",
+          confirmButtonText: "OK",
+        });
+        return;
+      }
+      Swal.fire({
+        title: "<strong>Error Saving Deck.</strong>",
+        html: "<p>You are not the owner of the deck.</p>",
+        icon: "error",
+        confirmButtonColor: "#f27474",
+        confirmButtonText: "Close",
+      }); // should allow copy as some pt
+    });
+  };
+
   return (
     <DeckListContext.Provider
       value={{
@@ -210,6 +288,7 @@ export const DeckListProvider: FC<test> = ({ children, id }) => {
         removeFromDeckList,
         forceRender,
         forceRenderDispatch,
+        saveDeckList,
       }}
     >
       {children}

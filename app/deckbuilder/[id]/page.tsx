@@ -8,5 +8,5 @@ export default function DeckBuilder({params}: any) {
   const { cardsData } = useContext(CardDataContext);
   const [cardList, setCardList] = useState(Object.assign({}, cardsData));
 
-  return <PageContent id={params.id} cardList={cardList} />;
+  return <PageContent id={params.id} cardList={cardList} saveType={"deckBuilder"}/>;
 }
