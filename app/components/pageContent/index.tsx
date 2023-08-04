@@ -10,9 +10,15 @@ export type PageContentProps = {
   cardList: CardsData[];
   id: string;
   saveType: string;
+  saveCollection?: Function;
 };
 
-export const PageContent: FC<PageContentProps> = ({ cardList, id, saveType }) => {
+export const PageContent: FC<PageContentProps> = ({
+  cardList,
+  id,
+  saveType,
+  saveCollection,
+}) => {
   return (
     <div>
       <DeckListProvider id={id}>
@@ -23,7 +29,10 @@ export const PageContent: FC<PageContentProps> = ({ cardList, id, saveType }) =>
             <div className="bg-gb-brown rounded-md h-full w-full shadow-2xl">
               <Deck collectionView={false} />
             </div>
-            <SaveButton saveType={saveType}></SaveButton>
+            <SaveButton
+              saveType={saveType}
+              saveCollection={saveCollection}
+            ></SaveButton>
           </ResponsiveDeckWrapper>
         </div>
       </DeckListProvider>

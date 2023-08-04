@@ -18,7 +18,7 @@ type collectionCountObjType = { [key: number]: number };
 
 const setCollectionCounts = (collectionCounts: any, cardsData: any) => {
   for (var collectionCount in collectionCounts) {
-    var currCard = cardsData[parseInt(collectionCount)];
+    var currCard = cardsData[parseInt(collectionCount) - 1]; // subtracting 1 to convert array index to cardNum
     if (currCard)
       currCard.collectionCount = collectionCounts[parseInt(collectionCount)];
   }
@@ -38,40 +38,11 @@ const createCollectionCountObj = (cardList: CardsData[]) => {
   for (var index in cardList) {
     var card = cardList[index];
     if (card.collectionCount > 0) {
-      collectionCountObj[parseInt(index)] = card.collectionCount;
+      collectionCountObj[parseInt(index) + 1] = card.collectionCount; // adding 1 to convert array index to cardNum
     }
   }
   return collectionCountObj;
 };
-
-async function saveCollectionCount(
-  id: string,
-  collectionCountObj: collectionCountObjType,
-  userId: string
-) {
-  const patchData = { collection: collectionCountObj, user: userId };
-  const res = await fetch(
-    `https://grotto-beasts-test.fly.dev/api/collections/cardCollection/records/${id}`,
-    {
-      method: "PATCH",
-      cache: "no-cache",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(patchData),
-    }
-  );
-  if (res.status === 200) {
-    Swal.fire({
-      title: "<strong>Collection Saved!</strong>",
-      icon: "success",
-      confirmButtonColor: "#257d52",
-      confirmButtonText: "OK",
-    });
-  }
-  const data = await res.json();
-  return data;
-}
 
 export default function CollectionPage({ params }: any) {
   const { cardsData } = useContext(CardDataContext);
@@ -86,9 +57,37 @@ export default function CollectionPage({ params }: any) {
       setUserId(data?.user);
     });
   }, []);
+  async function saveCollectionCount(
+    id: string,
+    collectionCountObj: collectionCountObjType,
+    userId: string
+  ) {
+    const patchData = { collection: collectionCountObj, user: userId };
+    try {
+      const record = await pocketBaseConnection
+        ?.collection("cardCollection")
+        .update(id, patchData);
+      if (record) {
+        Swal.fire({
+          title: "<strong>Collection Saved!</strong>",
+          icon: "success",
+          confirmButtonColor: "#257d52",
+          confirmButtonText: "OK",
+        });
+        return;
+      }
+    } catch {
+      Swal.fire({
+        title: "<strong>Error Saving Collection.</strong>",
+        html: "<p>You are not the owner of the Collection.</p>",
+        icon: "error",
+        confirmButtonColor: "#f27474",
+        confirmButtonText: "Close",
+      });
+    }
+  }
 
   const saveCollection = () => {
-    const collectionCountObj = createCollectionCountObj(cardList);
     if (!pocketBaseConnection?.authStore.isValid) {
       Swal.fire({
         title: "<strong>YOU ARE NOT LOGGED IN</strong>",
@@ -99,10 +98,18 @@ export default function CollectionPage({ params }: any) {
       });
       return;
     }
+    const collectionCountObj = createCollectionCountObj(cardList);
     saveCollectionCount(params.id, collectionCountObj, userId).then((result) =>
-      console.log("result", result)
+      console.log("result", result) // should delete at some pt
     );
   };
 
-  return <PageContent cardList={cardList} id={params.id} saveType={"collection"}/>;
+  return (
+    <PageContent
+      cardList={cardList}
+      id={params.id}
+      saveType={"collection"}
+      saveCollection={saveCollection}
+    />
+  );
 }
