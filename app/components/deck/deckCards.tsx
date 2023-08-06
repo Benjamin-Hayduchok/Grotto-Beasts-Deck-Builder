@@ -94,12 +94,12 @@ var currDeckArr: {
 
 const DeckCards = (props: { collectionView: boolean }) => {
   getDeckList();
-  const {deckList, addToDeckList} = useContext(DeckListContext);
+  const { deckList, addToDeckList } = useContext(DeckListContext);
   const [deckArr, setDeckArr] = useState(deckList);
 
   useEffect(() => {
     deckList && setDeckArr([...deckList]);
-  }, [deckList])
+  }, [deckList]);
 
   if (loadChallenger) {
     loadChallenger = false;
@@ -182,18 +182,12 @@ const DeckCards = (props: { collectionView: boolean }) => {
     // setDeckArr([...currDeckArr]);
   }
   return (
-    <div className="deckCards" id="style-1">
-      {deckArr?.map((card) => (
-        <DeckCard
-          cardNum={card.cardNum}
-          name={card.name}
-          imageName={card.imageName}
-          count={card.count}
-          cost={card.cost}
-          isEpic={card.isEpic}
-          key={card.cardNum}
-        />
-      ))}
+    <div className="h-full p-2 overflow-auto" id="style-1">
+      <div className="flex flex-col gap-2">
+        {deckArr?.map((card) => (
+          <DeckCard card={card} key={`deckCard-${card.cardNum}`} />
+        ))}
+      </div>
     </div>
   );
 };
