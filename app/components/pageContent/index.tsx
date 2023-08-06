@@ -5,15 +5,24 @@ import { ResponsiveDeckWrapper } from "../responsiveDeckWrapper/ResponsiveDeckWr
 import Deck from "../deck/deck";
 import { DeckListProvider } from "../providers/deckListProvider/DeckListProvider";
 import classNames from "classnames";
+import { SaveButton } from "../saveButton";
 
 export type PageContentProps = {
   cardList: CardsData[];
+  id: string;
+  saveType: string;
+  saveCollection?: Function;
 };
 
-export const PageContent: FC<PageContentProps> = ({ cardList }) => {
+export const PageContent: FC<PageContentProps> = ({
+  cardList,
+  id,
+  saveType,
+  saveCollection,
+}) => {
   return (
     <div>
-      <DeckListProvider>
+      <DeckListProvider id={id}>
         <SearchBar></SearchBar>
         <div className={"flex p-8"}>
           <CardList collectionView={true} cardArray={Object.values(cardList)} />
@@ -27,6 +36,10 @@ export const PageContent: FC<PageContentProps> = ({ cardList }) => {
             >
               <Deck isCollection={false} />
             </div>
+            <SaveButton
+              saveType={saveType}
+              saveCollection={saveCollection}
+            ></SaveButton>
           </ResponsiveDeckWrapper>
         </div>
       </DeckListProvider>
