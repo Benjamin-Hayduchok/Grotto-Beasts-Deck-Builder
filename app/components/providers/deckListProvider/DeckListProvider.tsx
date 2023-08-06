@@ -32,28 +32,29 @@ async function getDeckList(id: string) {
   return data;
 }
 
-function createDeckListObj(deckList: dbDeckListObjType, cardsData: any) {
+function createDeckListObj(
+  deckList: dbDeckListObjType,
+  cardsData: any
+): DeckListType[] {
   if (!cardsData) {
     return [];
   }
-  var deckListInit: DeckListType[] = [];
-  for (var cardNum in deckList) {
-    var cardObj = cardsData[parseInt(cardNum) - 1];
-    var cardCount = deckList[cardNum];
-    var parsedCard = parseCardIntoDeckCard(cardObj, parseInt(cardCount));
-    deckListInit.push(parsedCard);
-  }
-  return deckListInit;
+  return Object.entries(deckList).map(([cardNum, cardCount]) => {
+    const cardObj = cardsData[parseInt(cardNum) - 1];
+    return parseCardIntoDeckCard(cardObj, parseInt(cardCount));
+  });
 }
 
-const formatDeckObj = (currDeckObj: any) => {
-  var returnObj: { [key: number]: number } = {};
-  for (var card of currDeckObj) {
-    if (card.count > 0) {
-      returnObj[card.cardNum] = card.count;
-    }
-  }
-  return returnObj;
+const formatDeckObj = (currDeckObj: any): { [key: number]: number } => {
+  return currDeckObj.reduce(
+    (returnObj: { [x: string]: any }, { cardNum, count }: any) => {
+      if (count > 0) {
+        returnObj[cardNum] = count;
+      }
+      return returnObj;
+    },
+    {}
+  );
 };
 
 export type DeckListType = {
