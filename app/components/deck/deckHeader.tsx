@@ -3,24 +3,14 @@ import DeckCounter from "./deckCounter";
 import classNames from "classnames";
 import { DeckListContext } from "../providers/deckListProvider/DeckListProvider";
 
-export type DeckHeaderProps = {
-  isCollection: boolean;
-};
-
-export const DeckHeader: FC<DeckHeaderProps> = ({ isCollection }) => {
+export const DeckHeader: FC = () => {
   const { challenger } = useContext(DeckListContext);
   const [currChallenger, setCurrChallenger] = useState(challenger); // currently a string, might make it an object in the future
+
   useEffect(() => {
     setCurrChallenger(challenger);
   }, [challenger]);
-  if (isCollection) {
-    return (
-      <div className="deckHeader">
-        <p className="challengerName">Deck Lists</p>
-        <DeckCounter collectionView={isCollection}></DeckCounter>
-      </div>
-    );
-  }
+
   return (
     <div
       className={classNames(
@@ -32,7 +22,7 @@ export const DeckHeader: FC<DeckHeaderProps> = ({ isCollection }) => {
         Challenger:
         <div className="">{currChallenger}</div>
       </div>
-      <DeckCounter collectionView={isCollection}></DeckCounter>
+      <DeckCounter></DeckCounter>
     </div>
   );
 };

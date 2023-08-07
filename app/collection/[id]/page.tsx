@@ -1,10 +1,5 @@
 "use client";
 
-import CardList from "../../components/cardList";
-import StickyBox from "react-sticky-box";
-import Deck from "../../components/deck/deck";
-import SearchBar from "../../components/searchBar";
-import { SaveButton } from "../../components/saveButton";
 import { useContext, useEffect, useState } from "react";
 import {
   CardsData,
@@ -25,7 +20,7 @@ const setCollectionCounts = (collectionCounts: any, cardsData: any) => {
   return cardsData;
 };
 
-async function getCollectionCount(id: string, cardsData: any) {
+async function getCollectionCount(id: string) {
   const res = await fetch(
     `https://grotto-beasts-test.fly.dev/api/collections/cardCollection/records/${id}`
   );
@@ -45,16 +40,18 @@ const createCollectionCountObj = (cardList: CardsData[]) => {
 };
 
 export default function CollectionPage({ params }: any) {
-  const { cardsData } = useContext(CardDataContext);
+  const { cardsData, pageType } = useContext(CardDataContext);
   const pocketBaseConnection = useContext(PocketBaseContext);
   const [cardList, setCardList] = useState(Object.assign({}, cardsData));
   const [userId, setUserId] = useState("");
+  const [deckLists, setDeckLists] = useState([]);
 
   useEffect(() => {
     if (params.id === "new") return;
-    getCollectionCount(params.id, cardsData).then((data) => {
+    getCollectionCount(params.id).then((data) => {
       setCardList(setCollectionCounts(data?.collection, cardsData));
       setUserId(data?.user);
+      setDeckLists(data?.deckLists ? data?.deckLists : []);
     });
   }, []);
   async function saveCollectionCount(
@@ -108,8 +105,10 @@ export default function CollectionPage({ params }: any) {
     <PageContent
       cardList={cardList}
       id={params.id}
-      saveType={"collection"}
       saveCollection={saveCollection}
+      userId={userId}
+      deckLists={deckLists}
+      pageType={pageType}
     />
   );
 }
