@@ -9,7 +9,7 @@ export type PageContentProps = {
   id: string;
   saveCollection?: Function;
   userId?: string;
-  deckLists?: never[];
+  deckLists?: string[];
   pageType?: string;
 };
 

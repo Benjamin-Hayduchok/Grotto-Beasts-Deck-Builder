@@ -12,7 +12,7 @@ type CommonPageContentProps = {
     saveType: string;
     saveCollection?: Function;
     userId?: string;
-    deckLists?: never[];
+    deckLists?: string[];
 }
 
 export const CommonPageContent: FC<CommonPageContentProps> = ({

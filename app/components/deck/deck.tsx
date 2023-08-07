@@ -8,7 +8,7 @@ import CollectionDeckCards from "./collectionDeckCards";
 
 type DeckProps = {
   userId?: string;
-  deckLists?: never[];
+  deckLists?: string[];
 };
 
 const Deck: FC<DeckProps> = ({ userId, deckLists }) => {

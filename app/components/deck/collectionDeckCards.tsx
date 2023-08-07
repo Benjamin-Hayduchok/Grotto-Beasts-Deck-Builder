@@ -1,8 +1,9 @@
 import React, { FC, useState, useEffect } from "react";
 import CollectionDeckCard from "./collectionDeckCard";
+import CollectionAddDeckListButton from "./collectionAddDeckListButton";
 
 type CollectionDeckCardsProps = {
-    deckListsProp?: never[];
+    deckListsProp?: string[];
 }
 
 const CollectionDeckCards: FC<CollectionDeckCardsProps> = ({ deckListsProp }) => {
@@ -18,6 +19,7 @@ const CollectionDeckCards: FC<CollectionDeckCardsProps> = ({ deckListsProp }) =>
         {deckLists?.map((deckListId, index) => (
           <CollectionDeckCard key={deckListId} deckListId={deckListId} deckListNum={index}></CollectionDeckCard>
         ))}
+        <CollectionAddDeckListButton deckLists={deckLists}/>
       </div>
     </div>
   );
