@@ -1,5 +1,4 @@
 import React, { FC, ReactNode, useContext } from "react";
-import eventBus from "./eventBus";
 import { DeckListContext } from "./providers/deckListProvider/DeckListProvider";
 import classNames from "classnames";
 import { useModal } from "./providers/modalProvider/ModalProvider";
@@ -16,10 +15,6 @@ const CountAndInfoPopUp = (props: {
     useContext(DeckListContext);
   const { openModal } = useModal();
 
-  const showInfoCard = (cardNum: string) => {
-    // console.log('SHOW INFO cardNum', cardNum);
-  };
-
   const decreaseCard = (cardNum: string) => {
     removeFromDeckList(cardNum);
     forceRenderDispatch();
@@ -34,7 +29,7 @@ const CountAndInfoPopUp = (props: {
     return (
       <div
         className={classNames(
-          "absolute right-10 top-1/2 -translate-y-1/2",
+          "absolute right-10 top-1/2 -translate-y-1/2 h-full",
           "flex w-[150px]",
           "divide-x-2 divide-white divide-opacity-25",
           "bg-black bg-opacity-50",
@@ -69,7 +64,7 @@ const CardActionButton: FC<CardActionButtonProps> = ({ onClick, label }) => {
     <div
       className={classNames(
         "flex grow justify-center",
-        "p-2 cursor-pointer",
+        "py-1 cursor-pointer",
         "text-xl"
       )}
       onClick={onClick}
