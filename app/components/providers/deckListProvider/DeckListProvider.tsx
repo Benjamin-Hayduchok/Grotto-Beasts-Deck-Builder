@@ -39,7 +39,7 @@ function createDeckListObj(
   if (!cardsData) {
     return [];
   }
-  return Object.entries(deckList).map(([cardNum, cardCount]) => {
+  return Object.entries(deckList ?? {}).map(([cardNum, cardCount]) => {
     const cardObj = cardsData[parseInt(cardNum) - 1];
     return parseCardIntoDeckCard(cardObj, parseInt(cardCount));
   });
