@@ -28,7 +28,7 @@ const DeckCard: FC<DeckCardProps> = ({ card }) => {
         alt={`cost-${card.cost}`}
       ></img>
       <div className="w-full flex justify-between">
-        <div className="flex">
+        <div className="flex gap-2">
           {card.name}
           <EpicTag isEpic={card.isEpic}></EpicTag>
         </div>
