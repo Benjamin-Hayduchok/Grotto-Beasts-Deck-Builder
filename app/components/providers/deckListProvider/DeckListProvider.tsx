@@ -32,19 +32,6 @@ async function getDeckList(id: string) {
   return data;
 }
 
-function createDeckListObj(
-  deckList: dbDeckListObjType,
-  cardsData: any
-): DeckListType[] {
-  if (!cardsData) {
-    return [];
-  }
-  return Object.entries(deckList ?? {}).map(([cardNum, cardCount]) => {
-    const cardObj = cardsData[parseInt(cardNum) - 1];
-    return parseCardIntoDeckCard(cardObj, parseInt(cardCount));
-  });
-}
-
 const formatDeckObj = (currDeckObj: any): { [key: number]: number } => {
   return currDeckObj.reduce(
     (returnObj: { [x: string]: any }, { cardNum, count }: any) => {
@@ -122,6 +109,20 @@ export const DeckListProvider: FC<DeckListProviderType> = ({
   );
   const { cardsData, updateCollectionCount, forceCollectionRenderDispatch } =
     useContext(CardDataContext);
+  function createDeckListObj(
+    deckList: dbDeckListObjType,
+    cardsData: any
+  ): DeckListType[] {
+    if (!cardsData) {
+      return [];
+    }
+    return Object.entries(deckList ?? {}).map(([cardNum, cardCount]) => {
+      const cardObj = cardsData[parseInt(cardNum) - 1];
+      updateCollectionCount(false, cardNum);
+      forceCollectionRenderDispatch();
+      return parseCardIntoDeckCard(cardObj, parseInt(cardCount));
+    });
+  }
 
   useEffect(() => {
     if (id === "new") return;
@@ -183,7 +184,16 @@ export const DeckListProvider: FC<DeckListProviderType> = ({
           // can have unlimited byeah beast
           copyDeckList[i].count++;
           setDeckListLength(deckListLength + 1);
-          updateCollectionCount(false, cardNum);
+          if (!updateCollectionCount(false, cardNum)) {
+            // Swal.fire({
+            //   title:
+            //     "<strong>You don't have another copy of that card.</strong>",
+            //   html: "<b>Card will still be added to deck but the deck is not fully valid.</b>",
+            //   icon: "error",
+            //   confirmButtonColor: "#f27474",
+            //   confirmButtonText: "OK",
+            // }); // not super user friendly. the user who is building a deck without a collection will get spammed.
+          }
           forceCollectionRenderDispatch();
         }
         return;
@@ -191,7 +201,15 @@ export const DeckListProvider: FC<DeckListProviderType> = ({
     }
     var parsedCard = parseCardIntoDeckCard(cardObj);
     copyDeckList.push(parsedCard);
-    updateCollectionCount(false, cardNum);
+    if (!updateCollectionCount(false, cardNum)) {
+      // Swal.fire({
+      //   title: "<strong>You don't have a copy of that card.</strong>",
+      //   html: "<b>Card will still be added to deck but the deck is not fully valid.</b>",
+      //   icon: "error",
+      //   confirmButtonColor: "#f27474",
+      //   confirmButtonText: "OK",
+      // }); // not super user friendly. the user who is building a deck without a collection will get spammed.
+    }
     forceCollectionRenderDispatch();
     parsedCard.isEpic && setEpicArray([...epicArray, parsedCard.cardNum]);
     setDeckListLength(deckListLength + 1);

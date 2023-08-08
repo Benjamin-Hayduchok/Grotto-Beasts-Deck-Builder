@@ -36,7 +36,7 @@ export type CardContextValues = {
   pageType?: PageTypes;
   userId: string;
   deckLists?: string[];
-  updateCollectionCount: (isIncremented: boolean, cardNum: string) => void;
+  updateCollectionCount: (isIncremented: boolean, cardNum: string) => boolean;
   saveCollection: () => void;
   forceRender: boolean;
   forceCollectionRenderDispatch: () => void;
@@ -47,7 +47,7 @@ export const CardDataContext = createContext<CardContextValues>({
   pageType: undefined,
   userId: "",
   deckLists: [],
-  updateCollectionCount: () => {},
+  updateCollectionCount: () => true,
   saveCollection: () => {},
   forceRender: false,
   forceCollectionRenderDispatch: () => {}
@@ -170,10 +170,14 @@ export const CardDataProvider: FC<PropsWithChildren> = ({ children }) => {
       allCardsData[cardToUpdateIndex].collectionCount++; // need to update to find the card with that cardNum instead of querying the index value right away
       setAllCardsData(allCardsData);
       // setCardList([...cardList]); // WORKS BUT IS SO SLOW
-      return;
+      return true;
     }
-    allCardsData[cardToUpdateIndex].collectionCount--;
-    setAllCardsData(allCardsData);
+    if (allCardsData[cardToUpdateIndex].collectionCount > 0) {
+      allCardsData[cardToUpdateIndex].collectionCount--;
+      setAllCardsData(allCardsData);
+      return true;
+    }
+    return false;
     // setCardList([...cardList]); // WORKS BUT IS SO SLOW
   };
 
