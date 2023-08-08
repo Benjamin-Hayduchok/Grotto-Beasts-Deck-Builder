@@ -176,7 +176,7 @@ export const DeckListProvider: FC<DeckListProviderType> = ({
     }
 
     var copyDeckList = [...deckList];
-
+    console.log('invalidCards', invalidCards)
     for (var i = 0; i < copyDeckList.length; i++) {
       // attempting to add card to decklist
       var deckCard = copyDeckList[i];
@@ -188,7 +188,7 @@ export const DeckListProvider: FC<DeckListProviderType> = ({
           if (
             !updateCollectionCount(false, cardNum) &&
             localStorage.getItem("collectionCountId") &&
-            !invalidCards.includes(cardNum)
+            invalidCards.length <= 0
           ) {
             Swal.fire({
               title:
@@ -211,7 +211,7 @@ export const DeckListProvider: FC<DeckListProviderType> = ({
     if (
       !updateCollectionCount(false, cardNum) &&
       localStorage.getItem("collectionCountId") &&
-      !invalidCards.includes(cardNum)
+      invalidCards.length <= 0
     ) {
       Swal.fire({
         title: "<strong>You don't have a copy of that card.</strong>",
