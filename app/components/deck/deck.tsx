@@ -5,20 +5,31 @@ import { CardDataContext } from "../providers/cardDataProvider";
 import { PageTypes } from "../providers/cardDataProvider";
 import { CollectionDeckHeader } from "./collectionDeckHeader";
 import CollectionDeckCards from "./collectionDeckCards";
+import { SaveButton } from "../saveButton";
 
 type DeckProps = {
   userId?: string;
   deckLists?: string[];
+  saveType: string;
+  saveCollection?: Function;
 };
 
-const Deck: FC<DeckProps> = ({ userId, deckLists }) => {
+const Deck: FC<DeckProps> = ({
+  userId,
+  deckLists,
+  saveType,
+  saveCollection,
+}) => {
   const { pageType } = useContext(CardDataContext);
 
   return (
     <div className="h-full flex flex-col">
       {pageType === PageTypes.COLLECTION && (
         <>
-          <CollectionDeckHeader userId={userId} deckListCount={deckLists?.length}></CollectionDeckHeader>
+          <CollectionDeckHeader
+            userId={userId}
+            deckListCount={deckLists?.length}
+          ></CollectionDeckHeader>
           <CollectionDeckCards deckListsProp={deckLists}></CollectionDeckCards>
         </>
       )}
@@ -28,6 +39,12 @@ const Deck: FC<DeckProps> = ({ userId, deckLists }) => {
           <DeckCards />
         </>
       )}
+      <div className="flex justify-center w-full p-2">
+        <SaveButton
+          saveType={saveType}
+          saveCollection={saveCollection}
+        ></SaveButton>
+      </div>
     </div>
   );
 };

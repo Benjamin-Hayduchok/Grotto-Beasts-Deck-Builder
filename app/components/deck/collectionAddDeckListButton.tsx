@@ -63,9 +63,16 @@ const CollectionAddDeckListButton: FC<CollectionAddDeckListButtonProps> = ({
       });
     }
   };
+
   return (
-    <button className={classNames("btn btn-neutral")} onClick={addDecklist}>
-      Add Deck
+    <button
+      className={classNames(
+        "flex justify-center w-full px-5 py-1 max-w-s rounded-2xl border-2 border-yellow-400 border-opacity-50",
+        "text-white bg-[rgba(0,0,0,.2)] hover:bg-gradient-to-r hover:bg-[rgb(252,209,68,.4)] transition-all ease-out duration-300"
+      )}
+      onClick={addDecklist}
+    >
+      <div className={classNames("text-base")}>New Deck</div>
     </button>
   );
 };

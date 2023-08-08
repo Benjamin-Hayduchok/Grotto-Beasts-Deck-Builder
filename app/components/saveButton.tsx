@@ -26,7 +26,7 @@ export const SaveButton: FC<SaveButtonProps> = ({
   return (
     <button
       className={classNames(
-        "flex absolute justify-center rounded w-40 h-14 px-5 py-2.5",
+        "flex justify-center rounded w-full h-14 px-5 py-2.5 max-w-s",
         "overflow-hidden group bg-green-500 hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300"
       )}
       onClick={() => save()}
