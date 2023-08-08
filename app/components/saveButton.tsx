@@ -1,23 +1,22 @@
 import { FC, useContext } from "react";
 import classNames from "classnames";
 import { DeckListContext } from "./providers/deckListProvider/DeckListProvider";
+import { CardDataContext } from "./providers/cardDataProvider";
 import { PageTypes } from "./providers/cardDataProvider";
 
 export type SaveButtonProps = {
   saveType: string;
-  saveCollection?: Function;
 };
 
 export const SaveButton: FC<SaveButtonProps> = ({
   saveType,
-  saveCollection,
 }) => {
   const { saveDeckList } = useContext(DeckListContext);
+  const { saveCollection } = useContext(CardDataContext);
 
   const save = () => {
     if (saveType === PageTypes.DECKBUILDER) {
       saveDeckList();
-      return;
     }
     if (saveCollection) {
       saveCollection();

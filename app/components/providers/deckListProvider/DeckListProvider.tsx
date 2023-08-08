@@ -120,6 +120,8 @@ export const DeckListProvider: FC<DeckListProviderType> = ({
     (state) => !state,
     false
   );
+  const { cardsData, updateCollectionCount, forceCollectionRenderDispatch } =
+    useContext(CardDataContext);
 
   useEffect(() => {
     if (id === "new") return;
@@ -131,8 +133,6 @@ export const DeckListProvider: FC<DeckListProviderType> = ({
       setEpicArray(data?.epicArray);
     });
   }, []);
-
-  const { cardsData } = useContext(CardDataContext);
 
   const addToDeckList = (cardNum: string) => {
     if (typeof cardsData === "undefined" || typeof deckList === "undefined") {
@@ -183,12 +183,16 @@ export const DeckListProvider: FC<DeckListProviderType> = ({
           // can have unlimited byeah beast
           copyDeckList[i].count++;
           setDeckListLength(deckListLength + 1);
+          updateCollectionCount(false, cardNum);
+          forceCollectionRenderDispatch();
         }
         return;
       }
     }
     var parsedCard = parseCardIntoDeckCard(cardObj);
     copyDeckList.push(parsedCard);
+    updateCollectionCount(false, cardNum);
+    forceCollectionRenderDispatch();
     parsedCard.isEpic && setEpicArray([...epicArray, parsedCard.cardNum]);
     setDeckListLength(deckListLength + 1);
     setDeckList([...copyDeckList]);
@@ -210,6 +214,8 @@ export const DeckListProvider: FC<DeckListProviderType> = ({
     const copyDeckList = [...deckList];
     if (copyDeckList[cardIndex].count <= 1) {
       copyDeckList.splice(cardIndex, 1);
+      updateCollectionCount(true, cardNum);
+      forceCollectionRenderDispatch();
       // Remove the card from the epicArray when its count is 0
       if (cardObj.type[0] === "✦") {
         setEpicArray((prevEpicArray) =>
@@ -218,6 +224,8 @@ export const DeckListProvider: FC<DeckListProviderType> = ({
       }
     } else {
       copyDeckList[cardIndex].count--;
+      updateCollectionCount(true, cardNum);
+      forceCollectionRenderDispatch();
     }
     setDeckListLength((prevDeckListLength) => prevDeckListLength - 1);
     setDeckList(copyDeckList);
