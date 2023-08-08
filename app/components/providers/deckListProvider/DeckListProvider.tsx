@@ -107,6 +107,7 @@ export const DeckListProvider: FC<DeckListProviderType> = ({
     (state) => !state,
     false
   );
+  const [invalidCards, setInvalidCards] = useState<String[]>([]);
   const { cardsData, updateCollectionCount, forceCollectionRenderDispatch } =
     useContext(CardDataContext);
   function createDeckListObj(
@@ -184,15 +185,21 @@ export const DeckListProvider: FC<DeckListProviderType> = ({
           // can have unlimited byeah beast
           copyDeckList[i].count++;
           setDeckListLength(deckListLength + 1);
-          if (!updateCollectionCount(false, cardNum)) {
-            // Swal.fire({
-            //   title:
-            //     "<strong>You don't have another copy of that card.</strong>",
-            //   html: "<b>Card will still be added to deck but the deck is not fully valid.</b>",
-            //   icon: "error",
-            //   confirmButtonColor: "#f27474",
-            //   confirmButtonText: "OK",
-            // }); // not super user friendly. the user who is building a deck without a collection will get spammed.
+          if (
+            !updateCollectionCount(false, cardNum) &&
+            localStorage.getItem("collectionCountId") &&
+            !invalidCards.includes(cardNum)
+          ) {
+            Swal.fire({
+              title:
+                "<strong>You don't have another copy of that card.</strong>",
+              html: "<b>Card will still be added to deck but the deck is not fully valid.</b>",
+              icon: "error",
+              confirmButtonColor: "#f27474",
+              confirmButtonText: "OK",
+            }); // not super user friendly. the user who is building a deck without a collection will get spammed.
+            invalidCards.push(cardNum);
+            setInvalidCards([...invalidCards]);
           }
           forceCollectionRenderDispatch();
         }
@@ -201,14 +208,20 @@ export const DeckListProvider: FC<DeckListProviderType> = ({
     }
     var parsedCard = parseCardIntoDeckCard(cardObj);
     copyDeckList.push(parsedCard);
-    if (!updateCollectionCount(false, cardNum)) {
-      // Swal.fire({
-      //   title: "<strong>You don't have a copy of that card.</strong>",
-      //   html: "<b>Card will still be added to deck but the deck is not fully valid.</b>",
-      //   icon: "error",
-      //   confirmButtonColor: "#f27474",
-      //   confirmButtonText: "OK",
-      // }); // not super user friendly. the user who is building a deck without a collection will get spammed.
+    if (
+      !updateCollectionCount(false, cardNum) &&
+      localStorage.getItem("collectionCountId") &&
+      !invalidCards.includes(cardNum)
+    ) {
+      Swal.fire({
+        title: "<strong>You don't have a copy of that card.</strong>",
+        html: "<b>Card will still be added to deck but the deck is not fully valid.</b>",
+        icon: "error",
+        confirmButtonColor: "#f27474",
+        confirmButtonText: "OK",
+      }); // not super user friendly. the user who is building a deck without a collection will get spammed.
+      invalidCards.push(cardNum);
+      setInvalidCards([...invalidCards]);
     }
     forceCollectionRenderDispatch();
     parsedCard.isEpic && setEpicArray([...epicArray, parsedCard.cardNum]);
