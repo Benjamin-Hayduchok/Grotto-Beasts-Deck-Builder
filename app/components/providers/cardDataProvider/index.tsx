@@ -50,7 +50,7 @@ export const CardDataContext = createContext<CardContextValues>({
   updateCollectionCount: () => true,
   saveCollection: () => {},
   forceRender: false,
-  forceCollectionRenderDispatch: () => {}
+  forceCollectionRenderDispatch: () => {},
 });
 
 type collectionCountObjType = { [key: number]: number };
@@ -90,12 +90,20 @@ export const CardDataProvider: FC<PropsWithChildren> = ({ children }) => {
   const [pageType, setPageType] = useState<PageTypes>();
   const [userId, setUserId] = useState("");
   const [deckLists, setDeckLists] = useState([]);
-  const path = window.location.pathname;
+  var path = "";
+  if (typeof window !== "undefined") {
+    path = window.location.pathname;
+  }
   const pathArr = path.split("/");
-  const id =
-    pathArr.includes(PageTypes.COLLECTION) && pathArr.length === 3
-      ? pathArr[2]
-      : localStorage.getItem("collectionCountId") || "";
+  var id = "";
+  if (typeof localStorage !== "undefined") {
+    path = window.location.pathname;
+    id =
+      pathArr.includes(PageTypes.COLLECTION) && pathArr.length === 3
+        ? pathArr[2]
+        : localStorage.getItem("collectionCountId") || "";
+  }
+
   const [collectionId, setCollectionId] = useState(id);
   const [forceRender, forceCollectionRenderDispatch] = useReducer(
     (state) => !state,
@@ -103,7 +111,6 @@ export const CardDataProvider: FC<PropsWithChildren> = ({ children }) => {
   );
 
   const pocketBaseConnection = useContext(PocketBaseContext);
-  
 
   useEffect(() => {
     const handleURLChange = () => {
@@ -209,7 +216,7 @@ export const CardDataProvider: FC<PropsWithChildren> = ({ children }) => {
         updateCollectionCount,
         saveCollection,
         forceRender,
-        forceCollectionRenderDispatch
+        forceCollectionRenderDispatch,
       }}
     >
       {children}

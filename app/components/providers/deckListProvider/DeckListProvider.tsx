@@ -321,7 +321,7 @@ export const DeckListProvider: FC<DeckListProviderType> = ({
         });
       }
 
-      return true;
+      return;
     }
     const data = {
       user: userId,
