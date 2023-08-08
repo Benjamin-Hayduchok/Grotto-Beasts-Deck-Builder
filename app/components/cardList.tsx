@@ -1,11 +1,8 @@
 "use client";
 
 import { Card } from "./tailwindComponents/card/card";
-import Container from "react-bootstrap/Container";
-import SearchBar from "./searchBar";
-import allCards from "./card-list.json";
 import eventBus from "./eventBus";
-import React, { useContext, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 var loadEventBus = true;
 

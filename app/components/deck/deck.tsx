@@ -42,7 +42,6 @@ const Deck: FC<DeckProps> = ({
       <div className="flex justify-center w-full p-2">
         <SaveButton
           saveType={saveType}
-          saveCollection={saveCollection}
         ></SaveButton>
       </div>
     </div>
