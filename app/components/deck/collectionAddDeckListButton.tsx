@@ -12,7 +12,7 @@ const CollectionAddDeckListButton: FC<CollectionAddDeckListButtonProps> = ({
 }) => {
   const pocketBaseConnection = useContext(PocketBaseContext);
   const addDecklist = async () => {
-    if (!pocketBaseConnection) {
+    if (!pocketBaseConnection?.authStore.isValid) {
       Swal.fire({
         title: "<strong>YOU ARE NOT LOGGED IN</strong>",
         html: '<a href="/login" style="color:blue;"><u>Click here to go to the Login Page...<u></a>',
@@ -56,7 +56,7 @@ const CollectionAddDeckListButton: FC<CollectionAddDeckListButtonProps> = ({
       }
     } catch {
       Swal.fire({
-        title: "<strong>Error Creating Decklist Ensure you are logged in..</strong>",
+        title: "<strong>Error Creating Decklist Ensure you are logged in...</strong>",
         html: '<a href="/login" style="color:blue;"><u>Click here to go to the Login Page...<u></a>',
         icon: "error",
         confirmButtonColor: "#f27474",
