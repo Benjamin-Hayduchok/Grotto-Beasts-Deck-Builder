@@ -86,6 +86,7 @@ const Card = (props: {
       <CollectionCardHover
         collectionCount={props.collectionCount}
         cardNum={props.cardNum}
+        collectionView={props.collectionView}
         updateCollectionCount={props.updateCollectionCount}
       ></CollectionCardHover>
     </div>

@@ -6,7 +6,6 @@ import { InfoIcon } from "../../icons/InfoIcon";
 import { useModal } from "../../providers/modalProvider/ModalProvider";
 import { CardInfoCarousel } from "../../cardInfo/cardInfoCarousel";
 import { DeckListContext } from "../../providers/deckListProvider/DeckListProvider";
-import util from "../../util";
 import { CardDataContext, PageTypes } from "../../providers/cardDataProvider";
 
 export type CardProps = {
@@ -142,6 +141,7 @@ export const Card: FC<CardProps> = ({
         collectionCount={collectionCount}
         cardNum={cardNum}
         updateCollectionCount={updateCollectionCount!}
+        collectionView={pageType === PageTypes.COLLECTION}
       />
     </div>
   );

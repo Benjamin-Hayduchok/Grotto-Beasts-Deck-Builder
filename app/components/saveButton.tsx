@@ -17,6 +17,7 @@ export const SaveButton: FC<SaveButtonProps> = ({
   const save = () => {
     if (saveType === PageTypes.DECKBUILDER) {
       saveDeckList();
+      return;
     }
     if (saveCollection) {
       saveCollection();
