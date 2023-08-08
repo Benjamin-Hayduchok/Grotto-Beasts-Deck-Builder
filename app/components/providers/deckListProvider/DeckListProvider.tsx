@@ -108,8 +108,12 @@ export const DeckListProvider: FC<DeckListProviderType> = ({
     false
   );
   const [invalidCards, setInvalidCards] = useState<String[]>([]);
-  const { cardsData, updateCollectionCount, forceCollectionRenderDispatch } =
-    useContext(CardDataContext);
+  const {
+    cardsData,
+    deckLists,
+    updateCollectionCount,
+    forceCollectionRenderDispatch,
+  } = useContext(CardDataContext);
   function createDeckListObj(
     deckList: dbDeckListObjType,
     cardsData: any
@@ -176,7 +180,6 @@ export const DeckListProvider: FC<DeckListProviderType> = ({
     }
 
     var copyDeckList = [...deckList];
-    console.log('invalidCards', invalidCards)
     for (var i = 0; i < copyDeckList.length; i++) {
       // attempting to add card to decklist
       var deckCard = copyDeckList[i];
@@ -264,6 +267,62 @@ export const DeckListProvider: FC<DeckListProviderType> = ({
 
   // need to add collectionId to this in some way. will likely grab from local storage as it should be stored there
   const saveDeckToDB = async (deckObj: any) => {
+    if (id === "new") {
+      const collectionId = localStorage.getItem("collectionCountId");
+
+      if (!collectionId) {
+        return;
+      }
+
+      try {
+        const deckListData = {
+          user: localStorage.getItem("userId"),
+          decklist: deckObj,
+          challenger: challenger,
+          decklistLength: deckListLength,
+          collectionid: collectionId,
+          epicArray: epicArray,
+          name: "TO BE ADDED LATER",
+        };
+
+        const deckListRecord = await pocketBaseConnection
+          ?.collection("decklists")
+          .create(deckListData);
+
+        if (!deckListRecord?.id) {
+          return;
+        }
+
+        deckLists?.push(deckListRecord?.id);
+
+        const collectionData = {
+          user: localStorage.getItem("userId"),
+          deckLists: deckLists,
+        };
+
+        const collectionRecord = await pocketBaseConnection
+          ?.collection("cardCollection")
+          .update(collectionId, collectionData);
+
+        if (typeof window !== "undefined") {
+          window.location.href =
+            new URL(window.location.href).origin +
+            "/deckbuilder/" +
+            deckListRecord?.id;
+        }
+      } catch {
+        Swal.fire({
+          title:
+            "<strong>Error Creating Decklist. Ensure you are logged in...</strong>",
+          html: '<a href="/login" style="color:blue;"><u>Click here to go to the Login Page...</u></a>',
+          icon: "error",
+          confirmButtonColor: "#f27474",
+          confirmButtonText: "Close",
+        });
+      }
+
+      return true;
+    }
     const data = {
       user: userId,
       decklist: deckObj,
