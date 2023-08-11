@@ -66,7 +66,7 @@ const Card = (props: {
   };
   useEffect(() => {});
   return (
-    <div className="cardContainer" onClick={() => addCard(props)}>
+    <div className="cardContainer">
       <div
         ref={inputRef}
         className="card"
@@ -76,6 +76,7 @@ const Card = (props: {
           backgroundSize: "contain",
           border: "red 1px solid",
         }}
+        onClick={() => addCard(props)}
         onMouseLeave={removeListener}
         onMouseMove={rotateToMouse}
       >
@@ -83,9 +84,9 @@ const Card = (props: {
         <div ref={glowRef} className="glow" />
       </div>
       <CollectionCardHover
-        collectionView={props.collectionView}
         collectionCount={props.collectionCount}
         cardNum={props.cardNum}
+        collectionView={props.collectionView}
         updateCollectionCount={props.updateCollectionCount}
       ></CollectionCardHover>
     </div>

@@ -9,25 +9,13 @@ export type DeckCardProps = {
 };
 
 const DeckCard: FC<DeckCardProps> = ({ card }) => {
-  // const { name, cardNum, imageName, count, cost, isEpic } = props;
-
   const [showAdjustCount, setShowAdjustCount] = useState(true);
-
-  const showCardCountChange = (cardNum: string) => {
-    // console.log('SHOW cardNum', cardNum)
-    setShowAdjustCount(true);
-  };
-
-  const hideCardCountChange = (cardNum: string) => {
-    // console.log('HIDE cardNum', cardNum);
-    setShowAdjustCount(false);
-  };
 
   return (
     <div
       className={classNames(
         "group",
-        "relative overflow-clip",
+        "relative",
         "flex items-center py-1 pl-10 pr-4",
         "border-2 border-yellow-400 border-opacity-50 rounded-2xl",
         "bg-[rgb(31,45,74)] bg-opacity-90",
@@ -35,12 +23,12 @@ const DeckCard: FC<DeckCardProps> = ({ card }) => {
       )}
     >
       <img
-        className="absolute -left-1 w-10 h-10"
+        className="absolute overflow-visible -left-[.45em] w-10 h-10"
         src={"../cost+" + card.cost + ".png"}
         alt={`cost-${card.cost}`}
       ></img>
       <div className="w-full flex justify-between">
-        <div className="flex">
+        <div className="flex gap-2">
           {card.name}
           <EpicTag isEpic={card.isEpic}></EpicTag>
         </div>

@@ -38,6 +38,8 @@ export default function GoogleButton() {
           });
           return;
         }
+        let userId = authData.record.id;
+        localStorage.setItem("userId", userId);
         let collectionCountId = authData.record.collectionCountId;
         if (!collectionCountId || collectionCountId === "") {
           collectionCountId = await createNewCollection(pb, authData.record.id);

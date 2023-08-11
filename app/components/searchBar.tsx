@@ -137,7 +137,7 @@ const SearchBar = () => {
           <input
             type="submit"
             className={classNames(
-              "rounded-full bg-[#ffa800] px-4 py-1",
+              "rounded-full bg-green-800 text-white px-4 py-1",
               "hover:cursor-pointer hover:brightness-75"
             )}
             id="submitCardSearch"
@@ -145,7 +145,7 @@ const SearchBar = () => {
           />
           <button
             className={classNames(
-              "rounded-full bg-green-800 text-white px-4 py-1",
+              "rounded-full bg-[#ffa800] px-4 py-1",
               "hover:cursor-pointer hover:brightness-75"
             )}
             onClick={clearInputs}

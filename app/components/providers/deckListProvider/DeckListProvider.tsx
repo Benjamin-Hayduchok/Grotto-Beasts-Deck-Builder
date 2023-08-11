@@ -32,19 +32,6 @@ async function getDeckList(id: string) {
   return data;
 }
 
-function createDeckListObj(
-  deckList: dbDeckListObjType,
-  cardsData: any
-): DeckListType[] {
-  if (!cardsData) {
-    return [];
-  }
-  return Object.entries(deckList).map(([cardNum, cardCount]) => {
-    const cardObj = cardsData[parseInt(cardNum) - 1];
-    return parseCardIntoDeckCard(cardObj, parseInt(cardCount));
-  });
-}
-
 const formatDeckObj = (currDeckObj: any): { [key: number]: number } => {
   return currDeckObj.reduce(
     (returnObj: { [x: string]: any }, { cardNum, count }: any) => {
@@ -120,6 +107,27 @@ export const DeckListProvider: FC<DeckListProviderType> = ({
     (state) => !state,
     false
   );
+  const [invalidCards, setInvalidCards] = useState<String[]>([]);
+  const {
+    cardsData,
+    deckLists,
+    updateCollectionCount,
+    forceCollectionRenderDispatch,
+  } = useContext(CardDataContext);
+  function createDeckListObj(
+    deckList: dbDeckListObjType,
+    cardsData: any
+  ): DeckListType[] {
+    if (!cardsData) {
+      return [];
+    }
+    return Object.entries(deckList ?? {}).map(([cardNum, cardCount]) => {
+      const cardObj = cardsData[parseInt(cardNum) - 1];
+      updateCollectionCount(false, cardNum);
+      forceCollectionRenderDispatch();
+      return parseCardIntoDeckCard(cardObj, parseInt(cardCount));
+    });
+  }
 
   useEffect(() => {
     if (id === "new") return;
@@ -131,8 +139,6 @@ export const DeckListProvider: FC<DeckListProviderType> = ({
       setEpicArray(data?.epicArray);
     });
   }, []);
-
-  const { cardsData } = useContext(CardDataContext);
 
   const addToDeckList = (cardNum: string) => {
     if (typeof cardsData === "undefined" || typeof deckList === "undefined") {
@@ -174,7 +180,6 @@ export const DeckListProvider: FC<DeckListProviderType> = ({
     }
 
     var copyDeckList = [...deckList];
-
     for (var i = 0; i < copyDeckList.length; i++) {
       // attempting to add card to decklist
       var deckCard = copyDeckList[i];
@@ -183,12 +188,45 @@ export const DeckListProvider: FC<DeckListProviderType> = ({
           // can have unlimited byeah beast
           copyDeckList[i].count++;
           setDeckListLength(deckListLength + 1);
+          if (
+            !updateCollectionCount(false, cardNum) &&
+            localStorage.getItem("collectionCountId") &&
+            invalidCards.length <= 0
+          ) {
+            Swal.fire({
+              title:
+                "<strong>You don't have another copy of that card.</strong>",
+              html: "<b>Card will still be added to deck but the deck is not fully valid.</b>",
+              icon: "error",
+              confirmButtonColor: "#f27474",
+              confirmButtonText: "OK",
+            }); // not super user friendly. the user who is building a deck without a collection will get spammed.
+            invalidCards.push(cardNum);
+            setInvalidCards([...invalidCards]);
+          }
+          forceCollectionRenderDispatch();
         }
         return;
       }
     }
     var parsedCard = parseCardIntoDeckCard(cardObj);
     copyDeckList.push(parsedCard);
+    if (
+      !updateCollectionCount(false, cardNum) &&
+      localStorage.getItem("collectionCountId") &&
+      invalidCards.length <= 0
+    ) {
+      Swal.fire({
+        title: "<strong>You don't have a copy of that card.</strong>",
+        html: "<b>Card will still be added to deck but the deck is not fully valid.</b>",
+        icon: "error",
+        confirmButtonColor: "#f27474",
+        confirmButtonText: "OK",
+      }); // not super user friendly. the user who is building a deck without a collection will get spammed.
+      invalidCards.push(cardNum);
+      setInvalidCards([...invalidCards]);
+    }
+    forceCollectionRenderDispatch();
     parsedCard.isEpic && setEpicArray([...epicArray, parsedCard.cardNum]);
     setDeckListLength(deckListLength + 1);
     setDeckList([...copyDeckList]);
@@ -210,6 +248,8 @@ export const DeckListProvider: FC<DeckListProviderType> = ({
     const copyDeckList = [...deckList];
     if (copyDeckList[cardIndex].count <= 1) {
       copyDeckList.splice(cardIndex, 1);
+      updateCollectionCount(true, cardNum);
+      forceCollectionRenderDispatch();
       // Remove the card from the epicArray when its count is 0
       if (cardObj.type[0] === "✦") {
         setEpicArray((prevEpicArray) =>
@@ -218,6 +258,8 @@ export const DeckListProvider: FC<DeckListProviderType> = ({
       }
     } else {
       copyDeckList[cardIndex].count--;
+      updateCollectionCount(true, cardNum);
+      forceCollectionRenderDispatch();
     }
     setDeckListLength((prevDeckListLength) => prevDeckListLength - 1);
     setDeckList(copyDeckList);
@@ -225,6 +267,62 @@ export const DeckListProvider: FC<DeckListProviderType> = ({
 
   // need to add collectionId to this in some way. will likely grab from local storage as it should be stored there
   const saveDeckToDB = async (deckObj: any) => {
+    if (id === "new") {
+      const collectionId = localStorage.getItem("collectionCountId");
+
+      if (!collectionId) {
+        return;
+      }
+
+      try {
+        const deckListData = {
+          user: localStorage.getItem("userId"),
+          decklist: deckObj,
+          challenger: challenger,
+          decklistLength: deckListLength,
+          collectionid: collectionId,
+          epicArray: epicArray,
+          name: "TO BE ADDED LATER",
+        };
+
+        const deckListRecord = await pocketBaseConnection
+          ?.collection("decklists")
+          .create(deckListData);
+
+        if (!deckListRecord?.id) {
+          return;
+        }
+
+        deckLists?.push(deckListRecord?.id);
+
+        const collectionData = {
+          user: localStorage.getItem("userId"),
+          deckLists: deckLists,
+        };
+
+        const collectionRecord = await pocketBaseConnection
+          ?.collection("cardCollection")
+          .update(collectionId, collectionData);
+
+        if (typeof window !== "undefined") {
+          window.location.href =
+            new URL(window.location.href).origin +
+            "/deckbuilder/" +
+            deckListRecord?.id;
+        }
+      } catch {
+        Swal.fire({
+          title:
+            "<strong>Error Creating Decklist. Ensure you are logged in...</strong>",
+          html: '<a href="/login" style="color:blue;"><u>Click here to go to the Login Page...</u></a>',
+          icon: "error",
+          confirmButtonColor: "#f27474",
+          confirmButtonText: "Close",
+        });
+      }
+
+      return;
+    }
     const data = {
       user: userId,
       decklist: deckObj,

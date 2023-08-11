@@ -6,7 +6,6 @@ import { InfoIcon } from "../../icons/InfoIcon";
 import { useModal } from "../../providers/modalProvider/ModalProvider";
 import { CardInfoCarousel } from "../../cardInfo/cardInfoCarousel";
 import { DeckListContext } from "../../providers/deckListProvider/DeckListProvider";
-import util from "../../util";
 import { CardDataContext, PageTypes } from "../../providers/cardDataProvider";
 
 export type CardProps = {
@@ -43,7 +42,8 @@ export const Card: FC<CardProps> = ({
     maxWidth: "max-w-[240px]",
   },
 }) => {
-  const {deckList, addToDeckList, forceRenderDispatch} = useContext(DeckListContext);
+  const { deckList, addToDeckList, forceRenderDispatch } =
+    useContext(DeckListContext);
   const { cardsData, pageType } = useContext(CardDataContext);
 
   const inputRef = useRef<HTMLDivElement>(null);
@@ -63,7 +63,6 @@ export const Card: FC<CardProps> = ({
       style={{
         perspective: "1500px",
       }}
-      onClick={() => addCard({ cardNum, name })}
     >
       <div
         ref={inputRef}
@@ -80,6 +79,7 @@ export const Card: FC<CardProps> = ({
         )}
         onMouseLeave={removeListener}
         onMouseMove={rotateToMouse}
+        onClick={() => addCard({ cardNum, name })}
       >
         <div
           className={classNames(
@@ -137,14 +137,12 @@ export const Card: FC<CardProps> = ({
           />
         </div>
       </div>
-      {pageType === PageTypes.COLLECTION && (
-        <CollectionCardHover
-          collectionView={collectionView}
-          collectionCount={collectionCount}
-          cardNum={cardNum}
-          updateCollectionCount={updateCollectionCount!}
-        />
-      )}
+      <CollectionCardHover
+        collectionCount={collectionCount}
+        cardNum={cardNum}
+        updateCollectionCount={updateCollectionCount!}
+        collectionView={pageType === PageTypes.COLLECTION}
+      />
     </div>
   );
 };

@@ -5,10 +5,10 @@ import CardMinusButton from "./cardMinusButton";
 import CollectionCardCount from "./collectionCardCount";
 
 export default function CollectionCardHover(props: {
-  collectionView: boolean;
   collectionCount: number;
   cardNum: string;
   updateCollectionCount: Function;
+  collectionView: boolean;
 }) {
   const [cardCount, setCardCount] = useState(props.collectionCount);
   const [init, setInit] = useState(false);
@@ -31,14 +31,13 @@ export default function CollectionCardHover(props: {
     }
   };
 
-  if (props.collectionView) {
-    return (
-      <div className="collectionCardHoverContainer">
-        <CardMinusButton cardDec={minusPressed} />
-        <CollectionCardCount count={cardCount.toString()} />
-        <CardPlusButtom cardInc={plusPressed} />
-      </div>
-    );
-  }
+  return (
+    <div className="collectionCardHoverContainer">
+      {props.collectionView && <CardMinusButton cardDec={minusPressed} />}
+      <CollectionCardCount count={cardCount.toString()} collectionView={props.collectionView} />
+      {props.collectionView && <CardPlusButtom cardInc={plusPressed} />}
+    </div>
+  );
+
   return <div></div>;
 }
