@@ -13,10 +13,10 @@ export default function CollectionCardCount(props: {
   return (
     <>
       {props.collectionView ? (
-        <p className="collectionCardCount">{count}</p>
+        <p className="collectionCardCount">{parseInt(count) < 0 ? 0 : count}</p>
       ) : (
         <p className="text-lg justify-center text-center w-full">
-          Collection Count: {count}
+          Collection Count: {parseInt(count) < 0 ? 0 : count}
         </p>
       )}
     </>

@@ -179,9 +179,9 @@ export const CardDataProvider: FC<PropsWithChildren> = ({ children }) => {
       // setCardList([...cardList]); // WORKS BUT IS SO SLOW
       return true;
     }
+    allCardsData[cardToUpdateIndex].collectionCount--;
+    setAllCardsData(allCardsData);
     if (allCardsData[cardToUpdateIndex].collectionCount > 0) {
-      allCardsData[cardToUpdateIndex].collectionCount--;
-      setAllCardsData(allCardsData);
       return true;
     }
     return false;
